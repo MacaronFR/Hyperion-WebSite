@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Controller;
+namespace Hyperion\WebSite;
 
 /**
  * Class Controller
@@ -11,7 +11,7 @@ namespace Controller;
 abstract class Controller
 {
 	/**
-	 * Must be instanced for using the get() method and control POST request
+	 * Must be instanced for using the get() method and control GET request
 	 * @param array $args Argument passed to the controller by the router
 	 * @return mixed
 	 */

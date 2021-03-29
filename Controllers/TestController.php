@@ -1,6 +1,6 @@
 <?php
 
-namespace Controller;
+namespace Hyperion\WebSite;
 require_once "Controller.php";
 
 class TestController extends Controller

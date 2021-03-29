@@ -1,6 +1,5 @@
 <?php
-namespace Router;
-use Controller\Controller;
+namespace Hyperion\WebSite;
 use JetBrains\PhpStorm\ArrayShape;
 
 /**
@@ -112,17 +111,11 @@ class Router{
 		}
 	}
 	public function default(string $method = ""){
-		if(!($this->routed) && $this->default_controller !== null){
-			if($method !== "" && $method === $this->method){
-				if($method === Router::GET){
+		if (!($this->routed) && $this->default_controller !== null) {
+			if (($method !== "" && $method === $this->method) || $method === "") {
+				if ($method === Router::GET) {
 					$this->default_controller->get($this->prepareArgs([]));
-				}elseif($method === Router::POST){
-					$this->default_controller->post($this->prepareArgs([]));
-				}
-			}else{
-				if($this->method === Router::GET){
-					$this->default_controller->get($this->prepareArgs([]));
-				}elseif ($this->method === Router::POST){
+				} elseif ($method === Router::POST) {
 					$this->default_controller->post($this->prepareArgs([]));
 				}
 			}
