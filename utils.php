@@ -20,6 +20,8 @@ function API_request(string $path, string $method): array|false{
         }catch (JsonException){
             return false;
         }
+    }else{
+        return false;
     }
 }
 
