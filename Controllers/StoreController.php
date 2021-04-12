@@ -15,7 +15,16 @@ class StoreController extends Controller {
 		include "Views/head.php";
 		$head = ob_get_contents();
 		ob_end_clean();
-		$head .= "\t<nik>\n";
+		ob_start();
+		include "Views/header.php";
+		$header = ob_get_contents();
+		ob_end_clean();
+		$main = "";
+		$footer = "";
+		ob_start();
+		include "Views/body.php";
+		$body = ob_get_contents();
+		ob_end_clean();
 		include "Views/root.php";
 	}
 	
