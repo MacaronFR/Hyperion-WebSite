@@ -8,18 +8,18 @@ namespace Hyperion\WebSite;
  * @package Controller
  * @author Macaron
  */
-abstract class Controller
-{
+abstract class Controller {
 	/**
 	 * Must be instanced for using the get() method and control GET request
 	 * @param array $args Argument passed to the controller by the router
 	 * @return mixed
 	 */
-    abstract public function get(array $args);
+	abstract public function get(array $args);
+	
 	/**
 	 * Must be instanced for using the post() method and control POST request
 	 * @param array $args Argument passed to the controller by the router
 	 * @return mixed
 	 */
-    abstract public function post(array $args);
+	abstract public function post(array $args);
 }

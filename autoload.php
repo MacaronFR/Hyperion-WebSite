@@ -1,0 +1,6 @@
+<?php
+require_once "Controllers/Controller.php";
+require_once "Controllers/StoreController.php";
+require_once "Controllers/TestController.php";
+require_once "Router.php";
+require_once "utils.php";
