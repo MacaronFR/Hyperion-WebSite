@@ -1,3 +1,11 @@
-body{
-  margin: 0;
+@import "../bootstrap-5/scss/bootstrap";
+
+$primary: #FFC300;
+
+#topBar{
+  height: 80px;
+}
+
+img{
+  max-height: 100%;
 }

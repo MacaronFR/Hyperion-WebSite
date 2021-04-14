@@ -5,12 +5,12 @@
  * @var string $footer
  */
 ?>
-<header>
+<header class="bg-dark">
     <?= $header ?>
 </header>
-<main>
+<main class="container">
     <?= $main ?>
 </main>
-<footer>
+<footer class="container">
     <?= $footer ?>
 </footer>
