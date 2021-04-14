@@ -5,9 +5,9 @@
  * @var string $footer
  */
 ?>
-<header class="bg-dark">
+<!-- <header class="bg-dark">         J'ai mi en commentaire parceque c'est génant est bizzare pour le css #Mikaaaa-->
     <?= $header ?>
-</header>
+<!-- </header> -->
 <main class="container">
     <?= $main ?>
 </main>
