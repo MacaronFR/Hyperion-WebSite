@@ -1,9 +1,10 @@
 @import "../bootstrap-5/scss/bootstrap";
+@import "_mikaSCSS";
 
 $primary: #FFC300;
 
 #topBar{
-  height: 80px;
+  height: 180px;
 }
 
 img{
