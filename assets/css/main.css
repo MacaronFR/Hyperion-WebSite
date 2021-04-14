@@ -10728,6 +10728,11 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+#header_1 {
+  background-color: red;
+  height: 10vw;
+}
+
 #topBar {
   height: 180px;
 }
