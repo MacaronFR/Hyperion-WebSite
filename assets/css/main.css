@@ -10728,6 +10728,11 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 /* ----------------------------------- Header ----------------------------------- */
 header {
   width: 100%;
