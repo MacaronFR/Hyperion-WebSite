@@ -10774,12 +10774,12 @@ header {
   width: 100%;
 }
 
-#footer_1 {
-  display: flex;
-}
-
 #footer_1 > ul {
   list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
 }
 
 #footer_2 {
