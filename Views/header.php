@@ -1,13 +1,12 @@
 <?php
 ?>
-<div class="d-flex flex-column justify-content-start">
-	<div id="topBar" class="container-fluid bg-primary">
-		<img alt="logo" src="/assets/images/Hyperion-yellow-transparent.png" class="img-fluid">
-		<div id="searchBar"></div>
-		<div id="actions"></div>
-	</div>
-	<div id="subBar" style="background-color: red" class="container-fluid">
-		<div id="link">bonnour</div>
-		<div id="info"></div>
-	</div>
+
+<!-- Header sans barre de recherche -->
+<div id="header_1" class="navbar">
+	<div id="header_logo">
+        <a class="navbar-brand" href="#">
+		    <img src="/assets/images/Hyperion-yellow-transparent.png" alt="logo_Hyperion">
+        </a>
+    </div>
 </div>
+<div id="header_1_line"></div>
