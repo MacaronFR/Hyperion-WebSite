@@ -6,10 +6,10 @@
 ?>
 <!DOCTYPE html>
 <html lang="">
-<head>
-	<?= $head ?>
-</head>
-<body>
-    <?= $body ?>
-</body>
+    <head>
+        <?= $head ?>
+    </head>
+    <body>
+        <?= $body ?>
+    </body>
 </html>

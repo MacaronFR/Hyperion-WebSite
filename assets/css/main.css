@@ -10731,11 +10731,14 @@ textarea.form-control-lg {
 /* ----------------------------------- Generale ----------------------------------- */
 html {
   height: 100%;
+  background-color: #0f5132;
 }
 
 body {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  background-color: purple;
 }
 
 main {
