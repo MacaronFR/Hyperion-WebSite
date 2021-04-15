@@ -6,4 +6,6 @@
 		    <img src="/assets/images/Hyperion-yellow-transparent.png" alt="logo_Hyperion">
         </a>
     </div>
+    <div id="header_1_line"></div>
+
 </div>
