@@ -5,6 +5,9 @@
   flex-direction: row;
   align-items: center;
 }
+#header_logo > a{
+  margin: 0;
+}
 #header_logo > a > img{
   height: 3.5vw;
 }
