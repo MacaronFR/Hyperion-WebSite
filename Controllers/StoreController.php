@@ -22,7 +22,7 @@ class StoreController extends Controller {
 		$main = "";
         ob_start();
         include "Views/footer.php";
-		$footer = "ob_get_contents()";
+		$footer = ob_get_contents();
         ob_end_clean();
 		ob_start();
 		include "Views/body.php";
