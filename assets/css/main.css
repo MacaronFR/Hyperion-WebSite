@@ -10738,8 +10738,7 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  background-color: #0dcaf0;
-  min-height: 100vh;
+  min-height: 83.6vh;
 }
 
 /* ----------------------------------- Header ----------------------------------- */
@@ -10778,7 +10777,6 @@ header {
 
 /* ----------------------------------- Footer ----------------------------------- */
 #footer {
-  background-color: red;
   height: 5vw;
   width: 100%;
   bottom: 0;
