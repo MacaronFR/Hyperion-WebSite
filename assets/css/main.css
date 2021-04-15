@@ -10762,4 +10762,11 @@ header {
   background-color: #FFC300;
 }
 
+/* ----------------------------------- Footer ----------------------------------- */
+#footer {
+  background-color: red;
+  height: 10vw;
+  width: 100%;
+}
+
 /*# sourceMappingURL=main.css.map */

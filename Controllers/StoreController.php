@@ -25,6 +25,10 @@ class StoreController extends Controller {
 		include "Views/body.php";
 		$body = ob_get_contents();
 		ob_end_clean();
+        ob_start();
+        include "Views/footer.php";
+        $header = ob_get_contents();
+        ob_end_clean();
 		include "Views/root.php";
 	}
 	
