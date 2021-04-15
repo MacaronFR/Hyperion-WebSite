@@ -20,11 +20,14 @@ class StoreController extends Controller {
 		$header = ob_get_contents();
 		ob_end_clean();
 		$main = "";
+        ob_start();
+        include "Views/footer.php";
+		$footer = "ob_get_contents()";
+        ob_end_clean();
 		ob_start();
 		include "Views/body.php";
 		$body = ob_get_contents();
 		ob_end_clean();
-        $footer = "";
 		include "Views/root.php";
 	}
 	
