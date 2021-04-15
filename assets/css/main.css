@@ -10793,4 +10793,8 @@ header {
   justify-content: center;
 }
 
+#footer_2 > p {
+  color: #555555;
+}
+
 /*# sourceMappingURL=main.css.map */
