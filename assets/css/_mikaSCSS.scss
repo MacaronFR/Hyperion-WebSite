@@ -44,6 +44,10 @@ header{
   flex-direction: row;
   padding: 0;
   margin: 0;
+  justify-content: center;
+}
+#footer_1 > ul > li{
+  margin: 0 1vw;
 }
 #footer_2{
   display: flex;
