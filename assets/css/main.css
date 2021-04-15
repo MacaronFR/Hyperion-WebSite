@@ -10784,7 +10784,8 @@ header {
 }
 
 #footer_1 > ul > li {
-  margin: 0 1vw;
+  margin: 0 1.5vw;
+  color: #0066C0;
 }
 
 #footer_2 {
