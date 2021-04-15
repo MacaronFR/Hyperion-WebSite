@@ -2,6 +2,11 @@ body{
   display: flex;
   flex-direction: column;
 }
+main{
+  display: flex;
+  flex-direction: column;
+  background-color: #0dcaf0;
+}
 /* ----------------------------------- Header ----------------------------------- */
 header{
   width: 100%;
