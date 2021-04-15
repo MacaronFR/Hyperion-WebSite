@@ -10784,9 +10784,10 @@ header {
 }
 
 #footer_line {
-  background: linear-gradient(180deg, white, #FFC300, white);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), #FFC300, rgba(255, 255, 255, 0.5));
   width: 100%;
   height: 0.15vw;
+  margin-bottom: 0.8vw;
 }
 
 #footer_1 > ul {
@@ -10806,6 +10807,7 @@ header {
 #footer_2 {
   display: flex;
   justify-content: center;
+  margin-top: 0.4vw;
 }
 
 #footer_2 > p {
