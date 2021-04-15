@@ -10733,4 +10733,8 @@ textarea.form-control-lg {
   height: 4vw;
 }
 
+#header_logo > a > img {
+  height: 10px;
+}
+
 /*# sourceMappingURL=main.css.map */
