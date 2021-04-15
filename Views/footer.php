@@ -8,6 +8,6 @@
         </ul>
     </div>
     <div id="footer_2">
-        <p>©  <?php echo date('Y'); ?>, Hyperion.fr, Groupe 1</p>
+        <p>©  <?= date('Y'); ?>, Hyperion.fr, Groupe 1</p>
     </div>
 </div>
