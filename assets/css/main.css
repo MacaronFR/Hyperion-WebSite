@@ -10744,6 +10744,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 
 #header_logo > a {
@@ -10757,7 +10758,7 @@ header {
 
 #header_1_line {
   width: 100%;
-  height: 3vw;
+  height: 0.45vw;
   background-color: purple;
 }
 
