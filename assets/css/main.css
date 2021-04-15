@@ -10731,10 +10731,13 @@ textarea.form-control-lg {
 #header_1 {
   background-color: black;
   height: 4vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #header_logo > a > img {
-  height: 3vw;
+  height: 3.5vw;
 }
 
 /*# sourceMappingURL=main.css.map */
