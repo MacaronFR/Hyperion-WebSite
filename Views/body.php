@@ -8,9 +8,9 @@
 <header>
     <?= $header ?>
 </header>
-<main class="container">
+<main>
     <?= $main ?>
 </main>
-<footer class="container">
+<footer>
     <?= $footer ?>
 </footer>
