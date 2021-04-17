@@ -16,7 +16,7 @@
                 <input type="submit" name="form_connexion" value="Continuer">
             </div>
         </form>
-        <div class="">
+        <div class="mt-1 mt-lg-4">
             <p>En passant votre commande, vous acceptez les <u>Conditions générales</u> de vente d'Hyperion.</p>
         </div>
     </div>
