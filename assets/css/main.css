@@ -10773,10 +10773,7 @@ header {
 /* ----------------------------------- Footer ----------------------------------- */
 #footer {
   height: 5vw;
-  width: 100%;
   background: radial-gradient(at 49% 17%, #E7E7E7, #FFFFFF 49%);
-  bottom: 0;
-  /* à virer a un moment */
 }
 
 #footer_line {
