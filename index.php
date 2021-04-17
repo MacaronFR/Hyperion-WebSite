@@ -13,6 +13,6 @@ $rt->get("/lol", new TestController());
 $rt->get("/", new StoreController());
 $rt->get("/connect", new ConnectionController());
 $rt->post("/connect", new ConnectionController());
-$rt->get("/connect", new InscriptionController());
-$rt->post("/connect", new InscriptionController());
+$rt->get("/inscription", new InscriptionController());
+$rt->post("/inscription", new InscriptionController());
 $rt->default();
