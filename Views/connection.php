@@ -8,6 +8,10 @@
                 <label for="id" class="form-label">Adresse e-mail ou numéro de téléphone portable</label>
                 <input type="text" class="form-control" name="id">
             </div>
+            <div class="form-group mt-1 mt-lg-4">
+                <label for="password" class="form-label">Votre mot de passe</label>
+                <input type="password" class="form-control" name="password">
+            </div>
             <div class="form-check">
                 <input type="submit" name="form_connexion" value="Continuer">
             </div>
