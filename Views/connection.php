@@ -17,6 +17,7 @@
         </div>
     </div>
 
+    <!--
     <div id="div_connexion_2" class="row">
         <div>
             <h2>Nouveau chez Hyperion ?</h2>
@@ -25,4 +26,5 @@
             <input type="submit" name="form_connexion" value="Continuer">
         </div>
     </div>
+    -->
 </div>
