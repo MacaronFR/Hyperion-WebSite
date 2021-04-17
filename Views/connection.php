@@ -31,4 +31,3 @@
     </div>
 </div>
 
-<!-- class="container-fluid d-flex justify-content-center mt-16 mt-lg-5" -->
