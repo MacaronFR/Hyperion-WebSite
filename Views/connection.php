@@ -1,7 +1,7 @@
 <?php
 ?>
 <div id="div_form_connexion" class="container-fluid">
-    <div id="div_connexion" class="row col-12">
+    <div id="div_connexion" class="row col-8">
         <h2>S'identifier</h2>
         <form action="#" method="post">
             <div class="form-group">
