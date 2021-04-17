@@ -2,7 +2,7 @@
 ?>
 <div id="div_form_connexion" class="container-fluid d-flex justify-content-center mt-16 mt-lg-5">
     <div id="div_connexion" class="row col-10">
-        <h2>S'identifier</h2>
+        <h1>S'identifier</h1>
         <form action="#" method="post">
             <div class="form-group">
                 <label for="id" class="form-label">Adresse e-mail ou numéro de téléphone portable</label>
