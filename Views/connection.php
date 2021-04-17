@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <div id="div_connexion_2" class="row col-6 col-lg-4 py-4 px-4">
+    <div id="div_connexion_2" class="row">
         <div>
             <h2>Nouveau chez Hyperion ?</h2>
         </div>
