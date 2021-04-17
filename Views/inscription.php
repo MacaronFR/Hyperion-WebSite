@@ -9,7 +9,7 @@
                     <label for="family_name" class="form-label">Votre nom</label>
                     <input type="text" class="form-control" name="family_name">
                 </div>
-                <div class="form-group col-5 offset-2">
+                <div class="form-group col-5">
                     <label for="first_name" class="form-label">Votre prénom</label>
                     <input type="text" class="form-control" name="first_name">
                 </div>
