@@ -59,6 +59,12 @@ abstract class Controller {
         return ob_get_clean();
     }
 
+    protected function prepareInscription(): string{
+        ob_start();
+        include "Views/inscription.php";
+        return ob_get_clean();
+    }
+
 	/**
 	 * Must be instanced for using the get() method and control GET request
 	 * @param array $args Argument passed to the controller by the router
