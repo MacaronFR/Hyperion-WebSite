@@ -17,7 +17,7 @@
             </div>
         </form>
         <div class="mt-1 mt-lg-4">
-            <p>En passant votre commande, vous acceptez les <u>Conditions générales</u> de vente d'Hyperion.</p>
+            <p>En passant votre commande, vous acceptez les <a>Conditions générales</a> de vente d'Hyperion.</p>
         </div>
     </div>
     <!--
