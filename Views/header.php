@@ -6,5 +6,5 @@
     <a class="navbar-brand" href="#">
         <img src="/assets/images/Hyperion-yellow-transparent.png" alt="logo_Hyperion" width="30" height="30">
     </a>
-   <!-- <div id="header_1_line"></div>-->
+    <div id="header_1_line"></div>
 </nav>
