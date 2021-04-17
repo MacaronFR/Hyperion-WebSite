@@ -1,7 +1,7 @@
 <?php
 ?>
 <div id="div_form_connexion" class="container">
-    <div id="div_connexion" class="col-4">
+    <div id="div_connexion" class="col-sm-6">
         <h2>S'identifier</h2>
         <form action="#" method="post">
             <div class="mb-3">
@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <div id="div_connexion_2" class="col-4">
+    <div id="div_connexion_2" class="col-md-6">
         <div>
             <h2>Nouveau chez Hyperion ?</h2>
         </div>
