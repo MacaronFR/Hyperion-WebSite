@@ -12,7 +12,7 @@
                 <label for="password" class="form-label">Votre mot de passe</label>
                 <input type="password" class="form-control" name="password">
             </div>
-            <div class="">
+            <div class="form-group mt-1 mt-lg-4">
                 <input type="submit" name="form_connexion" value="Continuer" class="btn btn-secondary btn-lg btn-block">
             </div>
         </form>
