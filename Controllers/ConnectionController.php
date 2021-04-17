@@ -27,7 +27,7 @@ class ConnectionController extends Controller {
         $main = $this->prepareConnection();
 		$footer = $this->prepareFooter();
 		$body = $this->prepareBody($header, $main, $footer);
-		var_dump($_POST);
+		//var_dump($_POST);
 		include "Views/root.php";
 	}
 }
