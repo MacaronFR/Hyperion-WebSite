@@ -16,7 +16,6 @@
             <p>En passant votre commande, vous acceptez les Conditions générales de vente d'Hyperion.</p>
         </div>
     </div>
-
     <!--
     <div id="div_connexion_2" class="row">
         <div>
