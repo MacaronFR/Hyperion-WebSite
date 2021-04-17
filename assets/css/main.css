@@ -10748,6 +10748,16 @@ header {
   flex-direction: column;
 }
 
+#header_1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header_logo > a > img {
+  height: auto;
+}
+
 #header_1_line {
   background-color: #FFC300;
 }
