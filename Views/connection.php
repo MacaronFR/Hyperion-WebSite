@@ -17,7 +17,7 @@
             </div>
         </form>
         <div class="">
-            <p>En passant votre commande, vous acceptez les Conditions générales de vente d'Hyperion.</p>
+            <p>En passant votre commande, vous acceptez les <u>Conditions générales</u> de vente d'Hyperion.</p>
         </div>
     </div>
     <!--
