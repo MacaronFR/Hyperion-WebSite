@@ -15651,6 +15651,29 @@ header {
   width: 100%;
 }
 
+/* ----------------------------------- Header_2 ----------------------------------- */
+#header_2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+#header_2 > a > img {
+  height: 70px;
+}
+
+#header_2 > a {
+  padding: 0;
+  margin: 0;
+}
+
+#header_2_line {
+  background-color: #FFC300;
+  height: 9px;
+  width: 100%;
+}
+
 /* ----------------------------------- Footer ----------------------------------- */
 #footer {
   height: 5vw;

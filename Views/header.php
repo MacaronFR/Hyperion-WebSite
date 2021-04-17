@@ -7,5 +7,5 @@
         <img src="/assets/images/Hyperion-yellow-transparent.png" alt="logo_Hyperion" class="img-fluid">
     </a>
 </nav>
-<div id="header_1_line"></div>
+<div id="header_2_line"></div>
 
