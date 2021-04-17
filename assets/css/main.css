@@ -15699,4 +15699,8 @@ header {
   width: 100%;
 }
 
+#div_connexion_2 > div > h2, #div_connexion_2 > div > .h2 {
+  color: red;
+}
+
 /*# sourceMappingURL=main.css.map */
