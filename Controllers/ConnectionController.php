@@ -12,7 +12,8 @@ class ConnectionController extends Controller {
 	public function get(array $args){
 		$head = $this->prepareHead("Connection");
 		$header = $this->prepareHeader();
-		$main = "";
+		$main = "NIKK";
+		$main .= "<form method='post'><input type='submit'><input type='text' name='nik'></form>";
 		$footer = $this->prepareFooter();
 		$body = $this->prepareBody($header, $main, $footer);
 		include "Views/root.php";
