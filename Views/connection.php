@@ -25,11 +25,8 @@
         <div class="mt-3 mt-lg-4">
             <h2>Nouveau chez Hyperion ?</h2>
         </div>
-        <div class="mt-3 mt-lg-4">
-           <!-- <button type="button"  value="Continuer"> -->
+        <div class="form-group mt-4 mt-lg-4">
+            <button type="button" name="go_inscription" value="Créer votre compte Hyperion" class="btn btn-block">
         </div>
     </div>
 </div>
-
-
-<!-- class="container-fluid d-flex justify-content-center mt-16 mt-lg-5" -->
