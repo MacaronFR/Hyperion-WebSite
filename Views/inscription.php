@@ -4,7 +4,7 @@
     <div id="div_inscription" class="row col-6 col-lg-4 border border-2 rounded-3 py-4 px-4 align-self-center">
         <h1>Créer votre compte</h1>
         <form action="#" method="post">
-            <div class="form-row mt-1 mt-lg-4">
+            <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="family_name" class="form-label">Votre nom</label>
                     <input type="text" class="form-control" name="family_name">
