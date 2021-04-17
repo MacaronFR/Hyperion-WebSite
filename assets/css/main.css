@@ -10766,6 +10766,8 @@ header {
 
 #header_1_line {
   background-color: #FFC300;
+  height: 9px;
+  width: 100%;
 }
 
 /* ----------------------------------- Footer ----------------------------------- */
