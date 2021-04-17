@@ -2,7 +2,7 @@
 ?>
 
 <!-- Header sans barre de recherche -->
-<nav id="header_1" class="navbar navbar-dark">
+<nav id="header_1" class="navbar bg-dark">
     <a class="navbar-brand" href="#">
         <img src="/assets/images/Hyperion-yellow-transparent.png" alt="logo_Hyperion" width="30" height="30">
     </a>
