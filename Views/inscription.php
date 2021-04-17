@@ -4,13 +4,15 @@
     <div id="div_inscription" class="row col-6 col-lg-4 border border-2 rounded-3 py-4 px-4 align-self-center">
         <h1>Créer votre compte</h1>
         <form action="#" method="post">
-            <div class="form-group mt-1 mt-lg-4">
-                <label for="family_name" class="form-label">Votre nom</label>
-                <input type="text" class="form-control" name="family_name">
-            </div>
-            <div class="form-group mt-1 mt-lg-4">
-                <label for="first_name" class="form-label">Votre prénom</label>
-                <input type="text" class="form-control" name="first_name">
+            <div class="form-row mt-1 mt-lg-4">
+                <div class="form-group col-6">
+                    <label for="family_name" class="form-label">Votre nom</label>
+                    <input type="text" class="form-control" name="family_name">
+                </div>
+                <div class="form-group col-6">
+                    <label for="first_name" class="form-label">Votre prénom</label>
+                    <input type="text" class="form-control" name="first_name">
+                </div>
             </div>
             <div class="form-group mt-1 mt-lg-4">
                 <label for="email" class="form-label">Votre adresse email</label>
