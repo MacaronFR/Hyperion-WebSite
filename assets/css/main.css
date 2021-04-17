@@ -10817,19 +10817,15 @@ header {
 
 /* ----------------------------------- Connection ----------------------------------- */
 #div_form_connexion {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+  background-color: #0f5132;
 }
 
 #div_connexion {
   background-color: red;
-  align-self: center;
 }
 
 #div_connexion_2 {
   background-color: blue;
-  align-self: center;
 }
 
 /*# sourceMappingURL=main.css.map */
