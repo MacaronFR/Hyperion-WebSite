@@ -15660,11 +15660,6 @@ header {
   height: 70px;
 }
 
-#header_2 > a {
-  padding: 0;
-  margin: 0;
-}
-
 #header_2_line {
   background-color: #FFC300;
   height: 9px;
