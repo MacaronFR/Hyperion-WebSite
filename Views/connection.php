@@ -13,8 +13,7 @@
                 <input type="password" class="form-control" name="password">
             </div>
             <div class="">
-                <input type="submit" name="form_connexion" value="Continuer">
-                <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
+                <input type="submit" name="form_connexion" value="Continuer" class="btn btn-secondary btn-lg btn-block">
             </div>
         </form>
         <div class="mt-1 mt-lg-4">
