@@ -12,9 +12,10 @@
                 <label for="password" class="form-label">Votre mot de passe</label>
                 <input type="password" class="form-control" name="password">
             </div>
-
+            <div class="">
+                <input type="submit" name="form_connexion" value="Continuer">
                 <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
-
+            </div>
         </form>
         <div class="mt-1 mt-lg-4">
             <p>En passant votre commande, vous acceptez les <a href="#">Conditions générales</a> de vente d'Hyperion.</p>
