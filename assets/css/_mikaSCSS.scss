@@ -5,7 +5,6 @@ html{
 body{
   display: flex;
   flex-direction: column;
-  background-color: purple;
 }
 main{
   display: flex;
@@ -13,6 +12,7 @@ main{
   min-height: 83.6vh;
 }
 /* ----------------------------------- Header ----------------------------------- */
+/*
 header{
   width: 100%;
   height: auto;
@@ -41,7 +41,7 @@ header{
   height: 0.35vw;
   background-color: #FFC300;
 }
-
+*/
 /* ----------------------------------- Footer ----------------------------------- */
 #footer{
   height: 5vw;
