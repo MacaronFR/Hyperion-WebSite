@@ -26,7 +26,7 @@
             <h2>Nouveau chez Hyperion ?</h2>
         </div>
         <div class="form-group mt-4 mt-lg-4">
-            <button type="button" name="go_inscription" value="Créer votre compte Hyperion" class="btn btn-block">
+            <button class="btn btn-primary" type="submit">Button</button>
         </div>
     </div>
 </div>
