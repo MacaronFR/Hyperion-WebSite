@@ -15697,4 +15697,9 @@ header {
   background-color: blue;
 }
 
+#div_connexion > form > div > input {
+  background-color: #FFC300;
+  border-color: #CC9E08;
+}
+
 /*# sourceMappingURL=main.css.map */
