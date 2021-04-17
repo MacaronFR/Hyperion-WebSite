@@ -26,7 +26,7 @@
             <h2>Nouveau chez Hyperion ?</h2>
         </div>
         <div class="mt-3 mt-lg-4">
-            <button type="button"  value="Continuer">
+           <!-- <button type="button"  value="Continuer"> -->
         </div>
     </div>
 </div>
