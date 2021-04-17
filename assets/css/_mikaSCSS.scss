@@ -98,3 +98,19 @@ header{
   color: black;
   width: 100%;
 }
+/* ----------------------------------- Inscription ----------------------------------- */
+#div_inscription > form > div >input[type=submit]{
+  background-color: #FFC300;
+  border-color: #CC9E08;
+  width: 100%;
+}
+#div_inscription_2 > div > h5{
+  text-align: center;
+  color: #928585;
+}
+#div_inscription_2  > div >button{
+  background-color: white;
+  border-color: black;
+  color: black;
+  width: 100%;
+}

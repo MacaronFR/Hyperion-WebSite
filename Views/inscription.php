@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <div id="div_connexion_2" class="row col-6 col-lg-4 py-4 px-4 align-self-center">
+    <div id="div_inscription_2" class="row col-6 col-lg-4 py-4 px-4 align-self-center">
         <div class="mt-3 mt-lg-4">
             <h5>Déjà chez Hyperion ?</h5>
         </div>
