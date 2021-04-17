@@ -1,7 +1,7 @@
 <?php
 ?>
-<div id="div_form_connexion" class="container-fluid d-flex justify-content-center">
-    <div id="div_connexion" class="row col-6 col-lg-4">
+<div id="div_form_connexion" class="container-fluid d-flex justify-content-center flex-column mt-16 mt-lg-5">
+    <div id="div_connexion" class="row col-6 col-lg-4 border border-2 rounded-3 py-4 px-4">
         <h1>S'identifier</h1>
         <form action="#" method="post">
             <div class="form-group mt-1 mt-lg-4">
@@ -21,16 +21,14 @@
         </div>
     </div>
 
-    <div id="div_connexion_2" class="row col-6 col-lg-4">
+    <div id="div_connexion_2" class="row col-6 col-lg-4 py-4 px-4">
         <div class="mt-3 mt-lg-4">
             <h2>Nouveau chez Hyperion ?</h2>
         </div>
         <div class="mt-3 mt-lg-4">
-           <!-- <div id="div_connexion" class="row col-6 col-lg-4 border border-2 rounded-3 py-4 px-4">
-            <div id="div_connexion_2" class="row col-6 col-lg-4 py-4 px-4">
-
-            -->
+           <!-- <button type="button"  value="Continuer"> -->
         </div>
     </div>
 </div>
 
+<!-- class="container-fluid d-flex justify-content-center mt-16 mt-lg-5" -->
