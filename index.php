@@ -5,6 +5,7 @@ use Hyperion\WebSite\TestController;
 use Hyperion\WebSite\StoreController;
 use Hyperion\WebSite\ConnectionController;
 use Hyperion\WebSite\InscriptionController;
+use Hyperion\WebSite\ShopController;
 
 include "autoload.php";
 
@@ -15,4 +16,6 @@ $rt->get("/connect", new ConnectionController());
 $rt->post("/connect", new ConnectionController());
 $rt->get("/inscription", new InscriptionController());
 $rt->post("/inscription", new InscriptionController());
+$rt->get("/shop", new ShopController());
+$rt->post("/shop", new ShopController());
 $rt->default();
