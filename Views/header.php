@@ -1,4 +1,5 @@
-<?php
+<?php echo ($title);
+
 ?>
 
 <!-- Header sans barre de recherche -->
