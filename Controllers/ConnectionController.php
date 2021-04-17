@@ -12,8 +12,7 @@ class ConnectionController extends Controller {
 	public function get(array $args){
 		$head = $this->prepareHead("Connection");
 		$header = $this->prepareHeader();
-		$main = "NIKK";
-		$main .= "<form method='post'><input type='submit'><input type='text' name='nik'></form>";
+		$main = $this->prepareConnection();
 		$footer = $this->prepareFooter();
 		$body = $this->prepareBody($header, $main, $footer);
 		include "Views/root.php";
@@ -25,7 +24,7 @@ class ConnectionController extends Controller {
 	public function post(array $args){
 		$head = $this->prepareHead("Connection");
 		$header = $this->prepareHeader();
-		$main = "";
+        $main = $this->prepareConnection();
 		$footer = $this->prepareFooter();
 		$body = $this->prepareBody($header, $main, $footer);
 		var_dump($_POST);
