@@ -21,11 +21,11 @@
         </div>
     </div>
 
-    <div id="div_connexion_2" class="">
-        <div>
+    <div id="div_connexion_2" class="row col-6 col-lg-4 py-4 px-4">
+        <div class="mt-3 mt-lg-4">
             <h2>Nouveau chez Hyperion ?</h2>
         </div>
-        <div class="">
+        <div class="mt-3 mt-lg-4">
             <button type="button"  value="Continuer">
         </div>
     </div>
