@@ -5,6 +5,7 @@ html{
 body{
   //display: flex;
   //flex-direction: column;
+  min-height: 70vw;
 }
 main{
   //display: flex;
@@ -45,6 +46,7 @@ header{
 #footer{
   height: 5vw;
   background: radial-gradient(at 49% 17%, #E7E7E7, #FFFFFF 49%);
+  bottom: 0;
 }
 #footer_line{
   background: linear-gradient(90deg ,rgba(255,255,255,0.5), #FFC300, rgba(255,255,255,0.5));

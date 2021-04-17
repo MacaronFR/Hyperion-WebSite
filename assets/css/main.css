@@ -15613,6 +15613,10 @@ textarea.form-control-lg {
   }
 }
 /* ----------------------------------- Generale ----------------------------------- */
+body {
+  min-height: 70vw;
+}
+
 a {
   color: #0066C0 !important;
 }
@@ -15651,6 +15655,7 @@ header {
 #footer {
   height: 5vw;
   background: radial-gradient(at 49% 17%, #E7E7E7, #FFFFFF 49%);
+  bottom: 0;
 }
 
 #footer_line {
