@@ -4,7 +4,7 @@
     <div id="div_connexion">
         <h2>S'identifier</h2>
         <form action="#" method="post">
-            <div class="">
+            <div class="mb3">
                 <label for="id" class="form-label">Adresse e-mail ou numéro de téléphone portable</label>
                 <input type="text" class="form-control" name="id">
             </div>

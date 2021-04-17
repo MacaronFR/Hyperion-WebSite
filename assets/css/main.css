@@ -10816,5 +10816,18 @@ header {
 }
 
 /* ----------------------------------- Connection ----------------------------------- */
+#div_form_connexion {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#div_connexion {
+  background-color: red;
+}
+
+#div_connexion_2 {
+  background-color: blue;
+}
 
 /*# sourceMappingURL=main.css.map */
