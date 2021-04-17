@@ -23,7 +23,7 @@
                 <input type="text" class="form-control" name="password_1">
             </div>
             <div class="form-group mt-1 mt-lg-4">
-                <label for="password_2" class="form-label">Confirmez vtore mot de passe</label>
+                <label for="password_2" class="form-label">Confirmez votre mot de passe</label>
                 <input type="text" class="form-control" name="password_2">
             </div>
             <div class="form-group mt-4 mt-lg-4">
@@ -37,7 +37,7 @@
 
     <div id="div_inscription_2" class="row col-6 col-lg-4 py-4 px-4 align-self-center">
         <div class="mt-3 mt-lg-4">
-            <h5>Déjà chez Hyperion ?</h5>
+            <h5>Déjà membre de Hyperion ?</h5>
         </div>
         <div class="form-group mt-4 mt-lg-4">
             <button class="btn btn-primary" type="submit">Connectez-vous à votre compte Hyperion</button>
