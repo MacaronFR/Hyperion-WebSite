@@ -1,5 +1,4 @@
-<?php var_dump($title);
-
+<?php
 ?>
 
 <!-- Header sans barre de recherche -->
