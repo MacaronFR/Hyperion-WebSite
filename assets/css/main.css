@@ -15681,6 +15681,10 @@ header {
 }
 
 /* ----------------------------------- Connection ----------------------------------- */
+#div_form_connexion {
+  border-color: #979797;
+}
+
 #div_connexion {
   background-color: red;
 }
