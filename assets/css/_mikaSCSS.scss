@@ -84,7 +84,7 @@ header{
 #div_connexion_2{
   background-color: blue;
 }
-#div_connexion > form > div >input{
+#div_connexion > form > div >input[type=submit]{
   background-color: #FFC300;
   border-color: #CC9E08;
 }
