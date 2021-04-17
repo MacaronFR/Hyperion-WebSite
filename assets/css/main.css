@@ -15699,13 +15699,14 @@ header {
   width: 100%;
 }
 
-#div_connexion_2 > div > h2, #div_connexion_2 > div > .h2 {
+#div_connexion_2 > div > h5, #div_connexion_2 > div > .h5 {
   text-align: center;
+  color: #928585;
 }
 
 #div_connexion_2 > div > button {
-  background-color: #FFC300;
-  border-color: #CC9E08;
+  background-color: white;
+  border-color: black;
   width: 100%;
 }
 
