@@ -13,7 +13,7 @@
                 <input type="password" class="form-control" name="password">
             </div>
             <div class="form-group mt-1 mt-lg-4">
-                <input type="submit" name="form_connexion" value="Continuer" class="btn btn-secondary btn-lg btn-block">
+                <input type="submit" name="form_connexion" value="Continuer" class="btn btn-block">
             </div>
         </form>
         <div class="mt-1 mt-lg-4">
