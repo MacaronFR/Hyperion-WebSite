@@ -250,11 +250,22 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 $spacer: 1rem !default;
 $spacers: (
   0: 0,
-  1: $spacer / 4,
-  2: $spacer / 2,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+  1: $spacer / 9,
+  2: $spacer / 8,
+  3: $spacer / 7,
+  4: $spacer / 6,
+  5: $spacer / 5,
+  6: $spacer / 4,
+  7: $spacer / 3,
+  8: $spacer / 2,
+  9: $spacer,
+  10: $spacer * 1.5,
+  11: $spacer * 2,
+  12: $spacer * 2.5,
+  13: $spacer * 3,
+  14: $spacer * 3.5,
+  15: $spacer * 4,
+  16: $spacer * 4.5,
 ) !default;
 
 $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
