@@ -1,7 +1,7 @@
 <?php
 ?>
 <div id="div_form_connexion" class="container-fluid d-flex justify-content-center mt-16 mt-lg-5">
-    <div id="div_connexion" class="row col-10 border border-primary">
+    <div id="div_connexion" class="row col-10 border border-2 rounded-3">
         <h1>S'identifier</h1>
         <form action="#" method="post">
             <div class="form-group">
