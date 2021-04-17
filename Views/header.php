@@ -2,7 +2,7 @@
 ?>
 
 <!-- Header sans barre de recherche -->
-<nav id="header_1" class="navbar py-4 py-lg-2">
+<nav id="header_1" class="navbar py-4 py-lg-0">
     <a class="navbar-brand" href="#">
         <img src="/assets/images/Hyperion-yellow-transparent.png" alt="logo_Hyperion" class="img-fluid">
     </a>
