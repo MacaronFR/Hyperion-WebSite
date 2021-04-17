@@ -15653,7 +15653,7 @@ header {
 
 /* ----------------------------------- Header_2 ----------------------------------- */
 #header_2 {
-  background-color: white;
+  background-color: red;
 }
 
 #header_2 > a > img {
