@@ -7,5 +7,5 @@
         <img src="/assets/images/Hyperion-yellow-transparent.png" alt="logo_Hyperion" width="30" height="30">
     </a>
 </nav>
-<div id="header_1_line" class="navbar py-1 py-lg-0.1"></div>
+<div id="header_1_line" class="navbar py-2 py-lg-0.1"></div>
 
