@@ -28,6 +28,7 @@
         <div class="mt-3 mt-lg-4">
            <!-- <div id="div_connexion" class="row col-6 col-lg-4 border border-2 rounded-3 py-4 px-4">
             <div id="div_connexion_2" class="row col-6 col-lg-4 py-4 px-4">
+
             -->
         </div>
     </div>
