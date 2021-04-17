@@ -10756,7 +10756,7 @@ header {
 }
 
 #header_logo > a > img {
-  height: auto;
+  height: 100%;
 }
 
 #header_1_line {
