@@ -10729,17 +10729,6 @@ textarea.form-control-lg {
   }
 }
 /* ----------------------------------- Generale ----------------------------------- */
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  min-height: 83.6vh;
-}
-
 /* ----------------------------------- Header ----------------------------------- */
 header {
   width: 100%;
