@@ -20,8 +20,8 @@
             <p>En passant votre commande, vous acceptez les <a href="#">Conditions générales</a> de vente d'Hyperion.</p>
         </div>
     </div>
-    <!--
-    <div id="div_connexion_2" class="row">
+
+    <div id="div_connexion_2" class="row col-6 col-lg-4 py-4 px-4">
         <div>
             <h2>Nouveau chez Hyperion ?</h2>
         </div>
@@ -29,5 +29,4 @@
             <input type="submit" name="form_connexion" value="Continuer">
         </div>
     </div>
-    -->
 </div>
