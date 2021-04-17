@@ -12,11 +12,11 @@
                 <label for="password" class="form-label">Votre mot de passe</label>
                 <input type="password" class="form-control" name="password">
             </div>
-            <div class="form-group mt-1 mt-lg-4">
+            <div class="form-group mt-4 mt-lg-4">
                 <input type="submit" name="form_connexion" value="Continuer" class="btn btn-block">
             </div>
         </form>
-        <div class="mt-1 mt-lg-4">
+        <div class="mt-3 mt-lg-4">
             <p>En passant votre commande, vous acceptez les <a href="#">Conditions générales</a> de vente d'Hyperion.</p>
         </div>
     </div>
