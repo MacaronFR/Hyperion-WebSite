@@ -12,7 +12,7 @@ class ShopController extends Controller
      */
     public function get(array $args){
         $head = $this->prepareHead("Shop");
-        $header = $this->prepareHeader();
+        $header = $this->prepareHeader_2();
         $main = $this->prepareShop();
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
@@ -24,7 +24,7 @@ class ShopController extends Controller
      */
     public function post(array $args){
         $head = $this->prepareHead("Shop");
-        $header = $this->prepareHeader();
+        $header = $this->prepareHeader_2();
         $main = $this->prepareShop();
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);

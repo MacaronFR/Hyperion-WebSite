@@ -30,6 +30,12 @@ abstract class Controller {
 		return ob_get_clean();
 	}
 
+    protected function prepareHeader_2(): string{
+        ob_start();
+        include "Views/header_2.php";
+        return ob_get_clean();
+    }
+
 	/**
 	 * Return the default footer
 	 * @return string Default footer
