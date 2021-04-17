@@ -1,4 +1,4 @@
-<?php echo ($title);
+<?php var_dump($title);
 
 ?>
 
