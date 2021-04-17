@@ -5,11 +5,11 @@
         <h1>Créer votre compte</h1>
         <form action="#" method="post">
             <div class="form-row d-flex mt-1 mt-lg-4">
-                <div class="form-group col-5">
+                <div class="form-group col-6">
                     <label for="family_name" class="form-label">Votre nom</label>
                     <input type="text" class="form-control" name="family_name">
                 </div>
-                <div class="form-group col-5">
+                <div class="form-group col-6">
                     <label for="first_name" class="form-label">Votre prénom</label>
                     <input type="text" class="form-control" name="first_name">
                 </div>
