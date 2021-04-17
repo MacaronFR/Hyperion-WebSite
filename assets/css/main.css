@@ -10813,6 +10813,8 @@ header {
 /* ----------------------------------- Connection ----------------------------------- */
 #div_form_connexion {
   background-color: #0f5132;
+  padding: 0;
+  margin: 0;
 }
 
 #div_connexion {
