@@ -71,6 +71,12 @@ abstract class Controller {
         return ob_get_clean();
     }
 
+    protected function prepareVerifInscription(): string{
+        ob_start();
+        include "Views/verif_inscription.php";
+        return ob_get_clean();
+    }
+
     protected function prepareShop(): string{
         ob_start();
         include "Views/shop.php";
