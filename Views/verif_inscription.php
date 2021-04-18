@@ -1,5 +1,4 @@
 <?php
-include ('includes/config.php');
 
 if(isset($_POST['form_inscription'])){
     $family_name = trim($_POST['family_name']);
@@ -9,6 +8,7 @@ if(isset($_POST['form_inscription'])){
     $password_1 = $_POST['password_1'];
     $password_2 = $_POST['password_2'];
     $password = password_hash($password_1, PASSWORD_DEFAULT);
+    $error_creation="";
     if(!empty($family_name) AND !empty($first_name) AND !empty($email) AND !empty($password_1) AND !empty($password_2))
     {
         if($password_1==$password_2)
@@ -49,41 +49,42 @@ if(isset($_POST['form_inscription'])){
 
                                                     ?><script>alert("un mail de confirmation vous a été envoyé !");document.location.href="/shop"</script><?php
                                                 } else{
-                                                    echo "cet email existe deja";
+                                                    $error_creation ="cet email existe deja";
                                                 }
                                             } else{
-                                                echo "le format de mail est invalide";
+                                                $error_creation =" le format de mail est invalide";
                                             }
                                         } else{
-                                            echo "le prénom ne peut etre constitué que de chiffres et de lettres";
+                                            $error_creation ="le prénom ne peut etre constitué que de chiffres et de lettres";
                                         }
                                     } else{
-                                        echo "la taille du prénom doit etre inférieur à 61 caractére";
+                                        $error_creation ="la taille du prénom doit etre inférieur à 61 caractére";
                                     }
                                 } else{
-                                    echo "le nom de famille ne peut etre constitué que de chiffres et de lettres";
+                                    $error_creation ="le nom de famille ne peut etre constitué que de chiffres et de lettres";
                                 }
                             } else{
-                                echo "la taille du nom de famille doit etre inférieur à 61 caractére";
+                                $error_creation ="la taille du nom de famille doit etre inférieur à 61 caractére";
                             }
                         } else{
-                            echo "le caractere doit etre constituer d'au moins 1 caractére minuscule";
+                            $error_creation ="le caractere doit etre constituer d'au moins 1 caractére minuscule";
                         }
                     } else{
-                        echo "l'email doit etre composé d'au moins 1 chiffre";
+                        $error_creation ="l'email doit etre composé d'au moins 1 chiffre";
                     }
                 } else{
-                    echo "le mot de passe doit etre composé d'au moins 1 caractére majuscule et minuscule";
+                    $error_creation ="le mot de passe doit etre composé d'au moins 1 caractére majuscule et minuscule";
                 }
             } else{
-                echo "le mot de passe doit au moins faire 8 caractéres";
+                $error_creation ="le mot de passe doit au moins faire 8 caractéres";
             }
         } else{
-            echo "les deux champs mot de passe doivent etre identiques";
+            $error_creation ="les deux champs mot de passe doivent etre identiques";
         }
     } else{
-        echo "remplir complétement le formulaire";
+        $error_creation ="remplir complétement le formulaire";
     }
+    ?><script>alert("<?= $error_creation?>");document.location.href="/inscription"</script><?php
 } else {
     //header('location: index.php');
     echo "il manque un bail";
