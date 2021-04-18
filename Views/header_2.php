@@ -18,9 +18,3 @@
     </div>
 </nav>
 
-
-
-
-
-<!-- <div id="header_1_line"></div> -->
-
