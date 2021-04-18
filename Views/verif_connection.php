@@ -1,5 +1,5 @@
 <?php
-//include('includes/connexion_check.php');
+include('../connectionCheck.php');
 
 if(isset($_POST['form_connexion']))
 {
@@ -36,7 +36,7 @@ if(isset($_POST['form_connexion']))
                     if($marchandtest==True)
                     {
                         //$_SESSION['vendor']=$info_check['id_user'];
-                        $_SESSION['haunter']=$id_user;
+                        $_SESSION['vendor']=$id_user;
                     }
                     header('location: /shop');
                 } else{
