@@ -5,7 +5,7 @@ html{
 body{
   //display: flex;
   //flex-direction: column;
-  //min-height: 70vw;
+  min-height: 100vh;
 }
 main{
   //display: flex;
@@ -110,7 +110,6 @@ header{
 #div_connexion > form > div >input[type=submit]{
   background-color: #FFC300;
   border-color: #CC9E08;
-  width: 100%;
 }
 #div_connexion_2 > div > h5{
   text-align: center;

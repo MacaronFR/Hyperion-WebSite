@@ -11,6 +11,6 @@
 <main>
     <?= $main ?>
 </main>
-<footer>
+<footer id="footer" class="">
     <?= $footer ?>
 </footer>

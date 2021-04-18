@@ -9,7 +9,7 @@
     <head>
         <?= $head ?>
     </head>
-    <body>
+    <body class="d-flex justify-content-between flex-column">
         <?= $body ?>
     </body>
 </html>

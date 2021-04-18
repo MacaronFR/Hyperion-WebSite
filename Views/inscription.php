@@ -5,29 +5,35 @@
         <h1>Créer votre compte</h1>
         <form action="verif_inscription" method="post">
             <div class="form-row d-flex mt-1 mt-lg-4">
-                <div class="form-group col-6">
+                <div class="form-group col mx-2">
                     <label for="family_name" class="form-label">Votre nom</label>
                     <input type="text" class="form-control" name="family_name">
                 </div>
-                <div class="form-group col-6">
+                <div class="form-group col mx-2">
                     <label for="first_name" class="form-label">Votre prénom</label>
                     <input type="text" class="form-control" name="first_name">
                 </div>
             </div>
             <div class="form-group mt-1 mt-lg-4">
-                <label for="email" class="form-label">Votre adresse email</label>
-                <input type="email" class="form-control" name="email">
+				<div class="mx-2">
+					<label for="email" class="form-label">Votre adresse email</label>
+					<input type="email" class="form-control" name="email">
+				</div>
             </div>
             <div class="form-group mt-1 mt-lg-4">
-                <label for="password_1" class="form-label">Votre mot de passe</label>
-                <input type="text" class="form-control" name="password_1">
+				<div class="mx-2">
+					<label for="password_1" class="form-label">Votre mot de passe</label>
+					<input type="text" class="form-control" name="password_1">
+				</div>
             </div>
             <div class="form-group mt-1 mt-lg-4">
-                <label for="password_2" class="form-label">Confirmez votre mot de passe</label>
-                <input type="text" class="form-control" name="password_2">
+				<div class="mx-2">
+                	<label for="password_2" class="form-label">Confirmez votre mot de passe</label>
+                	<input type="text" class="form-control" name="password_2">
+				</div>
             </div>
-            <div class="form-group mt-4 mt-lg-4">
-                <input type="submit" name="form_inscription" value="Continuer" class="btn btn-block">
+            <div class="form-group mt-4 d-flex justify-content-center row">
+				<input type="submit" name="form_inscription" value="Continuer" class="btn btn-block col-lg-8 col-6">
             </div>
         </form>
         <div class="mt-3 mt-lg-4">
