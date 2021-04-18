@@ -15617,6 +15617,10 @@ a {
   color: #0066C0 !important;
 }
 
+.navbar-toggler {
+  background-color: red !important;
+}
+
 /* ----------------------------------- Header ----------------------------------- */
 header {
   width: 100%;
