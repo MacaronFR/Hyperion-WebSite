@@ -54,7 +54,8 @@ if(isset($_POST['form_connexion']))
     }
     ?><script>alert("<?= $erreur?>");document.location.href="/connect"</script><?php
 } else{
-    header('Location: /shop');
+    //header('Location: /shop');
+    echo "ok";
 }
 
 
