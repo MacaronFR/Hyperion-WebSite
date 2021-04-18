@@ -12,9 +12,9 @@ class VerifInscriptionController extends Controller
      */
     public function get(array $args){
         $head = $this->prepareHead("VerifInscription");
-        $header = $this->prepareHeader();
+        $header = "";
         $main = $this->prepareVerifInscription();
-        $footer = $this->prepareFooter();
+        $footer = "";
         $body = $this->prepareBody($header, $main, $footer);
         include "Views/root.php";
     }
@@ -24,9 +24,9 @@ class VerifInscriptionController extends Controller
      */
     public function post(array $args){
         $head = $this->prepareHead("VerifInscription");
-        $header = $this->prepareHeader();
+        $header = "";
         $main = $this->prepareVerifInscription();
-        $footer = $this->prepareFooter();
+        $footer = "";
         $body = $this->prepareBody($header, $main, $footer);
         var_dump($_POST);
         include "Views/root.php";
