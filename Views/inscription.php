@@ -27,7 +27,7 @@
                 <input type="text" class="form-control" name="password_2">
             </div>
             <div class="form-group mt-4 mt-lg-4">
-                <input type="submit" name="form_connexion" value="Continuer" class="btn btn-block">
+                <input type="submit" name="form_inscription" value="Continuer" class="btn btn-block">
             </div>
         </form>
         <div class="mt-3 mt-lg-4">
