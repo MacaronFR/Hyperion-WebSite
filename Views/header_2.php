@@ -38,9 +38,7 @@
                     <?php }else { ?>
                     <a class="nav-item nav-link" href="/inscription">Inscription</a>
                     <a class="nav-item nav-link" href="/connect">Connexion</a>
-
-                    <?php
-                } ?>
+                <?php } ?>
             </div>
         </div>
     </div>
