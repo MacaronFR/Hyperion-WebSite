@@ -18,6 +18,7 @@ $rt = new Router(new TestController());
 $rt->get("/lol", new TestController());
 $rt->get("/", new StoreController());
 $rt->get("/connect", new ConnectionController());
+$rt->get("/connect/*", new ConnectionController());
 $rt->post("/verif_connect", new VerifConnectionController());
 $rt->get("/inscription", new InscriptionController());
 $rt->post("/verif_inscription", new VerifInscriptionController());
