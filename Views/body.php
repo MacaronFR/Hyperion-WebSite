@@ -11,6 +11,6 @@
 <main>
     <?= $main ?>
 </main>
-<footer>
+<footer class="fixed-bottom mt-4">
     <?= $footer ?>
 </footer>
