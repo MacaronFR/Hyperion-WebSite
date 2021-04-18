@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="navbarHeader2">
         <div class="navbar-nav">
             <form class="">
-                <div class="input-group mb-3">
+                <div class="input-group">
                     <div class="input-group-prepend">
                         <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Toutes nos catégories</button>
                         <div class="dropdown-menu">
@@ -20,7 +20,7 @@
                             <a class="dropdown-item" href="#">Jakobs</a>
                         </div>
                     </div>
-                    <div class="input-group mb-3">
+                    <div class="input-group">
                         <input type="text" class="form-control">
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button">rechercher</button>
@@ -28,8 +28,10 @@
                     </div>
                 </div>
             </form>
-            <a class="nav-item nav-link" href="#">Inscription</a>
-            <a class="nav-item nav-link" href="#">Connexion</a>
+            <div>
+                <a class="nav-item nav-link" href="#">Inscription</a>
+                <a class="nav-item nav-link" href="#">Connexion</a>
+            </div>
         </div>
     </div>
 </nav>
