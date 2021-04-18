@@ -4,7 +4,7 @@
 <nav id="header_2" class="navbar navbar-expand-lg py-4 py-lg-0">
     <div class="container-fluid">
         <a class="navbar-brand">Navbar</a>
-        <div class="input-group mb-3">
+        <div class="input-group">
             <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">aaaaaaaa</a></li>
