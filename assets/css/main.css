@@ -15613,10 +15613,6 @@ textarea.form-control-lg {
   }
 }
 /* ----------------------------------- Generale ----------------------------------- */
-body {
-  min-height: 70vw;
-}
-
 a {
   color: #0066C0 !important;
 }

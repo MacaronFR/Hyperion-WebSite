@@ -1,6 +1,6 @@
 <?php
 ?>
-<div id="div_form_connexion" class="container-fluid d-flex flex-column mt-11 mt-lg-5 mb-5">
+<div id="div_form_connexion" class="container-fluid d-flex flex-column mt-11 mt-lg-5 mb-4">
     <div id="div_connexion" class="row col-11 col-lg-4 border border-2 rounded-3 py-4 px-4 align-self-center">
         <h1>S'identifier</h1>
         <form action="#" method="post">
