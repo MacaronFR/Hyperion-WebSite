@@ -4,11 +4,10 @@ function API_request(string $path, string $method): array|false{
 	$API_credentials = read_conf("[API]");
 	if($path[0] !== '/')
 		$path = '/' . $path;
-	$url = "https://${API_credentials[0]}${path}";
+	$url = "https://${API_credentials[0]}$path";
 	$curl = curl_init();
 	$opt = [
 		CURLOPT_FOLLOWLOCATION => false,
-		//CURLOPT_HEADER => true,
 		CURLOPT_CUSTOMREQUEST => $method,
 		CURLOPT_USERPWD => $API_credentials[3] . ":" . $API_credentials[4],
 		CURLOPT_URL => $url,
@@ -40,4 +39,10 @@ function read_conf(string $section): array|false{
 		return $conf;
 	}
 	return false;
+}
+
+function sanitize(string $string): string{
+	$string = trim($string);
+	$string = htmlspecialchars($string);
+	return $string;
 }
