@@ -7,6 +7,11 @@ require_once "autoload.php";
 class VerifInscriptionController extends Controller
 {
 
+	private function prepareVerifInscription(): string{
+		ob_start();
+		include "Views/verif_inscription.php";
+		return ob_get_clean();
+	}
     /**
      * @inheritDoc
      */

@@ -7,6 +7,11 @@ include "autoload.php";
 class ShopController extends Controller
 {
 
+	private function prepareShop(): string{
+		ob_start();
+		include "Views/shop.php";
+		return ob_get_clean();
+	}
     /**
      * @inheritDoc
      */

@@ -8,6 +8,11 @@ require_once "autoload.php";
 class ConnectionCheckController extends Controller
 {
 
+	private function prepareConnectionCheck(): string{
+		ob_start();
+		include "connectionCheck.php";
+		return ob_get_clean();
+	}
     /**
      * @inheritDoc
      */
