@@ -10,7 +10,7 @@
     </button>
 
     <!-- deuxieme partie -->
-    <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarHeader2">
+    <div class="collapse navbar-collapse" id="navbarHeader2">
         <div class="navbar-nav">
             <form class="form-inline align-self-center">
                 <div class="d-flex flex-column flex-lg-row">
