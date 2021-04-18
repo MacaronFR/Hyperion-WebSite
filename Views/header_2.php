@@ -10,8 +10,8 @@
     </button>
 
     <!-- deuxieme partie -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarHeader2">
-        <div class="navbar-nav">
+    <div class="" id="navbarHeader2">
+        <div class="navbar-collapse justify-content-center">
             <form class="form-inline align-self-center">
                 <div class="d-flex flex-column flex-lg-row">
                     <div class="input-group-prepend">
