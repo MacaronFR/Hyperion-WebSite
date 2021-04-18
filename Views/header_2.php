@@ -11,7 +11,7 @@
 
     <!-- deuxieme partie -->
     <div class="collapse navbar-collapse" id="navbarHeader2">
-        <div class="navbar-nav justify-content-center">
+        <div class="navbar-nav">
             <form class="form-inline align-self-center">
                 <div class="d-flex flex-column flex-lg-row">
                     <div class="input-group-prepend">
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </form>
-            <div class="d-flex flex-column flex-lg-row">
+            <div class="d-flex flex-column flex-lg-row align-self-center">
                 <a class="nav-item nav-link" href="/inscription">Inscription</a>
                 <a class="nav-item nav-link" href="/connect">Connexion</a>
             </div>
