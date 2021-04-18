@@ -38,8 +38,7 @@ if(isset($_POST['form_connexion']))
                         //$_SESSION['vendor']=$info_check['id_user'];
                         $_SESSION['haunter']=$id_user;
                     }
-                    echo "connecté";
-                    //header('location: /shop');
+                    header('location: /shop');
                 } else{
                     $erreur ="veuillez confirmer votre adressse email";
                 }
