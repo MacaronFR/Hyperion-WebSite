@@ -20,7 +20,12 @@
                             <a class="dropdown-item" href="#">Ecarlates</a>
                         </div>
                     </div>
-                    <input type="text" class="form-control">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">rechercher</button>
+                        </div>
+                    </div>
                 </div>
             </form>
             <a class="nav-item nav-link" href="#">Inscription</a>
