@@ -6,6 +6,12 @@ include "autoload.php";
 
 class ConnectionController extends Controller {
 
+	private function prepareConnection(): string{
+		ob_start();
+		include "Views/connection.php";
+		return ob_get_clean();
+	}
+
 	/**
 	 * @inheritDoc
 	 */

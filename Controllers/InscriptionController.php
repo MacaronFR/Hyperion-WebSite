@@ -7,6 +7,11 @@ include "autoload.php";
 class InscriptionController extends Controller
 {
 
+	protected function prepareInscription(): string{
+		ob_start();
+		include "Views/inscription.php";
+		return ob_get_clean();
+	}
     /**
      * @inheritDoc
      */

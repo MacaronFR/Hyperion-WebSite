@@ -7,6 +7,11 @@ require_once "autoload.php";
 class VerifConnectionController extends Controller
 {
 
+	protected function prepareVerifConnection(): string{
+		ob_start();
+		include "Views/verif_connection.php";
+		return ob_get_clean();
+	}
     /**
      * @inheritDoc
      */

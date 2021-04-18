@@ -4,21 +4,22 @@
 namespace Hyperion\WebSite;
 require_once "autoload.php";
 
-class VerifInscriptionController extends Controller
+
+class ConnectionCheckController extends Controller
 {
 
-	private function prepareVerifInscription(): string{
+	private function prepareConnectionCheck(): string{
 		ob_start();
-		include "Views/verif_inscription.php";
+		include "connectionCheck.php";
 		return ob_get_clean();
 	}
     /**
      * @inheritDoc
      */
     public function get(array $args){
-        $head = $this->prepareHead("VerifInscription");
-        $header = "";
-        $main = $this->prepareVerifInscription();
+        $head = $this->prepareHead("ConnectionCheck");
+        $header = "";;
+        $main = $this->prepareConnectionCheck();
         $footer = "";
         $body = $this->prepareBody($header, $main, $footer);
         include "Views/root.php";
@@ -28,9 +29,9 @@ class VerifInscriptionController extends Controller
      * @inheritDoc
      */
     public function post(array $args){
-        $head = $this->prepareHead("VerifInscription");
-        $header = "";
-        $main = $this->prepareVerifInscription();
+        $head = $this->prepareHead("ConnectionCheck");
+        $header = "";;
+        $main = $this->prepareConnectionCheck();
         $footer = "";
         $body = $this->prepareBody($header, $main, $footer);
         var_dump($_POST);
