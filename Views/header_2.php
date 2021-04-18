@@ -33,9 +33,9 @@
             <div class="d-flex flex-column flex-lg-row align-items-end">
                 <?php if (isset($_SESSION['email']))
                 { ?>
-                    <a class="nav-item nav-link" href="/inscription">Mon compte</a>
-                    <a class="nav-item nav-link" href="/inscription">Mes commandes</a>
-                    <a class="nav-item nav-link" href="/inscription">Déconnexion</a>
+                    <a class="nav-item nav-link" href="#">Mon compte</a>
+                    <a class="nav-item nav-link" href="#">Mes commandes</a>
+                    <a class="nav-item nav-link" href="/disconnect">Déconnexion</a>
                     <?php
                 }else
                 { ?>
