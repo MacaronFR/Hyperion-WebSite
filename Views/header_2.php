@@ -15,9 +15,9 @@
                     <div class="input-group-prepend">
                         <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Toutes nos catégories</button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">bienvenue</a>
-                            <a class="dropdown-item" href="#">chez les pillards</a>
-                            <a class="dropdown-item" href="#">Ecarlates</a>
+                            <a class="dropdown-item" href="#">Tediore</a>
+                            <a class="dropdown-item" href="#">Maliwan</a>
+                            <a class="dropdown-item" href="#">Jakobs</a>
                         </div>
                     </div>
                     <div class="input-group mb-3">
