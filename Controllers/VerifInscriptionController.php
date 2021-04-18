@@ -18,13 +18,36 @@ class VerifInscriptionController extends Controller
 					if(array_intersect($number, str_split($post_args['password_1'])) !== []){
 						//password OK
 						if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-							
+							$credentials = read_conf("[API]");
+							$token_info = API_request("/token/$credentials[1]/$credentials[2]", "GET");
+							$param = [
+								"name" => $family_name,
+								"fname" => $first_name,
+								"mail" => $email,
+								"passwd" => $hash
+							];
+							$token = $token_info['content']['token'];
+							$result = API_request("/inscription/$token", "POST", $param);
+							if($result['status']['code'] === 201){
+								return 0;
+							}else{
+								return 1;
+							}
+						}else{
+							return 2;
 						}
+					}else{
+						return 3;
 					}
+				}else{
+					return 4;
 				}
+			}else{
+				return 5;
 			}
+		}else{
+			return 6;
 		}
-		return 0;
 	}
 
 	/**
@@ -38,8 +61,14 @@ class VerifInscriptionController extends Controller
      * @inheritDoc
      */
     public function post(array $args){
-        if($this->checkInscription($args['post_args']) === 0){
-        	//header("Location: /");
+        switch($this->checkInscription($args['post_args'])){
+			case 0: header("Location: /");break;
+			case 1: header("Location: /1");break;
+			case 2: header("Location: /2");break;
+			case 3: header("Location: /3");break;
+			case 4: header("Location: /4");break;
+			case 5: header("Location: /5");break;
+			case 6: header("Location: /6");break;
 		}
     }
 }

@@ -6,7 +6,7 @@ require_once "autoload.php";
 
 class ConnectionController extends Controller {
 
-	private function prepareConnection(): string{
+	private function prepareConnection(string $error): string{
 		ob_start();
 		include "Views/connection.php";
 		return ob_get_clean();
@@ -18,7 +18,7 @@ class ConnectionController extends Controller {
 	public function get(array $args){
 		$head = $this->prepareHead("Connection");
 		$header = $this->prepareHeader();
-		$main = $this->prepareConnection();
+		$main = $this->prepareConnection($args['uri_args'][0] ?? "");
 		$footer = $this->prepareFooter();
 		$body = $this->prepareBody($header, $main, $footer);
 		include "Views/root.php";

@@ -1,6 +1,6 @@
 <?php
 
-function API_request(string $path, string $method): array|false{
+function API_request(string $path, string $method, array $param = null): array|false{
 	$API_credentials = read_conf("[API]");
 	if($path[0] !== '/')
 		$path = '/' . $path;
@@ -13,8 +13,18 @@ function API_request(string $path, string $method): array|false{
 		CURLOPT_URL => $url,
 		CURLOPT_RETURNTRANSFER => true
 	];
+	if($param !== null && ($method === "POST" || $method === "PUT")){
+		try{
+			$json = json_encode($param, true, JSON_THROW_ON_ERROR);
+		}catch(JsonException){
+			return false;
+		}
+		$opt[CURLOPT_POSTFIELDS] = $json;
+		$opt[CURLOPT_HTTPHEADER] = ['Content-type: application/json'];
+	}
 	curl_setopt_array($curl, $opt);
 	$res = curl_exec($curl);
+	var_dump($res);
 	try{
 		return json_decode($res, associative: true, flags: JSON_THROW_ON_ERROR);
 	}catch(JsonException){
