@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <a class="navbar-brand">Navbar</a>
         <div class="input-group">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Toutes nos catégories</button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">aaaaaaaa</a></li>
                 <li><a class="dropdown-item" href="#">bbbbbbbb</a></li>
