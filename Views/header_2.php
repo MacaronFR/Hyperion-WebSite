@@ -12,24 +12,6 @@
     <!-- deuxieme partie -->
     <div class="collapse navbar-collapse" id="navbarHeader2">
         <div class="navbar-collapse">
-            <form class="form-inline align-self-center">
-                <div class="d-flex flex-column flex-lg-row">
-                    <div class="input-group-prepend">
-                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Toutes nos catégories</button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Tediore</a>
-                            <a class="dropdown-item" href="#">Maliwan</a>
-                            <a class="dropdown-item" href="#">Jakobs</a>
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <input type="text" class="form-control">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button">rechercher</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
             <div class="d-flex flex-column flex-lg-row">
                 <?php if (isset($_SESSION['mail'])){ ?>
                     <a class="nav-item nav-link" href="#">Mon compte</a>
