@@ -3,13 +3,20 @@ html{
 
 }
 body{
-  display: flex;
-  flex-direction: column;
+  //display: flex;
+  //flex-direction: column;
+  //min-height: 70vw;
 }
 main{
-  display: flex;
-  flex-direction: column;
-  min-height: 83.6vh;
+  //display: flex;
+  //flex-direction: column;
+  //min-height: 83.6vh;
+}
+a{
+  color: #0066C0 !important;
+}
+.navbar-toggler{
+  background-color: #CC9E08 !important;
 }
 /* ----------------------------------- Header ----------------------------------- */
 
@@ -23,24 +30,46 @@ header{
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: black;
 }
-#header_logo > a{
-  //margin: 0;
-  //padding: 0;
+#header_1 > a > img{
+  height: 70px;
 }
-#header_logo > a > img{
-  height: auto;
+#header_1 > a{
+  padding: 0;
+  margin: 0;
 }
 #header_1_line{
   background-color: #FFC300;
+  height: 9px;
+  width: 100%;
+}
+
+/* ----------------------------------- Header_2 ----------------------------------- */
+
+#header_2{
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  background-color: black;
+}
+#header_2 > a > img{
+  height: 70px;
+}
+#header_2 > a{
+  //padding: 0;
+  //margin: 0;
+}
+#header_2_line{
+  background-color: #FFC300;
+  height: 9px;
+  width: 100%;
 }
 
 /* ----------------------------------- Footer ----------------------------------- */
 #footer{
   height: 5vw;
-  width: 100%;
   background: radial-gradient(at 49% 17%, #E7E7E7, #FFFFFF 49%);
-  bottom: 0; /* à virer a un moment */
 }
 #footer_line{
   background: linear-gradient(90deg ,rgba(255,255,255,0.5), #FFC300, rgba(255,255,255,0.5));
@@ -71,11 +100,41 @@ header{
 
 /* ----------------------------------- Connection ----------------------------------- */
 #div_form_connexion{
- background-color: #0f5132;
+  border-color: #979797;
 }
 #div_connexion{
-  background-color: red;
+ // background-color: red;
 }
 #div_connexion_2{
-  background-color: blue;
+}
+#div_connexion > form > div >input[type=submit]{
+  background-color: #FFC300;
+  border-color: #CC9E08;
+  width: 100%;
+}
+#div_connexion_2 > div > h5{
+  text-align: center;
+  color: #928585;
+}
+#div_connexion_2  > div >button{
+  background-color: white;
+  border-color: black;
+  color: black;
+  width: 100%;
+}
+/* ----------------------------------- Inscription ----------------------------------- */
+#div_inscription > form > div >input[type=submit]{
+  background-color: #FFC300;
+  border-color: #CC9E08;
+  width: 100%;
+}
+#div_inscription_2 > div > h5{
+  text-align: center;
+  color: #928585;
+}
+#div_inscription_2  > div >button{
+  background-color: white;
+  border-color: black;
+  color: black;
+  width: 100%;
 }

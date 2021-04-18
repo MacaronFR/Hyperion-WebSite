@@ -12,7 +12,7 @@ class StoreController extends Controller {
 	public function get(array $args){
 		$head = $this->prepareHead("Hyperion");
 		$header = $this->prepareHeader();
-		$main = "";
+		$main = header('Location: /shop');;
         $footer = $this->prepareFooter();
 		$body = $this->prepareBody($header, $main, $footer);
 		include "Views/root.php";
