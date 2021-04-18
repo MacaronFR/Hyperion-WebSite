@@ -23,10 +23,8 @@
                     <input type="text" class="form-control">
                 </div>
             </form>
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Features</a>
-            <a class="nav-item nav-link" href="#">Pricing</a>
-            <a class="nav-item nav-link disabled" href="#">Disabled</a>
+            <a class="nav-item nav-link" href="#">Inscrixion</a>
+            <a class="nav-item nav-link" href="#">Connexion</a>
         </div>
     </div>
 </nav>
