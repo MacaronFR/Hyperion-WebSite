@@ -31,8 +31,18 @@
                 </div>
             </form>
             <div class="d-flex flex-column flex-lg-row align-items-end">
-                <a class="nav-item nav-link" href="/inscription">Inscription</a>
-                <a class="nav-item nav-link" href="/connect">Connexion</a>
+                <?php if (isset($_SESSION['email']))
+                { ?>
+                    <a class="nav-item nav-link" href="/inscription">Mon compte</a>
+                    <a class="nav-item nav-link" href="/inscription">Mes commandes</a>
+                    <a class="nav-item nav-link" href="/inscription">Déconnexion</a>
+                    <?php
+                }else
+                { ?>
+                    <a class="nav-item nav-link" href="/inscription">Inscription</a>
+                    <a class="nav-item nav-link" href="/connect">Connexion</a>
+                    <?php
+                } ?>
             </div>
         </div>
     </div>
