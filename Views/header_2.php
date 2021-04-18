@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </form>
-            <div>
+            <div class="mr-0">
                 <a class="nav-item nav-link" href="#">Inscription</a>
                 <a class="nav-item nav-link" href="#">Connexion</a>
             </div>
