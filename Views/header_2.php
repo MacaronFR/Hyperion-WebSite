@@ -8,9 +8,11 @@
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader2" aria-controls="navbarHeader2" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- deuxieme partie -->
     <div class="collapse navbar-collapse" id="navbarHeader2">
         <div class="navbar-nav">
-            <form class="">
+            <form class="form-inline">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Toutes nos catégories</button>
