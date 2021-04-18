@@ -10,3 +10,5 @@
 <script src="/assets/bootstrap-5/js/bootstrap.min.js"></script>
 <link rel="icon" href="/assets/images/Hyperion-yellow-transparent.png">
 <link href="/assets/WillowBody_pc_ps3.ttf">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
