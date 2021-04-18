@@ -32,8 +32,8 @@ if(isset($_POST['form_inscription'])){
                                             if(filter_var($email, FILTER_VALIDATE_EMAIL))
                                             {
                                                 /* ----------- requete pour verifier si l'email n'est pas deja present dans la bdd ---------- */
-                                                $verif ="requete pour verifier si l'email n'est pas deja present dans la bdd";
-                                                if($verif['email']!=$email)
+                                                $verifemaill ="mika-xuan@hotmail.com";
+                                                if($verifemaill!=$email)
                                                 {
                                                     $to = ($email);
                                                     $subject = "Activez votre compte Hyperion";
