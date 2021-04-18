@@ -6,5 +6,4 @@ $vendor = isset($_SESSION['vendor']) ? true : false;
 echo $connected;
 echo $admin;
 echo $vendor;
-echo "hi";
 ?>
