@@ -32,7 +32,7 @@ if(isset($_POST['form_inscription'])){
                                             if(filter_var($email, FILTER_VALIDATE_EMAIL))
                                             {
                                                 /* ----------- requete pour verifier si l'email n'est pas deja present dans la bdd ---------- */
-                                                $verifemaill ="mika-xuan@hotmail.com";
+                                                $verifemaill ="mika-xuan@hotmail678.com";
                                                 if($verifemaill!=$email)
                                                 {
                                                     $to = ($email);
