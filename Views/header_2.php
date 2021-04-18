@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control">
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button">rechercher</button>
                         </div>
