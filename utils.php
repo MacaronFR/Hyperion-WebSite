@@ -7,6 +7,8 @@ function API_request(string $path, string $method): array|false{
 	$url = "https://${API_credentials[0]}${path}";
 	$curl = curl_init();
 	$opt = [
+		CURLOPT_FOLLOWLOCATION => false,
+		//CURLOPT_HEADER => true,
 		CURLOPT_CUSTOMREQUEST => $method,
 		CURLOPT_USERPWD => $API_credentials[3] . ":" . $API_credentials[4],
 		CURLOPT_URL => $url,
@@ -14,13 +16,9 @@ function API_request(string $path, string $method): array|false{
 	];
 	curl_setopt_array($curl, $opt);
 	$res = curl_exec($curl);
-	if(curl_getinfo($curl)['http_code'] === 200){
-		try{
-			return json_decode($res, associative: true, flags: JSON_THROW_ON_ERROR);
-		}catch(JsonException){
-			return false;
-		}
-	}else{
+	try{
+		return json_decode($res, associative: true, flags: JSON_THROW_ON_ERROR);
+	}catch(JsonException){
 		return false;
 	}
 }
@@ -43,4 +41,3 @@ function read_conf(string $section): array|false{
 	}
 	return false;
 }
-

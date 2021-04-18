@@ -2,7 +2,7 @@
 
 
 namespace Hyperion\WebSite;
-include "autoload.php";
+require_once "autoload.php";
 
 class InscriptionController extends Controller
 {
