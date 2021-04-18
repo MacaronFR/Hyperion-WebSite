@@ -11,7 +11,7 @@
         </button>
 
         <div id="navbarHeader2" class="collapse navbar-collapse">
-            <div class="input-group">
+            <div class="input-group d-flex">
                 <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Toutes nos catégories</button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">aaaaaaaa</a></li>
