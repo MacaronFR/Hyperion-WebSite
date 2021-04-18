@@ -12,6 +12,7 @@ use Hyperion\WebSite\ShopController;
 
 
 include "autoload.php";
+include "connectionCheck.php";
 
 $rt = new Router(new TestController());
 $rt->get("/lol", new TestController());
