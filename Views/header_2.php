@@ -1,5 +1,5 @@
 <?php
-include('/connection_check');
+include('../connection_check');
 ?>
 
 <nav id="header_2" class="navbar navbar-expand-lg py-4 py-lg-0">
