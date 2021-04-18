@@ -1,7 +1,7 @@
 <?php
 ?>
 
-<nav id="header_2" class="navbar navbar-expand-lg py-4 py-lg-0 navbar-light bg-light">
+<nav id="header_2" class="navbar navbar-expand-lg py-4 py-lg-0">
     <a class="navbar-brand" href="/shop">
         <img src="/assets/images/Hyperion-yellow-transparent.png" alt="logo_Hyperion" class="img-fluid">
     </a>
