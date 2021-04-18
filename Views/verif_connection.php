@@ -53,7 +53,7 @@ if(isset($_POST['form_connexion']))
     } else{
         $erreur ="vous devez remplir tous les champs du formulaire";
     }
-    /*?><script>alert("<?= $erreur?>");document.location.href="/connect"</script><?php*/
+    ?><script>alert("<?= $erreur?>");document.location.href="/connect"</script><?php
 } else{
     //header('Location: /shop');
     echo "ok";
