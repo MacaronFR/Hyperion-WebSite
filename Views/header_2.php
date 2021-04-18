@@ -11,7 +11,7 @@
 
     <!-- deuxieme partie -->
     <div class="collapse navbar-collapse" id="navbarHeader2">
-        <div class="navbar-nav">
+        <div class="navbar-nav justify-content-center">
             <form class="form-inline align-self-center">
                 <div class="d-flex flex-column flex-lg-row">
                     <div class="input-group-prepend">
