@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </form>
-            <div class="d-flex flex-column flex-lg-row align-self-center">
+            <div class="d-flex flex-column flex-lg-row align-items-end">
                 <a class="nav-item nav-link" href="/inscription">Inscription</a>
                 <a class="nav-item nav-link" href="/connect">Connexion</a>
             </div>
