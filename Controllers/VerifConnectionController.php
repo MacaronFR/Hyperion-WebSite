@@ -48,8 +48,11 @@ class VerifConnectionController extends Controller{
 	 * @inheritDoc
 	 */
 	public function post(array $args){
-		if($this->checkConnection($args['post_args']) === 0){
-			header("Location: /");
+		switch($this->checkConnection($args['post_args'])){
+			case 0: header("Location: /");break;
+			case 1: header("Location: /1");break;
+			case 2: header("Location: /2");break;
+			case 3: header("Location: /3");break;
 		}
 	}
 }
