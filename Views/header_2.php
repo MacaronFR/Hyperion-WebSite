@@ -10,7 +10,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div id="navbarHeader2">
+        <div id="navbarHeader2" class="collapse navbar-collapse">
             <div class="input-group">
                 <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Toutes nos catégories</button>
                 <ul class="dropdown-menu">
