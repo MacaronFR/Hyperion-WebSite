@@ -31,18 +31,14 @@
                 </div>
             </form>
             <div class="d-flex flex-column flex-lg-row align-items-end">
-                <?php if (isset($_SESSION['email']))
-                { ?>
+                <?php if (isset($_SESSION['email'])){ ?>
                     <a class="nav-item nav-link" href="#">Mon compte</a>
                     <a class="nav-item nav-link" href="#">Mes commandes</a>
                     <a class="nav-item nav-link" href="/disconnect">Déconnexion</a>
-                    <?php
-                }else
-                { ?>
+                    <?php }else { ?>
                     <a class="nav-item nav-link" href="/inscription">Inscription</a>
                     <a class="nav-item nav-link" href="/connect">Connexion</a>
-                    <?php
-                } ?>
+                    <?php } ?>
             </div>
         </div>
     </div>
