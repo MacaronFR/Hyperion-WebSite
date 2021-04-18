@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse" id="navbarHeader2">
         <div class="navbar-nav">
             <form class="form-inline">
-                <div class="input-group d-flex flex-row">
+                <div class="d-flex flex-row">
                     <div class="input-group-prepend">
                         <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Toutes nos catégories</button>
                         <div class="dropdown-menu">
