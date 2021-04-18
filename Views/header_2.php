@@ -11,7 +11,7 @@
 
     <!-- deuxieme partie -->
     <div class="collapse navbar-collapse" id="navbarHeader2">
-        <div class="navbar-collapse justify-content-center">
+        <div class="navbar-collapse">
             <form class="form-inline align-self-center">
                 <div class="d-flex flex-column flex-lg-row">
                     <div class="input-group-prepend">
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </form>
-            <div class="d-flex flex-column flex-lg-row align-items-end">
+            <div class="d-flex flex-column flex-lg-row">
                 <?php if (isset($_SESSION['mail'])){ ?>
                     <a class="nav-item nav-link" href="#">Mon compte</a>
                     <a class="nav-item nav-link" href="#">Mes commandes</a>
