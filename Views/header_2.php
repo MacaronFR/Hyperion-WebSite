@@ -23,7 +23,7 @@
                     <input type="text" class="form-control">
                 </div>
             </form>
-            <a class="nav-item nav-link" href="#">Inscrixion</a>
+            <a class="nav-item nav-link" href="#">Inscription</a>
             <a class="nav-item nav-link" href="#">Connexion</a>
         </div>
     </div>
