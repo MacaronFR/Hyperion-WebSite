@@ -1,6 +1,10 @@
 <?php
 include ('includes/config.php');
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if(isset($_POST['form_inscription'])){
     $family_name = trim($_POST['family_name']);
     $first_name = trim($_POST['first_name']);
