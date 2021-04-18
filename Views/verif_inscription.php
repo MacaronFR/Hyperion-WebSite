@@ -35,16 +35,17 @@ if(isset($_POST['form_inscription'])){
                                                 $verifemaill ="mika-xuan@hotmail678.com";
                                                 if($verifemaill!=$email)
                                                 {
-                                                    $to = ($email);
-                                                    $subject = "Activez votre compte Hyperion";
-                                                    $txt = "Bienvenue chez Hyperion !
-                                                    Bonjour " . $first_name .", votre compte Hyperion vient d'être créé.
-                                                    Veuillez activer votre compte via le lien ci-dessous :
-                                                    https://hyperion.dev.macaron-dev.fr/activate-email.php?k=$emailhash&i=$family_name
-                                                    Merci, l'équipe Hyperion.";
-                                                    $headers = "From: no-reply@Hyperion.fr";
-                                                    mail($to,$subject,$txt,$headers);
-
+                                                    /*
+                                                        $to = ($email);
+                                                        $subject = "Activez votre compte Hyperion";
+                                                        $txt = "Bienvenue chez Hyperion !
+                                                        Bonjour " . $first_name .", votre compte Hyperion vient d'être créé.
+                                                        Veuillez activer votre compte via le lien ci-dessous :
+                                                        https://hyperion.dev.macaron-dev.fr/activate-email.php?k=$emailhash&i=$family_name
+                                                        Merci, l'équipe Hyperion.";
+                                                        $headers = "From: no-reply@Hyperion.fr";
+                                                        mail($to,$subject,$txt,$headers);
+                                                    */
                                                     /* ---------- petite requete pour creer le nouveau membre dans la bdd ----------*/
 
                                                     ?><script>alert("un mail de confirmation vous a été envoyé !");document.location.href="/shop"</script><?php
