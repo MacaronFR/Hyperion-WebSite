@@ -11,7 +11,7 @@
         </button>
 
         <div id="navbarHeader2" class="collapse navbar-collapse">
-            <div class="d-flex flex-column flex-lg-row container-md">
+            <div class="d-flex flex-column flex-lg-row container-lg">
                 <div class="input-group">
                     <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Toutes nos catégories</button>
                     <ul class="dropdown-menu">
@@ -21,7 +21,7 @@
                     </ul>
                     <input type="text" class="form-control" aria-label="Text input with dropdown button">
                 </div>
-                <div>
+                <div class="d-grid gap-2">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </div>
             </div>
