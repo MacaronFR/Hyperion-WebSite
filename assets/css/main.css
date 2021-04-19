@@ -15755,7 +15755,7 @@ header {
 }
 
 #header_1_link > * {
-  color: #CC9E08;
+  color: #CC9E08 !important;
 }
 
 /*# sourceMappingURL=main.css.map */
