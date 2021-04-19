@@ -2,30 +2,35 @@
 
 
 namespace Hyperion\WebSite;
+use JetBrains\PhpStorm\NoReturn;
+
 require_once "autoload.php";
 
-class DisconnectController extends Controller
-{
-    private function prepareDisconnect(): string{
-        ob_start();
-        include "disconnect_process.php";
-        return ob_get_clean();
-    }
+class DisconnectController extends Controller{
 
-    /**
-     * @inheritDoc
-     */
-    public function get(array $args){
-        $head = $this->prepareHead("Disconnect");
-        $header = "";;
-        $main = $this->prepareDisconnect();
-        $footer = "";
-        $body = $this->prepareBody($header, $main, $footer);
-        include "Views/root.php";
-    }
+	/**
+	 * @inheritDoc
+	 */
+	#[NoReturn] public function get(array $args){
+		if(empty($_SESSION)){
+			header("Location: /connect");
+		}
+		$response = API_request("/disconnect/${_SESSION['token']}", "DELETE");
+		if($response !== false){
+			if($response['status']['code'] === 200 || $_SESSION['status']['code'] === 404){
+				session_destroy();
+				header('location: /shop');
+				exit();
+			}
+		}
+		header("Location: /500");
+		exit();
+	}
 
-    /**
-     * @inheritDoc
-     */
-    public function post(array $args){ return false;}
+	/**
+	 * @inheritDoc
+	 */
+	public function post(array $args){
+		return false;
+	}
 }
