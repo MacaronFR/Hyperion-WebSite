@@ -15750,7 +15750,18 @@ header {
 
 /* ----------------------------------- Search barre ----------------------------------- */
 #search_barre_bouton {
-  background-image: url(/assets/images/search.svg);
+  background: url(/assets/images/search.svg);
+  background-repeat: no-repeat;
+  background-size: 2vw;
+  font-size: 1vw;
+  background-position: calc(100% - 10px) center;
+  background-repeat: no-repeat;
+  height: 2.5vw;
+  border-radius: 1vw;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  line-height: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
