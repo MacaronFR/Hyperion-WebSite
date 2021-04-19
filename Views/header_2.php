@@ -22,7 +22,7 @@
                     <input type="text" class="form-control" aria-label="Text input with dropdown button">
                 </div>
                 <div class="d-grid gap-2">
-                    <button id="search_barre_bouton" class="btn btn-outline-success" type="submit"></button>
+                    <input id="search_barre_bouton" class="btn btn-outline-success" type="submit" value="   ">
                 </div>
             </div>
             <div class="navbar-nav">
