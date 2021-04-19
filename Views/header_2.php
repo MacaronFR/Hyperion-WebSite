@@ -1,4 +1,7 @@
 <?php
+/**
+ * @var array $text Contain all root text in the desired language
+ */
 ?>
 
 <nav id="header_2" class="navbar navbar-expand-lg py-4 py-lg-0">
@@ -27,12 +30,12 @@
             </div>
             <div class="navbar-nav me-lg-5" id="header_1_link">
                 <?php if (isset($_SESSION['mail'])){ ?>
-                    <a class="nav-item nav-link" href="#">Mon compte</a>
-                    <a class="nav-item nav-link" href="#">Mes commandes</a>
-                    <a class="nav-item nav-link" href="/disconnect">Déconnexion</a>
+                    <a class="nav-item nav-link" href="#"><?= $text['account']['my_account'] ?></a>
+                    <a class="nav-item nav-link" href="#"><?= $text['account']['my_command'] ?></a>
+                    <a class="nav-item nav-link" href="/disconnect"><?= $text['account']['disconnect'] ?></a>
                 <?php }else { ?>
-                    <a class="nav-item nav-link" href="/inscription">Inscription</a>
-                    <a class="nav-item nav-link" href="/connect">Connexion</a>
+                    <a class="nav-item nav-link" href="/inscription"><?= $text['account']['inscription'] ?></a>
+                    <a class="nav-item nav-link" href="/connect"><?= $text['account']['connection'] ?></a>
                 <?php } ?>
             </div>
         </div>
