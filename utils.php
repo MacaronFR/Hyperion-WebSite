@@ -55,3 +55,53 @@ function sanitize(string $string): string{
 	$string = htmlspecialchars($string);
 	return $string;
 }
+
+function get_lang(){
+	if(!isset($_SESSION['lang'])){
+		if(isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])){
+			$accepted = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+			preg_match_all("/(([a-z]{1,8})(-[a-z]{1,8})?)\s*(;\s*q\s*=\s*(1|0\.[0-9]*))?/i", $accepted, $match, PREG_SET_ORDER);
+			$languages = [];
+			foreach($match as $lang){
+				if(isset($languages[$lang[2]], $lang[5])){
+					if($languages[$lang[2]] < (double)$lang[5]){
+						$languages[$lang[2]] = (double)$lang[5];
+					}
+				}else{
+					if(isset($lang[5])){
+						$languages[$lang[2]] = (double)$lang[5];
+					}else{
+						$languages[$lang[2]] = 1.;
+					}
+				}
+			}
+			uasort($languages, function ($a, $b){
+				if($a === $b){
+					return 0;
+				}
+				return ($a < $b)? 1 : -1;
+			});
+			$d = dir(__DIR__ . "/Language");
+			$available = [];
+			while(($entry = $d->read()) !== false){
+				$available[] = $entry;
+			}
+			$available = array_diff($available, ['.', '..']);
+			foreach($languages as $language => $value){
+				if(in_array($language, $available)){
+					$_SESSION['lang'] = $language;
+					return;
+				}
+			}
+		}
+		$_SESSION['lang'] = 'fr';
+	}
+}
+
+function get_text(string $view): array|false{
+	if(file_exists(__DIR__ . "/Language/${_SESSION['lang']}/$view.yml")){
+		return yaml_parse_file(__DIR__ . "/Language/${_SESSION['lang']}/$view.yml");
+	}else{
+		return false;
+	}
+}

@@ -31,7 +31,7 @@ if(isset($_POST['form_inscription'])){
 														Veuillez activer votre compte via le lien ci-dessous :
 														https://hyperion.dev.macaron-dev.fr/activate-email.php?k=$emailhash&i=$family_name
 														Merci, l'équipe Hyperion.";
-														$headers = "From: no-reply@Hyperion.fr";
+														$headers = "From: no-reply@Hyperion.de";
 														mail($to,$subject,$txt,$headers);
 													*/
 													/* ---------- petite requete pour creer le nouveau membre dans la bdd ----------*/

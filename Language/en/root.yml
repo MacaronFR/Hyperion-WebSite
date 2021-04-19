@@ -1,0 +1,7 @@
+header:
+    account:
+        my_account: "My account"
+        my_command: "My commands"
+        disconnect: "Log out"
+        inscription: "Sign in"
+        connection: "Log in"
