@@ -26,9 +26,14 @@
                 </div>
             </div>
             <div class="navbar-nav">
+                <?php if (isset($_SESSION['mail'])){ ?>
                     <a class="nav-item nav-link" href="#">Mon compte</a>
                     <a class="nav-item nav-link" href="#">Mes commandes</a>
                     <a class="nav-item nav-link" href="/disconnect">Déconnexion</a>
+                <?php }else { ?>
+                    <a class="nav-item nav-link" href="/inscription">Inscription</a>
+                    <a class="nav-item nav-link" href="/connect">Connexion</a>
+                <?php } ?>
             </div>
         </div>
     </div>
