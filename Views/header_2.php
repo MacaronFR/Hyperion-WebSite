@@ -29,14 +29,14 @@
                 </div>
             </div>
             <div class="navbar-nav me-lg-5" id="header_1_link">
-                <?php if (isset($_SESSION['mail'])){ ?>
+                <?php if(isset($_SESSION['mail'])): ?>
                     <a class="nav-item nav-link" href="#"><?= $text['account']['my_account'] ?></a>
                     <a class="nav-item nav-link" href="#"><?= $text['account']['my_command'] ?></a>
                     <a class="nav-item nav-link" href="/disconnect"><?= $text['account']['disconnect'] ?></a>
-                <?php }else { ?>
+                <?php else: ?>
                     <a class="nav-item nav-link" href="/inscription"><?= $text['account']['inscription'] ?></a>
                     <a class="nav-item nav-link" href="/connect"><?= $text['account']['connection'] ?></a>
-                <?php } ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>
