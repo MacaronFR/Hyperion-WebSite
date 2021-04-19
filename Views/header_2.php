@@ -21,7 +21,7 @@
                     </ul>
                     <input type="text" class="form-control" aria-label="Text input with dropdown button">
                 </div>
-                <div class="d-grid gap-2 mt-1 mt-lg-0">
+                <div class="d-grid gap-2 mt-3 mt-lg-0">
                     <button id="search_barre_bouton" class="btn btn-outline-success" type="submit">Search</button>
                 </div>
             </div>
