@@ -56,10 +56,6 @@ header{
 #header_2 > a > img{
   height: 70px;
 }
-#header_2 > a{
-  //padding: 0;
-  //margin: 0;
-}
 #header_2_line{
   background-color: #FFC300;
   height: 9px;
@@ -136,4 +132,14 @@ header{
   border-color: black;
   color: black;
   width: 100%;
+}
+
+/* ----------------------------------- Search barre ----------------------------------- */
+#search_barre_bouton{
+  border-color: #CC9E08;
+  color: #CC9E08;
+}
+
+#header_1_link > *{
+  color: #CC9E08 !important;
 }

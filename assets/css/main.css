@@ -15748,4 +15748,14 @@ header {
   width: 100%;
 }
 
+/* ----------------------------------- Search barre ----------------------------------- */
+#search_barre_bouton {
+  border-color: #CC9E08;
+  color: #CC9E08;
+}
+
+#header_1_link > * {
+  color: #CC9E08 !important;
+}
+
 /*# sourceMappingURL=main.css.map */
