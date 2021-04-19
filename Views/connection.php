@@ -28,7 +28,7 @@
 				<?php endif; ?>
 			</div>
             <div class="form-group mt-4 mt-lg-4">
-                <input type="submit" name="form_connexion" value="Continuer" class="btn btn-block col-lg-12 col-8">
+                <input type="submit" name="form_connexion" value="Continuer" class="btn btn-block col-12">
             </div>
         </form>
         <div class="mt-3 mt-lg-4">
