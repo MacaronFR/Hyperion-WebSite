@@ -24,7 +24,6 @@ function API_request(string $path, string $method, array $param = null): array|f
 	}
 	curl_setopt_array($curl, $opt);
 	$res = curl_exec($curl);
-	var_dump($res);
 	try{
 		return json_decode($res, associative: true, flags: JSON_THROW_ON_ERROR);
 	}catch(JsonException){
