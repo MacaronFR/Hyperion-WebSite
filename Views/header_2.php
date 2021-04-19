@@ -25,6 +25,11 @@
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </div>
             </div>
+            <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="#">Mon compte</a>
+                    <a class="nav-item nav-link" href="#">Mes commandes</a>
+                    <a class="nav-item nav-link" href="/disconnect">Déconnexion</a>
+            </div>
         </div>
     </div>
 </nav>
