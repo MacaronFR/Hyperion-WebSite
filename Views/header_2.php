@@ -2,7 +2,7 @@
 ?>
 
 <nav id="header_2" class="navbar navbar-expand-lg py-4 py-lg-0">
-    <div class="container-fluid">
+    <div class="container-fluid ju">
         <a class="navbar-brand" href="/shop">
             <img src="/assets/images/Hyperion-yellow-transparent.png" alt="logo_Hyperion" height="70">
         </a>
@@ -25,7 +25,7 @@
                     <button id="search_barre_bouton" class="btn btn-outline-success" type="submit">Search</button>
                 </div>
             </div>
-            <div class="navbar-nav">
+            <div class="navbar-nav me-lg-5" id="header_1_link">
                 <?php if (isset($_SESSION['mail'])){ ?>
                     <a class="nav-item nav-link" href="#">Mon compte</a>
                     <a class="nav-item nav-link" href="#">Mes commandes</a>
