@@ -149,5 +149,8 @@ header{
   background-color: #242217;
 }
 #SubHeaderCategories > * > a{
-  color: white;
+  color: white !important;
+}
+#SubHeaderCategories > * > * > * > a{
+  color: white !important;
 }

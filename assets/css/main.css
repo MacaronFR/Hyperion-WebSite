@@ -15764,7 +15764,11 @@ header {
 }
 
 #SubHeaderCategories > * > a {
-  color: white;
+  color: white !important;
+}
+
+#SubHeaderCategories > * > * > * > a {
+  color: white !important;
 }
 
 /*# sourceMappingURL=main.css.map */
