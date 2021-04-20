@@ -72,19 +72,14 @@ header{
 }
 #footer_1 > ul{
   list-style: none;
-  display: flex;
-  flex-direction: row;
   padding: 0;
   margin: 0;
-  justify-content: center;
 }
 #footer_1 > ul > li{
   margin: 0 1.5vw;
   color: #0066C0;
 }
 #footer_2{
-  display: flex;
-  justify-content: center;
   margin-top: 0.4vw;
 }
 #footer_2 > p{
