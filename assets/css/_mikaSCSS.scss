@@ -48,10 +48,7 @@ header{
 /* ----------------------------------- Header_2 ----------------------------------- */
 
 #header_2{
-  //display: flex;
-  //align-items: center;
-  //justify-content: center;
-  background-color: black;
+  background-color: black !important;
 }
 #header_2 > a > img{
   height: 70px;
@@ -142,4 +139,15 @@ header{
 
 #header_1_link > *{
   color: #CC9E08 !important;
+}
+
+/* ----------------------------------- Search barre ----------------------------------- */
+#SubHeaderCategories{
+  background-color: #242217 !important;
+}
+#SubHeaderCategories > * > a{
+  color: white !important;
+}
+#SubHeaderCategories > * > * > * > a{
+  color: white !important;
 }
