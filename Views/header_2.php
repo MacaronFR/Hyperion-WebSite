@@ -2,7 +2,6 @@
 /**
  * @var array $text Contain all root text in the desired language
  */
-echo $title;
 ?>
 
 <nav id="header_2" class="navbar navbar-expand-lg py-4 py-lg-0 navbar-light bg-light">
