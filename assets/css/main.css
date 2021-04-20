@@ -15657,7 +15657,7 @@ header {
 
 /* ----------------------------------- Header_2 ----------------------------------- */
 #header_2 {
-  background-color: black;
+  background-color: black !important;
 }
 
 #header_2 > a > img {
