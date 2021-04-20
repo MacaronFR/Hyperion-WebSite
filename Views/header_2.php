@@ -47,6 +47,7 @@
 <!-- sub header 1 -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
+        <a class="navbar-brand" href="#">Explorer</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarCategories" aria-controls="navBarCategories" aria-expanded="false" aria-label="Toggle navigation sub_header">
             <span class="navbar-toggler-icon"></span>
         </button>
