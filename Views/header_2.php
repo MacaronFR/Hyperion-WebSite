@@ -72,4 +72,4 @@
     </div>
 </nav>
 
-<? echo SHOP ?>
+<?php echo SHOP ?>
