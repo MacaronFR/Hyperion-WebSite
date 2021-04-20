@@ -87,12 +87,13 @@ class Router {
 	/**
 	 * Route GET request with matching pattern (use * as wildcard character)
 	 * @param string $pattern Pattern to match with
-	 * @param Controller|null $controller Controller to use if pattern match
+	 * @param string|null $controller_name Controller to use if pattern match
 	 * @param mixed|null $additional_param
 	 */
-	public function get(string $pattern = "/", Controller|null $controller = null, mixed $additional_param = null){
+	public function get(string $pattern = "/", string|null $controller_name = null, mixed $additional_param = null){
 		if($this->method == Router::GET){
 			if(($matches = $this->match($pattern)) !== false){
+				$controller = new $controller_name();
 				$this->routed = true;
 				$args = $this->prepareArgs($matches, $additional_param);
 				if($controller !== null)
@@ -106,12 +107,13 @@ class Router {
 	/**
 	 * Route POST request with matching pattern (use * as wildcard character)
 	 * @param string $pattern Pattern to match with
-	 * @param Controller|null $controller Controller used if pattern match
+	 * @param string|null $controller_name Controller used if pattern match
 	 * @param mixed|null $additional_param
 	 */
-	public function post(string $pattern = "/", Controller|null $controller = null, mixed $additional_param = null){
+	public function post(string $pattern = "/", string|null $controller_name = null, mixed $additional_param = null){
 		if($this->method == Router::POST){
 			if(($matches = $this->match($pattern)) !== false){
+				$controller = new $controller_name();
 				$this->routed = true;
 				$args = $this->prepareArgs($matches, $additional_param);
 				if($controller !== null)
