@@ -72,4 +72,4 @@
     </div>
 </nav>
 
-<?= $define ?>
+<?= SHOP ?>
