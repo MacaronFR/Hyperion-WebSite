@@ -61,6 +61,13 @@ var_dump($_SESSION);
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']==='3'): ?>
                     <a class="nav-item nav-link" href="#">Gestion des Offres</a>
                 <?php endif; ?>
+                <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'2'): ?>
+                    <a class="nav-item nav-link" href="#">Administration</a>
+                <?php endif; ?>
+                <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'3'): ?>
+                    <a class="nav-item nav-link" href="#">Administration des Offres</a>
+                    <a class="nav-item nav-link" href="#">Administration des Projets</a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
