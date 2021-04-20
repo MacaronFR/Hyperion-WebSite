@@ -41,4 +41,22 @@
         </div>
     </div>
 </nav>
+<!-- line header yellow -->
 <div id="header_2_line"></div>
+
+<!-- sub header 1 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarCategories" aria-controls="navBarCategories" aria-expanded="false" aria-label="Toggle navigation sub_header">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navBarCategories">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Nos Produits</a>
+                <a class="nav-link" href="#">Service Client</a>
+                <a class="nav-link" href="#">Projets Humanitaires</a>
+                <a class="nav-link disabled" href="#" >Projets Ecologiques</a>
+            </div>
+        </div>
+    </div>
+</nav>
