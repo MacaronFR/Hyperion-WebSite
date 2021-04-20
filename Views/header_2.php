@@ -57,6 +57,9 @@
                 <a class="nav-link" href="#">Service Client</a>
                 <a class="nav-link" href="#">Projets Humanitaires</a>
                 <a class="nav-link disabled" href="#" >Projets Ecologiques</a>
+                <?php if($_SESSION['level']===3): ?>
+                    <a class="nav-item nav-link" href="#">Gestion des Offres</a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
