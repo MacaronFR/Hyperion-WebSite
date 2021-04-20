@@ -15760,8 +15760,11 @@ header {
 
 /* ----------------------------------- Search barre ----------------------------------- */
 #SubHeaderCategories {
-  background-color: #242217 !important;
-  color: white;
+  background-color: #242217;
+}
+
+#SubHeaderCategories > a {
+  background-color: #242217;
 }
 
 /*# sourceMappingURL=main.css.map */
