@@ -72,4 +72,17 @@
     </div>
 </nav>
 
-<?php echo $title ?>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Téléphonie</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Photo & Caméscopes</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Tv &  Vidéo</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Audio & HIFI</a>
+    </li>
+</ul>
