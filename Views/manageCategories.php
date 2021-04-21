@@ -167,18 +167,18 @@
                 <form>
                     <div class="mb-3">
                         <h4>Renommer le domaine:</h4>
-                        <label for="recipient-name" class="col-form-label">Nom actuel du Domaine:</label>
+                        <label for="recipient-name" class="col-form-label">id du domaine:</label>
                         <input type="text" class="form-control" id="actualDomaineName">
                     </div>
                     <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Message:</label>
-                        <textarea class="form-control" id="message-text"></textarea>
+                        <label for="message-text" class="col-form-label">Nouveau nom du domaine:</label>
+                        <input class="form-control" id="newDomainName">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Send message</button>
+                <button type="button" class="btn btn-primary">Modifier</button>
             </div>
         </div>
     </div>
@@ -191,7 +191,7 @@ modalAlterDomain.addEventListener('show.bs.modal', function (event) {
     // Button that triggered the modal
     var button = event.relatedTarget
   // Extract info from data-bs-* attributes
-  var recipient = button.getAttribute('data-bs-whatever')
+  var domain_actual_name = button.getAttribute('data-bs-whatever')
   var id_domain = button.getAttribute('data-domain-id')
   // If necessary, you could initiate an AJAX request here
   // and then do the updating in a callback.
@@ -200,7 +200,7 @@ modalAlterDomain.addEventListener('show.bs.modal', function (event) {
   var modalTitle = domainModal.querySelector('.modal-title')
   var modalBodyInput = domainModal.querySelector('.modal-body input')
 
-  modalTitle.textContent = 'New message to ' + recipient
+  modalTitle.textContent = 'Renommer le Domaine : ' + domain_actual_name
   modalBodyInput.value = id_domain
 })
 </script>
