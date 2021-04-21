@@ -191,7 +191,8 @@ modalAlterDomain.addEventListener('show.bs.modal', function (event) {
     // Button that triggered the modal
     var button = event.relatedTarget
   // Extract info from data-bs-* attributes
-  var recipient = button.getAttribute('data-domain-id')
+  var recipient = button.getAttribute('data-bs-whatever')
+  var id_domain = button.getAttribute('data-domain-id')
   // If necessary, you could initiate an AJAX request here
   // and then do the updating in a callback.
   //
@@ -200,6 +201,6 @@ modalAlterDomain.addEventListener('show.bs.modal', function (event) {
   var modalBodyInput = domainModal.querySelector('.modal-body input')
 
   modalTitle.textContent = 'New message to ' + recipient
-  modalBodyInput.value = recipient
+  modalBodyInput.value = data-domain-id
 })
 </script>
