@@ -15781,9 +15781,9 @@ header {
   color: #4B4B4B !important;
 }
 
-#div_manage_domain {
+.divs_manage {
   background-color: #F5F5F5;
-  border-color: #FFC300;
+  border-color: #FFC300 !important;
 }
 
 /*# sourceMappingURL=main.css.map */
