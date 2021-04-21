@@ -4,9 +4,7 @@
     <div id="div_manage_domain" class="row col-11 col-lg-4 border border-2 rounded-3 py-4 px-4 align-self-center">
         <div id="div_create_domain ">
             <h3>Ajouter un domaine de produit</h3>
-            <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example">
-            <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
-            <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">
+            <input class="form-control" type="text" placeholder="Saisie d'un domaine de produit">
         </div>
         <div id="div_manage_all_domain">
             <h3>Tous les domaines de produit</h3>
@@ -23,38 +21,38 @@
                 <tr>
                     <th scope="row">1</th>
                     <td>Téléphonie</td>
-                    <td><button type="button" class="btn btn-primary">Primary</button></td>
-                    <td><button type="button" class="btn btn-danger">Danger</button></td>
+                    <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                    <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
                     <td>Vidéo</td>
-                    <td><button type="button" class="btn btn-primary">Primary</button></td>
-                    <td><button type="button" class="btn btn-danger">Danger</button></td>
+                    <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                    <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
                     <td>Electro-ménager</td>
-                    <td><button type="button" class="btn btn-primary">Primary</button></td>
-                    <td><button type="button" class="btn btn-danger">Danger</button></td>
+                    <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                    <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                 </tr>
                 <tr>
                     <th scope="row">1</th>
                     <td>Tv</td>
-                    <td><button type="button" class="btn btn-primary">Primary</button></td>
-                    <td><button type="button" class="btn btn-danger">Danger</button></td>
+                    <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                    <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
                     <td>Objets connectés</td>
-                    <td><button type="button" class="btn btn-primary">Primary</button></td>
-                    <td><button type="button" class="btn btn-danger">Danger</button></td>
+                    <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                    <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
                     <td>Audio & HIFI</td>
-                    <td><button type="button" class="btn btn-primary">Primary</button></td>
-                    <td><button type="button" class="btn btn-danger">Danger</button></td>
+                    <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                    <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                 </tr>
                 </tbody>
             </table>
