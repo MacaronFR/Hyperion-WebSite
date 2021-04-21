@@ -186,7 +186,7 @@
 
 <!-- script callModalDomain -->
 <script>
-var exampleModal = document.getElementById('modalAlterDomain')
+var domainModal = document.getElementById('modalAlterDomain')
 modalAlterDomain.addEventListener('show.bs.modal', function (event) {
     // Button that triggered the modal
     var button = event.relatedTarget
@@ -196,8 +196,8 @@ modalAlterDomain.addEventListener('show.bs.modal', function (event) {
   // and then do the updating in a callback.
   //
   // Update the modal's content.
-  var modalTitle = exampleModal.querySelector('.modal-title')
-  var modalBodyInput = exampleModal.getElementById("actualDomaineName")
+  var modalTitle = domainModal.querySelector('.modal-title')
+  var modalBodyInput = domainModal.querySelector('.modal-body input')
 
   modalTitle.textContent = 'New message to ' + recipient
   modalBodyInput.value = recipient
