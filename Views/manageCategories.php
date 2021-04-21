@@ -201,6 +201,6 @@ modalAlterDomain.addEventListener('show.bs.modal', function (event) {
   var modalBodyInput = domainModal.querySelector('.modal-body input')
 
   modalTitle.textContent = 'New message to ' + recipient
-  modalBodyInput.value = data-domain-id
+  modalBodyInput.value = id_domain
 })
 </script>
