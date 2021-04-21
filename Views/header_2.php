@@ -1,7 +1,10 @@
 <?php
 /**
  * @var array $text Contain all root text in the desired language
+
+ ** @var string $title Contain the title of the page
  */
+
 ?>
 
 <nav id="header_2" class="navbar navbar-expand-lg py-4 py-lg-0 navbar-light bg-light">
@@ -45,7 +48,7 @@
 <div id="header_2_line"></div>
 
 <!-- sub header 1 -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="SubHeaderCategories">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="SubHeaderCategories">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Explorer</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarCategories" aria-controls="navBarCategories" aria-expanded="false" aria-label="Toggle navigation sub_header">
@@ -57,7 +60,59 @@
                 <a class="nav-link" href="#">Service Client</a>
                 <a class="nav-link" href="#">Projets Humanitaires</a>
                 <a class="nav-link disabled" href="#" >Projets Ecologiques</a>
+                <?php if(isset($_SESSION['level']) AND $_SESSION['level']==='3'): ?>
+                    <a class="nav-item nav-link" href="#">Gestion des Offres</a>
+                <?php endif; ?>
+                <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'3'): ?>
+                    <a class="nav-item nav-link" href="/manageCategories">Gestion des Produits</a>
+                    <a class="nav-item nav-link" href="#">Gestion des Offres</a>
+                    <a class="nav-item nav-link" href="#">Gestion des Projets</a>
+                <?php endif; ?>
+                <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'2'): ?>
+                    <a class="nav-item nav-link" href="#">Administration</a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
 </nav>
+<?php if ($title === "Shop"): ?>
+<nav class="navbar navbar-expand-lg navbar-dark subHeader3">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Catégories</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#">Téléphonie</a>
+                <a class="nav-link" href="#">Photo & Caméscopes</a>
+                <a class="nav-link" href="#">Tv & Vidéo</a>
+                <a class="nav-link" href="#">Audio & HIFI</a>
+                <a class="nav-link" href="#">Objects Connectés</a>
+                <a class="nav-link" href="#">Informatique</a>
+                <a class="nav-link" href="#">GPS & Auto</a>
+                <a class="nav-link" href="#">Eléctromenagers</a>
+                <a class="nav-link" href="#">Bricolage</a>
+                <a class="nav-link" href="#">Consoles</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<?php elseif ($title === "ManageCategories"): ?>
+<nav class="navbar navbar-expand-lg navbar-dark subHeader3">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Catégories</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Ajoutez un produit</a>
+                <a class="nav-link" href="#">Consulter les produits</a>
+                <a class="nav-link" href="#">Gerer les caractéristiques & catégories</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<?php endif; ?>
