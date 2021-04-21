@@ -20,6 +20,42 @@
                 <tbody>
                 <tr>
                     <th scope="row">1</th>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                    <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
+                </tr>
+               <!-- <tr>
+                    <th scope="row">1</th>
                     <td>Téléphonie</td>
                     <td><button type="button" class="btn btn-primary">Modifier</button></td>
                     <td><button type="button" class="btn btn-danger">Supprimer</button></td>
@@ -53,7 +89,7 @@
                     <td>Audio & HIFI</td>
                     <td><button type="button" class="btn btn-primary">Modifier</button></td>
                     <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                </tr>
+                </tr> -->
                 </tbody>
             </table>
         </div>
