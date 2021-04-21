@@ -153,21 +153,22 @@
     </div>
 </div>
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterDomain" data-bs-whatever="@mdo">Open modal for @mdo</button>
 
 
-<div class="modal fade" id="modalAlterDomain" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal AlterDomain -->
+<div class="modal fade" id="modalAlterDomain" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="exampleModalLabel">Modifier le Domaine</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
                 <form>
                     <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Recipient:</label>
-                        <input type="text" class="form-control" id="recipient-name">
+                        <h4>Renommer le domaine:</h4>
+                        <label for="recipient-name" class="col-form-label">Nom actuel du Domaine:</label>
+                        <input type="text" class="form-control" id="actualDomaineName">
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Message:</label>
@@ -183,6 +184,7 @@
     </div>
 </div>
 
+<!-- script callModalDomain -->
 <script>
 var exampleModal = document.getElementById('modalAlterDomain')
 modalAlterDomain.addEventListener('show.bs.modal', function (event) {
