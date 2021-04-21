@@ -1,7 +1,10 @@
 <?php
 /**
  * @var array $text Contain all root text in the desired language
+
+ ** @var string $title Contain the title of the page
  */
+
 ?>
 
 <nav id="header_2" class="navbar navbar-expand-lg py-4 py-lg-0 navbar-light bg-light">
@@ -61,7 +64,7 @@
                     <a class="nav-item nav-link" href="#">Gestion des Offres</a>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'3'): ?>
-                    <a class="nav-item nav-link" href="#">Gestion des Produits</a>
+                    <a class="nav-item nav-link" href="/manageCategories">Gestion des Produits</a>
                     <a class="nav-item nav-link" href="#">Gestion des Offres</a>
                     <a class="nav-item nav-link" href="#">Gestion des Projets</a>
                 <?php endif; ?>
@@ -72,7 +75,7 @@
         </div>
     </div>
 </nav>
-
+<?php if ($title === "Shop"): ?>
 <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Catégories</a>
@@ -96,3 +99,20 @@
         </div>
     </div>
 </nav>
+<?php elseif ($title === "ManageCategories"): ?>
+<nav class="navbar navbar-expand-lg navbar-dark subHeader3">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Catégories</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Ajoutez un produit</a>
+                <a class="nav-link" href="#">Consulter les produits</a>
+                <a class="nav-link" href="#">Gerer les caractéristiques & catégories</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<?php endif; ?>
