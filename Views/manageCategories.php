@@ -168,7 +168,7 @@
                     <div class="mb-3">
                         <h4>Renommer le domaine:</h4>
                         <label for="recipient-name" class="col-form-label">id du domaine:</label>
-                        <input type="text" class="form-control" id="actualDomaineName">
+                        <input type="text" class="form-control" id="actualDomaineName" disabled>
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Nouveau nom du domaine:</label>
