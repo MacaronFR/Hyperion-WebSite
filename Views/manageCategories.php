@@ -8,7 +8,7 @@
         </div>
         <div id="div_manage_all_domain" class="container">
             <h3>Tous les domaines de produit</h3>
-            <table class="table">
+            <table class="table-responsive">
                 <thead>
                 <tr>
                     <th scope="col">id</th>
