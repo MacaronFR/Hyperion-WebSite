@@ -143,7 +143,7 @@
                             <th scope="row">3</th>
                             <td>Objets connectés</td>
                             <td>HomePod</td>
-                            <td><button type="button" class="btn btn-primary" data-bs-target="#exampleModal">Modifier</button></td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                         </tr>
                     </tbody>
