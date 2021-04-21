@@ -72,4 +72,4 @@
     </div>
 </nav>
 
-<?php echo SUBHEADER ?>
+<?php echo $title ?>
