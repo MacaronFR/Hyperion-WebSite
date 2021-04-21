@@ -15768,9 +15768,17 @@ header {
 
 /* ----------------------------------- Sub Header 3 ----------------------------------- */
 .subHeader3 {
-  background-color: #EAE9E7;
-  border-color: #C9C8C4;
+  background-color: #EAE9E7 !important;
+  border-color: #C9C8C4 !important;
   border-width: 1px;
+}
+
+.subHeader3 > * > a {
+  color: white !important;
+}
+
+.subHeader3 > * > * > * > a {
+  color: white !important;
 }
 
 /*# sourceMappingURL=main.css.map */
