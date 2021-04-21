@@ -72,17 +72,26 @@
     </div>
 </nav>
 
-<ul class="nav nav-tabs">
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Téléphonie</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Photo & Caméscopes</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Tv &  Vidéo</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Audio & HIFI</a>
-    </li>
-</ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light subHeader3">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Catégories</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#">Téléphonie</a>
+                <a class="nav-link" href="#">Photo & Caméscopes</a>
+                <a class="nav-link" href="#">Tv & Vidéo</a>
+                <a class="nav-link" href="#">Audio & HIFI</a>
+                <a class="nav-link" href="#">Objects Connectés</a>
+                <a class="nav-link" href="#">Informatique</a>
+                <a class="nav-link" href="#">GPS & Auto</a>
+                <a class="nav-link" href="#">Eléctromenagers</a>
+                <a class="nav-link" href="#">Bricolage</a>
+                <a class="nav-link" href="#">Consoles</a>
+            </div>
+        </div>
+    </div>
+</nav>
