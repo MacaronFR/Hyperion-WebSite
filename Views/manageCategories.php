@@ -166,7 +166,6 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-3">
-                        <h4>Renommer le domaine:</h4>
                         <label for="recipient-name" class="col-form-label">id du domaine:</label>
                         <input type="text" class="form-control" id="actualDomaineName" disabled>
                     </div>
@@ -198,7 +197,7 @@ modalAlterDomain.addEventListener('show.bs.modal', function (event) {
   //
   // Update the modal's content.
   var modalTitle = domainModal.querySelector('.modal-title')
-  var modalBodyInput = domainModal.querySelector('.modal-body input')
+  var modalBodyInput = document.getElementById('actualDomaineName')
 
   modalTitle.textContent = 'Renommer le Domaine : ' + domain_actual_name
   modalBodyInput.value = id_domain
