@@ -27,4 +27,5 @@ $rt->post("/verif_inscription", VerifInscriptionController::class);
 $rt->get("/shop", ShopController::class);
 $rt->get("/disconnect", DisconnectController::class);
 $rt->get("/manageCategories", ManageCategories::class);
+$rt->post("/manageCategories", ManageCategories::class);
 $rt->default();

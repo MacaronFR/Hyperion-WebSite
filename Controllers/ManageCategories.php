@@ -28,8 +28,13 @@ class ManageCategories extends Controller
     /**
      * @inheritDoc
      */
-    public function post(array $args)
-    {
-        // TODO: Implement post() method.
+    public function post(array $args){
+        $head = $this->prepareHead("Shop");
+        $header = $this->prepareHeader_2($root['header'], "ManageCategories");
+        $main = $this->prepareManageCategories();
+        $footer = $this->prepareFooter();
+        $body = $this->prepareBody($header, $main, $footer);
+        var_dump($_POST);
+        include "Views/root.php";
     }
 }
