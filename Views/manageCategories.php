@@ -60,8 +60,8 @@
                 </table>
             </div>
         </div>
-    </di>
-</div>
+    </div>
+
     <!-- gestion types of product -->
     <div id="div_manage_domain" class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
         <div id="div_create_domain" class="container">
@@ -126,5 +126,5 @@
                 </table>
             </div>
         </div>
-        </div>
     </div>
+</div>
