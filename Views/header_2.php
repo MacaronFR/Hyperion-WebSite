@@ -45,7 +45,7 @@
 <div id="header_2_line"></div>
 
 <!-- sub header 1 -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="SubHeaderCategories">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="SubHeaderCategories">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Explorer</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarCategories" aria-controls="navBarCategories" aria-expanded="false" aria-label="Toggle navigation sub_header">
@@ -72,7 +72,7 @@
     </div>
 </nav>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light subHeader3">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark subHeader3">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Catégories</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
