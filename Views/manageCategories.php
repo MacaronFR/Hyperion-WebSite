@@ -6,7 +6,7 @@
             <h3>Ajouter un domaine de produit</h3>
             <input class="form-control" type="text" placeholder="Saisie d'un domaine de produit">
         </div>
-        <div id="div_manage_all_domain" class="container">
+        <div id="div_manage_all_domain" class="container mt-3">
             <h3>Tous les domaines de produit</h3>
             <div class="table-responsive">
                 <table class="table">
