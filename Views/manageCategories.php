@@ -4,7 +4,7 @@
     <!-- gestion categories of product -->
     <div id="div_manage_domain" class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
         <div id="div_create_domain" class="container">
-            <h3>Ajouter un domaine de produit</h3>
+            <h3 class="mb-3">Ajouter un domaine de produit</h3>
             <div class="row">
                 <div class="col-7">
                     <input class="form-control" type="text" placeholder="Saisie d'un domaine de produit">
