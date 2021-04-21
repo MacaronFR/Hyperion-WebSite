@@ -9,6 +9,7 @@ use Hyperion\WebSite\VerifConnectionController;
 use Hyperion\WebSite\InscriptionController;
 use Hyperion\WebSite\VerifInscriptionController;
 use Hyperion\WebSite\ShopController;
+use Hyperion\WebSite\ManageCategories;
 
 
 include "autoload.php";
@@ -25,4 +26,5 @@ $rt->get("/inscription", InscriptionController::class);
 $rt->post("/verif_inscription", VerifInscriptionController::class);
 $rt->get("/shop", ShopController::class);
 $rt->get("/disconnect", DisconnectController::class);
+$rt->get("/manageCategories", ManageCategories::class);
 $rt->default();
