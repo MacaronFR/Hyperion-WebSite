@@ -72,4 +72,4 @@
     </div>
 </nav>
 
-<?php echo SHOP ?>
+<?php echo SUBHEADER ?>
