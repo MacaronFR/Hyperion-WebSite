@@ -198,7 +198,7 @@ modalAlterDomain.addEventListener('show.bs.modal', function (event) {
   //
   // Update the modal's content.
   var modalTitle = exampleModal.querySelector('.modal-title')
-  var modalBodyInput = exampleModal.getElementById("actualDomaineName")
+  var modalBodyInput = exampleModal.exampleModal.querySelector('.modal-body input')
 
   modalTitle.textContent = 'New message to ' + recipient
   modalBodyInput.value = recipient
