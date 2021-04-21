@@ -19,78 +19,42 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                        <td>Téléphoniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiie</td>
-                    </tr>
-                   <!-- <tr>
-                        <th scope="row">1</th>
-                        <td>Téléphonie</td>
-                        <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                        <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Vidéo</td>
-                        <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                        <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Electro-ménager</td>
-                        <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                        <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Tv</td>
-                        <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                        <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Objets connectés</td>
-                        <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                        <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Audio & HIFI</td>
-                        <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                        <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                    </tr> -->
+                       <tr>
+                            <th scope="row">1</th>
+                            <td>Téléphonie</td>
+                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+                       </tr>
+                       <tr>
+                            <th scope="row">2</th>
+                            <td>Vidéo</td>
+                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+                       </tr>
+                       <tr>
+                            <th scope="row">3</th>
+                            <td>Electro-ménager</td>
+                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+                       </tr>
+                       <tr>
+                            <th scope="row">1</th>
+                            <td>Tv</td>
+                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+                       </tr>
+                       <tr>
+                            <th scope="row">2</th>
+                            <td>Objets connectés</td>
+                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+                       </tr>
+                       <tr>
+                            <th scope="row">3</th>
+                            <td>Audio & HIFI</td>
+                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+                       </tr>
                     </tbody>
                 </table>
             </div>
