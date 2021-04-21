@@ -18,7 +18,7 @@ class ShopController extends Controller{
 	public function get(array $args){
 		$root = get_text("root");
 		$head = $this->prepareHead("Shop");
-		$header = $this->prepareHeader_2($root['header']);
+		$header = $this->prepareHeader_2($root['header'], "Shop");
 		$main = $this->prepareShop();
 		$footer = $this->prepareFooter();
 		$body = $this->prepareBody($header, $main, $footer);
