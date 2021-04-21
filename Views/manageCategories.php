@@ -75,7 +75,7 @@
             <h3 class="mb-3">Ajouter un Type de produits associés à son domaine</h3>
             <div class="row">
                 <div class="col-5">
-                    <input class="form-control" type="text" placeholder="Saisie d'un domaine de produit">
+                    <input class="form-control" type="text" placeholder="Saisie d'un type de produit">
                 </div>
                 <div class="col-5">
                     <select class="form-select">
