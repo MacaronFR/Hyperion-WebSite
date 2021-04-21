@@ -3,7 +3,7 @@
     <h1 style="text-align: center" class="mb-4">Gestion des caractéristiques & catégories</h1>
     <!-- gestion categories of product -->
     <div id="div_manage_domain" class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
-        <div id="div_create_domain" class="container">
+        <div id="div_create_domain mb-4" class="container">
             <h3 class="mb-3">Ajouter un domaine de produit</h3>
             <div class="row">
                 <div class="col-7">
@@ -70,8 +70,8 @@
     </div>
 
     <!-- gestion types of product -->
-    <div id="div_manage_domain" class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
-        <div id="div_create_domain" class="container">
+    <div id="div_manage_types" class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
+        <div id="div_create_type" class="container mb-3">
             <h3 class="mb-3">Ajouter un Type de produits associés à son domaine</h3>
             <div class="row">
                 <div class="col-5">
@@ -90,7 +90,7 @@
                 </div>
             </div>
         </div>
-        <div id="div_manage_all_domain" class="container mt-3">
+        <div id="div_manage_all_type" class="container mt-3">
             <h3 class="mb-3">Tous les types de produits associés à leur domaine</h3>
             <div class="table-responsive">
                 <table class="table">
