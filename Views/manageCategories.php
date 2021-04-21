@@ -143,7 +143,7 @@
                             <th scope="row">3</th>
                             <td>Objets connectés</td>
                             <td>HomePod</td>
-                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterDomain" data-domain-id="23" data-bs-whatever="@mdo">Modifier</button></td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterDomain" data-domain-id="23" data-domain-name="HomePod">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                         </tr>
                     </tbody>
@@ -191,7 +191,7 @@ modalAlterDomain.addEventListener('show.bs.modal', function (event) {
     // Button that triggered the modal
     var button = event.relatedTarget
   // Extract info from data-bs-* attributes
-  var domain_actual_name = button.getAttribute('data-bs-whatever')
+  var domain_actual_name = button.getAttribute('data-domain-name')
   var id_domain = button.getAttribute('data-domain-id')
   // If necessary, you could initiate an AJAX request here
   // and then do the updating in a callback.
