@@ -30,7 +30,7 @@
                        <tr>
                             <th scope="row">1</th>
                             <td>Téléphonie</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterDomain" data-domain-id="23" data-domain-name="Téléphonie">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                        </tr>
                        <tr>
@@ -108,7 +108,7 @@
                             <th scope="row">1</th>
                             <td>Téléphonie</td>
                             <td>Smarthphone</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterType" data-type-id="25" data-type-domain-app="Objet connecté" data-type-name="Smartphone">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                         </tr>
                         <tr>
@@ -136,14 +136,14 @@
                             <th scope="row">2</th>
                             <td>Objets connectés</td>
                             <td>montre</td>
-                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterType" data-type-id="25" data-type-domain-app="Objet connecté" data-type-name="Montre">Modifier</button></td>
+                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
                             <td>Objets connectés</td>
                             <td>HomePod</td>
-                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterDomain" data-domain-id="23" data-domain-name="HomePod">Modifier</button></td>
+                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                         </tr>
                     </tbody>
