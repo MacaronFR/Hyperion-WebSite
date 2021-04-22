@@ -310,7 +310,7 @@
 <script>
     // ---------- callModalDomain  ----------
     var domainModal = document.getElementById('modalAlterCategory')
-    modalAlterDomain.addEventListener('show.bs.modal', function (event)
+    modalAlterCategory.addEventListener('show.bs.modal', function (event)
     {
         var button = event.relatedTarget
         var domain_actual_name = button.getAttribute('data-category-name')
