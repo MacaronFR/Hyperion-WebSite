@@ -183,23 +183,45 @@
     </div>
 </div>
 
+<!-- Modal AlterType -->
+<div class="modal fade" id="modalAlterType" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="titleModalType">Modifier le Domaine</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="col-form-label">id du type:</label>
+                        <input type="text" class="form-control" id="actualTypeName" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Nouveau nom du Type:</label>
+                        <input class="form-control" id="newTypeName">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Modifier</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- script callModalDomain -->
 <script>
-var domainModal = document.getElementById('modalAlterDomain')
-modalAlterDomain.addEventListener('show.bs.modal', function (event) {
-    // Button that triggered the modal
-    var button = event.relatedTarget
-  // Extract info from data-bs-* attributes
-  var domain_actual_name = button.getAttribute('data-domain-name')
-  var id_domain = button.getAttribute('data-domain-id')
-  // If necessary, you could initiate an AJAX request here
-  // and then do the updating in a callback.
-  //
-  // Update the modal's content.
-  var modalTitle = document.getElementById('titleModalDomain')
-  var modalBodyInput = document.getElementById('actualDomaineName')
-
-  modalTitle.textContent = 'Renommer le Domaine : ' + domain_actual_name
-  modalBodyInput.value = id_domain
-})
+    var domainModal = document.getElementById('modalAlterDomain')
+    modalAlterDomain.addEventListener('show.bs.modal', function (event)
+    {
+        var button = event.relatedTarget
+        var domain_actual_name = button.getAttribute('data-domain-name')
+        var id_domain = button.getAttribute('data-domain-id')
+        var modalTitle = document.getElementById('titleModalDomain')
+        var modalBodyInput = document.getElementById('actualDomaineName')
+        modalTitle.textContent = 'Renommer le Domaine : ' + domain_actual_name
+        modalBodyInput.value = id_domain
+    })
 </script>
