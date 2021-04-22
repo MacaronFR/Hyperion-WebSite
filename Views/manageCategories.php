@@ -309,9 +309,8 @@
 
 <script>
     // ---------- callModalDomain  ----------
-    var domainModal = document.getElementById('modalAlterCategory')
-    modalAlterCategory.addEventListener('show.bs.modal', function (event)
-    {
+    //var domainModal = document.getElementById('modalAlterCategory')
+	$("#modalAlterCategory").on('show.bs.modal' ,function (event) {
         var button = event.relatedTarget
         var domain_actual_name = button.getAttribute('data-category-name')
         var id_domain = button.getAttribute('data-category-id')
