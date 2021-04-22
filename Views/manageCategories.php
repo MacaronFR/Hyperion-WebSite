@@ -9,14 +9,16 @@
     <div id="div_manage_domain" class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
         <div id="div_create_category" class="container mb-4">
             <h3 class="mb-3">Ajouter une catégorie de produit</h3>
-            <div class="row">
-                <div class="col-7">
-                    <input class="form-control" type="text" placeholder="Saisie d'une catégorie de produit">
+            <form action="/verifAddDomainProduct" method="post">
+                <div class="row">
+                    <div class="col-7">
+                        <input class="form-control" type="text" placeholder="Saisie d'une catégorie de produit">
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-primary" type="submit">Ajouter</button>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <button class="btn btn-primary" type="submit">Ajouter</button>
-                </div>
-            </div>
+            </form>
         </div>
         <div id="div_manage_all_category" class="container mt-3">
             <h3 class="mb-3">Toutes les catégories de produit</h3>
