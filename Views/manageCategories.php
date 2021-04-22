@@ -1,21 +1,25 @@
-<?php ?>
+<?php
+/**
+ * @var array $categories
+ */
+?>
 <div id="div_main_manage_domains_caracteristiques" class="container-fluid d-flex flex-column mt-11 mt-lg-2">
     <h1 style="text-align: center" class="mb-4">Gestion des caractéristiques & catégories</h1>
     <!-- gestion categories of product -->
     <div id="div_manage_domain" class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
-        <div id="div_create_domain mb-4" class="container">
-            <h3 class="mb-3">Ajouter un domaine de produit</h3>
+        <div id="div_create_category" class="container mb-4">
+            <h3 class="mb-3">Ajouter une catégorie de produit</h3>
             <div class="row">
                 <div class="col-7">
-                    <input class="form-control" type="text" placeholder="Saisie d'un domaine de produit">
+                    <input class="form-control" type="text" placeholder="Saisie d'une catégorie de produit">
                 </div>
                 <div class="col-3">
                     <button class="btn btn-primary" type="submit">Ajouter</button>
                 </div>
             </div>
         </div>
-        <div id="div_manage_all_domain" class="container mt-3">
-            <h3 class="mb-3">Tous les domaines de produit</h3>
+        <div id="div_manage_all_category" class="container mt-3">
+            <h3 class="mb-3">Toutes les catégories de produit</h3>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -27,42 +31,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                       <tr>
-                            <th scope="row">1</th>
-                            <td>Téléphonie</td>
-                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterDomain" data-domain-id="23" data-domain-name="Téléphonie">Modifier</button></td>
+					<?php foreach($categories as $category):?>
+                       <tr id="cat<?= $category['id']?>">
+                            <th scope="row"><?= $category['id']?></th>
+                            <td><?= $category["name"] ?></td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterCategory" data-category-id="<?= $category['id']?>" data-category-name="<?= $category['name']?>">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                        </tr>
-                       <tr>
-                            <th scope="row">2</th>
-                            <td>Vidéo</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                       </tr>
-                       <tr>
-                            <th scope="row">3</th>
-                            <td>Electro-ménager</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                       </tr>
-                       <tr>
-                            <th scope="row">4</th>
-                            <td>Tv</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                       </tr>
-                       <tr>
-                            <th scope="row">5</th>
-                            <td>Objets connectés</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                       </tr>
-                       <tr>
-                            <th scope="row">6</th>
-                            <td>Audio & HIFI</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                       </tr>
+					<?php endforeach;?>
                     </tbody>
                 </table>
             </div>
@@ -234,22 +210,22 @@
 
 
 <!-- Modal AlterDomain -->
-<div class="modal fade" id="modalAlterDomain" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="modalAlterCategory" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="titleModalDomain">Modifier le Domaine</h5>
+                <h5 class="modal-title" id="titleModalCategory">Modifier la catégorie</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
                 <form>
                     <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">id du domaine:</label>
-                        <input type="text" class="form-control" id="actualDomaineName" disabled>
+                        <label for="recipient-name" class="col-form-label">id de la catégorie:</label>
+                        <input type="text" class="form-control" id="actualCategoryName" disabled>
                     </div>
                     <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Nouveau nom du domaine:</label>
-                        <input class="form-control" id="newDomainName">
+                        <label for="message-text" class="col-form-label">Nouveau nom de la catégorie:</label>
+                        <input class="form-control" id="newCategoryName">
                     </div>
                 </form>
             </div>
@@ -333,14 +309,14 @@
 
 <script>
     // ---------- callModalDomain  ----------
-    var domainModal = document.getElementById('modalAlterDomain')
+    var domainModal = document.getElementById('modalAlterCategory')
     modalAlterDomain.addEventListener('show.bs.modal', function (event)
     {
         var button = event.relatedTarget
-        var domain_actual_name = button.getAttribute('data-domain-name')
-        var id_domain = button.getAttribute('data-domain-id')
-        var modalTitle = document.getElementById('titleModalDomain')
-        var modalBodyInput = document.getElementById('actualDomaineName')
+        var domain_actual_name = button.getAttribute('data-category-name')
+        var id_domain = button.getAttribute('data-category-id')
+        var modalTitle = document.getElementById('titleModalCategory')
+        var modalBodyInput = document.getElementById('actualCategoryName')
         modalTitle.textContent = 'Renommer le Domaine : ' + domain_actual_name
         modalBodyInput.value = id_domain
     })
