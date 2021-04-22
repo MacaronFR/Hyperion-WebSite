@@ -46,19 +46,19 @@
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                        </tr>
                        <tr>
-                            <th scope="row">1</th>
+                            <th scope="row">4</th>
                             <td>Tv</td>
                             <td><button type="button" class="btn btn-primary">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                        </tr>
                        <tr>
-                            <th scope="row">2</th>
+                            <th scope="row">5</th>
                             <td>Objets connectés</td>
                             <td><button type="button" class="btn btn-primary">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                        </tr>
                        <tr>
-                            <th scope="row">3</th>
+                            <th scope="row">6</th>
                             <td>Audio & HIFI</td>
                             <td><button type="button" class="btn btn-primary">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
@@ -126,21 +126,21 @@
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                         </tr>
                         <tr>
-                            <th scope="row">1</th>
+                            <th scope="row">4</th>
                             <td>Tv</td>
                             <td>écran plat</td>
                             <td><button type="button" class="btn btn-primary">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                         </tr>
                         <tr>
-                            <th scope="row">2</th>
+                            <th scope="row">5</th>
                             <td>Objets connectés</td>
                             <td>montre</td>
                             <td><button type="button" class="btn btn-primary">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                         </tr>
                         <tr>
-                            <th scope="row">3</th>
+                            <th scope="row">6</th>
                             <td>Objets connectés</td>
                             <td>HomePod</td>
                             <td><button type="button" class="btn btn-primary">Modifier</button></td>
@@ -200,6 +200,15 @@
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Nouveau nom du Type:</label>
                         <input class="form-control" id="newTypeName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Nouveau nom domaine du type:</label>
+                        <select class="form-select">
+                            <option selected>Choisir un Domaine de produit</option>
+                            <option value="1">Téléphonie</option>
+                            <option value="2">Vidéo</option>
+                            <option value="3">Electro-ménager</option>
+                        </select>
                     </div>
                 </form>
             </div>
