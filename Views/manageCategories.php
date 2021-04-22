@@ -188,7 +188,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="titleModalType">Modifier le Domaine</h5>
+                <h5 class="modal-title" id="titleModalType"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
@@ -236,7 +236,7 @@
         var id_type = button.getAttribute('data-type-id')
         var modalTitle = document.getElementById('titleModalType')
         var modalBodyInput = document.getElementById('actualTypeName')
-        modalTitle.textContent = 'Renommer le type : ' + Type_actual_name
+        modalTitle.textContent = 'Alterer le type : ' + Type_actual_name
         modalBodyInput.value = id_type
     })
 </script>
