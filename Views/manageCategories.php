@@ -160,7 +160,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modifier le Domaine</h5>
+                <h5 class="modal-title" id="titleModalDomain">Modifier le Domaine</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
@@ -196,7 +196,7 @@ modalAlterDomain.addEventListener('show.bs.modal', function (event) {
   // and then do the updating in a callback.
   //
   // Update the modal's content.
-  var modalTitle = domainModal.querySelector('.modal-title')
+  var modalTitle = document.getElementById('titleModalDomain')
   var modalBodyInput = document.getElementById('actualDomaineName')
 
   modalTitle.textContent = 'Renommer le Domaine : ' + domain_actual_name
