@@ -1,4 +1,6 @@
 RewriteEngine On
 
+Header set Access-Control-Allow-Origin "*"
+
 RewriteCond "%{REQUESt_URI}" !\.(png|jpg|jpeg|ico|js|css|svg|ttf)
 RewriteRule (.*) index.php [L]

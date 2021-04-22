@@ -12,7 +12,7 @@
         <a class="navbar-brand" href="/shop">
             <img src="/assets/images/Hyperion-yellow-transparent.png" alt="logo_Hyperion" height="70">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader2" aria-controls="navbarHeader2" aria-expanded="false">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader2" aria-controls="navbarHeader2" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
 
