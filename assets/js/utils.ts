@@ -6,6 +6,7 @@ function API_REQUEST(path: string, method: string, param=[]){
 	$.ajax(url,
 		{
 			contentType: "application/json",
+			dataType: 'jsonp',
 			crossDomain: true,
 			method: method,
 			username: "hyperion",
