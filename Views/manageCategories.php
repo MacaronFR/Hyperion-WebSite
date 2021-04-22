@@ -368,9 +368,7 @@
         var id_spec = button.getAttribute('data-spec-id')
         var modalTitle = document.getElementById('titleModalSpec')
         var modalBodyInput = document.getElementById('actualSpecName')
-        var modalBodyInput_2 = document.getElementById('newSpecValue')
         modalTitle.textContent = 'Alterer la spec: ' + Spec_actual_name
         modalBodyInput.value = id_spec
-        modalBodyInput_2.value = Spec_actual_value
     })
 </script>
