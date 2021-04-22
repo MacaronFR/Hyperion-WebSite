@@ -10,5 +10,6 @@ require_once "Controllers/VerifInscriptionController.php";
 require_once "Controllers/ShopController.php";
 require_once "Controllers/DisconnectController.php";
 require_once "Controllers/ManageCategories.php";
+require_once "Controllers/ManageAddProductController.php";
 require_once "Router.php";
 require_once "utils.php";

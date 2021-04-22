@@ -108,7 +108,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Ajoutez un produit</a>
+                <a class="nav-link active" aria-current="page" href="/manageAddProduct">Ajoutez un produit</a>
                 <a class="nav-link" href="#">Consulter les produits</a>
                 <a class="nav-link" href="#">Gerer les caractéristiques & catégories</a>
             </div>
