@@ -10,6 +10,7 @@ use Hyperion\WebSite\InscriptionController;
 use Hyperion\WebSite\VerifInscriptionController;
 use Hyperion\WebSite\ShopController;
 use Hyperion\WebSite\ManageCategories;
+use Hyperion\WebSite\ManageAddProductController;
 
 
 include "autoload.php";
@@ -28,4 +29,6 @@ $rt->get("/shop", ShopController::class);
 $rt->get("/disconnect", DisconnectController::class);
 $rt->get("/manageCategories", ManageCategories::class);
 $rt->post("/manageCategories", ManageCategories::class);
+$rt->get("/manageAddProduct", ManageAddProductController::class);
+$rt->post("/manageAddProduct", ManageAddProductController::class);
 $rt->default();

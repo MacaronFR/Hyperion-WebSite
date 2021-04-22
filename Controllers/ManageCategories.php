@@ -7,6 +7,11 @@ require_once "autoload.php";
 class ManageCategories extends Controller
 {
     protected function prepareManageCategories(): string{
+		$response = API_request("/category", "GET");
+		$categories = [];
+		if($response !== false && $response["status"]["code"]){
+			$categories = $response["content"];
+		}
         ob_start();
         include "Views/manageCategories.php";
         return ob_get_clean();
