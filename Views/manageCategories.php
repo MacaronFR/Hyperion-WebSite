@@ -136,7 +136,7 @@
                             <th scope="row">2</th>
                             <td>Objets connectés</td>
                             <td>montre</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterTomain" data-domain-id="25" data-domain-name="Objetconnecté">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                         </tr>
                         <tr>
@@ -211,8 +211,9 @@
     </div>
 </div>
 
-<!-- script callModalDomain -->
+
 <script>
+    // ---------- callModalDomain  ----------
     var domainModal = document.getElementById('modalAlterDomain')
     modalAlterDomain.addEventListener('show.bs.modal', function (event)
     {
@@ -223,5 +224,18 @@
         var modalBodyInput = document.getElementById('actualDomaineName')
         modalTitle.textContent = 'Renommer le Domaine : ' + domain_actual_name
         modalBodyInput.value = id_domain
+    })
+
+    // ---------- callModalType  ----------
+    var typeModal = document.getElementById('modalAlterType')
+    modalAlterType.addEventListener('show.bs.modal', function (event)
+    {
+        var button = event.relatedTarget
+        var Type_actual_name = button.getAttribute('data-domain-name')
+        var id_type = button.getAttribute('data-domain-id')
+        var modalTitle = document.getElementById('titleModalDomain')
+        var modalBodyInput = document.getElementById('actualDomaineName')
+        modalTitle.textContent = 'Renommer le Domaine : ' + Type_actual_name
+        modalBodyInput.value = id_type
     })
 </script>
