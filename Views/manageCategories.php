@@ -136,7 +136,7 @@
                             <th scope="row">2</th>
                             <td>Objets connectés</td>
                             <td>montre</td>
-                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterTomain" data-domain-id="25" data-domain-name="Objetconnecté">Modifier</button></td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterType" data-domain-id="25" data-domain-name="Objetconnecté">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                         </tr>
                         <tr>
