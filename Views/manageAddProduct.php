@@ -76,7 +76,7 @@
             </div>
         </div>
         <div class="col-11 col-lg-6 align-self-center mb-5">
-            <button class="btn btn-primary buttonmax" type="submit">Ajouter</button>
+            <button class="btn btn-primary buttonmax" type="submit">Ajouter ce produit</button>
         </div>
     </div>
 </form>
