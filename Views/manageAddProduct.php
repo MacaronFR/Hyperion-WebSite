@@ -5,10 +5,10 @@
             <div class="container mb-3">
                 <h3 class="mb-3">Général</h3>
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-6">
                         <input class="form-control" type="text" placeholder="Type de produit">
                     </div>
-                    <div class="col-5">
+                    <div class="col-6">
                         <input class="form-control" type="text" placeholder="Marque du produit">
                     </div>
                 </div>
