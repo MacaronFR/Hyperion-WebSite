@@ -64,7 +64,7 @@
                     <a class="nav-item nav-link" href="#">Gestion des Offres</a>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'3'): ?>
-                    <a class="nav-item nav-link" href="/manageCategories">Gestion des Produits</a>
+                    <a class="nav-item nav-link" href="/manageAddProduct">Gestion des Produits</a>
                     <a class="nav-item nav-link" href="#">Gestion des Offres</a>
                     <a class="nav-item nav-link" href="#">Gestion des Projets</a>
                 <?php endif; ?>
@@ -110,7 +110,7 @@
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" href="/manageAddProduct">Ajoutez un produit</a>
                 <a class="nav-link" href="#">Consulter les produits</a>
-                <a class="nav-link" href="#">Gerer les caractéristiques & catégories</a>
+                <a class="nav-link" href="/manageCategories">Gerer les caractéristiques & catégories</a>
             </div>
         </div>
     </div>
