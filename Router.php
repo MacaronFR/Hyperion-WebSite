@@ -45,6 +45,8 @@ class Router {
 	 */
 	private static function patternToRegex(string $pattern): string{
 		$regex = "/^" . str_replace("\*", "([^\/]*)", preg_quote($pattern, "/")) . "$/";
+		$regex = str_replace("\{", "(?:", $regex);
+		$regex = str_replace("\}", ")?", $regex);
 		return $regex;
 	}
 	
