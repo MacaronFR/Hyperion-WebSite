@@ -6,10 +6,20 @@
                 <h3 class="mb-3">Général</h3>
                 <div class="row">
                     <div class="col-6">
-                        <input class="form-control" type="text" placeholder="Type de produit">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Saisie d'une catégorie</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
                     </div>
                     <div class="col-6">
-                        <input class="form-control" type="text" placeholder="Marque du produit">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Saisie d'un type</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
                     </div>
                 </div>
             </div>
