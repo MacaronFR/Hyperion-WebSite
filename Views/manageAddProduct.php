@@ -17,11 +17,11 @@
         <div id="divAddProductStockage" class="row col-11 col-lg-6 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
             <div class="container mb-3">
                 <h3 class="mb-3">Stockage</h3>
-                <div class="row">
-                    <div class="col-5">
+                <div class="row mb-2">
+                    <div class="col-6">
                         <input class="form-control" type="text" placeholder="Nombres de stockages disponibles">
                     </div>
-                    <div class="col-2">
+                    <div class="col-6">
                         <button class="btn btn-primary" type="submit">Ajouter</button>
                     </div>
                 </div>
