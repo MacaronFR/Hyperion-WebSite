@@ -19,17 +19,16 @@
                 <h3 class="mb-3">Stockage</h3>
                 <div class="row mb-2">
                     <div class="col-6">
-                        <input class="form-control" type="text" placeholder="Nombres de stockages disponibles">
+                        <input class="form-control form-control-sm" type="text" placeholder="Nombres de stockages disponibles">
                     </div>
                     <div class="col-6">
-                        <button class="btn btn-primary buttonmax" type="submit">Ajouter champs supplémentaires</button>
+                        <button class="btn btn-primary buttonmax" type="submit">Actualiser nombres de champs</button>
                     </div>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputStockage">Value 1:</span>
                     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputStockage">
                 </div>
-
             </div>
         </div>
         <div id="divAddProductColorie" class="row col-11 col-lg-6 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
@@ -40,13 +39,12 @@
                         <input class="form-control" type="text" placeholder="Nombres de Colories disponibles">
                     </div>
                     <div class="col-6">
-                        <button class="btn btn-primary  buttonmax" type="submit">Ajouter</button>
+                        <button class="btn btn-primary  buttonmax" type="submit">Actualiser nombres de champs</button>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-5">
-                        <input class="form-control" type="text" placeholder="value">
-                    </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputColories">Value 1:</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputColories">
                 </div>
             </div>
         </div>
@@ -58,13 +56,12 @@
                         <input class="form-control" type="text" placeholder="Nombres d'autres specs disponibles">
                     </div>
                     <div class="col-6">
-                        <button class="btn btn-primary buttonmax" type="submit">Ajouter</button>
+                        <button class="btn btn-primary buttonmax" type="submit">Actualiser nombres de champs</button>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-5">
-                        <input class="form-control" type="text" placeholder="value">
-                    </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputOtherSpec">Value 1:</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputOtherSpec">
                 </div>
             </div>
         </div>
