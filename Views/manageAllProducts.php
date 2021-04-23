@@ -16,15 +16,48 @@
                     </tr>
                     </thead>
                     <tbody id="tabCat">
-                    <?php foreach($categories as $category):?>
-                        <tr id="cat<?= $category['id']?>" class="cat-line">
-                            <td><?= $category['id']?></td>
-                            <td><?= $category["name"] ?></td>
-                            <td><?= $category["name"] ?></td>
-                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterCategory" data-category-id="<?= $category['id']?>" data-category-name="<?= $category['name']?>">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger delete-cat" data-category-id="<?= $category['id']?>">Supprimer</button></td>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>iphone 6s</td>
+                            <td>16 GB</td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterType" data-type-id="25" data-type-domain-app="Objet connecté" data-type-name="Smartphone">Modifier</button></td>
+                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                         </tr>
-                    <?php endforeach;?>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>iphone 6s</td>
+                            <td>32 GB</td>
+                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>iphone 6s</td>
+                            <td>64 GB</td>
+                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>iphone 6s</td>
+                            <td>Noir</td>
+                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>iphone 6s</td>
+                            <td>Blanc</td>
+                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Samsung A6</td>
+                            <td>32 GB</td>
+                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
+                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
