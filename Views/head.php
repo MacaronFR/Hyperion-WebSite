@@ -19,3 +19,7 @@
 
 
 <script src="/assets/js/utils.js"></script>
+
+<!-- test pour mika -->
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
