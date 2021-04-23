@@ -22,7 +22,7 @@ class ManageAllProductController extends Controller
         $main = $this->prepareManageAllProducts();
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
-        include "Views/manageAllProducts.php";
+        include "Views/root.php";
     }
 
     /**
@@ -35,6 +35,6 @@ class ManageAllProductController extends Controller
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
         var_dump($_POST);
-        include "Views/manageAllProducts.php";
+        include "Views/root.php";
     }
 }
