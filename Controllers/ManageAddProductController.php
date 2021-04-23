@@ -30,7 +30,7 @@ class ManageAddProductController extends Controller
      * @inheritDoc
      */
     public function post(array $args){
-        $head = $this->prepareHead("Shop");
+        $head = $this->prepareHead("ManageAddProduct");
         $header = $this->prepareHeader_2($root['header'], "ManageAddProduct");
         $main = $this->prepareManageAddProduct();
         $footer = $this->prepareFooter();
