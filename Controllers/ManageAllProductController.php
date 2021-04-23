@@ -6,21 +6,6 @@ require_once "autoload.php";
 
 class ManageAllProductController extends Controller
 {
-
-    /**
-     * @inheritDoc
-     */
-    protected function prepareManageAllProduct(): string{
-        $response = API_request("/manageAllProducts", "GET");
-        $categories = [];
-        if($response !== false && $response["status"]["code"]){
-            $categories = $response["content"];
-        }
-        ob_start();
-        include "Views/manageAllProducts.php";
-        return ob_get_clean();
-    }
-
     /**
      * @inheritDoc
      */
@@ -33,4 +18,6 @@ class ManageAllProductController extends Controller
         $body = $this->prepareBody($header, $main, $footer);
         include "Views/root.php";
     }
+
+    public function post(array $args){return false; }
 }
