@@ -13,5 +13,6 @@ require_once "Controllers/ManageCategories.php";
 require_once "Controllers/ManageAddProductController.php";
 require_once "Controllers/VerifAddDomainProductController.php";
 require_once "Controllers/ManageAllProductController.php";
+require_once "Controllers/SpecController.php";
 require_once "Router.php";
 require_once "utils.php";
