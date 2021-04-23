@@ -19,7 +19,7 @@
                 <h3 class="mb-3">Stockage</h3>
                 <div class="row mb-2">
                     <div class="col-6">
-                        <input class="form-control form-control-sm" type="text" placeholder="Nombres de stockages disponibles">
+                        <input class="form-control" type="text" placeholder="Nombres de stockages disponibles">
                     </div>
                     <div class="col-6">
                         <button class="btn btn-primary buttonmax" type="submit">Actualiser nombres de champs</button>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputStockage">Value 1:</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputStockage">
+                    <input type="text" class="form-control form-control-sm" aria-label="Sizing example input" aria-describedby="inputStockage">
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputColories">Value 1:</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputColories">
+                    <input type="text" class="form-control form-control-sm" aria-label="Sizing example input" aria-describedby="inputColories">
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputOtherSpec">Value 1:</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputOtherSpec">
+                    <input type="text" class="form-control form-control-sm" aria-label="Sizing example input" aria-describedby="inputOtherSpec">
                 </div>
             </div>
         </div>
