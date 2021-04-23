@@ -11,10 +11,10 @@
             <h3 class="mb-3">Ajouter une catégorie de produit</h3>
             <div class="row">
                 <div class="col-7">
-                    <input class="form-control" type="text" placeholder="Saisie d'une catégorie de produit">
+                    <input class="form-control" type="text" placeholder="Saisie d'une catégorie de produit" id="addCategoryInput">
                 </div>
                 <div class="col-3">
-                    <button class="btn btn-primary" type="submit">Ajouter</button>
+                    <button class="btn btn-primary" type="submit" id="addCategory">Ajouter</button>
                 </div>
             </div>
         </div>
@@ -30,13 +30,13 @@
                         <th scope="col"></th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tabCat">
 					<?php foreach($categories as $category):?>
-                       <tr id="cat<?= $category['id']?>">
-                            <th scope="row"><?= $category['id']?></th>
+                       <tr id="cat<?= $category['id']?>" class="cat-line">
+                            <td><?= $category['id']?></td>
                             <td><?= $category["name"] ?></td>
                             <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterCategory" data-category-id="<?= $category['id']?>" data-category-name="<?= $category['name']?>">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+                            <td><button type="button" class="btn btn-danger delete-cat" data-category-id="<?= $category['id']?>">Supprimer</button></td>
                        </tr>
 					<?php endforeach;?>
                     </tbody>
@@ -225,13 +225,13 @@
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Nouveau nom de la catégorie:</label>
-                        <input class="form-control" id="newCategoryName">
+                        <input class="form-control" id="newCategoryName" placeholder="Nom">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Modifier</button>
+                <button type="button" class="btn btn-primary" id="changeCategory">Modifier</button>
             </div>
         </div>
     </div>
@@ -306,19 +306,102 @@
     </div>
 </div>
 
+<!-- TOAST -->
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 1500">
+	<div id="ToastError" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-danger">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+	<div id="ToastSuccess" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-success">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+	<div id="ToastWarning" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-warning">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+</div>
 
 <script>
+	let toastEL = [].slice.call(document.querySelectorAll(".toast"));
+	let toastList = toastEL.map(function (toastE) {
+		return new bootstrap.Toast(toastE)
+	})
+	toastList[0].show();
+	toastList[1].show();
+	toastList[2].show();
     // ---------- callModalDomain  ----------
     //var domainModal = document.getElementById('modalAlterCategory')
 	$("#modalAlterCategory").on('show.bs.modal' ,function (event) {
-        var button = event.relatedTarget
-        var domain_actual_name = button.getAttribute('data-category-name')
-        var id_domain = button.getAttribute('data-category-id')
-        var modalTitle = document.getElementById('titleModalCategory')
-        var modalBodyInput = document.getElementById('actualCategoryName')
+        let button = event.relatedTarget
+        let domain_actual_name = button.getAttribute('data-category-name')
+        let id_domain = button.getAttribute('data-category-id')
+        let modalTitle = document.getElementById('titleModalCategory')
+        let modalBodyInput = document.getElementById('actualCategoryName')
+		$("#newCategoryName").attr("placeholder", domain_actual_name)
+		$('#changeCategory').on("click", function (){
+			let value = $("#newCategoryName").val();
+			API_REQUEST("/category/" + token + "/" + id_domain, "PUT", {"name": value}).then((res) => {
+				if(res['status']['code'] === 200){
+					$("#cat" + id_domain).children()[1].innerText = value;
+					button.dataset["categoryName"] = value
+					$("#modalAlterCategory").modal("toggle")
+					$("#ToastSuccess").children(".toast-body").text("Catégorie modifiée avec succès")
+					toastList[1].show()
+					$("#newCategoryName").val("")
+				}
+			}).catch((res) => {
+				$("#ToastError").children(".toast-body").text("Erreur lors de la modification")
+				toastList[0].show()
+			});
+		})
         modalTitle.textContent = 'Renommer le Domaine : ' + domain_actual_name
         modalBodyInput.value = id_domain
     })
+
+	$(".delete-cat").on('click', deleteCat)
+	function deleteCat(){
+		let id = $(this).data("category-id")
+		API_REQUEST("/category/" + token + "/" + id, "DELETE").then(() => {
+			let catid = "cat" + id
+			$("#"+catid).remove()
+			$("#ToastSuccess").children(".toast-body").text("Catégorie supprimer avec succès")
+			toastList[1].show()
+		}).catch((res) => {
+			$("#ToastError").children(".toast-body").text("Erreur lors de la suppression")
+			toastList[0].show()
+		})
+	}
+
+	$("#addCategory").on("click", function(){
+		let name = $("#addCategoryInput").val()
+		API_REQUEST("/category/" + token, "POST", {"name": name}).then((res) =>{
+			if(res['status']['code'] === 201){
+				let new_line = $($(".cat-line")[0]).clone(true, true);
+				new_line.attr("id", "cat" + res['content'][0]);
+				new_line.children()[0].textContent = res['content'][0];
+				new_line.children()[1].textContent = name;
+				new_line.children()[2].children[0].dataset["categoryId"] = res['content'][0];
+				new_line.children()[2].children[0].dataset["categoryName"] = name;
+				new_line.children()[3].children[0].dataset["categoryId"] = res['content'][0];
+				$(new_line.children()[3].children[0]).off("click");
+				$(new_line.children()[3].children[0]).on("click", deleteCat);
+				new_line.prependTo($("#tabCat"));
+				$("#ToastSuccess").children(".toast-body").text("Catégorie ajouter avec succès");
+				toastList[1].show();
+				$("#addCategoryInput").val("");
+			}else if(res['status']['code'] === 202){
+				$("#ToastWarning").children(".toast-body").text("La catégorie existe déjà")
+				toastList[2].show()
+			}
+		}).catch((res) => {
+			$("#ToastError").children(".toast-body").text("Erreur lors de la création")
+			toastList[0].show()
+		})
+	})
 
     // ---------- callModalType  ----------
     var typeModal = document.getElementById('modalAlterType')

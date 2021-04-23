@@ -12,7 +12,7 @@
         <a class="navbar-brand" href="/shop">
             <img src="/assets/images/Hyperion-yellow-transparent.png" alt="logo_Hyperion" height="70">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader2" aria-controls="navbarHeader2" aria-expanded="false">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader2" aria-controls="navbarHeader2" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -64,7 +64,7 @@
                     <a class="nav-item nav-link" href="#">Gestion des Offres</a>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'3'): ?>
-                    <a class="nav-item nav-link" href="/manageCategories">Gestion des Produits</a>
+                    <a class="nav-item nav-link" href="/manageAddProduct">Gestion des Produits</a>
                     <a class="nav-item nav-link" href="#">Gestion des Offres</a>
                     <a class="nav-item nav-link" href="#">Gestion des Projets</a>
                 <?php endif; ?>
@@ -99,7 +99,7 @@
         </div>
     </div>
 </nav>
-<?php elseif ($title === "ManageCategories"): ?>
+<?php elseif ($title === "ManageCategories" || $title === "ManageAddProduct" || $title === "ManageAllProducts"): ?>
 <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Catégories</a>
@@ -109,8 +109,8 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" href="/manageAddProduct">Ajoutez un produit</a>
-                <a class="nav-link" href="#">Consulter les produits</a>
-                <a class="nav-link" href="#">Gerer les caractéristiques & catégories</a>
+                <a class="nav-link" href="/manageAllProducts">Consulter les produits</a>
+                <a class="nav-link" href="/manageCategories">Gerer les caractéristiques & catégories</a>
             </div>
         </div>
     </div>
