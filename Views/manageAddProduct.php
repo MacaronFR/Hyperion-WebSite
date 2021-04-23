@@ -22,7 +22,7 @@
                         <input class="form-control" type="text" placeholder="Nombres de stockages disponibles">
                     </div>
                     <div class="col-6">
-                        <button class="btn btn-primary" type="submit">Ajouter</button>
+                        <button class="btn btn-primary buttonmax" type="submit">Ajouter</button>
                     </div>
                 </div>
                 <div class="row">
@@ -36,11 +36,11 @@
             <div class="container mb-3">
                 <h3 class="mb-3">Colorie</h3>
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-6">
                         <input class="form-control" type="text" placeholder="Nombres de Colories disponibles">
                     </div>
-                    <div class="col-2">
-                        <button class="btn btn-primary" type="submit">Ajouter</button>
+                    <div class="col-6">
+                        <button class="btn btn-primary  buttonmax" type="submit">Ajouter</button>
                     </div>
                 </div>
                 <div class="row">
@@ -54,11 +54,11 @@
             <div class="container mb-3">
                 <h3 class="mb-3">Autres specs</h3>
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-6">
                         <input class="form-control" type="text" placeholder="Nombres d'autres specs disponibles">
                     </div>
-                    <div class="col-2">
-                        <button class="btn btn-primary" type="submit">Ajouter</button>
+                    <div class="col-6">
+                        <button class="btn btn-primary buttonmax" type="submit">Ajouter</button>
                     </div>
                 </div>
                 <div class="row">
