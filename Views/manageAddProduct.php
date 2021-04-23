@@ -1,22 +1,79 @@
-h
-<div id="div_manage_types" class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
-    <div id="div_create_type" class="container mb-3">
-        <h3 class="mb-3">Ajouter un Type de produits associés à son domaine</h3>
-        <div class="row">
-            <div class="col-5">
-                <input class="form-control" type="text" placeholder="Saisie d'un type de produit">
-            </div>
-            <div class="col-5">
-                <select class="form-select">
-                    <option selected>Choisir un Domaine de produit</option>
-                    <option value="1">Téléphonie</option>
-                    <option value="2">Vidéo</option>
-                    <option value="3">Electro-ménager</option>
-                </select>
-            </div>
-            <div class="col-2">
-                <button class="btn btn-primary" type="submit">Ajouter</button>
+<div id="manageAddProduct">
+    <h1 style="text-align: center" class="mb-4">Ajouter un nouveau produit</h1>
+    <form>
+        <div id="divAddProductGeneral" class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
+            <div class="container mb-3">
+                <h3 class="mb-3">Général</h3>
+                <div class="row">
+                    <div class="col-5">
+                        <input class="form-control" type="text" placeholder="Type de produit">
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control" type="text" placeholder="Marque du produit">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+        <div id="divAddProductStockage" class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
+            <div class="container mb-3">
+                <h3 class="mb-3">Stockage</h3>
+                <div class="row">
+                    <div class="col-5">
+                        <input class="form-control" type="text" placeholder="Nombres de stockages disponibles">
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-primary" type="submit">Ajouter</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <input class="form-control" type="text" placeholder="value">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divAddProductColorie" class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
+            <div class="container mb-3">
+                <h3 class="mb-3">Colorie</h3>
+                <div class="row">
+                    <div class="col-5">
+                        <input class="form-control" type="text" placeholder="Nombres de Colories disponibles">
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-primary" type="submit">Ajouter</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <input class="form-control" type="text" placeholder="value">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divAddProductSpecs" class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
+            <div class="container mb-3">
+                <h3 class="mb-3">Autres specs</h3>
+                <div class="row">
+                    <div class="col-5">
+                        <input class="form-control" type="text" placeholder="Nombres d'autres specs disponibles">
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-primary" type="submit">Ajouter</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <input class="form-control" type="text" placeholder="value">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-primary" type="submit">Ajouter</button>
+        </div>
+    </form>
 </div>
+
+
+
+
