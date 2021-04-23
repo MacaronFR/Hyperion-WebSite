@@ -1,6 +1,7 @@
 <?php
 /**
  * @var array $categories
+ * @var array $types
  */
 ?>
 <div id="div_main_manage_domains_caracteristiques" class="container-fluid d-flex flex-column mt-11 mt-lg-2">
@@ -55,10 +56,10 @@
                 </div>
                 <div class="col-5">
                     <select class="form-select">
-                        <option selected>Choisir un Domaine de produit</option>
-                        <option value="1">Téléphonie</option>
-                        <option value="2">Vidéo</option>
-                        <option value="3">Electro-ménager</option>
+                        <option selected disabled>Choisir un Domaine de produit</option>
+                        <?php foreach($categories as $cat): ?>
+							<option value="<?= $cat['id']?>"><?= $cat['name']?></option>
+						<?php endforeach;?>
                     </select>
                 </div>
                 <div class="col-2">
@@ -73,55 +74,22 @@
                     <thead>
                     <tr>
                         <th scope="col">id</th>
+						<th scope="col">Type de produit</th>
                         <th scope="col">Nom Du domaine</th>
-                        <th scope="col">Type de produit</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>
                     </thead>
                     <tbody>
+					<?php foreach($types as $type): ?>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Téléphonie</td>
-                            <td>Smarthphone</td>
+                            <td><?= $type['id'] ?></td>
+                            <td><?= $type['type'] ?></td>
+                            <td><?= $type['category']?></td>
                             <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterType" data-type-id="25" data-type-domain-app="Objet connecté" data-type-name="Smartphone">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Téléphonie</td>
-                            <td>Téléphone fix</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Téléphonie</td>
-                            <td>Baby-phone</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Tv</td>
-                            <td>écran plat</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Objets connectés</td>
-                            <td>montre</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">6</th>
-                            <td>Objets connectés</td>
-                            <td>HomePod</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                        </tr>
+					<?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
