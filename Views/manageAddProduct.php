@@ -75,8 +75,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-2">
-            <button class="btn btn-primary" type="submit">Ajouter</button>
+        <div class="col-11 align-self-center">
+            <button class="btn btn-primary buttonmax" type="submit">Ajouter</button>
         </div>
     </div>
 </form>
