@@ -1,6 +1,6 @@
-<div id="manageAddProduct" class="container-fluid d-flex flex-column mt-11 mt-lg-2">
-    <h1 style="text-align: center" class="mb-4">Ajouter un nouveau produit</h1>
-
+<form action="##">
+    <div id="manageAddProduct" class="container-fluid d-flex flex-column mt-11 mt-lg-2">
+        <h1 style="text-align: center" class="mb-4">Ajouter un nouveau produit</h1>
         <div id="divAddProductGeneral" class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
             <div class="container mb-3">
                 <h3 class="mb-3">Général</h3>
@@ -71,8 +71,8 @@
         <div class="col-2">
             <button class="btn btn-primary" type="submit">Ajouter</button>
         </div>
-
-</div>
+    </div>
+</form>
 
 
 
