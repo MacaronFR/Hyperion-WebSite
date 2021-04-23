@@ -25,11 +25,11 @@
                         <button class="btn btn-primary buttonmax" type="submit">Ajouter</button>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-5">
-                        <input class="form-control" type="text" placeholder="value">
-                    </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="imputStockage">Value 1:</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="imputStockage">
                 </div>
+
             </div>
         </div>
         <div id="divAddProductColorie" class="row col-11 col-lg-6 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
