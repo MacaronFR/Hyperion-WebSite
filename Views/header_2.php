@@ -109,7 +109,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" href="/manageAddProduct">Ajoutez un produit</a>
-                <a class="nav-link" href="#">Consulter les produits</a>
+                <a class="nav-link" href="/manageAllProducts">Consulter les produits</a>
                 <a class="nav-link" href="/manageCategories">Gerer les caractéristiques & catégories</a>
             </div>
         </div>
