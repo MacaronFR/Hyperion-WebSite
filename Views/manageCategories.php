@@ -24,8 +24,8 @@
                 <table class="table" id="table_categories" data-toggle="table">
                     <thead>
                     <tr>
-                        <th scope="col">id</th>
-                        <th scope="col">Nom Du domaine</th>
+                        <th scope="col" data-sortable="true" data-field="id">id</th>
+                        <th scope="col" data-sortable="true" data-field="domainName">Nom Du domaine</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>
