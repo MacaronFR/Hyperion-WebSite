@@ -21,7 +21,7 @@
         <div id="div_manage_all_category" class="container mt-3">
             <h3 class="mb-3">Toutes les catégories de produit</h3>
             <div class="table-responsive">
-                <table class="table" id="table_categories">
+                <table class="table" id="table_categories" data-toggle="table">
                     <thead>
                     <tr>
                         <th scope="col">id</th>
