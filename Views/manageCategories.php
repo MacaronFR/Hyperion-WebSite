@@ -1,6 +1,7 @@
 <?php
 /**
  * @var array $categories
+ * @var array $types
  */
 ?>
 <div id="div_main_manage_domains_caracteristiques" class="container-fluid d-flex flex-column mt-11 mt-lg-2">
@@ -21,11 +22,11 @@
         <div id="div_manage_all_category" class="container mt-3">
             <h3 class="mb-3">Toutes les catégories de produit</h3>
             <div class="table-responsive">
-                <table class="table">
+                <table class="table" id="table_categories" data-toggle="table" data-search="true" data-pagination="true">
                     <thead>
                     <tr>
-                        <th scope="col">id</th>
-                        <th scope="col">Nom Du domaine</th>
+                        <th scope="col" data-sortable="true" data-field="id">id</th>
+                        <th scope="col" data-sortable="true" data-field="domainName">Nom Du domaine</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>
@@ -55,10 +56,10 @@
                 </div>
                 <div class="col-5">
                     <select class="form-select">
-                        <option selected>Choisir un Domaine de produit</option>
-                        <option value="1">Téléphonie</option>
-                        <option value="2">Vidéo</option>
-                        <option value="3">Electro-ménager</option>
+                        <option selected disabled>Choisir un Domaine de produit</option>
+                        <?php foreach($categories as $cat): ?>
+							<option value="<?= $cat['id']?>"><?= $cat['name']?></option>
+						<?php endforeach;?>
                     </select>
                 </div>
                 <div class="col-2">
@@ -73,55 +74,22 @@
                     <thead>
                     <tr>
                         <th scope="col">id</th>
+						<th scope="col">Type de produit</th>
                         <th scope="col">Nom Du domaine</th>
-                        <th scope="col">Type de produit</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>
                     </thead>
                     <tbody>
+					<?php foreach($types as $type): ?>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Téléphonie</td>
-                            <td>Smarthphone</td>
+                            <td><?= $type['id'] ?></td>
+                            <td><?= $type['type'] ?></td>
+                            <td><?= $type['category']?></td>
                             <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterType" data-type-id="25" data-type-domain-app="Objet connecté" data-type-name="Smartphone">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Téléphonie</td>
-                            <td>Téléphone fix</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Téléphonie</td>
-                            <td>Baby-phone</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Tv</td>
-                            <td>écran plat</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Objets connectés</td>
-                            <td>montre</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">6</th>
-                            <td>Objets connectés</td>
-                            <td>HomePod</td>
-                            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                        </tr>
+					<?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
@@ -308,17 +276,17 @@
 
 <!-- TOAST -->
 <div class="position-fixed top-0 end-0 p-3" style="z-index: 1500">
-	<div id="ToastError" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+	<div id="ToastError" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
 		<div class="toast-body bg-danger">
 			Hello, world! This is a toast message.
 		</div>
 	</div>
-	<div id="ToastSuccess" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+	<div id="ToastSuccess" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
 		<div class="toast-body bg-success">
 			Hello, world! This is a toast message.
 		</div>
 	</div>
-	<div id="ToastWarning" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+	<div id="ToastWarning" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
 		<div class="toast-body bg-warning">
 			Hello, world! This is a toast message.
 		</div>
@@ -330,9 +298,6 @@
 	let toastList = toastEL.map(function (toastE) {
 		return new bootstrap.Toast(toastE)
 	})
-	toastList[0].show();
-	toastList[1].show();
-	toastList[2].show();
     // ---------- callModalDomain  ----------
     //var domainModal = document.getElementById('modalAlterCategory')
 	$("#modalAlterCategory").on('show.bs.modal' ,function (event) {
@@ -342,6 +307,7 @@
         let modalTitle = document.getElementById('titleModalCategory')
         let modalBodyInput = document.getElementById('actualCategoryName')
 		$("#newCategoryName").attr("placeholder", domain_actual_name)
+		$('#changeCategory').off("click")
 		$('#changeCategory').on("click", function (){
 			let value = $("#newCategoryName").val();
 			API_REQUEST("/category/" + token + "/" + id_domain, "PUT", {"name": value}).then((res) => {
@@ -352,6 +318,9 @@
 					$("#ToastSuccess").children(".toast-body").text("Catégorie modifiée avec succès")
 					toastList[1].show()
 					$("#newCategoryName").val("")
+				}else if(res['status']['code'] === 202){
+					$("#ToastWarning").children(".toast-body").text("Cette catégorie existe déjà")
+					toastList[2].show()
 				}
 			}).catch((res) => {
 				$("#ToastError").children(".toast-body").text("Erreur lors de la modification")
