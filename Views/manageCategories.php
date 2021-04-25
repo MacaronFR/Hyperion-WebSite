@@ -37,7 +37,7 @@
                             <td><?= $category['id']?></td>
                             <td><?= $category["name"] ?></td>
                             <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterCategory" data-category-id="<?= $category['id']?>" data-category-name="<?= $category['name']?>">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger delete-cat" data-category-id="<?= $category['id']?>">Supprimer</button></td>
+                            <td><button type="button" class="btn btn-danger delete-cat" data-category-id="<?= $category['id']?>" data-bs-toggle="modal" data-bs-target="#modalDelete" data-category-name="<?= $category['name']?>">Supprimer</button></td>
                        </tr>
 					<?php endforeach;?>
                     </tbody>
@@ -85,8 +85,8 @@
                         <tr>
                             <td><?= $type['id'] ?></td>
                             <td><?= $type['type'] ?></td>
-                            <td><?= $type['category']?></td>
-                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterType" data-type-id="25" data-type-domain-app="Objet connecté" data-type-name="Smartphone">Modifier</button></td>
+                            <td><?= $type['category_name']?></td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterType" data-type-id="<?= $type["id"]?>" data-type-category-id="<?= $type["category"]?>" data-type-name="<?= $type["type"]?>">Modifier</button></td>
                             <td><button type="button" class="btn btn-danger">Supprimer</button></td>
                         </tr>
 					<?php endforeach; ?>
@@ -220,16 +220,15 @@
                         <input type="text" class="form-control" id="actualTypeName" disabled>
                     </div>
                     <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Nouveau nom du Type:</label>
+                        <label for="newTypeName" class="col-form-label">Nouveau nom du Type:</label>
                         <input class="form-control" id="newTypeName">
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Nouveau nom domaine du type:</label>
-                        <select class="form-select">
-                            <option selected>Choisir un Domaine de produit</option>
-                            <option value="1">Téléphonie</option>
-                            <option value="2">Vidéo</option>
-                            <option value="3">Electro-ménager</option>
+                        <select class="form-select" id="selectTypeCat">
+							<?php foreach($categories as $cat): ?>
+								<option value="<?= $cat['id']?>"><?= $cat['name']?></option>
+							<?php endforeach;?>
                         </select>
                     </div>
                 </form>
@@ -272,6 +271,21 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="modal fade" id="modalDelete" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Supprimer</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-danger delete">Supprimer</button>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!-- TOAST -->
@@ -331,19 +345,28 @@
         modalBodyInput.value = id_domain
     })
 
-	$(".delete-cat").on('click', deleteCat)
-	function deleteCat(){
-		let id = $(this).data("category-id")
+	$("#modalDelete").on("show.bs.modal", function (e){
+		let button = $(e.relatedTarget);
+		$(this).find(".modal-title").text("Supprimer catégorie : " + button.data("categoryName"));
+		$(this).find(".delete").off("click").on("click", function () {
+			deleteCat(button.data("categoryId"), $(this).parents(".modal"));
+		})
+	})
+
+	function deleteCat(id, modal){
 		API_REQUEST("/category/" + token + "/" + id, "DELETE").then(() => {
-			let catid = "cat" + id
-			$("#"+catid).remove()
+			const cat_id = "cat" + id
+			$("#"+cat_id).remove()
 			$("#ToastSuccess").children(".toast-body").text("Catégorie supprimer avec succès")
+			modal.modal("toggle");
 			toastList[1].show()
 		}).catch((res) => {
 			$("#ToastError").children(".toast-body").text("Erreur lors de la suppression")
 			toastList[0].show()
 		})
 	}
+
+	$(".delete-cat").on('click', deleteCat)
 
 	$("#addCategory").on("click", function(){
 		let name = $("#addCategoryInput").val()
@@ -373,17 +396,14 @@
 	})
 
     // ---------- callModalType  ----------
-    var typeModal = document.getElementById('modalAlterType')
-    modalAlterType.addEventListener('show.bs.modal', function (event)
-    {
-        var button = event.relatedTarget
-        var Type_actual_name = button.getAttribute('data-type-name')
-        var id_type = button.getAttribute('data-type-id')
-        var modalTitle = document.getElementById('titleModalType')
-        var modalBodyInput = document.getElementById('actualTypeName')
-        modalTitle.textContent = 'Alterer le type : ' + Type_actual_name
-        modalBodyInput.value = id_type
-    })
+    $("#modalAlterType").on("show.bs.modal", function (e){
+		const button = $(e.relatedTarget);
+		$("#titleModalType").textContent = "Modifier le type : " + button.data("typeName");
+		$("#actualTypeName").val(button.data("typeId"));
+		$("#newTypeName").attr("placeholder", button.data("typeName"));
+		$("#selectTypeCat").val(button.data("typeCategoryId")).change();
+	});
+
 
     // ---------- callModalSpec  ----------
     var specModal = document.getElementById('modalAlterSpec')
