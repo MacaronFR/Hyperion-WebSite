@@ -1,7 +1,7 @@
 declare var $: any;
 declare var jquery: any;
 
-function API_REQUEST(path: string, method: string, param = {}) {
+function API_REQUEST(path: string, method: string, param = {}, parse = true) {
 	let url = "https://api.hyperion.dev.macaron-dev.fr" + path;
 	return new Promise<any>(function(resolve, reject){
 		var xhr = new XMLHttpRequest();
@@ -15,7 +15,11 @@ function API_REQUEST(path: string, method: string, param = {}) {
 					}
 					try {
 						let res = JSON.parse(xhr.responseText);
-						resolve(res);
+						if(parse){
+							resolve(res);
+						}else{
+							resolve(JSON.stringify(res.content));
+						}
 					} catch (e) {
 						reject(xhr.responseText);
 					}

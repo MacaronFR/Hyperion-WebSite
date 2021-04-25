@@ -22,25 +22,16 @@
         <div id="div_manage_all_category" class="container mt-3">
             <h3 class="mb-3">Toutes les catégories de produit</h3>
             <div class="table-responsive">
-                <table class="table" id="table_categories" data-toggle="table" data-search="true" data-pagination="true" data-height="600">
+                <table class="table" id="table_categories" data-toggle="table" data-search="true" data-pagination="true" data-height="600" data-ajax="retrieve_cat" data-side-pagination="server">
                     <thead>
                     <tr>
-                        <th scope="col" data-sortable="true" data-field="id">id</th>
-                        <th scope="col" data-sortable="true" data-field="domainName">Nom Du domaine</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
+                        <th data-sortable="true" data-field="id">id</th>
+                        <th data-sortable="true" data-field="name">Nom Du domaine</th>
+						<th data-field="modif"></th>
+						<th data-field="suppr"></th>
                     </tr>
                     </thead>
-                    <tbody id="tabCat">
-					<?php foreach($categories as $category):?>
-                       <tr id="cat<?= $category['id']?>" class="cat-line">
-                            <td><?= $category['id']?></td>
-                            <td><?= $category["name"] ?></td>
-                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterCategory" data-category-id="<?= $category['id']?>" data-category-name="<?= $category['name']?>">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger delete-cat" data-category-id="<?= $category['id']?>" data-bs-toggle="modal" data-bs-target="#modalDelete" data-category-name="<?= $category['name']?>">Supprimer</button></td>
-                       </tr>
-					<?php endforeach;?>
-                    </tbody>
+
                 </table>
             </div>
         </div>
@@ -349,14 +340,13 @@
 		let button = $(e.relatedTarget);
 		$(this).find(".modal-title").text("Supprimer catégorie : " + button.data("categoryName"));
 		$(this).find(".delete").off("click").on("click", function () {
-			deleteCat(button.data("categoryId"), $(this).parents(".modal"));
+			deleteCat(button.data("categoryId"), $(this).parents(".modal"), button.parents("tr"));
 		})
 	})
 
-	function deleteCat(id, modal){
+	function deleteCat(id, modal, line){
 		API_REQUEST("/category/" + token + "/" + id, "DELETE").then(() => {
-			const cat_id = "cat" + id
-			$("#"+cat_id).remove()
+			$(line).remove()
 			$("#ToastSuccess").children(".toast-body").text("Catégorie supprimer avec succès")
 			modal.modal("toggle");
 			toastList[1].show()
@@ -365,8 +355,6 @@
 			toastList[0].show()
 		})
 	}
-
-	$(".delete-cat").on('click', deleteCat)
 
 	$("#addCategory").on("click", function(){
 		let name = $("#addCategoryInput").val()
@@ -418,4 +406,19 @@
         modalTitle.textContent = 'Alterer la spec: ' + Spec_actual_name
         modalBodyInput.value = id_spec
     })
+	var test;
+	function retrieve_cat(params){
+		let page = params.data.offset / 10
+    	API_REQUEST("/category/" + page, "GET").then((res) => {
+    		let rows = [];
+    		let total = res['content'].total;
+    		delete res['content']['total'];
+    		for(let i = 0; i < Object.keys(res.content).length; ++i){
+				rows.push(res.content[i]);
+				rows[i]['modif'] = "<button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#modalAlterCategory\" data-category-id=\"" + rows[i]['id'] + "\" data-category-name=\"" + rows[i]['name'] + "\">Modifier</button>"
+				rows[i]['suppr'] = "<button type=\"button\" class=\"btn btn-danger\" data-category-id=\"" + rows[i]['id'] + "\" data-bs-toggle=\"modal\" data-bs-target=\"#modalDelete\" data-category-name=\"" + rows[i]['name'] + "\">Supprimer</button>"
+			}
+    		params.success({"total": total, "totalNotFiltered": total, "rows": rows});
+		})
+	}
 </script>
