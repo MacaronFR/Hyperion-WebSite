@@ -22,7 +22,7 @@
         <div id="div_manage_all_category" class="container mt-3">
             <h3 class="mb-3">Toutes les catégories de produit</h3>
             <div class="table-responsive">
-                <table class="table" id="table_categories" data-toggle="table" data-search="true" data-pagination="true" data-height="600" data-ajax="retrieve_cat" data-side-pagination="server">
+                <table class="table" id="table_categories" data-toggle="table" data-search="true" data-pagination="true" data-height="600" data-ajax="retrieve_cat" data-side-pagination="server" data-row-attributes="rowAttributes">
                     <thead>
                     <tr>
                         <th data-sortable="true" data-field="id">id</th>
@@ -303,22 +303,25 @@
 	let toastList = toastEL.map(function (toastE) {
 		return new bootstrap.Toast(toastE)
 	})
+
+	function rowAttributes(row, index){
+		return {"class": "cat-row"};
+	}
     // ---------- callModalDomain  ----------
     //var domainModal = document.getElementById('modalAlterCategory')
-	$("#modalAlterCategory").on('show.bs.modal' ,function (event) {
-        let button = event.relatedTarget
-        let domain_actual_name = button.getAttribute('data-category-name')
-        let id_domain = button.getAttribute('data-category-id')
-        let modalTitle = document.getElementById('titleModalCategory')
-        let modalBodyInput = document.getElementById('actualCategoryName')
+	$("#modalAlterCategory").on('show.bs.modal' ,function (e) {
+        let button = $(e.relatedTarget);
+        let domain_actual_name = button.data("categoryName")
+        let id_domain = button.data("categoryId")
+        $('#titleModalCategory').text('Renommer le Domaine : ' + domain_actual_name)
+        $('#actualCategoryName').val(id_domain)
 		$("#newCategoryName").attr("placeholder", domain_actual_name)
-		$('#changeCategory').off("click")
-		$('#changeCategory').on("click", function (){
+		$('#changeCategory').off("click").on("click", function (){
 			let value = $("#newCategoryName").val();
 			API_REQUEST("/category/" + token + "/" + id_domain, "PUT", {"name": value}).then((res) => {
 				if(res['status']['code'] === 200){
-					$("#cat" + id_domain).children()[1].innerText = value;
-					button.dataset["categoryName"] = value
+					button.parents("tr").children()[1].innerText = value;
+					button.data("categoryName", value);
 					$("#modalAlterCategory").modal("toggle")
 					$("#ToastSuccess").children(".toast-body").text("Catégorie modifiée avec succès")
 					toastList[1].show()
@@ -328,12 +331,11 @@
 					toastList[2].show()
 				}
 			}).catch((res) => {
+				console.log(res);
 				$("#ToastError").children(".toast-body").text("Erreur lors de la modification")
 				toastList[0].show()
 			});
 		})
-        modalTitle.textContent = 'Renommer le Domaine : ' + domain_actual_name
-        modalBodyInput.value = id_domain
     })
 
 	$("#modalDelete").on("show.bs.modal", function (e){
@@ -351,6 +353,7 @@
 			modal.modal("toggle");
 			toastList[1].show()
 		}).catch((res) => {
+			console.log(res);
 			$("#ToastError").children(".toast-body").text("Erreur lors de la suppression")
 			toastList[0].show()
 		})
@@ -360,8 +363,7 @@
 		let name = $("#addCategoryInput").val()
 		API_REQUEST("/category/" + token, "POST", {"name": name}).then((res) =>{
 			if(res['status']['code'] === 201){
-				let new_line = $($(".cat-line")[0]).clone(true, true);
-				new_line.attr("id", "cat" + res['content'][0]);
+				let new_line = $($(".cat-row")[0]).clone(true, true);
 				new_line.children()[0].textContent = res['content'][0];
 				new_line.children()[1].textContent = name;
 				new_line.children()[2].children[0].dataset["categoryId"] = res['content'][0];
@@ -408,7 +410,6 @@
     })
 	var test;
 	function retrieve_cat(params){
-		console.log(params.data)
 		let page = params.data.offset / 10
 		let url = "/category/" + page;
 		if(params.data.order !== undefined && params.data.sort !== undefined) {
