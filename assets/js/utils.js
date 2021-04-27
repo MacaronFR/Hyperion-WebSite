@@ -1,5 +1,6 @@
-function API_REQUEST(path, method, param) {
+function API_REQUEST(path, method, param, parse) {
     if (param === void 0) { param = {}; }
+    if (parse === void 0) { parse = true; }
     var url = "https://api.hyperion.dev.macaron-dev.fr" + path;
     return new Promise(function (resolve, reject) {
         var xhr = new XMLHttpRequest();
@@ -13,7 +14,12 @@ function API_REQUEST(path, method, param) {
                     }
                     try {
                         var res = JSON.parse(xhr.responseText);
-                        resolve(res);
+                        if (parse) {
+                            resolve(res);
+                        }
+                        else {
+                            resolve(JSON.stringify(res.content));
+                        }
                     }
                     catch (e) {
                         reject(xhr.responseText);
