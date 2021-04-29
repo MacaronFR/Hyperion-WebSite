@@ -22,7 +22,16 @@
         <div id="div_manage_all_category" class="container mt-3">
             <h3 class="mb-3">Toutes les catégories de produit</h3>
             <div class="table-responsive">
-                <table class="table" id="table_categories" data-toggle="table" data-search="true" data-pagination="true" data-height="600" data-ajax="retrieve_cat" data-side-pagination="server" data-row-attributes="rowAttributes">
+                <table
+						class="table"
+						id="table_categories"
+						data-toggle="table"
+						data-search="true"
+						data-pagination="true"
+						data-height="600"
+						data-ajax="retrieve_cat"
+						data-side-pagination="server"
+						data-row-attributes="rowAttributes">
                     <thead>
                     <tr>
                         <th data-sortable="true" data-field="id">id</th>
@@ -31,7 +40,6 @@
 						<th data-field="suppr"></th>
                     </tr>
                     </thead>
-
                 </table>
             </div>
         </div>
@@ -48,9 +56,9 @@
                 <div class="col-5">
                     <select class="form-select">
                         <option selected disabled>Choisir un Domaine de produit</option>
-                        <?php foreach($categories as $cat): ?>
-							<option value="<?= $cat['id']?>"><?= $cat['name']?></option>
-						<?php endforeach;?>
+						<?php foreach($categories as $cat): ?>
+							<option value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
+						<?php endforeach; ?>
                     </select>
                 </div>
                 <div class="col-2">
@@ -61,27 +69,25 @@
         <div id="div_manage_all_type" class="container mt-3">
             <h3 class="mb-3">Tous les types de produits associés à leur domaine</h3>
             <div class="table-responsive">
-                <table class="table">
+				<table
+						class="table"
+						id="table_categories"
+						data-toggle="table"
+						data-search="true"
+						data-pagination="true"
+						data-height="600"
+						data-ajax="retrieve_type"
+						data-side-pagination="server"
+						data-row-attributes="rowAttributes">
                     <thead>
                     <tr>
-                        <th scope="col">id</th>
-						<th scope="col">Type de produit</th>
-                        <th scope="col">Nom Du domaine</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
+                        <th data-field="id" data-sortable="true">id</th>
+						<th data-field="type" data-sortable="true">Type de produit</th>
+                        <th data-field="category" data-sortable="true">Nom de la catégorie</th>
+                        <th data-field="modif"></th>
+                        <th data-field="suppr"></th>
                     </tr>
                     </thead>
-                    <tbody>
-					<?php foreach($types as $type): ?>
-                        <tr>
-                            <td><?= $type['id'] ?></td>
-                            <td><?= $type['type'] ?></td>
-                            <td><?= $type['category_name']?></td>
-                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterType" data-type-id="<?= $type["id"]?>" data-type-category-id="<?= $type["category"]?>" data-type-name="<?= $type["type"]?>">Modifier</button></td>
-                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                        </tr>
-					<?php endforeach; ?>
-                    </tbody>
                 </table>
             </div>
         </div>

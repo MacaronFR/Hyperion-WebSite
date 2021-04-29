@@ -134,3 +134,28 @@ function retrieve_cat(params){
 		params.success({"total": total, "totalNotFiltered": totalNotFiltered, "rows": rows});
 	})
 }
+
+function retrieve_type(params){
+	let page = params.data.offset / 10
+	let url = "/type_cat/" + page;
+	if(params.data.order !== undefined && params.data.sort !== undefined) {
+		url += "/search/" + params.data.search;
+		url += "/order/" + params.data.order;
+		url += "/sort/" + params.data.sort;
+	}else if (params.data.search !== "") {
+		url += "/search/" + params.data.search;
+	}
+	API_REQUEST(url, "GET").then((res) => {
+		let rows = [];
+		let total = res['content'].total;
+		let totalNotFiltered = res['content'].totalNotFiltered;
+		delete res['content']['total'];
+		delete res['content']['totalNotFiltered'];
+		for(let i = 0; i < Object.keys(res.content).length; ++i){
+			rows.push(res.content[i]);
+			rows[i]['modif'] = "<button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#modalAlterCategory\" data-category-id=\"" + rows[i]['id'] + "\" data-category-name=\"" + rows[i]['name'] + "\">Modifier</button>"
+			rows[i]['suppr'] = "<button type=\"button\" class=\"btn btn-danger\" data-category-id=\"" + rows[i]['id'] + "\" data-bs-toggle=\"modal\" data-bs-target=\"#modalDelete\" data-category-name=\"" + rows[i]['name'] + "\">Supprimer</button>"
+		}
+		params.success({"total": total, "totalNotFiltered": totalNotFiltered, "rows": rows});
+	})
+}
