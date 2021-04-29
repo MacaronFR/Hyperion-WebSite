@@ -51,18 +51,18 @@
             <h3 class="mb-3">Ajouter un Type de produits associés à son domaine</h3>
             <div class="row">
                 <div class="col-5">
-                    <input class="form-control" type="text" placeholder="Saisie d'un type de produit">
+                    <input class="form-control" type="text" placeholder="Saisie d'un type de produit" id="typeName">
                 </div>
                 <div class="col-5">
-                    <select class="form-select">
-                        <option selected disabled>Choisir un Domaine de produit</option>
+                    <select class="form-select" id="typeCategory">
+                        <option selected disabled>Choisir une catégorie de produit</option>
 						<?php foreach($categories as $cat): ?>
 							<option value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
 						<?php endforeach; ?>
                     </select>
                 </div>
                 <div class="col-2">
-                    <button class="btn btn-primary" type="submit">Ajouter</button>
+                    <button class="btn btn-primary" type="submit" id="addType">Ajouter</button>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
             <div class="table-responsive">
 				<table
 						class="table"
-						id="table_categories"
+						id="table_type"
 						data-toggle="table"
 						data-search="true"
 						data-pagination="true"
@@ -217,11 +217,11 @@
                         <input type="text" class="form-control" id="actualTypeName" disabled>
                     </div>
                     <div class="mb-3">
-                        <label for="newTypeName" class="col-form-label">Nouveau nom du Type:</label>
+                        <label for="newTypeName" class="col-form-label">Nouveau nom du Type : </label>
                         <input class="form-control" id="newTypeName">
                     </div>
                     <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Nouveau nom domaine du type:</label>
+                        <label for="message-text" class="col-form-label">Nouvelle catégories du type : </label>
                         <select class="form-select" id="selectTypeCat">
 							<?php foreach($categories as $cat): ?>
 								<option value="<?= $cat['id']?>"><?= $cat['name']?></option>
@@ -232,7 +232,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Modifier</button>
+                <button type="button" class="btn btn-primary" id="changeType">Modifier</button>
             </div>
         </div>
     </div>

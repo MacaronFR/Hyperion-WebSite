@@ -10,7 +10,7 @@ function API_REQUEST(path, method, param, parse) {
             if (xhr.readyState === xhr.DONE) {
                 if (xhr.status >= 200 && xhr.status <= 299) {
                     if (xhr.status === 204) {
-                        resolve("OK");
+                        resolve({ "status": { "code": 204, message: "OK" } });
                     }
                     try {
                         var res = JSON.parse(xhr.responseText);
