@@ -11,7 +11,7 @@ use Hyperion\WebSite\InscriptionController;
 use Hyperion\WebSite\VerifInscriptionController;
 use Hyperion\WebSite\ShopController;
 use Hyperion\WebSite\ManageCategoriesController;
-use Hyperion\WebSite\ManageAddProductController;
+use Hyperion\WebSite\ManageAddReferenceController;
 use Hyperion\WebSite\ManageAllProductController;
 
 
@@ -31,8 +31,8 @@ $rt->get("/shop", ShopController::class);
 $rt->get("/disconnect", DisconnectController::class);
 $rt->get("/manageCategories", ManageCategoriesController::class);
 $rt->post("/manageCategories", ManageCategoriesController::class);
-$rt->get("/manageAddProduct", ManageAddProductController::class);
+$rt->get("/manageAddReference", ManageAddReferenceController::class);
 $rt->get("/manageAllProducts", ManageAllProductController::class);
-$rt->post("/manageAddProduct", ManageAddProductController::class);
+$rt->post("/manageAddProduct", ManageAddReferenceController::class);
 $rt->post("/verifAddDomainProduct", VerifAddDomainProductController::class);
 $rt->default();

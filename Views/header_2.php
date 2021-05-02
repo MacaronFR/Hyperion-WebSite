@@ -64,7 +64,7 @@
                     <a class="nav-item nav-link" href="#">Gestion des Offres</a>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'3'): ?>
-                    <a class="nav-item nav-link" href="/manageAddProduct">Gestion des Produits</a>
+                    <a class="nav-item nav-link" href="/manageAddReference">Gestion des Produits</a>
                     <a class="nav-item nav-link" href="#">Gestion des Offres</a>
                     <a class="nav-item nav-link" href="#">Gestion des Projets</a>
                 <?php endif; ?>
@@ -99,7 +99,7 @@
         </div>
     </div>
 </nav>
-<?php elseif ($title === "ManageCategoriesController" || $title === "ManageAddProduct" || $title === "ManageAllProducts"): ?>
+<?php elseif ($title === "ManageCategoriesController" || $title === "ManageAddReference" || $title === "ManageAllProducts"): ?>
 <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Catégories</a>
@@ -108,7 +108,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="/manageAddProduct">Ajoutez un produit</a>
+                <a class="nav-link active" aria-current="page" href="/manageAddReference">Ajoutez un produit</a>
                 <a class="nav-link" href="/manageAllProducts">Consulter les produits</a>
                 <a class="nav-link" href="/manageCategories">Gerer les caractéristiques & catégories</a>
             </div>

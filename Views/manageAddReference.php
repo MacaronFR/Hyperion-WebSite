@@ -1,6 +1,11 @@
+<?php
+/** @var array $categories
+ *  @var array $types
+ */
+?>
 <form action="##">
     <div id="manageAddProduct" class="container-fluid d-flex flex-column mt-11 mt-lg-2">
-        <h1 style="text-align: center" class="mb-4">Ajouter un nouveau produit</h1>
+        <h1 style="text-align: center" class="mb-4">Ajouter une nouvelle référence</h1>
         <div id="divAddProductGeneral" class="row col-11 col-lg-6 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
             <div class="container mb-3">
                 <h3 class="mb-3">Général</h3>
@@ -8,17 +13,17 @@
                     <div class="col-6">
                         <select class="form-select" aria-label="Default select example">
                             <option selected>Saisie d'une catégorie</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+							<?php foreach($categories as $cat): ?>
+							<option value="<?= $cat['id'] ?>"><?= $cat['name']?></option>
+							<?php endforeach; ?>
                         </select>
                     </div>
                     <div class="col-6">
                         <select class="form-select" aria-label="Default select example">
                             <option selected>Saisie d'un type</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <?php foreach($types as $t): ?>
+							<option value="<?= $t['id'] ?>"><?= $t['type']?></option>
+							<?php endforeach; ?>
                         </select>
                     </div>
                 </div>

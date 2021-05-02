@@ -4,23 +4,31 @@
 namespace Hyperion\WebSite;
 require_once "autoload.php";
 
-class ManageAddProductController extends Controller
+class ManageAddReferenceController extends Controller
 {
 
     /**
      * @inheritDoc
      */
-    protected function prepareManageAddProduct(): string{
+    protected function prepareManageAddReference(): string{
+		$categories = API_request("/category", "GET");
+		$types = API_request("/type", "GET");
+		if($categories === false || $types === false){
+			exit();
+		}
+		$categories = $categories['content'];
+		$types = $types['content'];
+		unset($categories['total'], $categories['totalNotFiltered'], $types['total'], $types['totalNotFiltered']);
         ob_start();
-        include "Views/manageAddProduct.php";
+        include "Views/manageAddReference.php";
         return ob_get_clean();
     }
 
     public function get(array $args){
         $root = get_text("root");
-        $head = $this->prepareHead("ManageAddProduct");
-        $header = $this->prepareHeader_2($root['header'], "ManageAddProduct");
-        $main = $this->prepareManageAddProduct();
+        $head = $this->prepareHead("Ajout d'une référence");
+        $header = $this->prepareHeader_2($root['header'], "ManageAddReference");
+        $main = $this->prepareManageAddReference();
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
         include "Views/root.php";
