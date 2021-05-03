@@ -70,7 +70,7 @@
                         <textarea name="" placeholder="Description (facultatif)" class="form-control"></textarea>
                     </div>
                 </div>
-                <div id="div_trader_add_offer_button" class="form-group mt-4 d-flex justify-content-center row">
+                <div id="div_trader_add_offer_button" class="form-group mt-4 d-flex justify-content-center row mx-0">
                     <input type="submit" name="" value="Continuer" class="btn btn-block btn-lg col-lg-8 col-6">
                 </div>
             </form>
