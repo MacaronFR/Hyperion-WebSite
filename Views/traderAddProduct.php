@@ -3,7 +3,7 @@
 <div id="div_trader_add_offer_general" class="container-fluid d-flex flex-column">
     <h1 class="align-self-center mt-4">Créer une offre</h1>
     <div class="d-flex flex-column flex-lg-row mt-11 mt-lg-4 justify-content-end pe-lg-5 mb-5">
-        <div id="div_trader_add_offer" class="row col-11 col-lg-5 border border-2 border-warning rounded-3 position me-lg-5 px-5 py-3">
+        <div id="div_trader_add_offer" class="row col-11 col-lg-5 border border-2 border-warning rounded-3 position me-lg-5 px-5 pt-3 pb-4">
             <form action="#" method="post">
                 <div class="form-group mt-1 mt-lg-4">
                     <div class="mx-2">
@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <div id="div_trader_add_offer_button" class="form-group mt-4 d-flex justify-content-center row">
-                    <input type="submit" name="" value="Continuer" class="btn btn-block col-lg-8 col-6">
+                    <input type="submit" name="" value="Continuer" class="btn btn-block btn-lg col-lg-8 col-6">
                 </div>
             </form>
         </div>
