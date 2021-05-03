@@ -61,7 +61,7 @@
                 <a class="nav-link" href="#">Projets Humanitaires</a>
                 <a class="nav-link disabled" href="#" >Projets Ecologiques</a>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']==='3'): ?>
-                    <a class="nav-item nav-link" href="#">Gestion des Offres</a>
+                    <a class="nav-item nav-link" href="/traderAddOffer">Gestion des Offres</a>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'3'): ?>
                     <a class="nav-item nav-link" href="/manageAddReference">Gestion des Produits</a>
@@ -99,7 +99,7 @@
         </div>
     </div>
 </nav>
-<?php elseif ($title === "Manage Categories" || $title === "ManageAddReference" || $title === "ManageAllProducts"): ?>
+<?php elseif ($title === "Manage Categories" || $title === "ManageAddReference" || $title === "ManageAllProducts" || $title === "manageAllReferences"): ?>
 <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Catégories</a>
@@ -116,4 +116,21 @@
         </div>
     </div>
 </nav>
+<?php elseif ($title === "TraderAddOffer"): ?>
+    <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Catégories</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Ajouter une offre</a>
+                    <a class="nav-link" href="#">Consulter mes offres en attentes</a>
+                    <a class="nav-link" href="#">Consulter l'historique des offres</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 <?php endif; ?>
+
