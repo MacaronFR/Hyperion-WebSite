@@ -15884,5 +15884,9 @@ header {
 }
 
 /* ----------------------------------- table disposition ----------------------------------- */
+#div_trader_add_offer_button {
+  background-color: #FFC300;
+  border-color: #CC9E08;
+}
 
 /*# sourceMappingURL=main.css.map */
