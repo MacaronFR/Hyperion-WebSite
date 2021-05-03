@@ -109,7 +109,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" href="/manageAddReference">Ajoutez une référence</a>
-                <a class="nav-link" href="#">Consulter les références</a>
+                <a class="nav-link" href="/manageAllReferences">Consulter les références</a>
                 <a class="nav-link" href="/manageAllProducts">Consulter les produits</a>
                 <a class="nav-link" href="/manageCategories">Gerer les caractéristiques & catégories</a>
             </div>
