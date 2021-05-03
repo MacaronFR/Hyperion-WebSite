@@ -33,7 +33,7 @@
             <div class="form-group mt-1 mt-lg-4">
 				<div class="mx-2">
 					<label for="password_1" class="form-label">Votre mot de passe</label>
-					<input type="text" class="form-control" name="password_1">
+					<input type="password" class="form-control" name="password_1">
 				</div>
 				<div class="text-danger">
 					<?php if($error === "password/notsame"): ?>
@@ -46,7 +46,7 @@
             <div class="form-group mt-1 mt-lg-4">
 				<div class="mx-2">
                 	<label for="password_2" class="form-label">Confirmez votre mot de passe</label>
-                	<input type="text" class="form-control" name="password_2">
+                	<input type="password" class="form-control" name="password_2">
 				</div>
             </div>
             <div class="form-group mt-4 d-flex justify-content-center row">
