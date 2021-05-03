@@ -8,7 +8,7 @@ class TraderAddOffer extends Controller
 {
     protected function prepareTraderAddProduct(): string{
         ob_start();
-        include "Views/manageAllProducts.php";
+        include "Views/traderAddProduct.php";
         return ob_get_clean();
     }
 
