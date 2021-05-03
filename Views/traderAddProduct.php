@@ -1,7 +1,7 @@
 <?php
 ?>
 <div id="div_trader_add_offer_general" class="container-fluid d-flex flex-column flex-lg-row mt-11 mt-lg-5 justify-content-end pe-lg-5">
-    <div id="div_trader_add_offer" class="row col-11 col-lg-4 border border-2 rounded-3 position me-lg-10">
+    <div id="div_trader_add_offer" class="row col-11 col-lg-4 border border-2 rounded-3 position me-lg-5 px-5">
         <h1>Créer une offre</h1>
         <form action="#" method="post">
             <div class="form-group mt-1 mt-lg-4">
@@ -74,7 +74,7 @@
             </div>
         </form>
     </div>
-    <div id="div_trader_add_offer_price" class="row col-11 col-lg-3 border border-2 rounded-3 me-lg-5 ms-lg-5">
+    <div id="div_trader_add_offer_price" class="row col-11 col-lg-3 border border-2 rounded-3 me-lg-5 ms-lg-5 px-4">
         <h3>Estimation du prix d'achat</h3>
         <div id="priceEstimationOk">
             <p>Indisponible</p>
