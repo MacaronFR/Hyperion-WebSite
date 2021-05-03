@@ -78,7 +78,7 @@
         <div id="div_trader_add_offer_price_top" class="row col-11 col-lg-3 me-lg-5 ms-lg-5 px-4">
             <div id="div_trader_add_offer_price" class="justify-content-center d-flex flex-column">
                 <h3>Estimation du prix d'achat</h3>
-                <div id="priceEstimationOk">
+                <div id="priceEstimationOk" class="d-flex justify-content-center">
                     <p>Indisponible</p>
                 </div>
                 <div id="infoEstimation">
