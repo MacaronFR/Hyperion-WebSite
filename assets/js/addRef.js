@@ -1,3 +1,9 @@
+// @ts-ignore
+var toastEL = [].slice.call(document.querySelectorAll(".toast"));
+// @ts-ignore
+var toastList = toastEL.map(function (toastE) {
+    return new bootstrap.Toast(toastE);
+});
 var typeSelect = $("#typeSelect");
 var catSelect = $("#catSelect");
 var markSelect = $("#markSelect");
@@ -8,7 +14,10 @@ var specForm = $("#specForm");
 var nSpec = 0;
 var emptySpec = "<div class=\"row col-11 col-lg-10 col-xl-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4 spec\">" +
     "<div class='container mb-3'>" +
+    "<div class='d-flex justify-content-between'>" +
     "<h3>Spécification</h3>" +
+    "<button class='btn btn-outline-danger fs-3 del-spec' type='button'><i class=\"bi bi-x\"></i></button>" +
+    "</div>" +
     "<div class='row mt-4'>" +
     "<div class='input-group mb-3 px-3'>" +
     "<span class='input-group-text'>Nom</span>" +
@@ -26,13 +35,15 @@ var emptySpec = "<div class=\"row col-11 col-lg-10 col-xl-8 border border-2 bord
 var emptySpecValue = "<div class='input-group mb-3 px-3'>" +
     "<span class='input-group-text'>Valeur</span>" +
     "<input type='text' placeholder='Valeur' class='spec-value form-control'>" +
+    "<button class='btn btn-outline-danger delete-val' tabindex='-1' type='button'><i class=\"bi bi-trash\"></i></button>" +
     "</div>";
 catSelect.on("change", function () {
     API_REQUEST("/category/" + catSelect.val() + "/type", "GET").then(function (res) {
         markSelect.val("-1").attr("disabled", true).find("option:not([disabled])").remove();
         modelInput.attr("disabled", true);
         if (res.status.code === 204) {
-            console.log("Nothing");
+            $("#ToastWarning").children(".toast-body").text("Aucun type dans cette catégories");
+            toastList[2].show();
         }
         else {
             var n = res.content.total;
@@ -43,13 +54,17 @@ catSelect.on("change", function () {
                 typeSelect.append(new Option(res.content[i].type, res.content[i].category));
             }
         }
+    }).catch(function () {
+        $("#ToastError").children(".toast-body").text("Erreur lors de la récupération des types");
+        toastList[0].show();
     });
 });
 typeSelect.on("change", function () {
     API_REQUEST("/type/" + typeSelect.val() + "/mark", "GET").then(function (res) {
         modelInput.attr("disabled", true);
         if (res.status.code === 204) {
-            console.log("Nothing");
+            $("#ToastWarning").children(".toast-body").text("Aucune marque de ce type");
+            toastList[2].show();
         }
         else {
             var n = res.content.total;
@@ -61,6 +76,9 @@ typeSelect.on("change", function () {
             }
             markSelect.val("-1");
         }
+    }).catch(function () {
+        $("#ToastError").children(".toast-body").text("Erreur lors de la récupération des marques");
+        toastList[0].show();
     });
 });
 markSelect.on("change", function () {
@@ -74,36 +92,73 @@ newSpec.on("click", function () {
     spec.find(".spec-name").attr("name", "name" + nSpec);
     spec.find(".spec-value").attr("name", "value" + nSpec + "[]");
     spec.find(".add-spec-value").attr("data-n", nSpec);
-    newSpecValue();
+    newSpecListener();
 });
 specForm.on("submit", function () {
     var type = specForm.find("[name=type]").val();
-    var mark = specForm.find("[name=mark]").val();
+    var mark = parseInt(specForm.find("[name=mark]").val());
     var model = specForm.find("[name=model]").val();
     var specs = prepareSpec();
-    console.log(type);
-    console.log(mark);
-    console.log(model);
-    console.log(specs);
+    var fields = {
+        "type": type,
+        "mark": mark,
+        "model": model,
+        "specs": specs,
+        "buying": 1,
+        "selling": 1
+    };
+    if (type === null || mark === null || model === "") {
+        $("#ToastWarning").children(".toast-body").text("Champs manquant");
+        toastList[2].show();
+        return false;
+    }
+    API_REQUEST("/reference/" + token, "POST", fields).then(function (res) {
+        if (res.status.code === 201) {
+            $("#ToastSuccess").text("Référence Créer");
+            toastList[1].show();
+            typeSelect.val(-1).attr("disabled", true).find("option:not([disabled])").remove();
+            catSelect.val(-1);
+            markSelect.val(-1).attr("disabled", true).find("option:not([disabled])").remove();
+            modelInput.val("").attr("disabled", true);
+            $(".divs_manage.spec").remove();
+        }
+        else if (res.status.code === 209) {
+            $("#ToastWarning").children(".toast-body").text("La référence existe");
+            toastList[2].show();
+        }
+    }).catch(function () {
+        $("#ToastError").children(".toast-body").text("Erreur lors de la création de la référence");
+        toastList[0].show();
+    });
     return false;
 });
 function prepareSpec() {
-    var spec = {};
+    var spec = [];
     var _loop_1 = function (i) {
         var val = [];
         $("[name='value" + i + "[]']").each(function () {
-            val.push($(this).val());
+            if ($(this).val() !== "") {
+                val.push($(this).val());
+            }
         });
-        spec[$("[name=name" + i + "]").val()] = val;
+        if ($("[name=name" + i + "]").val() !== "") {
+            spec.push({ "name": $("[name=name" + i + "]").val(), "value": val });
+        }
     };
     for (var i = 1; i <= nSpec; ++i) {
         _loop_1(i);
     }
     return spec;
 }
-function newSpecValue() {
+function newSpecListener() {
     $(".add-spec-value").off("click").on("click", function () {
         $(emptySpecValue).insertBefore($(this).parent()).find("input").attr("name", "value" + $(this).data("n") + "[]");
+        $(".delete-val").off("click").on("click", function () {
+            $(this).parents(".input-group").remove();
+        });
+    });
+    $(".del-spec").on("click", function () {
+        console.log($(this).parents(".divs_manage").remove());
     });
 }
 //# sourceMappingURL=addRef.js.map

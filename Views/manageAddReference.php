@@ -12,15 +12,15 @@
 				<h3 class="mb-3">Général</h3>
 				<div class="row">
 					<div class="col-6">
-						<select class="form-select" id="catSelect" name="category">
-							<option selected disabled>Saisie d'une catégorie</option>
+						<select class="form-select" id="catSelect" name="category" required>
+							<option value="-1" selected disabled>Saisie d'une catégorie</option>
 							<?php foreach($categories as $cat): ?>
 								<option value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
 							<?php endforeach; ?>
 						</select>
 					</div>
 					<div class="col-6">
-						<select class="form-select" id="typeSelect" disabled name="type">
+						<select class="form-select" id="typeSelect" disabled name="type" required>
 							<option selected disabled value="-1">Sélectionner un type</option>
 						</select>
 					</div>
@@ -33,13 +33,13 @@
 				<div class="row mb-2">
 					<div class="col-lg-6 col-12">
 						<h3 class="mb-3">Marque</h3>
-						<select class="form-control" id="markSelect" disabled name="mark">
+						<select class="form-control" id="markSelect" disabled name="mark" required>
 							<option value="-1" selected disabled>Sélectionner une marque</option>
 						</select>
 					</div>
 					<div class="col-lg-6 col-12">
 						<h3 class="mb-3">Modèle</h3>
-						<input type="text" class="form-control" id="modelInput" disabled name="model">
+						<input type="text" class="form-control" id="modelInput" disabled name="model" required>
 					</div>
 				</div>
 			</div>
@@ -56,4 +56,23 @@
 		</div>
 	</div>
 </form>
+
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 1500">
+	<div id="ToastError" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-danger">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+	<div id="ToastSuccess" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-success">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+	<div id="ToastWarning" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-warning">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+</div>
+
 <script src="/assets/js/addRef.js"></script>
