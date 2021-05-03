@@ -1,7 +1,7 @@
 <?php
 ?>
-<div id="div_form_inscription" class="container-fluid d-flex mt-11 mt-lg-5">
-    <div id="div_inscription" class="row col-11 col-lg-4 border border-2 rounded-3 py-4 px-4 align-self-center">
+<div id="div_trader_add_offer_general" class="container-fluid d-flex flex-column flex-lg-row mt-11 mt-lg-5">
+    <div id="div_trader_add_offer" class="row col-11 col-lg-4 border border-2 rounded-3 py-4 px-4 ">
         <h1>Créer une offre</h1>
         <form action="#" method="post">
             <div class="form-group mt-1 mt-lg-4">
@@ -73,5 +73,16 @@
                 <input type="submit" name="form_inscription" value="Continuer" class="btn btn-block col-lg-8 col-6">
             </div>
         </form>
+    </div>
+    <div id="div_trader_add_offer_price" class="row col-11 col-lg-4 border border-2 rounded-3 py-4 px-4">
+        <h3>Estimation du prix d'achat</h3>
+        <div id="priceEstimationOk">
+            <p>Indisponible</p>
+        </div>
+        <div id="infoEstimation">
+            <p>Ce montant est calculé à partir des éléments déclarés, il s'agit d'une estimation du prix du produit
+            en fonction des informations renséignés. Si les informatiions renseignées ne conviennent pas, une mise
+            à jour de ces informations seront faites puis une contre offre vous sera envoyée.</p>
+        </div>
     </div>
 </div>
