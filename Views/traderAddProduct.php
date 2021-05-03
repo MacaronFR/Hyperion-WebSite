@@ -74,7 +74,7 @@
             </div>
         </form>
     </div>
-    <div id="div_trader_add_offer_price" class="row col-11 col-lg-3 border border-2 rounded-3 me-lg-5">
+    <div id="div_trader_add_offer_price" class="row col-11 col-lg-3 border border-2 rounded-3 me-lg-5 ms-lg-5">
         <h3>Estimation du prix d'achat</h3>
         <div id="priceEstimationOk">
             <p>Indisponible</p>
