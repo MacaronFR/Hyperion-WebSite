@@ -27,8 +27,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="divAddProductStockage"
-			 class="row col-11 col-lg-10 col-xl-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
+		<div class="row col-11 col-lg-10 col-xl-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
 			<div class="container mb-3">
 				<div class="row mb-2">
 					<div class="col-lg-6 col-12">
@@ -40,6 +39,21 @@
 					<div class="col-lg-6 col-12">
 						<h3 class="mb-3">Modèle</h3>
 						<input type="text" class="form-control" id="modelInput" disabled name="model" required>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row col-11 col-lg-10 col-xl-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
+			<div class="container mb-3">
+				<h3 class="mb-3">Prix</h3>
+				<div class="row mb-2">
+					<div class="col-lg-6 col-12">
+						<h3 class="mb-3">Achat</h3>
+						<input type="number" class="form-control" id="buyInput" required>
+					</div>
+					<div class="col-lg-6 col-12">
+						<h3 class="mb-3">Vente</h3>
+						<input type="number" class="form-control" id="sellInput" required>
 					</div>
 				</div>
 			</div>

@@ -16,6 +16,8 @@ const modelInput = $("#modelInput");
 const newSpec = $("#newSpec");
 const specDiv = $("#specDiv");
 const specForm = $("#specForm");
+const buyInput = $("#buyInput");
+const sellInput = $("#sellInput");
 var nSpec = 0;
 
 const emptySpec = "<div class=\"row col-11 col-lg-10 col-xl-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4 spec\">" +
@@ -109,13 +111,15 @@ specForm.on("submit", function(){
 	const mark = parseInt(specForm.find("[name=mark]").val());
 	const model = specForm.find("[name=model]").val();
 	const specs = prepareSpec();
+	const buying = parseFloat(buyInput.val());
+	const selling = parseFloat(sellInput.val());
 	let fields = {
 		"type": type,
 		"mark": mark,
 		"model": model,
 		"specs": specs,
-		"buying": 1,
-		"selling": 1
+		"buying": buying,
+		"selling": selling,
 	}
 	if(type === null || mark === null || model === ""){
 		$("#ToastWarning").children(".toast-body").text("Champs manquant");
@@ -124,7 +128,7 @@ specForm.on("submit", function(){
 	}
 	API_REQUEST("/reference/" + token, "POST", fields).then((res) => {
 		if(res.status.code === 201){
-			$("#ToastSuccess").text("Référence Créer");
+			$("#ToastSuccess").children(".toast-body").text("Référence Créer");
 			toastList[1].show();
 			reset();
 		}else if(res.status.code === 209){
@@ -175,5 +179,7 @@ function reset(){
 	catSelect.val(-1);
 	markSelect.val(-1).attr("disabled", true).find("option:not([disabled])").remove();
 	modelInput.val("").attr("disabled", true);
+	buyInput.val("");
+	sellInput.val("");
 	$(".divs_manage.spec").remove();
 }

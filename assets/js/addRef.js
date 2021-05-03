@@ -11,6 +11,8 @@ var modelInput = $("#modelInput");
 var newSpec = $("#newSpec");
 var specDiv = $("#specDiv");
 var specForm = $("#specForm");
+var buyInput = $("#buyInput");
+var sellInput = $("#sellInput");
 var nSpec = 0;
 var emptySpec = "<div class=\"row col-11 col-lg-10 col-xl-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4 spec\">" +
     "<div class='container mb-3'>" +
@@ -99,13 +101,15 @@ specForm.on("submit", function () {
     var mark = parseInt(specForm.find("[name=mark]").val());
     var model = specForm.find("[name=model]").val();
     var specs = prepareSpec();
+    var buying = parseFloat(buyInput.val());
+    var selling = parseFloat(sellInput.val());
     var fields = {
         "type": type,
         "mark": mark,
         "model": model,
         "specs": specs,
-        "buying": 1,
-        "selling": 1
+        "buying": buying,
+        "selling": selling,
     };
     if (type === null || mark === null || model === "") {
         $("#ToastWarning").children(".toast-body").text("Champs manquant");
@@ -114,7 +118,7 @@ specForm.on("submit", function () {
     }
     API_REQUEST("/reference/" + token, "POST", fields).then(function (res) {
         if (res.status.code === 201) {
-            $("#ToastSuccess").text("Référence Créer");
+            $("#ToastSuccess").children(".toast-body").text("Référence Créer");
             toastList[1].show();
             reset();
         }
@@ -165,6 +169,8 @@ function reset() {
     catSelect.val(-1);
     markSelect.val(-1).attr("disabled", true).find("option:not([disabled])").remove();
     modelInput.val("").attr("disabled", true);
+    buyInput.val("");
+    sellInput.val("");
     $(".divs_manage.spec").remove();
 }
 //# sourceMappingURL=addRef.js.map
