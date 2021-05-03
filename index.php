@@ -27,7 +27,7 @@ $rt->get("/", StoreController::class);
 $rt->get("/connect", ConnectionController::class);
 $rt->get("/connect/*", ConnectionController::class);
 $rt->post("/verif_connect", VerifConnectionController::class);
-$rt->get("/inscription", InscriptionController::class);
+$rt->get("/inscription{/*/*}", InscriptionController::class);
 $rt->post("/verif_inscription", VerifInscriptionController::class);
 $rt->get("/shop", ShopController::class);
 $rt->get("/disconnect", DisconnectController::class);
