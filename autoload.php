@@ -13,5 +13,6 @@ require_once "Controllers/ManageCategoriesController.php";
 require_once "Controllers/ManageAddReferenceController.php";
 require_once "Controllers/VerifAddDomainProductController.php";
 require_once "Controllers/ManageAllProductController.php";
+require_once "Controllers/ManageAllReferenceController.php";
 require_once "Router.php";
 require_once "utils.php";

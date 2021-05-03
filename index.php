@@ -13,6 +13,7 @@ use Hyperion\WebSite\ShopController;
 use Hyperion\WebSite\ManageCategoriesController;
 use Hyperion\WebSite\ManageAddReferenceController;
 use Hyperion\WebSite\ManageAllProductController;
+use Hyperion\WebSite\ManageAllReferenceController;
 
 
 include "autoload.php";
@@ -33,6 +34,7 @@ $rt->get("/manageCategories", ManageCategoriesController::class);
 $rt->post("/manageCategories", ManageCategoriesController::class);
 $rt->get("/manageAddReference", ManageAddReferenceController::class);
 $rt->get("/manageAllProducts", ManageAllProductController::class);
+$rt->get("/manageAllReferences", ManageAllReferenceController::class);
 $rt->post("/manageAddProduct", ManageAddReferenceController::class);
 $rt->post("/verifAddDomainProduct", VerifAddDomainProductController::class);
 $rt->default();
