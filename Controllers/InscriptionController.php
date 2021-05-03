@@ -7,7 +7,7 @@ require_once "autoload.php";
 class InscriptionController extends Controller
 {
 
-	protected function prepareInscription(): string{
+	protected function prepareInscription($error): string{
 		ob_start();
 		include "Views/inscription.php";
 		return ob_get_clean();
@@ -18,7 +18,7 @@ class InscriptionController extends Controller
     public function get(array $args){
         $head = $this->prepareHead("Inscription");
         $header = $this->prepareHeader();
-        $main = $this->prepareInscription();
+        $main = $this->prepareInscription(($args['uri_args'][0] ?? "") . "/" . ($args['uri_args'][1] ?? ""));
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
         include "Views/root.php";
