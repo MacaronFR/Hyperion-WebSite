@@ -75,15 +75,17 @@
                 </div>
             </form>
         </div>
-        <div id="div_trader_add_offer_price" class="row col-11 col-lg-3 me-lg-5 ms-lg-5 px-4">
-            <h3>Estimation du prix d'achat</h3>
-            <div id="priceEstimationOk">
-                <p>Indisponible</p>
-            </div>
-            <div id="infoEstimation">
-                <p>Ce montant est calculé à partir des éléments déclarés, il s'agit d'une estimation du prix du produit
-                    en fonction des informations renséignés. Si les informatiions renseignées ne conviennent pas, une mise
-                    à jour de ces informations seront faites puis une contre offre vous sera envoyée.</p>
+        <div id="div_trader_add_offer_price_top" class="row col-11 col-lg-3 me-lg-5 ms-lg-5 px-4">
+            <div id="div_trader_add_offer_price">
+                <h3>Estimation du prix d'achat</h3>
+                <div id="priceEstimationOk" class="">
+                    <p>Indisponible</p>
+                </div>
+                <div id="infoEstimation">
+                    <p>Ce montant est calculé à partir des éléments déclarés, il s'agit d'une estimation du prix du produit
+                        en fonction des informations renséignés. Si les informatiions renseignées ne conviennent pas, une mise
+                        à jour de ces informations seront faites puis une contre offre vous sera envoyée.</p>
+                </div>
             </div>
         </div>
     </div>
