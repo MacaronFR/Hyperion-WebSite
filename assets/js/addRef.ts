@@ -126,11 +126,7 @@ specForm.on("submit", function(){
 		if(res.status.code === 201){
 			$("#ToastSuccess").text("Référence Créer");
 			toastList[1].show();
-			typeSelect.val(-1).attr("disabled", true).find("option:not([disabled])").remove();
-			catSelect.val(-1);
-			markSelect.val(-1).attr("disabled", true).find("option:not([disabled])").remove();
-			modelInput.val("").attr("disabled", true);
-			$(".divs_manage.spec").remove();
+			reset();
 		}else if(res.status.code === 209){
 			$("#ToastWarning").children(".toast-body").text("La référence existe");
 			toastList[2].show();
@@ -168,4 +164,16 @@ function newSpecListener(){
 	$(".del-spec").on("click", function (){
 		console.log($(this).parents(".divs_manage").remove());
 	})
+}
+
+$("#reset").on("click", function(){
+	reset();
+})
+
+function reset(){
+	typeSelect.val(-1).attr("disabled", true).find("option:not([disabled])").remove();
+	catSelect.val(-1);
+	markSelect.val(-1).attr("disabled", true).find("option:not([disabled])").remove();
+	modelInput.val("").attr("disabled", true);
+	$(".divs_manage.spec").remove();
 }

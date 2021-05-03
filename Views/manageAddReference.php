@@ -51,7 +51,7 @@
 			<button class="btn btn-primary w-100" type="button" id="newSpec">Ajouter une spécification</button>
 		</div>
 		<div class="col-11 col-lg-10 col-xl-8 align-self-center mb-5 btn-group">
-			<button class="btn btn-warning w-25" type="submit">Réinitialiser</button>
+			<button class="btn btn-warning w-25" type="reset" id="reset">Réinitialiser</button>
 			<button class="btn btn-success w-75" type="submit">Ajouter ce produit</button>
 		</div>
 	</div>
