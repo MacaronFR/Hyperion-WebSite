@@ -67,7 +67,7 @@
                 </div>
                 <div class="form-group mt-1 mt-lg-4">
                     <div class="mx-2">
-                        <textarea name="" placeholder="Description (facultatif)" form-control"></textarea>
+                        <textarea name="" placeholder="Description (facultatif)" class="form-control"></textarea>
                     </div>
                 </div>
                 <div id="div_trader_add_offer_button" class="form-group mt-4 d-flex justify-content-center row">
