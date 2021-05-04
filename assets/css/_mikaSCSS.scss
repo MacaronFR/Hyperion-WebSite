@@ -1,176 +1,204 @@
 /* ----------------------------------- Generale ----------------------------------- */
-html{
+html {
 
 }
-body{
-  //display: flex;
-  //flex-direction: column;
-  min-height: 100vh;
+
+body {
+	//display: flex;
+	//flex-direction: column;
+	min-height: 100vh;
 }
-main{
-  //display: flex;
-  //flex-direction: column;
-  //min-height: 83.6vh;
+
+main {
+	//display: flex;
+	//flex-direction: column;
+	//min-height: 83.6vh;
 }
-a{
-  color: #0066C0 !important;
+
+a {
+	color: #0066C0 !important;
 }
-.navbar-toggler{
-  background-color: #CC9E08 !important;
+
+.navbar-toggler {
+	background-color: #CC9E08 !important;
 }
 
 /* ----------------------------------- Header ----------------------------------- */
 
-header{
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
+header {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
 }
-#header_1{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
+
+#header_1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
 }
-#header_1 > a > img{
-  height: 70px;
+
+#header_1 > a > img {
+	height: 70px;
 }
-#header_1 > a{
-  padding: 0;
-  margin: 0;
+
+#header_1 > a {
+	padding: 0;
+	margin: 0;
 }
-#header_1_line{
-  background-color: #FFC300;
-  height: 9px;
-  width: 100%;
+
+#header_1_line {
+	background-color: #FFC300;
+	height: 9px;
+	width: 100%;
 }
 
 /* ----------------------------------- Header_2 ----------------------------------- */
 
-#header_2{
-  background-color: black !important;
+#header_2 {
+	background-color: black !important;
 }
-#header_2 > a > img{
-  height: 70px;
+
+#header_2 > a > img {
+	height: 70px;
 }
-#header_2_line{
-  background-color: #FFC300;
-  height: 9px;
-  width: 100%;
+
+#header_2_line {
+	background-color: #FFC300;
+	height: 9px;
+	width: 100%;
 }
 
 /* ----------------------------------- Footer ----------------------------------- */
-#footer{
-  height: 5vw;
-  background: radial-gradient(at 49% 17%, #E7E7E7, #FFFFFF 49%);
+#footer {
+	height: 5vw;
+	background: radial-gradient(at 49% 17%, #E7E7E7, #FFFFFF 49%);
 }
-#footer_line{
-  background: linear-gradient(90deg ,rgba(255,255,255,0.5), #FFC300, rgba(255,255,255,0.5));
-  width: 100%;
-  height: 0.15vw;
-  margin-bottom: 0.8vw;
+
+#footer_line {
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), #FFC300, rgba(255, 255, 255, 0.5));
+	width: 100%;
+	height: 0.15vw;
+	margin-bottom: 0.8vw;
 }
-#footer_1 > ul{
-  list-style: none;
-  padding: 0;
-  margin: 0;
+
+#footer_1 > ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
-#footer_1 > ul > li{
-  margin: 0 1.5vw;
-  color: #0066C0;
+
+#footer_1 > ul > li {
+	margin: 0 1.5vw;
+	color: #0066C0;
 }
-#footer_2{
-  margin-top: 0.4vw;
+
+#footer_2 {
+	margin-top: 0.4vw;
 }
-#footer_2 > p{
-  color: #555555;
+
+#footer_2 > p {
+	color: #555555;
 }
 
 /* ----------------------------------- Connection ----------------------------------- */
-#div_form_connexion{
-  border-color: #979797;
+#div_form_connexion {
+	border-color: #979797;
 }
-#div_connexion{
- // background-color: red;
+
+#div_connexion {
+	// background-color: red;
 }
-#div_connexion_2{
+
+#div_connexion_2 {
 }
-#div_connexion > form > div >input[type=submit]{
-  background-color: #FFC300;
-  border-color: #CC9E08;
+
+#div_connexion > form > div > input[type=submit] {
+	background-color: #FFC300;
+	border-color: #CC9E08;
 }
-#div_connexion_2 > div > h5{
-  text-align: center;
-  color: #928585;
+
+#div_connexion_2 > div > h5 {
+	text-align: center;
+	color: #928585;
 }
-#div_connexion_2  > div >button{
-  background-color: white;
-  border-color: black;
-  color: black;
-  width: 100%;
+
+#div_connexion_2 > div > button {
+	background-color: white;
+	border-color: black;
+	color: black;
+	width: 100%;
 }
+
 /* ----------------------------------- Inscription ----------------------------------- */
-#div_inscription > form > div >input[type=submit]{
-  background-color: #FFC300;
-  border-color: #CC9E08;
-  width: 100%;
+#div_inscription > form > div > input[type=submit] {
+	background-color: #FFC300;
+	border-color: #CC9E08;
+	width: 100%;
 }
-#div_inscription_2 > div > h5{
-  text-align: center;
-  color: #928585;
+
+#div_inscription_2 > div > h5 {
+	text-align: center;
+	color: #928585;
 }
-#div_inscription_2  > div >button{
-  background-color: white;
-  border-color: black;
-  color: black;
-  width: 100%;
+
+#div_inscription_2 > div > button {
+	background-color: white;
+	border-color: black;
+	color: black;
+	width: 100%;
 }
 
 /* ----------------------------------- Search barre ----------------------------------- */
-#search_barre_bouton{
-  border-color: #CC9E08;
-  color: #CC9E08;
+#search_barre_bouton {
+	border-color: #CC9E08;
+	color: #CC9E08;
 }
 
-#header_1_link > *{
-  color: #CC9E08 !important;
+#header_1_link > * {
+	color: #CC9E08 !important;
 }
 
 /* ----------------------------------- Search barre ----------------------------------- */
-#SubHeaderCategories{
-  background-color: #242217 !important;
+#SubHeaderCategories {
+	background-color: #242217 !important;
 }
-#SubHeaderCategories > * > a{
-  color: white !important;
+
+#SubHeaderCategories > * > a {
+	color: white !important;
 }
-#SubHeaderCategories > * > * > * > a{
-  color: white !important;
+
+#SubHeaderCategories > * > * > * > a {
+	color: white !important;
 }
 
 /* ----------------------------------- Sub Header 3 ----------------------------------- */
-.subHeader3{
-  background-color: #EAE9E7 !important;
-  border-color: #C9C8C4 !important;
-  border-width: 1px;
-}
-.subHeader3 > * > a{
-  color: #4B4B4B !important;
-}
-.subHeader3 > * > * > * > a{
-  color: #4B4B4B !important;
+.subHeader3 {
+	background-color: #EAE9E7 !important;
+	border-color: #C9C8C4 !important;
+	border-width: 1px;
 }
 
-.divs_manage{
-  background-color: #F5F5F5;
+.subHeader3 > * > a {
+	color: #4B4B4B !important;
 }
+
+.subHeader3 > * > * > * > a {
+	color: #4B4B4B !important;
+}
+
+.divs_manage {
+	background-color: #F5F5F5;
+}
+
 /* ----------------------------------- table disposition ----------------------------------- */
-#div_trader_add_offer_button input[type=submit]{
-  background-color: #FFC300;
-  border-color: #CC9E08;
-  width: 100%;
+#div_trader_add_offer_button input[type=submit] {
+	background-color: #FFC300;
+	border-color: #CC9E08;
+	width: 100%;
 }
 
-#priceEstimationOk{
-  background-color: #CC9E08;
+#priceEstimationOk {
+	background-color: #CC9E08;
 }
