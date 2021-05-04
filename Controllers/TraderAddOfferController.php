@@ -11,6 +11,7 @@ class TraderAddOfferController extends Controller{
 			header("Location: /500");
 		}
 		$categories = $categories['content'];
+		unset($categories['total'], $categories['totalNotFiltered']);
 		ob_start();
 		include "Views/traderAddProduct.php";
 		return ob_get_clean();

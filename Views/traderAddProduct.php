@@ -12,8 +12,8 @@
 				<div class="form-group mt-1 mt-lg-4">
 					<div class="mx-2">
 						<select class="form-select" id="selectCategory">
-							<option selected>Catégorie de votre produit</option>
-							<option value="-1">Non repertoriée</option>
+							<option selected disabled class="keep">Catégorie de votre produit</option>
+							<option value="-1" class="keep">Non repertoriée</option>
 							<?php foreach($categories as $category): ?>
 								<option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
 							<?php endforeach; ?>
@@ -22,9 +22,9 @@
 				</div>
 				<div class="form-group mt-1 mt-lg-4">
 					<div class="mx-2">
-						<select class="form-select" disabled>
-							<option selected>Type de produit</option>
-							<option value="1">Non repertorié</option>
+						<select class="form-select" id="selectType" disabled>
+							<option selected disabled class="keep" value="-2">Type de produit</option>
+							<option value="-1" class="keep">Non repertorié</option>
 							<option value="2">Two</option>
 							<option value="3">Three</option>
 						</select>
@@ -32,9 +32,9 @@
 				</div>
 				<div class="form-group mt-1 mt-lg-4">
 					<div class="mx-2">
-						<select class="form-select" disabled>
-							<option selected>Marque du produit</option>
-							<option value="1">Non repertoriée</option>
+						<select class="form-select" id="selectMark" disabled>
+							<option selected disabled class="keep" value="-2">Marque du produit</option>
+							<option value="-1" class="keep">Non repertoriée</option>
 							<option value="2">Two</option>
 							<option value="3">Three</option>
 						</select>
@@ -42,9 +42,9 @@
 				</div>
 				<div class="form-group mt-1 mt-lg-4">
 					<div class="mx-2">
-						<select class="form-select" disabled>
-							<option selected>Modéle</option>
-							<option value="1">Non repertoriée</option>
+						<select class="form-select" id="selectModel" disabled>
+							<option selected disabled class="keep" value="-2">Modéle</option>
+							<option value="-1" class="keep">Non repertoriée</option>
 							<option value="2">Two</option>
 							<option value="3">Three</option>
 						</select>
@@ -52,9 +52,9 @@
 				</div>
 				<div class="form-group mt-1 mt-lg-4">
 					<div class="mx-2">
-						<select class="form-select" disabled>
-							<option selected>Etat du produit</option>
-							<option value="1">Non repertoriée</option>
+						<select class="form-select" id="selectState" disabled>
+							<option selected class="keep" disabled value="-2">Etat du produit</option>
+							<option value="-1" class="keep">Non repertoriée</option>
 							<option value="2">Two</option>
 							<option value="3">Three</option>
 						</select>
@@ -90,4 +90,21 @@
 		</div>
 	</div>
 </div>
-<script></script>
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 1500">
+	<div id="ToastError" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-danger">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+	<div id="ToastSuccess" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-success">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+	<div id="ToastWarning" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-warning">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+</div>
+<script src="/assets/js/traderAddOffer.js"></script>

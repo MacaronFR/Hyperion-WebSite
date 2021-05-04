@@ -53,7 +53,7 @@ catSelect.on("change", function () {
             delete res.content.totalNotFiltered;
             typeSelect.val("-1").removeAttr("disabled").find("option:not([disabled])").remove();
             for (var i = 0; i < n; ++i) {
-                typeSelect.append(new Option(res.content[i].type, res.content[i].category));
+                typeSelect.append(new Option(res.content[i].type, res.content[i].id));
             }
         }
     }).catch(function () {
