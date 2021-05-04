@@ -14,7 +14,7 @@ use Hyperion\WebSite\ManageCategoriesController;
 use Hyperion\WebSite\ManageAddReferenceController;
 use Hyperion\WebSite\ManageAllProductController;
 use Hyperion\WebSite\ManageAllReferenceController;
-use Hyperion\WebSite\TraderAddOffer;
+use Hyperion\WebSite\TraderAddOfferController;
 
 
 include "autoload.php";
@@ -35,7 +35,7 @@ $rt->get("/manageCategories", ManageCategoriesController::class);
 $rt->post("/manageCategories", ManageCategoriesController::class);
 $rt->get("/manageAddReference", ManageAddReferenceController::class);
 $rt->get("/manageAllProducts", ManageAllProductController::class);
-$rt->get("/traderAddOffer", TraderAddOffer::class);
+$rt->get("/traderAddOffer", TraderAddOfferController::class);
 $rt->get("/manageAllReferences", ManageAllReferenceController::class);
 $rt->post("/manageAddProduct", ManageAddReferenceController::class);
 $rt->post("/verifAddDomainProduct", VerifAddDomainProductController::class);

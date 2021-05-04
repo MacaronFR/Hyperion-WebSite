@@ -116,7 +116,7 @@
         </div>
     </div>
 </nav>
-<?php elseif ($title === "TraderAddOffer"): ?>
+<?php elseif ($title === "TraderAddOfferController"): ?>
     <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Catégories</a>
