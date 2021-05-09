@@ -8,7 +8,7 @@
 	<div class="d-flex flex-column flex-lg-row mt-11 mt-lg-4 justify-content-end pe-lg-5 mb-5">
 		<div id="div_trader_add_offer"
 			 class="row col-11 col-lg-5 border border-2 border-warning rounded-3 position me-lg-5 px-5 pt-3 pb-5">
-			<form>
+			<form id="newOffer">
 				<div class="form-group mt-1 mt-lg-4">
 					<div class="mx-2">
 						<select class="form-select" id="selectCategory">
@@ -98,12 +98,14 @@
 			Hello, world! This is a toast message.
 		</div>
 	</div>
-	<div id="ToastSuccess" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+	<div id="ToastSuccess" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true"
+		 data-bs-delay="1700">
 		<div class="toast-body bg-success">
 			Hello, world! This is a toast message.
 		</div>
 	</div>
-	<div id="ToastWarning" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+	<div id="ToastWarning" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true"
+		 data-bs-delay="1700">
 		<div class="toast-body bg-warning">
 			Hello, world! This is a toast message.
 		</div>

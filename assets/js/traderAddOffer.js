@@ -9,6 +9,12 @@ var sType = $("#selectType");
 var sMark = $("#selectMark");
 var sModel = $("#selectModel");
 var sState = $("#selectState");
+var emptySpecSelect = "<div class=\"form-group mt-1 mt-lg-4 mx-2\">" +
+    "<label>Storage</label>" +
+    "<select class=\"form-select\">" +
+    "<option selected class=\"keep\" disabled value=\"-1\">Vueillez selectionnez une valeur</option>" +
+    "</select>" +
+    "</div>";
 sCat.on("change", function () {
     sType.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
     sMark.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
@@ -111,5 +117,19 @@ sMark.on("change", function () {
 });
 sModel.on("change", function () {
     sState.removeAttr("disabled").val("-1");
+    if (sType.val() !== "-1" && sMark !== "-1" && sModel !== -1) {
+        API_REQUEST("/type/" + sType.val() + "/mark/" + sMark.val() + "/model/" + sModel.val() + "/reference", "GET").then(function (res) {
+            console.log(res, Object.keys(res.content.spec));
+            var keys = Object.keys(res.content.spec);
+            for (var i = 0; i < keys.length; ++i) {
+                var select = $(emptySpecSelect);
+                select.find("label").text(keys[i]);
+                // if(res.content.spec[keys[i]])
+                $("#newOffer").append(select);
+            }
+        }).catch(function (res) {
+            console.log(res);
+        });
+    }
 });
 //# sourceMappingURL=traderAddOffer.js.map
