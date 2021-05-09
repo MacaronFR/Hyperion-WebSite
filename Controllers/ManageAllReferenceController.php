@@ -17,7 +17,7 @@ class ManageAllReferenceController extends Controller
      */
     public function get(array $args){
         $root = get_text("root");
-        $head = $this->prepareHead("ManageAllReference");
+        $head = $this->prepareHead("Manage All Reference");
         $header = $this->prepareHeader_2($root['header'], "ManageAllReference");
         $main = $this->prepareManageAllReferences();
         $footer = $this->prepareFooter();
@@ -28,6 +28,7 @@ class ManageAllReferenceController extends Controller
     /**
      * @inheritDoc
      */
-    public function post(array $args)
-    { return false; }
+    public function post(array $args){
+    	return false;
+    }
 }

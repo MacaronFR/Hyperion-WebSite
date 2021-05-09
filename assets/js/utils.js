@@ -38,4 +38,16 @@ function API_REQUEST(path, method, param, parse) {
         }
     });
 }
+function prepare_url(params, url) {
+    url += params.data.offset / 10;
+    if (params.data.order !== undefined && params.data.sort !== undefined) {
+        url += "/search/" + params.data.search;
+        url += "/order/" + params.data.order;
+        url += "/sort/" + params.data.sort;
+    }
+    else if (params.data.search !== "") {
+        url += "/search/" + params.data.search;
+    }
+    return url;
+}
 //# sourceMappingURL=utils.js.map

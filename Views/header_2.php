@@ -99,7 +99,7 @@
         </div>
     </div>
 </nav>
-<?php elseif ($title === "Manage Categories" || $title === "ManageAddReference" || $title === "ManageAllProducts" || $title === "manageAllReferences"): ?>
+<?php elseif ($title === "Manage Categories" || $title === "ManageAddReference" || $title === "ManageAllProducts" || $title === "ManageAllReference"): ?>
 <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Catégories</a>

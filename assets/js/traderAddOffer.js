@@ -70,9 +70,11 @@ sMark.on("change", function () {
     sModel.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
     sState.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
     var url = "/model";
+    var type = false;
     if (sMark.val() !== "-1") {
         url = "";
-        if (sType !== "-1") {
+        if (sType.val() !== "-1") {
+            type = true;
             url = "/type/" + sType.val();
         }
         url += "/mark/" + sMark.val() + "/model";
@@ -83,8 +85,19 @@ sMark.on("change", function () {
             delete res.content.total;
             delete res.content.totalNotFiltered;
             sModel.removeAttr("disabled").find("option:not(.keep)").remove();
-            for (var i = 0; i < n; ++i) {
-                sModel.append(new Option(res.content[i].value, res.content[i].value));
+            if (type) {
+                for (var i = 0; i < n; ++i) {
+                    sModel.append(new Option(res.content[i].value, res.content[i].value));
+                }
+            }
+            else {
+                var keys = Object.keys(res.content);
+                for (var i = 0; i < keys.length; ++i) {
+                    sModel.append($(new Option(keys[i])).attr("disabled", true));
+                    for (var j = 0; j < res.content[keys[i]].length; ++j) {
+                        sModel.append(new Option(res.content[keys[i]][j], res.content[keys[i]][j]));
+                    }
+                }
             }
             sModel.val("-2");
         }
