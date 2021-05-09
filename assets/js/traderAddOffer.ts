@@ -19,7 +19,7 @@ sCat.on("change", function () {
 	sType.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
 	sMark.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
 	sModel.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
-	sState.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
+	sState.val("-1").attr("disabled", true);
 	let url = "/type";
 	if(sCat.val() !== "-1"){
 		url = "/category/" + sCat.val() + "/type";
@@ -47,7 +47,7 @@ sCat.on("change", function () {
 sType.on("change", function () {
 	sMark.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
 	sModel.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
-	sState.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
+	sState.val("-1").attr("disabled", true);
 	let url = "/mark";
 	if(sType.val() !== "-1"){
 		url = "/type/" + sType.val() + "/mark";
@@ -74,16 +74,15 @@ sType.on("change", function () {
 
 sMark.on("change", function () {
 	sModel.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
-	sState.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
+	sState.val("-1").attr("disabled", true);
 	let url = "/model";
 	let type = false;
 	if(sMark.val() !== "-1"){
-		url = "";
-		if(sType.val() !== "-1"){
-			type = true;
-			url = "/type/" + sType.val();
-		}
-		url += "/mark/" + sMark.val() + "/model"
+		url = "/mark/" + sMark.val() + "/model"
+	}
+	if(sType.val() !== "-1"){
+		type = true;
+		url = "/type/" + sType.val() + url;
 	}
 	API_REQUEST(url, "GET").then( (res) =>{
 		if(res.status.code === 200){
@@ -113,4 +112,8 @@ sMark.on("change", function () {
 		$("#ToastError").children(".toast-body").text("Erreur lors de la récupération des modèles");
 		toastList[0].show();
 	})
+})
+
+sModel.on("change", function(){
+	sState.removeAttr("disabled").val("-1");
 })

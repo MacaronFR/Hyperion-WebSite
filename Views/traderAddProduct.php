@@ -53,10 +53,12 @@
 				<div class="form-group mt-1 mt-lg-4">
 					<div class="mx-2">
 						<select class="form-select" id="selectState" disabled>
-							<option selected class="keep" disabled value="-2">Etat du produit</option>
-							<option value="-1" class="keep">Non repertoriée</option>
-							<option value="2">Two</option>
-							<option value="3">Three</option>
+							<option selected class="keep" disabled value="-1">État du produit</option>
+							<option value="1">Jabba le Hutt</option>
+							<option value="2">Passable</option>
+							<option value="3">OK</option>
+							<option value="4">Très bon</option>
+							<option value="5">Neuf</option>
 						</select>
 					</div>
 				</div>
@@ -82,7 +84,7 @@
 				<div id="infoEstimation">
 					<p>Ce montant est calculé à partir des éléments déclarés, il s'agit d'une estimation du prix du
 						produit
-						en fonction des informations renséignés. Si les informations renseignées ne conviennent pas, une
+						en fonction des informations renseignés. Si les informations renseignées ne conviennent pas, une
 						mise
 						à jour de ces informations seront faites puis une contre offre vous sera envoyée.</p>
 				</div>
