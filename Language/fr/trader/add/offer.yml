@@ -19,3 +19,5 @@ offer:
     continue: "Continuer"
     estimate: "Estimation du prix d'achat"
     unavailable: "Indisponible"
+  warning:
+    not_full: "Veuillez remplir tout les champs"

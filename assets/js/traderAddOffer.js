@@ -144,4 +144,15 @@ sModel.on("change", function () {
         });
     }
 });
+$("#newOffer").on("submit", function (e) {
+    var specOK = true;
+    $(".spec-select").each(function () { if ($(this).find("select").val() === null)
+        specOK = false; });
+    if (sCat.val() === null || sType.val() === null || sBrand.val() === null || sModel.val() === null || sState.val() === null || !specOK) {
+        $("#ToastWarning").children(".toast-body").text(text['warning']['not_full']);
+        toastList[2].show();
+        e.preventDefault();
+    }
+    //TODO new offer
+});
 //# sourceMappingURL=traderAddOffer.js.map

@@ -116,6 +116,9 @@
 	let text = {
 		'select':{
 			'choose': "<?= $traderAddOfferText['offer']['select']['choose']?>"
+		},
+		'warning':{
+			'not_full': "<?= $traderAddOfferText['offer']['warning']['not_full']?>"
 		}
 	}
 </script>

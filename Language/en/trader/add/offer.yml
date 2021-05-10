@@ -19,3 +19,5 @@ offer:
     continue: "Continue"
     estimate: "Buying price estimation"
     unavailable: "Unavailable"
+  warning:
+    not_full: "Please fill all fields"
