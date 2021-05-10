@@ -32,7 +32,7 @@
 				<div class="row mb-2">
 					<div class="col-lg-6 col-12">
 						<h3 class="mb-3">Marque</h3>
-						<select class="form-control" id="markSelect" disabled name="mark" required>
+						<select class="form-control" id="brandSelect" disabled name="brand" required>
 							<option value="-1" selected disabled>Sélectionner une marque</option>
 						</select>
 					</div>

@@ -6,7 +6,7 @@ var toastList = toastEL.map(function (toastE) {
 });
 var typeSelect = $("#typeSelect");
 var catSelect = $("#catSelect");
-var markSelect = $("#markSelect");
+var brandSelect = $("#brandSelect");
 var modelInput = $("#modelInput");
 var newSpec = $("#newSpec");
 var specDiv = $("#specDiv");
@@ -41,7 +41,7 @@ var emptySpecValue = "<div class='input-group mb-3 px-3'>" +
     "</div>";
 catSelect.on("change", function () {
     API_REQUEST("/category/" + catSelect.val() + "/type", "GET").then(function (res) {
-        markSelect.val("-1").attr("disabled", true).find("option:not([disabled])").remove();
+        brandSelect.val("-1").attr("disabled", true).find("option:not([disabled])").remove();
         modelInput.attr("disabled", true);
         if (res.status.code === 204) {
             $("#ToastWarning").children(".toast-body").text("Aucun type dans cette catégories");
@@ -62,7 +62,7 @@ catSelect.on("change", function () {
     });
 });
 typeSelect.on("change", function () {
-    API_REQUEST("/type/" + typeSelect.val() + "/mark", "GET").then(function (res) {
+    API_REQUEST("/type/" + typeSelect.val() + "/brand", "GET").then(function (res) {
         modelInput.attr("disabled", true);
         if (res.status.code === 204) {
             $("#ToastWarning").children(".toast-body").text("Aucune marque de ce type");
@@ -72,18 +72,18 @@ typeSelect.on("change", function () {
             var n = res.content.total;
             delete res.content.total;
             delete res.content.totalNotFiltered;
-            markSelect.removeAttr("disabled").find("option:not([disabled])").remove();
+            brandSelect.removeAttr("disabled").find("option:not([disabled])").remove();
             for (var i = 0; i < n; ++i) {
-                markSelect.append(new Option(res.content[i].value, res.content[i].id));
+                brandSelect.append(new Option(res.content[i].value, res.content[i].id));
             }
-            markSelect.val("-1");
+            brandSelect.val("-1");
         }
     }).catch(function () {
         $("#ToastError").children(".toast-body").text("Erreur lors de la récupération des marques");
         toastList[0].show();
     });
 });
-markSelect.on("change", function () {
+brandSelect.on("change", function () {
     modelInput.removeAttr("disabled");
 });
 newSpec.on("click", function () {
@@ -98,20 +98,20 @@ newSpec.on("click", function () {
 });
 specForm.on("submit", function () {
     var type = specForm.find("[name=type]").val();
-    var mark = parseInt(specForm.find("[name=mark]").val());
+    var brand = parseInt(specForm.find("[name=brand]").val());
     var model = specForm.find("[name=model]").val();
     var specs = prepareSpec();
     var buying = parseFloat(buyInput.val());
     var selling = parseFloat(sellInput.val());
     var fields = {
         "type": type,
-        "mark": mark,
+        "brand": brand,
         "model": model,
         "specs": specs,
         "buying": buying,
         "selling": selling,
     };
-    if (type === null || mark === null || model === "") {
+    if (type === null || brand === null || model === "") {
         $("#ToastWarning").children(".toast-body").text("Champs manquant");
         toastList[2].show();
         return false;
@@ -167,7 +167,7 @@ $("#reset").on("click", function () {
 function reset() {
     typeSelect.val(-1).attr("disabled", true).find("option:not([disabled])").remove();
     catSelect.val(-1);
-    markSelect.val(-1).attr("disabled", true).find("option:not([disabled])").remove();
+    brandSelect.val(-1).attr("disabled", true).find("option:not([disabled])").remove();
     modelInput.val("").attr("disabled", true);
     buyInput.val("");
     sellInput.val("");

@@ -33,8 +33,8 @@
 				</div>
 				<div class="form-group mt-1 mt-lg-4">
 					<div class="mx-2">
-						<select class="form-select" id="selectMark" disabled>
-							<option selected disabled class="keep" value="-2"><?= $traderAddOfferText['offer']['select']['mark']?></option>
+						<select class="form-select" id="selectBrand" disabled>
+							<option selected disabled class="keep" value="-2"><?= $traderAddOfferText['offer']['select']['brand']?></option>
 							<option value="-1" class="keep"><?= $traderAddOfferText['offer']['select']['unreferenced']?></option>
 							<option value="2">Two</option>
 							<option value="3">Three</option>

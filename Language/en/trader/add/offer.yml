@@ -5,7 +5,7 @@ offer:
     create: "Create offer"
     category: "Product Category"
     type: "Product type"
-    mark: "Product Mark"
+    brand: "Product Brand"
     model: "Model"
     state:
       state_title: "Product State"

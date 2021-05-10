@@ -5,7 +5,7 @@ offer:
     create: "Créer une offre"
     category: "Catégorie de votre produit"
     type: "Type du produit"
-    mark: "Marque du produit"
+    brand: "Marque du produit"
     model: "Modèle"
     state:
       state_title: "État du produit"

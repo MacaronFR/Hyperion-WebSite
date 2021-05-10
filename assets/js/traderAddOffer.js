@@ -6,7 +6,7 @@ var toastList = toastEL.map(function (toastE) {
 });
 var sCat = $("#selectCategory");
 var sType = $("#selectType");
-var sMark = $("#selectMark");
+var sBrand = $("#selectBrand");
 var sModel = $("#selectModel");
 var sState = $("#selectState");
 var emptySpecSelect = "<div class=\"form-group mt-1 mt-lg-4 mx-2 spec-select\">" +
@@ -17,7 +17,7 @@ var emptySpecSelect = "<div class=\"form-group mt-1 mt-lg-4 mx-2 spec-select\">"
     "</div>";
 sCat.on("change", function () {
     sType.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
-    sMark.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
+    sBrand.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
     sModel.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
     sState.val("-1").attr("disabled", true);
     var url = "/type";
@@ -45,23 +45,23 @@ sCat.on("change", function () {
     });
 });
 sType.on("change", function () {
-    sMark.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
+    sBrand.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
     sModel.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
     sState.val("-1").attr("disabled", true);
-    var url = "/mark";
+    var url = "/brand";
     if (sType.val() !== "-1") {
-        url = "/type/" + sType.val() + "/mark";
+        url = "/type/" + sType.val() + "/brand";
     }
     API_REQUEST(url, "GET").then(function (res) {
         if (res.status.code === 200) {
             var n = res.content.total;
             delete res.content.total;
             delete res.content.totalNotFiltered;
-            sMark.removeAttr("disabled").find("option:not(.keep)").remove();
+            sBrand.removeAttr("disabled").find("option:not(.keep)").remove();
             for (var i = 0; i < n; ++i) {
-                sMark.append(new Option(res.content[i].value, res.content[i].value));
+                sBrand.append(new Option(res.content[i].value, res.content[i].value));
             }
-            sMark.val("-2");
+            sBrand.val("-2");
         }
         else if (res.status.code === 204) {
             $("#ToastWarning").children(".toast-body").text("Aucune marque de ce type");
@@ -72,13 +72,13 @@ sType.on("change", function () {
         toastList[0].show();
     });
 });
-sMark.on("change", function () {
+sBrand.on("change", function () {
     sModel.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
     sState.val("-1").attr("disabled", true);
     var url = "/model";
     var type = false;
-    if (sMark.val() !== "-1") {
-        url = "/mark/" + sMark.val() + "/model";
+    if (sBrand.val() !== "-1") {
+        url = "/brand/" + sBrand.val() + "/model";
     }
     if (sType.val() !== "-1") {
         type = true;
@@ -118,8 +118,8 @@ sMark.on("change", function () {
 sModel.on("change", function () {
     $("#newOffer").find(".spec-select").remove();
     sState.removeAttr("disabled").val("-1");
-    if (sType.val() !== "-1" && sMark !== "-1" && sModel !== -1) {
-        API_REQUEST("/type/" + sType.val() + "/mark/" + sMark.val() + "/model/" + sModel.val() + "/reference", "GET").then(function (res) {
+    if (sType.val() !== "-1" && sBrand !== "-1" && sModel !== -1) {
+        API_REQUEST("/type/" + sType.val() + "/brand/" + sBrand.val() + "/model/" + sModel.val() + "/reference", "GET").then(function (res) {
             var name = undefined;
             getText(lang, "spec").then(function (resText) {
                 name = resText;

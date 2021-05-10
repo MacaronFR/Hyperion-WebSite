@@ -19,7 +19,7 @@
 					<tr>
 						<th data-sortable="true" data-field="id">id</th>
 						<th data-sortable="true" data-field="type">Types</th>
-						<th data-sortable="true" data-field="mark">Marques</th>
+						<th data-sortable="true" data-field="brand">Marques</th>
 						<th data-sortable="true" data-field="model">Modeles</th>
 						<th data-sortable="true" data-field="buying">Prix d'achat</th>
 						<th data-sortable="true" data-field="selling">Prix de vente</th>

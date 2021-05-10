@@ -13,7 +13,7 @@ let toastList = toastEL.map(function (toastE) {
 
 let sCat = $("#selectCategory");
 let sType = $("#selectType");
-let sMark = $("#selectMark");
+let sBrand = $("#selectBrand");
 let sModel = $("#selectModel");
 let sState = $("#selectState");
 
@@ -27,7 +27,7 @@ let emptySpecSelect =
 
 sCat.on("change", function () {
 	sType.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
-	sMark.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
+	sBrand.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
 	sModel.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
 	sState.val("-1").attr("disabled", true);
 	let url = "/type";
@@ -55,23 +55,23 @@ sCat.on("change", function () {
 })
 
 sType.on("change", function () {
-	sMark.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
+	sBrand.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
 	sModel.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
 	sState.val("-1").attr("disabled", true);
-	let url = "/mark";
+	let url = "/brand";
 	if(sType.val() !== "-1"){
-		url = "/type/" + sType.val() + "/mark";
+		url = "/type/" + sType.val() + "/brand";
 	}
 	API_REQUEST(url, "GET").then( (res) =>{
 		if(res.status.code === 200){
 			const n = res.content.total;
 			delete res.content.total;
 			delete res.content.totalNotFiltered;
-			sMark.removeAttr("disabled").find("option:not(.keep)").remove();
+			sBrand.removeAttr("disabled").find("option:not(.keep)").remove();
 			for(let i = 0; i < n; ++i){
-				sMark.append(new Option(res.content[i].value, res.content[i].value));
+				sBrand.append(new Option(res.content[i].value, res.content[i].value));
 			}
-			sMark.val("-2");
+			sBrand.val("-2");
 		}else if(res.status.code === 204){
 			$("#ToastWarning").children(".toast-body").text("Aucune marque de ce type");
 			toastList[2].show();
@@ -82,13 +82,13 @@ sType.on("change", function () {
 	})
 })
 
-sMark.on("change", function () {
+sBrand.on("change", function () {
 	sModel.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
 	sState.val("-1").attr("disabled", true);
 	let url = "/model";
 	let type = false;
-	if(sMark.val() !== "-1"){
-		url = "/mark/" + sMark.val() + "/model"
+	if(sBrand.val() !== "-1"){
+		url = "/brand/" + sBrand.val() + "/model"
 	}
 	if(sType.val() !== "-1"){
 		type = true;
@@ -127,8 +127,8 @@ sMark.on("change", function () {
 sModel.on("change", function(){
 	$("#newOffer").find(".spec-select").remove();
 	sState.removeAttr("disabled").val("-1");
-	if(sType.val() !== "-1" && sMark !== "-1" && sModel !== -1){
-		API_REQUEST("/type/" + sType.val() + "/mark/" + sMark.val() + "/model/" + sModel.val() + "/reference", "GET").then( (res)=> {
+	if(sType.val() !== "-1" && sBrand !== "-1" && sModel !== -1){
+		API_REQUEST("/type/" + sType.val() + "/brand/" + sBrand.val() + "/model/" + sModel.val() + "/reference", "GET").then( (res)=> {
 			let name = undefined;
 			getText(lang, "spec").then( (resText) => {
 				name = resText;

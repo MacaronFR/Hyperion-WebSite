@@ -11,7 +11,7 @@ let toastList = toastEL.map(function (toastE) {
 
 const typeSelect = $("#typeSelect");
 const catSelect = $("#catSelect");
-const markSelect = $("#markSelect");
+const brandSelect = $("#brandSelect");
 const modelInput = $("#modelInput");
 const newSpec = $("#newSpec");
 const specDiv = $("#specDiv");
@@ -49,7 +49,7 @@ const emptySpecValue = "<div class='input-group mb-3 px-3'>" +
 
 catSelect.on("change", function(){
 	API_REQUEST("/category/" + catSelect.val() + "/type", "GET").then((res) => {
-		markSelect.val("-1").attr("disabled", true).find("option:not([disabled])").remove();
+		brandSelect.val("-1").attr("disabled", true).find("option:not([disabled])").remove();
 		modelInput.attr("disabled", true);
 		if(res.status.code === 204){
 			$("#ToastWarning").children(".toast-body").text("Aucun type dans cette catégories");
@@ -70,7 +70,7 @@ catSelect.on("change", function(){
 })
 
 typeSelect.on("change", function (){
-	API_REQUEST("/type/" + typeSelect.val() + "/mark", "GET").then( (res) => {
+	API_REQUEST("/type/" + typeSelect.val() + "/brand", "GET").then( (res) => {
 		modelInput.attr("disabled", true);
 		if(res.status.code === 204){
 			$("#ToastWarning").children(".toast-body").text("Aucune marque de ce type");
@@ -79,11 +79,11 @@ typeSelect.on("change", function (){
 			const n = res.content.total;
 			delete res.content.total;
 			delete res.content.totalNotFiltered;
-			markSelect.removeAttr("disabled").find("option:not([disabled])").remove();
+			brandSelect.removeAttr("disabled").find("option:not([disabled])").remove();
 			for(let i = 0; i < n; ++i){
-				markSelect.append(new Option(res.content[i].value, res.content[i].id));
+				brandSelect.append(new Option(res.content[i].value, res.content[i].id));
 			}
-			markSelect.val("-1");
+			brandSelect.val("-1");
 		}
 	}).catch( () => {
 		$("#ToastError").children(".toast-body").text("Erreur lors de la récupération des marques");
@@ -91,7 +91,7 @@ typeSelect.on("change", function (){
 	})
 })
 
-markSelect.on("change", function(){
+brandSelect.on("change", function(){
 	modelInput.removeAttr("disabled");
 })
 
@@ -108,20 +108,20 @@ newSpec.on("click", function(){
 
 specForm.on("submit", function(){
 	const type = specForm.find("[name=type]").val();
-	const mark = parseInt(specForm.find("[name=mark]").val());
+	const brand = parseInt(specForm.find("[name=brand]").val());
 	const model = specForm.find("[name=model]").val();
 	const specs = prepareSpec();
 	const buying = parseFloat(buyInput.val());
 	const selling = parseFloat(sellInput.val());
 	let fields = {
 		"type": type,
-		"mark": mark,
+		"brand": brand,
 		"model": model,
 		"specs": specs,
 		"buying": buying,
 		"selling": selling,
 	}
-	if(type === null || mark === null || model === ""){
+	if(type === null || brand === null || model === ""){
 		$("#ToastWarning").children(".toast-body").text("Champs manquant");
 		toastList[2].show();
 		return false;
@@ -177,7 +177,7 @@ $("#reset").on("click", function(){
 function reset(){
 	typeSelect.val(-1).attr("disabled", true).find("option:not([disabled])").remove();
 	catSelect.val(-1);
-	markSelect.val(-1).attr("disabled", true).find("option:not([disabled])").remove();
+	brandSelect.val(-1).attr("disabled", true).find("option:not([disabled])").remove();
 	modelInput.val("").attr("disabled", true);
 	buyInput.val("");
 	sellInput.val("");
