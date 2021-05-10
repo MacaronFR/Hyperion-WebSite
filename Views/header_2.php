@@ -61,7 +61,7 @@
                 <a class="nav-link" href="#">Projets Humanitaires</a>
                 <a class="nav-link disabled" href="#" >Projets Ecologiques</a>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']==='3'): ?>
-                    <a class="nav-item nav-link" href="/traderAddOffer">Gestion des Offres</a>
+                    <a class="nav-item nav-link" href="/trader/add/offer">Gestion des Offres</a>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'3'): ?>
                     <a class="nav-item nav-link" href="/manageAddReference">Gestion des Produits</a>

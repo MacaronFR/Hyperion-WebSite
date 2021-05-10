@@ -1,4 +1,5 @@
 offer:
+  title: "Trader - Add Offer"
   select:
     choose: "Please choose value"
     unreferenced: "Unreferenced"

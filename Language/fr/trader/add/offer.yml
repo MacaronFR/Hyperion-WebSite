@@ -1,4 +1,5 @@
 offer:
+  title: "Marchand - Ajouter une offre"
   select:
     choose: "Veuillez choisir une valeur"
     unreferenced: "Non répertorié"

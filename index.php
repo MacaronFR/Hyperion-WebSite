@@ -36,7 +36,7 @@ $rt->get("/manageCategories", ManageCategoriesController::class);
 $rt->post("/manageCategories", ManageCategoriesController::class);
 $rt->get("/manageAddReference", ManageAddReferenceController::class);
 $rt->get("/manageAllProducts", ManageAllProductController::class);
-$rt->get("/traderAddOffer", TraderAddOfferController::class);
+$rt->get("/trader/add/offer", TraderAddOfferController::class);
 $rt->get("/manageAllReferences", ManageAllReferenceController::class);
 $rt->post("/manageAddProduct", ManageAddReferenceController::class);
 $rt->post("/verifAddDomainProduct", VerifAddDomainProductController::class);
