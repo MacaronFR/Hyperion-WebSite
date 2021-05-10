@@ -15,5 +15,6 @@ require_once "Controllers/VerifAddDomainProductController.php";
 require_once "Controllers/ManageAllProductController.php";
 require_once "Controllers/ManageAllReferenceController.php";
 require_once "Controllers/TraderAddOfferController.php";
+require_once "Controllers/TranslationController.php";
 require_once "Router.php";
 require_once "utils.php";

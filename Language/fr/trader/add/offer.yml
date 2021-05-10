@@ -1,0 +1,20 @@
+offer:
+  select:
+    choose: "Veuillez choisir une valeur"
+    unreferenced: "Non répertorié"
+    create: "Créer une offre"
+    category: "Catégorie de votre produit"
+    type: "Type du produit"
+    mark: "Marque du produit"
+    model: "Modèle"
+    state:
+      state_title: "État du produit"
+      state_jabba: "Jabba le Hutt"
+      state_passable: "Passable"
+      state_ok: "OK"
+      state_good: "Bon"
+      state_new: "Neuf"
+    description: "Description (facultatif)"
+    continue: "Continuer"
+    estimate: "Estimation du prix d'achat"
+    unavailable: "Indisponible"

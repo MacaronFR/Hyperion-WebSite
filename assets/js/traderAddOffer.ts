@@ -1,6 +1,8 @@
 declare var token: any;
 declare var $: any;
 declare var bootstrap: any;
+declare var text: object;
+declare var lang: string;
 
 // @ts-ignore
 let toastEL = [].slice.call(document.querySelectorAll(".toast"));
@@ -16,10 +18,10 @@ let sModel = $("#selectModel");
 let sState = $("#selectState");
 
 let emptySpecSelect =
-	"<div class=\"form-group mt-1 mt-lg-4 mx-2\">" +
+	"<div class=\"form-group mt-1 mt-lg-4 mx-2 spec-select\">" +
 		"<label>Storage</label>" +
 		"<select class=\"form-select\">" +
-			"<option selected class=\"keep\" disabled value=\"-1\">Vueillez selectionnez une valeur</option>" +
+			"<option selected class=\"keep\" disabled value=\"-1\">" + text['select']['choose'] + "</option>" +
 		"</select>" +
 	"</div>";
 
@@ -123,17 +125,28 @@ sMark.on("change", function () {
 })
 
 sModel.on("change", function(){
+	$("#newOffer").find(".spec-select").remove();
 	sState.removeAttr("disabled").val("-1");
 	if(sType.val() !== "-1" && sMark !== "-1" && sModel !== -1){
 		API_REQUEST("/type/" + sType.val() + "/mark/" + sMark.val() + "/model/" + sModel.val() + "/reference", "GET").then( (res)=> {
-			console.log(res, Object.keys(res.content.spec));
-			const keys = Object.keys(res.content.spec)
-			for(let i = 0; i < keys.length; ++i ) {
-				const select = $(emptySpecSelect);
-				select.find("label").text(keys[i]);
-				// if(res.content.spec[keys[i]])
-				$("#newOffer").append(select);
-			}
+			let name = undefined;
+			getText(lang, "spec").then( (resText) => {
+				name = resText;
+				const keys = Object.keys(res.content.spec)
+				for(let i = 0; i < keys.length; ++i ) {
+					const select = $(emptySpecSelect);
+					select.find("label").text(name['specification']['name'][keys[i]]);
+					if(Array.isArray(res.content.spec[keys[i]])){
+						for(let j = 0; j < res.content.spec[keys[i]].length; ++j){
+							select.find("select").append(new Option(res.content.spec[keys[i]][j]));
+						}
+					}else{
+						select.find("select").append(new Option(res.content.spec[keys[i]], "1"));
+						select.find("select").val("1");
+					}
+					$("#newOffer").append(select);
+				}
+			});
 		}).catch( (res) => {
 			console.log(res);
 		})

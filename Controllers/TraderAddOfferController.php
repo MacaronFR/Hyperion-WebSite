@@ -12,6 +12,7 @@ class TraderAddOfferController extends Controller{
 		}
 		$categories = $categories['content'];
 		unset($categories['total'], $categories['totalNotFiltered']);
+		$traderAddOfferText = get_text("trader/add/offer");
 		ob_start();
 		include "Views/traderAddProduct.php";
 		return ob_get_clean();

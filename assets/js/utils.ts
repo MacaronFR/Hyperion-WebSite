@@ -47,3 +47,22 @@ function prepare_url(params, url: string):string {
 	}
 	return url;
 }
+
+function getText(lang: string, section :String): Promise<any>{
+	return new Promise(function(resolve) {
+		let xhr = new XMLHttpRequest();
+		xhr.open("GET", "/text/" + lang + "/" + section);
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState === xhr.DONE) {
+				if (xhr.status === 200) {
+					try {
+						resolve(JSON.parse(xhr.responseText));
+					} catch (e) {
+						console.error("Error while retrieving");
+					}
+				}
+			}
+		}
+		xhr.send();
+	});
+}

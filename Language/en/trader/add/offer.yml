@@ -1,0 +1,20 @@
+offer:
+  select:
+    choose: "Please choose value"
+    unreferenced: "Unreferenced"
+    create: "Create offer"
+    category: "Product Category"
+    type: "Product type"
+    mark: "Product Mark"
+    model: "Model"
+    state:
+      state_title: "Product State"
+      state_jabba: "Jabba the Hutt"
+      state_passable: "Passable"
+      state_ok: "OK"
+      state_good: "Good"
+      state_new: "Factory New"
+    description: "Description (optional)"
+    continue: "Continue"
+    estimate: "Buying price estimation"
+    unavailable: "Unavailable"

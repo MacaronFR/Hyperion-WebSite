@@ -1,0 +1,4 @@
+specification:
+    name:
+      storage: "Stockage"
+      processor: "Processeur"
