@@ -21,3 +21,22 @@ offer:
     unavailable: "Indisponible"
   warning:
     not_full: "Veuillez remplir tout les champs"
+    type: "Aucun type dans cette catégorie"
+    brand: "Aucune marque de ce type"
+    model: "Aucun modèle de cette marque"
+    spec: "Aucune spécification pour ce modèle"
+  success:
+    created: "Offre créer"
+  error:
+    create: "Erreur lors de la création de l'offre"
+    type: "Erreur lors de la récupération des données des types"
+    brand: "Erreur lors de la récupération des données des marques"
+    model: "Erreur lors de la récupération des données des modèles"
+    spec: "Erreur lors de la récupération des données des spécification"
+  undefined:
+    title: "Champs non défini"
+    content:
+      main: "Certain champs ne sont pas défini, êtes vous sur de vouloir valider"
+      secondary: "Si vous valider, les informations que vous avez renseigné ne seront pas sauvegardé. Par conséquent nous ne pouvons pas vous fournir une estimation du prix d'achat."
+    close: "Annuler"
+    validate: "Valider"

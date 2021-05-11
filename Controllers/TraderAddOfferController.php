@@ -5,7 +5,7 @@ namespace Hyperion\WebSite;
 
 
 class TraderAddOfferController extends Controller{
-	protected function prepareTraderAddProduct($traderAddOfferText): string{
+	protected function prepareTraderAddProduct($traderAddOfferText, $traderAddOfferSpecText): string{
 		$categories = API_request("/category", "GET");
 		if($categories === false){
 			header("Location: /500");
@@ -21,11 +21,12 @@ class TraderAddOfferController extends Controller{
 	 * @inheritDoc
 	 */
 	public function get(array $args){
-		$traderAddOfferText = get_text("trader/add/offer");
+		$main = get_text("trader/add/offer");
+		$spec = get_text("spec");
 		$root = get_text("root");
-		$head = $this->prepareHead($traderAddOfferText['offer']['title']);
+		$head = $this->prepareHead($main['offer']['title']);
 		$header = $this->prepareHeader_2($root['header'], "TraderAddOfferController");
-		$main = $this->prepareTraderAddProduct($traderAddOfferText);
+		$main = $this->prepareTraderAddProduct($main, $spec);
 		$footer = $this->prepareFooter();
 		$body = $this->prepareBody($header, $main, $footer);
 		include "Views/root.php";

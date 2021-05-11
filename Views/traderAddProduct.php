@@ -2,6 +2,7 @@
 /**
  * @var array $categories
  * @var array $traderAddOfferText
+ * @var array $traderAddOfferSpecText
  */
 ?>
 <div id="div_trader_add_offer_general" class="container-fluid d-flex flex-column">
@@ -14,7 +15,7 @@
 					<div class="mx-2">
 						<select class="form-select" id="selectCategory">
 							<option selected disabled class="keep"><?= $traderAddOfferText['offer']['select']['category']?></option>
-							<option value="-1" class="keep"><?= $traderAddOfferText['offer']['select']['unreferenced']?></option>
+							<option value="undefined" class="keep"><?= $traderAddOfferText['offer']['select']['unreferenced']?></option>
 							<?php foreach($categories as $category): ?>
 								<option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
 							<?php endforeach; ?>
@@ -25,9 +26,7 @@
 					<div class="mx-2">
 						<select class="form-select" id="selectType" disabled>
 							<option selected disabled class="keep" value="-2"><?= $traderAddOfferText['offer']['select']['type']?></option>
-							<option value="-1" class="keep"><?= $traderAddOfferText['offer']['select']['unreferenced']?></option>
-							<option value="2">Two</option>
-							<option value="3">Three</option>
+							<option value="undefined" class="keep"><?= $traderAddOfferText['offer']['select']['unreferenced']?></option>
 						</select>
 					</div>
 				</div>
@@ -35,9 +34,7 @@
 					<div class="mx-2">
 						<select class="form-select" id="selectBrand" disabled>
 							<option selected disabled class="keep" value="-2"><?= $traderAddOfferText['offer']['select']['brand']?></option>
-							<option value="-1" class="keep"><?= $traderAddOfferText['offer']['select']['unreferenced']?></option>
-							<option value="2">Two</option>
-							<option value="3">Three</option>
+							<option value="undefined" class="keep"><?= $traderAddOfferText['offer']['select']['unreferenced']?></option>
 						</select>
 					</div>
 				</div>
@@ -45,16 +42,14 @@
 					<div class="mx-2">
 						<select class="form-select" id="selectModel" disabled>
 							<option selected disabled class="keep" value="-2"><?= $traderAddOfferText['offer']['select']['model']?></option>
-							<option value="-1" class="keep"><?= $traderAddOfferText['offer']['select']['unreferenced']?></option>
-							<option value="2">Two</option>
-							<option value="3">Three</option>
+							<option value="undefined" class="keep"><?= $traderAddOfferText['offer']['select']['unreferenced']?></option>
 						</select>
 					</div>
 				</div>
 				<div class="form-group mt-1 mt-lg-4">
 					<div class="mx-2">
 						<select class="form-select" id="selectState" disabled>
-							<option selected class="keep" disabled value="-1"><?= $traderAddOfferText['offer']['select']['state']['state_title']?></option>
+							<option selected class="keep" disabled value="undefined"><?= $traderAddOfferText['offer']['select']['state']['state_title']?></option>
 							<option value="1"><?= $traderAddOfferText['offer']['select']['state']['state_jabba']?></option>
 							<option value="2"><?= $traderAddOfferText['offer']['select']['state']['state_passable']?></option>
 							<option value="3"><?= $traderAddOfferText['offer']['select']['state']['state_ok']?></option>
@@ -93,6 +88,26 @@
 		</div>
 	</div>
 </div>
+
+<div class="modal fade" id="modalUndefined" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"><?= $traderAddOfferText['offer']['undefined']['title']?></h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">
+				<p><?= $traderAddOfferText['offer']['undefined']['content']['main']?></p>
+				<p><?= $traderAddOfferText['offer']['undefined']['content']['secondary']?></p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-bs-dismiss="modal"><?= $traderAddOfferText['offer']['undefined']['close']?></button>
+				<button type="button" class="btn btn-danger delete"><?= $traderAddOfferText['offer']['undefined']['validate']?></button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="position-fixed top-0 end-0 p-3" style="z-index: 1500">
 	<div id="ToastError" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
 		<div class="toast-body bg-danger">
@@ -117,9 +132,12 @@
 		'select':{
 			'choose': "<?= $traderAddOfferText['offer']['select']['choose']?>"
 		},
-		'warning':{
-			'not_full': "<?= $traderAddOfferText['offer']['warning']['not_full']?>"
-		}
+		'warning':<?= json_encode($traderAddOfferText['offer']['warning'])?>,
+		'success':{
+			'created': "<?= $traderAddOfferText['offer']['success']['created']?>"
+		},
+		'error': <?= json_encode($traderAddOfferText['offer']['error'])?>,
+		'specification': <?= json_encode($traderAddOfferSpecText['specification'])?>
 	}
 </script>
 <script src="/assets/js/traderAddOffer.js"></script>

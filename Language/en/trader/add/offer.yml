@@ -21,3 +21,22 @@ offer:
     unavailable: "Unavailable"
   warning:
     not_full: "Please fill all fields"
+    type: "No type in this category"
+    brand: "No brand of this type"
+    model: "No model of this brand"
+    spec: "No specification for this model"
+  success:
+    created: "Offer Created"
+  error:
+    create: "Error while creating"
+    type: "Error while retrieving type data"
+    brand: "Error while retrieving brand data"
+    model: "Error while retrieving model data"
+    spec: "Error while retrieving specification data"
+  undefined:
+    title: "Undefined fields"
+    content:
+      main: "Some fields aren't defined, are you sure you want to send form"
+      secondary: "If you send form with undefined field, the information you inquired will not be saved.Therefore, we will not be able to give a buying price estimation."
+    close: "Cancel"
+    validate: "Send"
