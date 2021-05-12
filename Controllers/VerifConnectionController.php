@@ -12,33 +12,29 @@ class VerifConnectionController extends Controller{
 	 * @return int return error code
 	 */
 	private function checkConnection(array $post_args): int{
-		if(isset($post_args['form_connexion']) && !empty($post_args['id'] and !empty($post_args['password']))){
-			$credentials = read_conf("[API]");
-			$mail = $post_args['id'];
-			$password = hash("sha256", $post_args['password']);
-			$client_info = API_request("/connect/$credentials[1]/$credentials[2]/$mail/$password", "GET");
-			if($client_info !== false){
-				if($client_info['status']['code'] === 302){
-					$token_info = API_request($client_info['status']['message'], "GET");
-					if($token_info !== false && $token_info['status']['code'] === 200){
-						$_SESSION['id'] = $client_info['content']['id'];
-						$_SESSION['mail'] = $client_info['content']['mail'];
-						$_SESSION['level'] = $client_info['content']['type'];
-						$_SESSION['name'] = $client_info['content']['name'];
-						$_SESSION['token'] = $token_info['content']['token'];
-						return 0;
-					}else{
-						return 1;
-					}
-				}else{
-					return 2;
-				}
-			}else{
-				return 3;
-			}
-		}else{
+		if(!isset($post_args['form_connexion']) || empty($post_args['id'] || empty($post_args['password']))){
 			return 4;
 		}
+		$credentials = read_conf("[API]");
+		$mail = $post_args['id'];
+		$password = hash("sha256", $post_args['password']);
+		$client_info = API_request("/connect/$credentials[1]/$credentials[2]/$mail/$password", "GET");
+		if($client_info === false){
+			return 3;
+		}
+		if($client_info['status']['code'] !== 302){
+			return 2;
+		}
+		$token_info = API_request($client_info['status']['message'], "GET");
+		if($token_info === false || $token_info['status']['code'] !== 200){
+			return 1;
+		}
+		$_SESSION['id'] = $client_info['content']['id'];
+		$_SESSION['mail'] = $client_info['content']['mail'];
+		$_SESSION['level'] = $client_info['content']['type'];
+		$_SESSION['name'] = $client_info['content']['name'];
+		$_SESSION['token'] = $token_info['content']['token'];
+		return 0;
 	}
 
 	/**
