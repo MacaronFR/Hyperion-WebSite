@@ -18,7 +18,7 @@ class ManageAllReferenceController extends Controller
     public function get(array $args){
         $root = get_text("root");
         $head = $this->prepareHead("Manage All Reference");
-        $header = $this->prepareHeader_2($root['header'], "ManageAllReference");
+        $header = $this->prepareHeader_2($root['header'], "manage");
         $main = $this->prepareManageAllReferences();
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
