@@ -26,7 +26,7 @@ class TraderAddOfferController extends Controller{
 		$root = get_text("root");
 		$head = $this->prepareHead($main['offer']['title']);
 		$head .= '<script src="/assets/js/base64.js"></script>';
-		$header = $this->prepareHeader_2($root['header'], "TraderAddOfferController");
+		$header = $this->prepareHeader_2($root['header'], "trader");
 		$main = $this->prepareTraderAddProduct($main, $spec);
 		$footer = $this->prepareFooter();
 		$body = $this->prepareBody($header, $main, $footer);

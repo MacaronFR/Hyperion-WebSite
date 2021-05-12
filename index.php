@@ -22,8 +22,7 @@ include "autoload.php";
 include "connectionCheck.php";
 get_lang();
 
-$rt = new Router(new TestController());
-$rt->get("/lol", TestController::class);
+$rt = new Router();
 $rt->get("/", StoreController::class);
 $rt->get("/connect", ConnectionController::class);
 $rt->get("/connect/*", ConnectionController::class);
@@ -39,4 +38,4 @@ $rt->get("/manage/all/references", ManageAllReferenceController::class);
 $rt->get("/trader/add/offer", TraderAddOfferController::class);
 $rt->post("/check/add/domain/product", VerifAddDomainProductController::class);
 $rt->get("/text/*/*", TranslationController::class);
-$rt->default();
+http_response_code(404);
