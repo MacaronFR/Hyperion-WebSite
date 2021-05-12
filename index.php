@@ -19,6 +19,7 @@ use Hyperion\WebSite\TraderAddOfferController;
 
 
 include "autoload.php";
+session_start();
 get_lang();
 
 $rt = new Router();
