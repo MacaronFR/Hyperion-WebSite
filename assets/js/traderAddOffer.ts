@@ -3,6 +3,11 @@ declare var $: any;
 declare var bootstrap: any;
 declare var text: object;
 declare var lang: string;
+declare var Base64: any;
+
+const maxFile = 3;
+let nFile = 1;
+let b64File = [];
 
 // @ts-ignore
 let toastEL = [].slice.call(document.querySelectorAll(".toast"));
@@ -24,6 +29,8 @@ let emptySpecSelect =
 			"<option selected class=\"keep\" disabled value=\"-1\">" + text['select']['choose'] + "</option>" +
 		"</select>" +
 	"</div>";
+
+let fileTab = "<li class='nav-item'><a class='nav-link' data-bs-toggle='tab' data-bs-target=''>" + text['select']['file'] + "</a></li>"
 
 sCat.on("change", function () {
 	sType.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
@@ -174,7 +181,7 @@ $("#newOffer").on("submit", function (e){
 
 $("#sendUndefined").on("click", sendOffer);
 
-function sendOffer(){
+async function sendOffer(){
 	let specOK = true;
 	let spec = {};
 	$(".spec-select").each(function(){
@@ -191,8 +198,11 @@ function sendOffer(){
 			'brand': sBrand.val(),
 			'model': sModel.val(),
 			'state': sState.val(),
-			'spec': spec
+			'spec': spec,
+			'files': []
 		}
+		await readFile();
+		post.files = b64File;
 		API_REQUEST("/offer/" + token, "POST", post).then( (res) => {
 			$("#ToastSuccess").children(".toast-body").text(text['success']['created']);
 			toastList[1].show()
@@ -205,4 +215,40 @@ function sendOffer(){
 		})
 	}
 	return
+}
+
+$("#newFile").on("click", function(){
+	if(nFile < maxFile){
+		++nFile;
+		let tmp = $(fileTab);
+		tmp.find("a").attr("data-bs-target", "#f" + nFile);
+		$(this).before(tmp);
+	}
+	if(nFile >= maxFile){
+		$(this).find("a").addClass("disabled")
+	}
+})
+
+function readFile(): Promise<void>{
+	return new Promise(function (resolve) {
+		b64File = [];
+		$(".offer-file").each(function (i) {
+			if (this.files.length === 1) {
+				const r = new FileReader();
+				r.onload = (ev) => {
+					b64File.push({
+						'content': Base64.encode(ev.target.result),
+						'filename': this.files[0].name,
+						'type': this.files[0].type
+					});
+					if (i === maxFile - 1) {
+						resolve();
+					}
+				}
+				r.readAsText(this.files[0]);
+			} else if (i === maxFile - 1) {
+				resolve();
+			}
+		});
+	});
 }

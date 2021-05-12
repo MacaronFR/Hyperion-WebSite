@@ -8,6 +8,7 @@ offer:
     type: "Product type"
     brand: "Product Brand"
     model: "Model"
+    file: "File"
     state:
       state_title: "Product State"
       state_jabba: "Jabba the Hutt"
@@ -15,10 +16,9 @@ offer:
       state_ok: "OK"
       state_good: "Good"
       state_new: "Factory New"
-    description: "Description (optional)"
-    continue: "Continue"
-    estimate: "Buying price estimation"
-    unavailable: "Unavailable"
+  continue: "Continue"
+  estimate: "Buying price estimation"
+  unavailable: "Unavailable"
   warning:
     not_full: "Please fill all fields"
     type: "No type in this category"

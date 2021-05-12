@@ -58,24 +58,38 @@
 						</select>
 					</div>
 				</div>
-				<div class="form-group mt-1 mt-lg-4">
-					<div class="mx-2">
-						<textarea name="" placeholder="<?= $traderAddOfferText['offer']['select']['description']?>" class="form-control"></textarea>
+				<div class="card mx-2 mt-lg-4 mt-2">
+					<div class="card-header">
+						<ul class="nav nav-tabs card-header-tabs">
+							<li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" data-bs-target="#f1"><?= $traderAddOfferText['offer']['select']['file']?></a></li>
+							<li class="nav-item" id="newFile"><a class="nav-link"><i class="bi bi-file-plus"></i></a></li>
+						</ul>
+					</div>
+					<div class="card-body tab-content">
+						<div class="mt-lg-2 mt-1 tab-pane fade show active" id="f1">
+							<input class="form-control offer-file" type="file">
+						</div>
+						<div class="mt-lg-2 mt-1 tab-pane fade" id="f2">
+							<input class="form-control offer-file" type="file">
+						</div>
+						<div class="mt-lg-2 mt-1 tab-pane fade" id="f3">
+							<input class="form-control offer-file" type="file">
+						</div>
 					</div>
 				</div>
 				<div id="div_trader_add_offer_button" class="form-group mt-4 d-flex justify-content-center row mx-0">
-					<input type="submit" name="" value="<?= $traderAddOfferText['offer']['select']['continue']?>" class="btn btn-block btn-lg col-lg-8 col-6">
+					<input type="submit" name="" value="<?= $traderAddOfferText['offer']['continue']?>" class="btn btn-block btn-lg col-lg-8 col-6">
 				</div>
 			</form>
 		</div>
 		<div id="div_trader_add_offer_price_top" class="row col-11 col-lg-3 me-lg-5 ms-lg-5 px-4 my-auto">
 			<div id="div_trader_add_offer_price" class="justify-content-center d-flex flex-column h-50">
-				<h3 class="align-self-center"><?= $traderAddOfferText['offer']['select']['estimate']?></h3>
+				<h3 class="align-self-center"><?= $traderAddOfferText['offer']['estimate']?></h3>
 				<!-- ici met une condition avec le carrée qui devient vert si le prix est disponible
 					et la police devient blanche :) <3
 					 il manque aussi les photos  3 maximum si jamais tu le fais avant moi -->
 				<div id="priceEstimationOk" class="d-flex justify-content-center py-3 mt-3 mb-4">
-					<p class="my-auto"><?= $traderAddOfferText['offer']['select']['unavailable']?></p>
+					<p class="my-auto"><?= $traderAddOfferText['offer']['unavailable']?></p>
 				</div>
 				<div id="infoEstimation">
 					<p>Ce montant est calculé à partir des éléments déclarés, il s'agit d'une estimation du prix du
@@ -130,7 +144,8 @@
 <script>
 	let text = {
 		'select':{
-			'choose': "<?= $traderAddOfferText['offer']['select']['choose']?>"
+			'choose': "<?= $traderAddOfferText['offer']['select']['choose']?>",
+			'file': "<?= $traderAddOfferText['offer']['select']['file']?>"
 		},
 		'warning':<?= json_encode($traderAddOfferText['offer']['warning'])?>,
 		'success':{

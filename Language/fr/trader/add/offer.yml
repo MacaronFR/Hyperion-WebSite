@@ -8,6 +8,7 @@ offer:
     type: "Type du produit"
     brand: "Marque du produit"
     model: "Modèle"
+    file: "Fichier"
     state:
       state_title: "État du produit"
       state_jabba: "Jabba le Hutt"
@@ -15,10 +16,9 @@ offer:
       state_ok: "OK"
       state_good: "Bon"
       state_new: "Neuf"
-    description: "Description (facultatif)"
-    continue: "Continuer"
-    estimate: "Estimation du prix d'achat"
-    unavailable: "Indisponible"
+  unavailable: "Indisponible"
+  continue: "Continuer"
+  estimate: "Estimation du prix d'achat"
   warning:
     not_full: "Veuillez remplir tout les champs"
     type: "Aucun type dans cette catégorie"
