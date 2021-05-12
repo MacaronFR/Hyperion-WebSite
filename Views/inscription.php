@@ -6,7 +6,7 @@
 <div id="div_form_inscription" class="container-fluid d-flex flex-column mt-11 mt-lg-5">
     <div id="div_inscription" class="row col-11 col-lg-4 border border-2 rounded-3 py-4 px-4 align-self-center">
         <h1>Créer votre compte</h1>
-        <form action="/verif_inscription" method="post">
+        <form action="/check/inscription" method="post">
             <div class="form-row d-flex mt-1 mt-lg-4">
                 <div class="form-group col mx-2">
                     <label for="family_name" class="form-label">Votre nom</label>

@@ -4,7 +4,7 @@
 <div id="div_form_connexion" class="container-fluid d-flex flex-column mt-11 mt-lg-5 mb-4">
     <div id="div_connexion" class="row col-11 col-lg-4 border border-2 rounded-3 py-4 px-4 align-self-center">
         <h1>S'identifier</h1>
-        <form action="/verif_connect" method="post">
+        <form action="/check/connect" method="post">
             <div class="form-group mt-1 mt-lg-4">
                 <label for="id" class="form-label">Adresse e-mail ou numéro de téléphone portable</label>
                 <input type="text" class="form-control" name="id">

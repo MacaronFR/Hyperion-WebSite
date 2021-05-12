@@ -64,7 +64,7 @@
                     <a class="nav-item nav-link" href="/trader/add/offer">Gestion des Offres</a>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'3'): ?>
-                    <a class="nav-item nav-link" href="/manageAddReference">Gestion des Produits</a>
+                    <a class="nav-item nav-link" href="/manage/add/reference">Gestion des Produits</a>
                     <a class="nav-item nav-link" href="#">Gestion des Offres</a>
                     <a class="nav-item nav-link" href="#">Gestion des Projets</a>
                 <?php endif; ?>
@@ -108,10 +108,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="/manageAddReference">Ajoutez une référence</a>
-                <a class="nav-link" href="/manageAllReferences">Consulter les références</a>
-                <a class="nav-link" href="/manageAllProducts">Consulter les produits</a>
-                <a class="nav-link" href="/manageCategories">Gerer les caractéristiques & catégories</a>
+                <a class="nav-link active" aria-current="page" href="/manage/add/reference">Ajoutez une référence</a>
+                <a class="nav-link" href="/manage/all/references">Consulter les références</a>
+                <a class="nav-link" href="/manage/all/products">Consulter les produits</a>
+                <a class="nav-link" href="/manage/categories">Gerer les caractéristiques & catégories</a>
             </div>
         </div>
     </div>
