@@ -172,6 +172,8 @@ $("#newOffer").on("submit", function (e){
 	sendOffer();
 })
 
+$("#sendUndefined").on("click", sendOffer);
+
 function sendOffer(){
 	let specOK = true;
 	let spec = {};

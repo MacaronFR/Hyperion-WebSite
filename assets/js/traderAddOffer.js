@@ -164,6 +164,7 @@ $("#newOffer").on("submit", function (e) {
     }
     sendOffer();
 });
+$("#sendUndefined").on("click", sendOffer);
 function sendOffer() {
     var specOK = true;
     var spec = {};
