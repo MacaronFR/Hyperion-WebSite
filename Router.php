@@ -141,4 +141,8 @@ class Router {
 			}
 		}
 	}
+
+	public function isRouted(){
+		return $this->routed;
+	}
 }

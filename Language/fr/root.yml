@@ -5,3 +5,35 @@ header:
         disconnect: "Déconnexion"
         inscription: "Inscription"
         connection: "Connexion"
+    search:
+        search: "Recherche"
+        all_cat: "Toutes les catégories"
+    header:
+        explore: "Explorer"
+        products: "Produits"
+        service: "Service Client"
+        project:
+            human: "Projet Humanitaire"
+            eco: "Projet Écologie"
+        staff:
+            product: "Gestion des produits"
+            offer: "Gestion des offres"
+            project: "Gestion des projets"
+        admin:
+            admin: "Administration"
+        trader:
+            offer: "Gestion des offres"
+    sub_header:
+        trader:
+            offer:
+                title: "Offres"
+                add: "Ajouter une offre"
+                pending: "Consulter les offres en attentes"
+                history: "Consulter l'historique des offres"
+        admin:
+            categories:
+                title: "Catégories"
+                add: "Ajouter une référence"
+                see_ref: "Consulter les référence"
+                see_prod: "Consulter les produits"
+                manage: "Gestion des catégories, types et spécification"

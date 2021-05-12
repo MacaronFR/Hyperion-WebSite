@@ -1,8 +1,7 @@
 <?php
 /**
  * @var array $text Contain all root text in the desired language
-
- ** @var string $title Contain the title of the page
+ * @var string $title Contain the title of the page
  */
 
 ?>
@@ -19,7 +18,7 @@
         <div id="navbarHeader2" class="collapse navbar-collapse">
             <div class="d-flex flex-column flex-lg-row container-lg">
                 <div class="input-group">
-                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Toutes nos catégories</button>
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?=$text['search']['all_cat']?></button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">aaaaaaaa</a></li>
                         <li><a class="dropdown-item" href="#">bbbbbbbb</a></li>
@@ -28,7 +27,7 @@
                     <input type="text" class="form-control" aria-label="Text input with dropdown button">
                 </div>
                 <div class="d-grid gap-2 mt-3 mt-lg-0">
-                    <button id="search_barre_bouton" class="btn btn-outline-success" type="submit">Search</button>
+                    <button id="search_barre_bouton" class="btn btn-outline-success" type="submit"><?=$text['search']['search']?></button>
                 </div>
             </div>
             <div class="navbar-nav me-lg-5" id="header_1_link">
@@ -50,26 +49,26 @@
 <!-- sub header 1 -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="SubHeaderCategories">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Explorer</a>
+        <a class="navbar-brand" href="#"><?=$text['header']['explore']?></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarCategories" aria-controls="navBarCategories" aria-expanded="false" aria-label="Toggle navigation sub_header">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navBarCategories">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Nos Produits</a>
-                <a class="nav-link" href="#">Service Client</a>
-                <a class="nav-link" href="#">Projets Humanitaires</a>
-                <a class="nav-link disabled" href="#" >Projets Ecologiques</a>
+                <a class="nav-link active" aria-current="page" href="#"><?=$text['header']['products']?></a>
+                <a class="nav-link" href="#"><?=$text['header']['service']?></a>
+                <a class="nav-link" href="#"><?=$text['header']['project']['human']?></a>
+                <a class="nav-link disabled" href="#" ><?=$text['header']['project']['eco']?></a>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']==='3'): ?>
-                    <a class="nav-item nav-link" href="/trader/add/offer">Gestion des Offres</a>
+                    <a class="nav-item nav-link" href="/trader/add/offer"><?=$text['header']['trader']['offer']?></a>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'3'): ?>
-                    <a class="nav-item nav-link" href="/manage/add/reference">Gestion des Produits</a>
-                    <a class="nav-item nav-link" href="#">Gestion des Offres</a>
-                    <a class="nav-item nav-link" href="#">Gestion des Projets</a>
+                    <a class="nav-item nav-link" href="/manage/add/reference"><?=$text['header']['staff']['product']?></a>
+                    <a class="nav-item nav-link" href="#"><?=$text['header']['staff']['offer']?></a>
+                    <a class="nav-item nav-link" href="#"><?=$text['header']['staff']['project']?></a>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'2'): ?>
-                    <a class="nav-item nav-link" href="#">Administration</a>
+                    <a class="nav-item nav-link" href="#"><?=$text['header']['admin']['admin']?></a>
                 <?php endif; ?>
             </div>
         </div>
@@ -102,16 +101,16 @@
 <?php elseif ($title === "manage"): ?>
 <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Catégories</a>
+        <a class="navbar-brand" href="#"><?= $text['sub_header']['admin']['categories']['title']?></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltBrandup" aria-controls="navbarNavAltBrandup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="/manage/add/reference">Ajoutez une référence</a>
-                <a class="nav-link" href="/manage/all/references">Consulter les références</a>
-                <a class="nav-link" href="/manage/all/products">Consulter les produits</a>
-                <a class="nav-link" href="/manage/categories">Gerer les caractéristiques & catégories</a>
+                <a class="nav-link active" aria-current="page" href="/manage/add/reference"><?= $text['sub_header']['admin']['categories']['add']?></a>
+                <a class="nav-link" href="/manage/all/references"><?= $text['sub_header']['admin']['categories']['see_ref']?></a>
+                <a class="nav-link" href="/manage/all/products"><?= $text['sub_header']['admin']['categories']['see_prod']?></a>
+                <a class="nav-link" href="/manage/categories"><?= $text['sub_header']['admin']['categories']['manage']?></a>
             </div>
         </div>
     </div>
@@ -119,15 +118,15 @@
 <?php elseif ($title === "trader"): ?>
     <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Catégories</a>
+            <a class="navbar-brand" href="#"><?= $text['sub_header']['trader']['offer']['title']?></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltBrandup" aria-controls="navbarNavAltBrandup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Ajouter une offre</a>
-                    <a class="nav-link" href="#">Consulter mes offres en attentes</a>
-                    <a class="nav-link" href="#">Consulter l'historique des offres</a>
+                    <a class="nav-link active" aria-current="page" href="#"><?= $text['sub_header']['trader']['offer']['add']?></a>
+                    <a class="nav-link" href="#"><?= $text['sub_header']['trader']['offer']['pending']?></a>
+                    <a class="nav-link" href="#"><?= $text['sub_header']['trader']['offer']['history']?></a>
                 </div>
             </div>
         </div>

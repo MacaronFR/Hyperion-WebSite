@@ -38,4 +38,6 @@ $rt->get("/manage/all/references", ManageAllReferenceController::class);
 $rt->get("/trader/add/offer", TraderAddOfferController::class);
 $rt->post("/check/add/domain/product", VerifAddDomainProductController::class);
 $rt->get("/text/*/*", TranslationController::class);
-http_response_code(404);
+if(!$rt->isRouted()){
+	http_response_code(404);
+}
