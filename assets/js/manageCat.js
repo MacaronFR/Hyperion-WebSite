@@ -4,9 +4,6 @@ var toastEL = [].slice.call(document.querySelectorAll(".toast"));
 var toastList = toastEL.map(function (toastE) {
     return new bootstrap.Toast(toastE);
 });
-function rowAttributes(row, index) {
-    return { "class": "cat-row" };
-}
 // ---------- callModalDomain  ----------
 //var domainModal = document.getElementById('modalAlterCategory')
 $("#modalAlterCategory").on('show.bs.modal', function (e) {
@@ -69,7 +66,7 @@ function deleteType(button, modal) {
                 toastList[2].show();
             }
         }).catch(function (res) {
-            if (res.status.code === 404) {
+            if (res === 404) {
                 $("#ToastWarning").children(".toast-body").text("Le type n'existe plus");
                 toastList[2].show();
             }
