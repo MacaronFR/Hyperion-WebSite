@@ -28,7 +28,9 @@
                 <tr>
                     <th scope="row">2134214</th>
                     <td>Smartphone</td>
-                    <td>En attente</td>
+                    <td class="d-grid">
+                        <button type="button" class="btn btn-warning">Contre Offre !</button>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">2134214</th>
@@ -38,7 +40,9 @@
                 <tr>
                     <th scope="row">2134214</th>
                     <td>Smartphone</td>
-                    <td>En attente</td>
+                    <td class="d-grid">
+                        <button type="button" class="btn btn-danger">Retour produit</button>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">2134214</th>
@@ -48,7 +52,9 @@
                 <tr>
                     <th scope="row">2134214</th>
                     <td>Smartphone</td>
-                    <td>En attente</td>
+                    <td class="d-grid">
+                        <button type="button" class="btn btn-warning">Contre Offre !</button>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">2134214</th>
@@ -79,7 +85,7 @@
             </table>
         </div>
         <div id="divtraderpendinginfo" class="container-fluid col-lg-3 d-flex flex-column justify-content-center my-auto py-3">
-            <h4 class="align-self-center">informations du produit</h4>
+            <h4 class="align-self-center mb-3">informations du produit</h4>
             <input type="text" class="form-control mb-1" value="Smartphone" style="text-align: center">
             <input type="text" class="form-control mb-1" value="Apple" style="text-align: center">
             <input type="text" class="form-control mb-1" value="6s - White" style="text-align: center">
