@@ -264,6 +264,7 @@ function retrieve_type(params){
 	API_REQUEST(url, "GET").then((res) => {
 		let rows = [];
 		let total = res['content'].total;
+
 		let totalNotFiltered = res['content'].totalNotFiltered;
 		delete res['content']['total'];
 		delete res['content']['totalNotFiltered'];

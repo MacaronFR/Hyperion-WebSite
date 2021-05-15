@@ -124,9 +124,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#"><?= $text['sub_header']['trader']['offer']['add']?></a>
-                    <a class="nav-link" href="#"><?= $text['sub_header']['trader']['offer']['pending']?></a>
-                    <a class="nav-link" href="#"><?= $text['sub_header']['trader']['offer']['history']?></a>
+                    <a class="nav-link active" aria-current="page" href="/trader/add/offer"><?= $text['sub_header']['trader']['offer']['add']?></a>
+                    <a class="nav-link" href="/trader/pending/offer"><?= $text['sub_header']['trader']['offer']['pending']?></a>
+                    <a class="nav-link" href="/trader/history/offer"><?= $text['sub_header']['trader']['offer']['history']?></a>
                 </div>
             </div>
         </div>

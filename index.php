@@ -16,6 +16,8 @@ use Hyperion\WebSite\ManageAddReferenceController;
 use Hyperion\WebSite\ManageAllProductController;
 use Hyperion\WebSite\ManageAllReferenceController;
 use Hyperion\WebSite\TraderAddOfferController;
+use Hyperion\WebSite\TraderHistoryOfferController;
+use Hyperion\WebSite\TraderPendingOfferController;
 
 
 include "autoload.php";
@@ -36,6 +38,8 @@ $rt->get("/manage/add/reference", ManageAddReferenceController::class);
 $rt->get("/manage/all/products", ManageAllProductController::class);
 $rt->get("/manage/all/references", ManageAllReferenceController::class);
 $rt->get("/trader/add/offer", TraderAddOfferController::class);
+$rt->get("/trader/history/offer", TraderHistoryOfferController::class);
+$rt->get("/trader/pending/offer", TraderPendingOfferController::class);
 $rt->post("/check/add/domain/product", VerifAddDomainProductController::class);
 $rt->get("/text/*/*", TranslationController::class);
 if(!$rt->isRouted()){
