@@ -207,7 +207,12 @@ header {
 }
 
 /* ----------------------------------- trader pending offer ----------------------------------- */
-#divtraderpendingtable thead{
+#divtraderpendingtable >thead{
+	background-color: #3C3C3C;
+	color: #CC9E08;
+}
+
+#divtraderpendingtable{
 	background-color: #3C3C3C;
 	color: #CC9E08;
 }
