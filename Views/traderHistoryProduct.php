@@ -33,28 +33,28 @@
                     <th scope="row">2134214</th>
                     <td>Smartphone</td>
                     <td class="d-grid">
-                        <button type="button" class="btn btn-danger">Refusé le 9/05/2021</button>
+                        <button type="button" class="btn btn-danger">Refusé le 09/05/2021</button>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">2134214</th>
                     <td>Smartphone</td>
                     <td class="d-grid">
-                        <button type="button" class="btn btn-danger">Refusé le 9/05/2021</button>
+                        <button type="button" class="btn btn-danger">Refusé le 09/05/2021</button>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">2134214</th>
                     <td>Smartphone</td>
                     <td class="d-grid">
-                        <button type="button" class="btn btn-success">Acceptée le 8/05/2021</button>
+                        <button type="button" class="btn btn-success">Acceptée le 08/05/2021</button>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">2134214</th>
                     <td>Smartphone</td>
                     <td class="d-grid">
-                        <button type="button" class="btn btn-danger">Refusé le 2/05/2021</button>
+                        <button type="button" class="btn btn-danger">Refusé le 02/05/2021</button>
                     </td>
                 </tr>
                 <tr>
