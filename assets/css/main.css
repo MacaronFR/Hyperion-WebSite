@@ -10916,4 +10916,10 @@ header {
   background-color: #CC9E08;
 }
 
+/* ----------------------------------- trader pending offer ----------------------------------- */
+#divtraderpendingtable thead {
+  background-color: #3C3C3C;
+  color: #CC9E08;
+}
+
 /*# sourceMappingURL=main.css.map */
