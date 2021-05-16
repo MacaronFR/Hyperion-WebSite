@@ -10918,13 +10918,13 @@ header {
 
 /* ----------------------------------- trader pending offer ----------------------------------- */
 #divtraderpendingtable > thead {
-  background-color: #3C3C3C;
-  color: #CC9E08;
+  background-color: #3C3C3C !important;
+  color: #CC9E08 !important;
 }
 
 #divtraderpendingtable {
-  background-color: #3C3C3C;
-  color: #CC9E08;
+  background-color: #3C3C3C !important;
+  color: #CC9E08 !important;
 }
 
 /*# sourceMappingURL=main.css.map */
