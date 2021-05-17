@@ -21,6 +21,7 @@ use Hyperion\WebSite\TraderPendingOfferController;
 use Hyperion\WebSite\ExpertHistoryOfferController;
 use Hyperion\WebSite\ExpertOffersController;
 use Hyperion\WebSite\ExpertPendingOfferController;
+use Hyperion\WebSite\ExpertConsultOneOfferController;
 use Hyperion\WebSite\MyAccountController;
 
 
@@ -46,6 +47,7 @@ $rt->get("/trader/history/offer", TraderHistoryOfferController::class);
 $rt->get("/trader/pending/offer", TraderPendingOfferController::class);
 $rt->get("/expert/pending/offer", ExpertPendingOfferController::class);
 $rt->get("/expert/history/offer", ExpertHistoryOfferController::class);
+$rt->get("/expert/consult/offer", ExpertConsultOneOfferController::class);
 $rt->get("/expert/offers", ExpertOffersController::class);
 $rt->get("/myAccount", MyAccountController::class);
 $rt->post("/check/add/domain/product", VerifAddDomainProductController::class);
