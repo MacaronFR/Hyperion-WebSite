@@ -1,5 +1,5 @@
 <div id="traderhistoryproductgeneral" class="container-fluid d-flex flex-column">
-    <button type="button" class="btn btn-warning btn-lg col-lg-2 mb-lg-5 mt-lg-5 mb-5 mt-5">Retour à l'accueil</button>
+    <button type="button" class="btn btn-warning btn-lg col-lg-2 mb-lg-5 mt-lg-5 mb-5 mt-5" onclick="window.location.href='/shop'">Retour à l'accueil</button>
     <div class="container-fluid d-flex flex-column flex-lg-row justify-content-lg-evenly">
         <div id="divActualInformations" class="border border-2 border-warning rounded-3 col-lg-4 px-lg-5 py-lg-5 me-lg-5 p-4 mb-5">
             <h3 class="mb-4">Mes informations actuelles</h3>
