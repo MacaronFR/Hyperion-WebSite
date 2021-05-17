@@ -64,7 +64,7 @@
                 <?php endif; ?>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'3'): ?>
                     <a class="nav-item nav-link" href="/manage/add/reference"><?=$text['header']['staff']['product']?></a>
-                    <a class="nav-item nav-link" href="#"><?=$text['header']['staff']['offer']?></a>
+                    <a class="nav-item nav-link" href="/expert/offers"><?=$text['header']['staff']['offer']?></a>
                     <a class="nav-item nav-link" href="#"><?=$text['header']['staff']['project']?></a>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'2'): ?>
@@ -115,6 +115,22 @@
         </div>
     </div>
 </nav>
+<?php elseif ($title === "expert"): ?>
+    <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Offres</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltBrandup" aria-controls="navbarNavAltBrandup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/expert/offers">Consulter offres</a>
+                    <a class="nav-link" href="/expert/pending/offer">Consulter offres en attentes</a>
+                    <a class="nav-link" href="/expert/history/offer">Consulter historique des offres traités</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 <?php elseif ($title === "trader"): ?>
     <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
         <div class="container-fluid">
