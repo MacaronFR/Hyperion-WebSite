@@ -32,7 +32,7 @@
             </div>
             <div class="navbar-nav me-lg-5" id="header_1_link">
                 <?php if(isset($_SESSION['mail'])): ?>
-                    <a class="nav-item nav-link" href="#"><?= $text['account']['my_account'] ?></a>
+                    <a class="nav-item nav-link" href="/myAccount"><?= $text['account']['my_account'] ?></a>
                     <a class="nav-item nav-link" href="#"><?= $text['account']['my_command'] ?></a>
                     <a class="nav-item nav-link" href="/disconnect"><?= $text['account']['disconnect'] ?></a>
                 <?php else: ?>
