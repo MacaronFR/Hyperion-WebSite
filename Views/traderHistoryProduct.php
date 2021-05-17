@@ -1,5 +1,5 @@
 <div id="traderhistoryproductgeneral" class="container-fluid d-flex flex-column">
-    <h3 class="align-self-center mb-4 mt-3">Offre(s) en Attente(s)</h3>
+    <h3 class="align-self-center mb-4 mt-3">Historique des Offres</h3>
     <div class="container-fluid d-flex flex-column flex-lg-row">
         <div id="divtraderhistorytable" class="container-fluid col-lg-7">
             <table class="table"
