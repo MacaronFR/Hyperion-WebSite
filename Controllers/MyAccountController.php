@@ -18,7 +18,7 @@ class MyAccountController extends Controller
     public function get(array $args){
         $root = get_text("root");
         $head = $this->prepareHead("account");
-        $header = $this->prepareHeader_2($root['header'], "account");
+        $header = $this->prepareHeader();
         $main = $this->prepareMyAccount();
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
