@@ -8,7 +8,7 @@ class ExpertOffersController extends Controller
 {
     protected function prepareExpertOffer(): string{
         ob_start();
-        include "Views/expertOffers.php.php";
+        include "Views/expertOffers.php";
         return ob_get_clean();
     }
 
