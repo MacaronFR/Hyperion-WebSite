@@ -11,7 +11,7 @@
                 <tr>
                     <th data-sortable data-field="id">id de l'offre</th>
                     <th data-sortable data-field="type">type de produit</th>
-                    <th data-sortable data-field="state">etat de l'offre</th>
+                    <th data-sortable data-field="state">date de l'offre</th>
                 </tr>
                 </thead>
                 <tbody>
