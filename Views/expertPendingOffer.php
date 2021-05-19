@@ -97,7 +97,7 @@
                 </button>
             </div>
             <div class="d-grid mt-3">
-                <button type="button" class="btn btn-warning me-1">Consulter l'offre</button>
+                <button type="button" class="btn btn-warning me-1" onClick="window.location = '/expert/consult/offer'">Consulter l'offre</button>
             </div>
         </div>
     </div>

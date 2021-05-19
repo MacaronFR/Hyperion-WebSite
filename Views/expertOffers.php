@@ -77,7 +77,7 @@
             <input type="text" class="form-control mb-1" value="Correct" style="text-align: center">
             <input type="text" class="form-control mb-1" value="145 €" style="text-align: center">
             <div class="d-grid mt-3">
-                <button type="button" class="btn btn-warning me-1">traiter cette offre</button>
+                <button type="button" class="btn btn-warning me-1" onClick="window.location = '/expert/consult/offer'">traiter cette offre</button>
             </div>
         </div>
     </div>
