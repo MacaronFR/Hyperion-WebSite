@@ -11,7 +11,7 @@
                 <tr>
                     <th data-sortable data-field="id">id de l'offre</th>
                     <th data-sortable data-field="type">type de produit</th>
-                    <th data-sortable data-field="state">date de fin de l'offre</th>
+                    <th data-sortable data-field="state">date de l'offre</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -97,7 +97,7 @@
                 </button>
             </div>
             <div class="d-grid mt-3">
-                <button type="button" class="btn btn-warning me-1" onClick="window.location = '/expert/consult/offer'">Consulter l'offre</button>
+                <button type="button" class="btn btn-warning me-1" onClick="window.location = '/expert/consult/offer'">Traiter l'offre</button>
             </div>
         </div>
     </div>
