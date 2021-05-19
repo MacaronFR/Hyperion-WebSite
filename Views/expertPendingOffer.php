@@ -1,4 +1,4 @@
-<div id="experthistoryoffergeneral" class="container-fluid d-flex flex-column">
+<div id="experthistoryoffergeneral" class="container-fluid d-flex flex-column mb-5">
     <h3 class="align-self-center mb-4 mt-3">Offres en attentes</h3>
     <div class="container-fluid d-flex flex-column flex-lg-row">
         <div id="divexperthistoryoffertable" class="container-fluid col-lg-7">
