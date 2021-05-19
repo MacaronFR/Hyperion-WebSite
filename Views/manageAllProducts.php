@@ -1,6 +1,6 @@
 <div id="div_main_manage_domains_caracteristiques" class="container-fluid d-flex flex-column mt-11 mt-lg-2">
     <h1 style="text-align: center" class="mb-4">Gestion de l'ensemble des produits</h1>
-    <div class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
+    <div class="row col-11 col-lg-8 border border-2 border-primary rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
         <div class="container mt-3">
             <div class="table-responsive">
 				<table

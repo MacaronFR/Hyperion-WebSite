@@ -88,7 +88,7 @@
                 </tbody>
             </table>
         </div>
-        <div id="divtraderhistoryinfo" class="container-fluid col-lg-3 d-flex flex-column justify-content-center my-auto p-4 border border-2 border-warning rounded-3">
+        <div id="divtraderhistoryinfo" class="container-fluid col-lg-3 d-flex flex-column justify-content-center my-auto p-4 border border-2 border-primary rounded-3">
             <h4 class="align-self-center mb-3">informations du produit</h4>
             <input type="text" class="form-control mb-1" value="Smartphone" style="text-align: center">
             <input type="text" class="form-control mb-1" value="Apple" style="text-align: center">

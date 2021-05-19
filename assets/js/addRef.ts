@@ -20,7 +20,7 @@ const buyInput = $("#buyInput");
 const sellInput = $("#sellInput");
 var nSpec = 0;
 
-const emptySpec = "<div class=\"row col-11 col-lg-10 col-xl-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4 spec\">" +
+const emptySpec = "<div class=\"row col-11 col-lg-10 col-xl-8 border border-2 border-primary rounded-3 py-4 px-4 align-self-center divs_manage mb-4 spec\">" +
 	"<div class='container mb-3'>" +
 	"<div class='d-flex justify-content-between'>" +
 	"<h3>Spécification</h3>" +

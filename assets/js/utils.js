@@ -38,7 +38,11 @@ function API_REQUEST(path, method, param, parse) {
         }
     });
 }
-function prepare_url(params, url) {
+function prepare_url(params, url, token) {
+    if (token === void 0) { token = false; }
+    if (token) {
+        url += token + "/";
+    }
     url += params.data.offset / 10;
     if (params.data.order !== undefined && params.data.sort !== undefined) {
         url += "/search/" + params.data.search;

@@ -9,7 +9,7 @@
 	<h1 class="align-self-center mt-4"><?= $traderAddOfferText['offer']['select']['create']?></h1>
 	<div class="d-flex flex-column flex-lg-row mt-11 mt-lg-4 justify-content-end pe-lg-5 mb-5">
 		<div id="div_trader_add_offer"
-			 class="row col-11 col-lg-5 border border-2 border-warning rounded-3 position me-lg-5 px-5 pt-3 pb-5 align-self-center mb-4">
+			 class="row col-11 col-lg-5 border border-2 border-primary rounded-3 position me-lg-5 px-5 pt-3 pb-5 align-self-center mb-4">
 			<form id="newOffer">
 				<div class="form-group mt-1 mt-lg-4">
 					<div class="mx-2">

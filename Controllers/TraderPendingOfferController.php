@@ -7,7 +7,7 @@ namespace Hyperion\WebSite;
 class TraderPendingOfferController extends Controller
 {
 
-    protected function prepareTraderPendingProduct(): string{
+    protected function prepareTraderPendingProduct(array $traderPendingText): string{
         ob_start();
         include "Views/traderPendingProduct.php";
         return ob_get_clean();
@@ -17,10 +17,11 @@ class TraderPendingOfferController extends Controller
      * @inheritDoc
      */
     public function get(array $args){
+		$traderPendingText = get_text("trader/pending/offer");
         $root = get_text("root");
-        $head = $this->prepareHead("Shop");
+        $head = $this->prepareHead($traderPendingText['offer']['title']);
         $header = $this->prepareHeader_2($root['header'], "trader");
-        $main = $this->prepareTraderPendingProduct();
+        $main = $this->prepareTraderPendingProduct($traderPendingText);
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
         include "Views/root.php";

@@ -7,7 +7,7 @@
 	<div id="manageAddProduct" class="container-fluid d-flex flex-column mt-11 mt-lg-2">
 		<h1 style="text-align: center" class="mb-4">Ajouter une nouvelle référence</h1>
 		<div id="divAddProductGeneral"
-			 class="row col-11 col-lg-10 col-xl-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
+			 class="row col-11 col-lg-10 col-xl-8 border border-2 border-primary rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
 			<div class="container mb-3">
 				<h3 class="mb-3">Général</h3>
 				<div class="row">
@@ -27,7 +27,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row col-11 col-lg-10 col-xl-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
+		<div class="row col-11 col-lg-10 col-xl-8 border border-2 border-primary rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
 			<div class="container mb-3">
 				<div class="row mb-2">
 					<div class="col-lg-6 col-12">
@@ -43,7 +43,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row col-11 col-lg-10 col-xl-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
+		<div class="row col-11 col-lg-10 col-xl-8 border border-2 border-primary rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
 			<div class="container mb-3">
 				<h3 class="mb-3">Prix</h3>
 				<div class="row mb-2">

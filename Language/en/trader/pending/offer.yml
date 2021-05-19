@@ -1,0 +1,30 @@
+offer:
+  title: "Pending Offers"
+  table:
+    header:
+      id: "ID"
+      date: "Date"
+      type: "Type"
+      status: "Status"
+    format: "mm/dd/yyyy"
+    status:
+      not_send: "Not send"
+      send: "Send"
+      analysing: "Analysing"
+      counter: "Counter offer"
+      deny: "Deny"
+      ok: "OK"
+      denied: "Denied"
+  detail:
+    detail: "Detail"
+    title: "Offer Detail"
+    state:
+      state_jabba: "Jabba the Hutt"
+      state_passable: "Passable"
+      state_ok: "OK"
+      state_good: "Good"
+      state_new: "Factory New"
+    offer: "Offer"
+    counter: "Counter-Offer"
+    accept: "Accept"
+    deny: "Deny"
