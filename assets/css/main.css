@@ -10745,7 +10745,7 @@ textarea.form-control-lg {
 */
 @media (min-width: 1025px) and (max-width: 1280px) {
   #carouselexpert img {
-    height: 500px;
+    height: 400px;
   }
 }
 /*
@@ -10754,7 +10754,7 @@ textarea.form-control-lg {
 */
 @media (min-width: 768px) and (max-width: 1024px) {
   #carouselexpert img {
-    height: 500px;
+    height: 700px;
   }
 }
 /*
@@ -10763,7 +10763,7 @@ textarea.form-control-lg {
 */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   #carouselexpert img {
-    height: 500px;
+    height: 350px;
   }
 }
 /*
@@ -10775,11 +10775,21 @@ textarea.form-control-lg {
     height: 500px;
   }
 }
+@media (min-width: 481px) and (max-width: 767px) and (orientation: landscape) {
+  #carouselexpert img {
+    height: 350px;
+  }
+}
 /*
   ##Device = Most of the Smartphones Mobiles (Portrait)
   ##Screen = B/w 320px to 479px
 */
 @media (min-width: 320px) and (max-width: 480px) {
+  #carouselexpert img {
+    height: 350px;
+  }
+}
+@media (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
   #carouselexpert img {
     height: 500px;
   }
