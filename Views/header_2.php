@@ -127,7 +127,6 @@
                     <a class="nav-link active" aria-current="page" href="/expert/offers">Consulter offres</a>
                     <a class="nav-link" href="/expert/pending/offer">Consulter offres en attentes</a>
                     <a class="nav-link" href="/expert/history/offer">Consulter historique des offres traités</a>
-                    <a class="nav-link" href="#">Litige</a>
                 </div>
             </div>
         </div>
