@@ -56,7 +56,6 @@
         <div class="collapse navbar-collapse" id="navBarCategories">
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" href="#"><?=$text['header']['products']?></a>
-                <a class="nav-link" href="#"><?=$text['header']['service']?></a>
                 <a class="nav-link" href="#"><?=$text['header']['project']['human']?></a>
                 <a class="nav-link disabled" href="#" ><?=$text['header']['project']['eco']?></a>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']==='3'): ?>
