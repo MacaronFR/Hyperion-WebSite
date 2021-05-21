@@ -1,4 +1,4 @@
-<div id="experthistoryoffergeneral" class="container-fluid d-flex flex-column">
+<div id="experthistoryoffergeneral" class="container-fluid d-flex flex-column mb-5">
     <h3 class="align-self-center mb-4 mt-3">Offres en attentes</h3>
     <div class="container-fluid d-flex flex-column flex-lg-row">
         <div id="divexperthistoryoffertable" class="container-fluid col-lg-7">
@@ -11,7 +11,7 @@
                 <tr>
                     <th data-sortable data-field="id">id de l'offre</th>
                     <th data-sortable data-field="type">type de produit</th>
-                    <th data-sortable data-field="state">date de fin de l'offre</th>
+                    <th data-sortable data-field="state">date de l'offre</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -70,7 +70,7 @@
         </div>
         <div id="divexperthistoryofferinfo" class="container-fluid col-lg-3 d-flex flex-column justify-content-center my-auto p-4 border border-2 border-warning rounded-3">
 
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselexpert" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -87,17 +87,17 @@
                         <img src="/assets/images/cl4p-tp_left.png" class="d-block w-100">
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselexpert" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselexpert" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
             <div class="d-grid mt-3">
-                <button type="button" class="btn btn-warning me-1">Consulter l'offre</button>
+                <button type="button" class="btn btn-warning me-1" onClick="window.location = '/expert/consult/offer'">Traiter l'offre</button>
             </div>
         </div>
     </div>
