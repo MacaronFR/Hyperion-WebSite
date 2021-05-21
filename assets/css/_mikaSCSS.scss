@@ -9,7 +9,9 @@
 	#carouselexpert img{
 		height: 500px;
 	}
-
+	#carouselexpertoneoffer img{
+		height: 500px;
+	}
 }
 
 /*
@@ -20,6 +22,9 @@
 @media (min-width: 1025px) and (max-width: 1280px) {
 
 	#carouselexpert img{
+		height: 400px;
+	}
+	#carouselexpertoneoffer img{
 		height: 400px;
 	}
 
@@ -35,6 +40,9 @@
 	#carouselexpert img{
 		height: 700px;
 	}
+	#carouselexpertoneoffer img{
+		height: 700px;
+	}
 
 }
 
@@ -46,6 +54,9 @@
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 
 	#carouselexpert img{
+		height: 350px;
+	}
+	#carouselexpertoneoffer img{
 		height: 350px;
 	}
 
@@ -61,12 +72,18 @@
 	#carouselexpert img{
 		height: 500px;
 	}
+	#carouselexpertoneoffer img{
+		height: 500px;
+	}
 
 }
 
 @media (min-width: 481px) and (max-width: 767px) and (orientation: landscape) {
 
 	#carouselexpert img{
+		height: 350px;
+	}
+	#carouselexpertoneoffer img{
 		height: 350px;
 	}
 
@@ -82,12 +99,18 @@
 	#carouselexpert img{
 		height: 350px;
 	}
+	#carouselexpertoneoffer img{
+		height: 350px;
+	}
 
 }
 
 @media (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
 
 	#carouselexpert img{
+		height: 500px;
+	}
+	#carouselexpertoneoffer img{
 		height: 500px;
 	}
 
