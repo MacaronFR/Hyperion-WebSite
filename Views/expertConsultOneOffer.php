@@ -2,8 +2,8 @@
     <h3 class="align-self-center mb-4 mt-3">Gestion de l'offre</h3>
     <div class="container-fluid d-flex flex-column flex-lg-row">
         <div class="container-fluid d-flex flex-column col-lg-5">
-            <div id="divexperthistoryofferinfo" class="container-fluid d-flex flex-column justify-content-center my-auto p-4 border border-2 border-warning rounded-3 mb-3">
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div id="divexpertoneoffer" class="container-fluid d-flex flex-column justify-content-center my-auto p-4 border border-2 border-warning rounded-3 mb-3">
+                <div id="carouselexpertoneoffer" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -20,11 +20,11 @@
                             <img src="/assets/images/cl4p-tp_left.png" class="d-block w-100">
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselexpertoneoffer" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselexpertoneoffer" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
