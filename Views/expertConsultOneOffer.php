@@ -11,13 +11,13 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="cl4p-tp_right.png" class="d-block w-100">
+                            <img src="/assets/images/cl4p-tp_right.png" class="d-block w-100">
                         </div>
                         <div class="carousel-item">
-                            <img src="cl4p-tp_center.png" class="d-block w-100">
+                            <img src="/assets/images/cl4p-tp_center.png" class="d-block w-100">
                         </div>
                         <div class="carousel-item">
-                            <img src="cl4p-tp_left.png" class="d-block w-100">
+                            <img src="/assets/images/cl4p-tp_left.png" class="d-block w-100">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
