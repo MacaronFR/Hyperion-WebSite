@@ -1,6 +1,6 @@
 <div id="expertoneoffergeneral" class="container-fluid d-flex flex-column">
     <h3 class="align-self-center mb-4 mt-3">Gestion de l'offre</h3>
-    <div class="container-fluid d-flex flex-column flex-lg-row">
+    <div class="container-fluid d-flex flex-column flex-lg-row mb-lg-5">
         <div class="container-fluid d-flex flex-column col-lg-5">
             <div id="divexpertoneoffer" class="container-fluid d-flex flex-column justify-content-center my-auto p-4 border border-2 border-warning rounded-3 mb-3">
                 <div id="carouselexpertoneoffer" class="carousel slide" data-bs-ride="carousel">
@@ -11,13 +11,13 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="/assets/images/cl4p-tp_right.png" class="d-block w-100">
+                            <img src="/assets/images/cl4p-tp_right.png" class="d-block">
                         </div>
                         <div class="carousel-item">
-                            <img src="/assets/images/cl4p-tp_center.png" class="d-block w-100">
+                            <img src="/assets/images/cl4p-tp_center.png" class="d-block">
                         </div>
                         <div class="carousel-item">
-                            <img src="/assets/images/cl4p-tp_left.png" class="d-block w-100">
+                            <img src="/assets/images/cl4p-tp_left.png" class="d-block">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselexpertoneoffer" data-bs-slide="prev">
