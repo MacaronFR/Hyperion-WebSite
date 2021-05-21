@@ -11,13 +11,13 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="/assets/images/cl4p-tp_right.png" class="d-block">
+                            <img src="/assets/images/cl4p-tp_right.png" class="">
                         </div>
                         <div class="carousel-item">
-                            <img src="/assets/images/cl4p-tp_center.png" class="d-block">
+                            <img src="/assets/images/cl4p-tp_center.png" class="">
                         </div>
                         <div class="carousel-item">
-                            <img src="/assets/images/cl4p-tp_left.png" class="d-block">
+                            <img src="/assets/images/cl4p-tp_left.png" class="">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselexpertoneoffer" data-bs-slide="prev">
