@@ -1,0 +1,22 @@
+product:
+  title: "Gestion de l'ensemble des produits"
+  table:
+    header:
+      id: "ID"
+      type: "Type"
+      brand: "Marque"
+      model: "Modèle"
+      buying: "Prix d'achat"
+      selling: "Prix de vente"
+    button:
+      change: "Modifier"
+      delete: "Supprimer"
+  modal:
+    delete:
+      close: "Fermer"
+      delete: "Supprimer"
+      title: "Supprimer produit : "
+  toast:
+    success: "Produit supprimer avec succès"
+    warning: "Le produit n'existe pas"
+    error: "Erreur lors de la suppression"

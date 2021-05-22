@@ -11,3 +11,18 @@ reference:
     button:
       change: "Change"
       delete: "Delete"
+  modal:
+    delete:
+      title: "Delete reference : "
+      delete: "Delete"
+      cancel: "Close"
+    change:
+      title: "Delete reference : "
+      cancel: "Fermer"
+      change: "Modifier"
+  toast:
+    error: "Error while deleting"
+    warning:
+      - "La référence n'existe plus"
+      - "Conflict, product use reference"
+    success: "Reference deleted"

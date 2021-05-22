@@ -77,8 +77,8 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-				<button type="button" class="btn btn-danger delete">Supprimer</button>
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $manageAllReferenceText['reference']['modal']['delete']['cancel']?></button>
+				<button type="button" class="btn btn-danger delete"><?= $manageAllReferenceText['reference']['modal']['delete']['delete']?></button>
 			</div>
 		</div>
 	</div>
@@ -102,5 +102,16 @@
 		</div>
 	</div>
 </div>
-
+<script>
+	const text = {
+		"table":{
+			"button": <?=json_encode($manageAllReferenceText['reference']['table']['button'])?>
+		},
+		"modal":{
+			"delete": "<?= $manageAllReferenceText['reference']['modal']['delete']['title']?>",
+			"change": "<?= $manageAllReferenceText['reference']['modal']['change']['title']?>"
+		},
+		"toast":<?= json_encode($manageAllReferenceText['reference']['toast'])?>
+	}
+</script>
 <script src="/assets/js/manageRef.js"></script>

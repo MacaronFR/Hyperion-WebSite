@@ -38,7 +38,7 @@ $rt->get("/inscription{/*/*}", InscriptionController::class);
 $rt->post("/check/inscription", VerifInscriptionController::class);
 $rt->get("/shop", ShopController::class);
 $rt->get("/disconnect", DisconnectController::class);
-$rt->get("/manage/categories", ManageCategoriesController::class);
+$rt->get("/manage/all/categories", ManageCategoriesController::class);
 $rt->get("/manage/add/reference", ManageAddReferenceController::class);
 $rt->get("/manage/all/products", ManageAllProductController::class);
 $rt->get("/manage/all/references", ManageAllReferenceController::class);

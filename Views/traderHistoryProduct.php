@@ -6,7 +6,8 @@
                    id="table_spec"
                    data-toggle="table"
                    data-pagination="true"
-                   data-height="600">
+                   data-height="600"
+				   data-locale="<?= $_SESSION['lang']?>">
                 <thead>
                 <tr>
                     <th data-sortable data-field="id">id de l'offre</th>

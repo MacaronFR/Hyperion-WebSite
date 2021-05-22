@@ -6,6 +6,7 @@ require_once "autoload.php";
 
 class ManageAllProductController extends Controller{
 	protected function prepareManageAllProducts(): string{
+		$allProductText = get_text("manage/all/product");
 		ob_start();
 		include "Views/manageAllProducts.php";
 		return ob_get_clean();

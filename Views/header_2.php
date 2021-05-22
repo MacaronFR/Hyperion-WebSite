@@ -109,7 +109,7 @@
                 <a class="nav-link active" aria-current="page" href="/manage/add/reference"><?= $text['sub_header']['admin']['categories']['add']?></a>
                 <a class="nav-link" href="/manage/all/references"><?= $text['sub_header']['admin']['categories']['see_ref']?></a>
                 <a class="nav-link" href="/manage/all/products"><?= $text['sub_header']['admin']['categories']['see_prod']?></a>
-                <a class="nav-link" href="/manage/categories"><?= $text['sub_header']['admin']['categories']['manage']?></a>
+                <a class="nav-link" href="/manage/all/categories"><?= $text['sub_header']['admin']['categories']['manage']?></a>
             </div>
         </div>
     </div>

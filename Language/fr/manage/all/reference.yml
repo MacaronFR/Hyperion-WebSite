@@ -11,3 +11,18 @@ reference:
     button:
       change: "Modifier"
       delete: "Supprimer"
+  modal:
+    delete:
+      title: "Supprimer Référence : "
+      delete: "Supprimer"
+      cancel: "Fermer"
+    change:
+      title: "Supprimer Référence : "
+      change: "Modifier"
+      cancel: "Fermer"
+  toast:
+    error: "Erreur lors de la suppression"
+    warning:
+      - "La référence n'existe plus"
+      - "Conflit, un produit dépend de la référence"
+    success: "Référence supprimer avec succès"
