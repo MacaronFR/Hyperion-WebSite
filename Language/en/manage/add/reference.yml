@@ -1,0 +1,33 @@
+reference:
+  title: "Add new reference"
+  main:
+    title: "General"
+    category: "Select category"
+    type: "Select type"
+  second:
+    brand:
+      title: "Brand"
+      select: "Select brand"
+    model:
+      title: "Model"
+      placeholder: "Select model"
+  price:
+    title: "Price"
+    buying:
+      title: "Buying"
+      placeholder: "Value"
+    selling:
+      title: "Selling"
+      placeholder: "Value"
+  specification:
+    title: "Specification"
+    name:
+      text: "Name"
+      placeholder: "Name"
+    value:
+      text: "Value"
+      placeholder: "Value"
+  button:
+    spec: "Add Specification"
+    reset: "Reset"
+    validate: "Add Reference"

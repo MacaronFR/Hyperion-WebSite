@@ -1,0 +1,13 @@
+reference:
+  title: "Manage all reference"
+  table:
+    header:
+      id: "ID"
+      type: "Type"
+      brand: "Brand"
+      model: "Model"
+      buying: "Buying price"
+      selling: "Selling price"
+    button:
+      change: "Change"
+      delete: "Delete"

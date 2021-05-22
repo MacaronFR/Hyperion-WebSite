@@ -10,6 +10,7 @@ class ManageAddReferenceController extends Controller{
 	 * @inheritDoc
 	 */
 	protected function prepareManageAddReference(): string{
+		$addReferenceText = get_text("manage/add/reference");
 		$categories = API_request("/category", "GET");
 		$types = API_request("/type", "GET");
 		if($categories === false || $types === false){

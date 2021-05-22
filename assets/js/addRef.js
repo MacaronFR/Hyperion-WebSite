@@ -17,17 +17,17 @@ var nSpec = 0;
 var emptySpec = "<div class=\"row col-11 col-lg-10 col-xl-8 border border-2 border-primary rounded-3 py-4 px-4 align-self-center divs_manage mb-4 spec\">" +
     "<div class='container mb-3'>" +
     "<div class='d-flex justify-content-between'>" +
-    "<h3>Spécification</h3>" +
+    "<h3>" + text['spec']['title'] + "</h3>" +
     "<button class='btn btn-outline-danger fs-3 del-spec' type='button'><i class=\"bi bi-x\"></i></button>" +
     "</div>" +
     "<div class='row mt-4'>" +
     "<div class='input-group mb-3 px-3'>" +
-    "<span class='input-group-text'>Nom</span>" +
-    "<input type='text' placeholder='Nom' class='spec-name form-control' name='name'>" +
+    "<span class='input-group-text'>" + text['spec']['name']['text'] + "</span>" +
+    "<input type='text' placeholder='" + text['spec']['name']['placeholder'] + "' class='spec-name form-control' name='name'>" +
     "</div>" +
     "<div class='input-group mb-3 px-3'>" +
-    "<span class='input-group-text'>Valeur</span>" +
-    "<input type='text' placeholder='Valeur' class='spec-value form-control' name='value'>" +
+    "<span class='input-group-text'>" + text['spec']['value']['text'] + "</span>" +
+    "<input type='text' placeholder='" + text['spec']['value']['placeholder'] + "' class='spec-value form-control' name='value'>" +
     "</div>" +
     "<div class='input-group px-3'>" +
     "<button type='button' class='btn btn-outline-secondary w-100 add-spec-value'>+</button>" +
@@ -35,8 +35,8 @@ var emptySpec = "<div class=\"row col-11 col-lg-10 col-xl-8 border border-2 bord
     "</div>" +
     "</div>";
 var emptySpecValue = "<div class='input-group mb-3 px-3'>" +
-    "<span class='input-group-text'>Valeur</span>" +
-    "<input type='text' placeholder='Valeur' class='spec-value form-control'>" +
+    "<span class='input-group-text'>" + text['spec']['value']['text'] + "</span>" +
+    "<input type='text' placeholder='" + text['spec']['value']['placeholder'] + "' class='spec-value form-control'>" +
     "<button class='btn btn-outline-danger delete-val' tabindex='-1' type='button'><i class=\"bi bi-trash\"></i></button>" +
     "</div>";
 catSelect.on("change", function () {

@@ -1,0 +1,13 @@
+reference:
+  title: "Gestion de l'ensemble de références"
+  table:
+    header:
+      id: "ID"
+      type: "Type"
+      brand: "Marque"
+      model: "Modèle"
+      buying: "Prix d'achat"
+      selling: "Prix de vente"
+    button:
+      change: "Modifier"
+      delete: "Supprimer"
