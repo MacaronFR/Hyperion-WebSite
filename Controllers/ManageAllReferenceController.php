@@ -7,6 +7,7 @@ namespace Hyperion\WebSite;
 class ManageAllReferenceController extends Controller
 {
     protected function prepareManageAllReferences(): string{
+    	$manageAllReferenceText = get_text("manage/all/reference");
         ob_start();
         include "Views/manageAllReference.php";
         return ob_get_clean();

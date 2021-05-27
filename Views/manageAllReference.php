@@ -1,9 +1,13 @@
+<?php
+/**
+ * @var array $manageAllReferenceText
+ */
+?>
 <div id="div_main_manage_domains_caracteristiques" class="container-fluid d-flex flex-column mt-11 mt-lg-2">
-	<h1 style="text-align: center" class="mb-4">Gestion de l'ensemble des références</h1>
+	<h1 style="text-align: center" class="mb-4"><?= $manageAllReferenceText['reference']['title']?></h1>
 	<div id="div_manage_domain"
 		 class="row col-11 col-lg-8 border border-2 border-primary rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
 		<div id="div_manage_all_products" class="container mt-3">
-			<h3 class="mb-3">Toutes les catégories de produit</h3>
 			<div class="table-responsive">
 				<table
 						class="table"
@@ -14,15 +18,16 @@
 						data-height="600"
 						data-ajax="retrieve_ref"
 						data-side-pagination="server"
-						data-row-attributes="rowAttributes">
+						data-row-attributes="rowAttributes"
+						data-locale="<?= $_SESSION['lang']?>">
 					<thead>
 					<tr>
-						<th data-sortable="true" data-field="id">id</th>
-						<th data-sortable="true" data-field="type">Types</th>
-						<th data-sortable="true" data-field="brand">Marques</th>
-						<th data-sortable="true" data-field="model">Modeles</th>
-						<th data-sortable="true" data-field="buying">Prix d'achat</th>
-						<th data-sortable="true" data-field="selling">Prix de vente</th>
+						<th data-sortable="true" data-field="id"><?= $manageAllReferenceText['reference']['table']['header']['id']?></th>
+						<th data-sortable="true" data-field="type"><?= $manageAllReferenceText['reference']['table']['header']['type']?></th>
+						<th data-sortable="true" data-field="brand"><?= $manageAllReferenceText['reference']['table']['header']['brand']?></th>
+						<th data-sortable="true" data-field="model"><?= $manageAllReferenceText['reference']['table']['header']['model']?></th>
+						<th data-sortable="true" data-field="buying"><?= $manageAllReferenceText['reference']['table']['header']['buying']?></th>
+						<th data-sortable="true" data-field="selling"><?= $manageAllReferenceText['reference']['table']['header']['selling']?></th>
 						<th data-field="modif"></th>
 						<th data-field="suppr"></th>
 					</tr>
@@ -72,8 +77,8 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-				<button type="button" class="btn btn-danger delete">Supprimer</button>
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $manageAllReferenceText['reference']['modal']['delete']['cancel']?></button>
+				<button type="button" class="btn btn-danger delete"><?= $manageAllReferenceText['reference']['modal']['delete']['delete']?></button>
 			</div>
 		</div>
 	</div>
@@ -97,5 +102,16 @@
 		</div>
 	</div>
 </div>
-
+<script>
+	const text = {
+		"table":{
+			"button": <?=json_encode($manageAllReferenceText['reference']['table']['button'])?>
+		},
+		"modal":{
+			"delete": "<?= $manageAllReferenceText['reference']['modal']['delete']['title']?>",
+			"change": "<?= $manageAllReferenceText['reference']['modal']['change']['title']?>"
+		},
+		"toast":<?= json_encode($manageAllReferenceText['reference']['toast'])?>
+	}
+</script>
 <script src="/assets/js/manageRef.js"></script>

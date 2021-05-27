@@ -13,7 +13,8 @@
                    data-pagination="true"
                    data-height="600"
 				   data-ajax="retrieve_pending"
-					data-side-pagination="server">
+				   data-side-pagination="server"
+				   data-locale="<?= $_SESSION['lang']?>">
                 <thead>
                 <tr>
 					<th data-field="id"><?= $traderPendingText['offer']['table']['header']['id']?></th>

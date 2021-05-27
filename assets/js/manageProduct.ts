@@ -19,8 +19,8 @@ function retrieve_prod(params){
 		delete res['content']['totalNotFiltered'];
 		for(let i = 0; i < Object.keys(res.content).length; ++i){
 			rows.push(res.content[i]);
-			rows[i]['modif'] = "<button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#modalAlterCategory\" data-category-id=\"" + rows[i]['id'] + "\" data-category-name=\"" + rows[i]['name'] + "\">Modifier</button>"
-			rows[i]['suppr'] = "<button type=\"button\" class=\"btn btn-danger\" data-prod-id=\"" + rows[i]['id'] + "\" data-bs-toggle=\"modal\" data-bs-target=\"#modalDelete\" data-prod-brand=\"" + rows[i]['brand'] + "\" data-prod-model=\"" + rows[i]['model'] + "\">Supprimer</button>"
+			rows[i]['modif'] = "<button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#modalAlterCategory\" data-category-id=\"" + rows[i]['id'] + "\" data-category-name=\"" + rows[i]['name'] + "\">" + text['table']['button']['change'] + "</button>"
+			rows[i]['suppr'] = "<button type=\"button\" class=\"btn btn-danger\" data-prod-id=\"" + rows[i]['id'] + "\" data-bs-toggle=\"modal\" data-bs-target=\"#modalDelete\" data-prod-brand=\"" + rows[i]['brand'] + "\" data-prod-model=\"" + rows[i]['model'] + "\">" + text['table']['button']['delete'] + "</button>"
 		}
 		params.success({"total": total, "totalNotFiltered": totalNotFiltered, "rows": rows});
 	})
@@ -29,21 +29,21 @@ function retrieve_prod(params){
 $("#modalDelete").on("show.bs.modal", function (e){
 	const button = $(e.relatedTarget);
 	const modal = $(this);
-	$(modal).find(".modal-title").text("Supprimer produits : " + button.data("prodBrand") + " - " + button.data("prodModel"));
+	$(modal).find(".modal-title").text(text['modal']['delete'] + button.data("prodBrand") + " - " + button.data("prodModel"));
 	$(modal).find(".delete").off("click").on("click", function () {
 		API_REQUEST("/product/" + token + "/" + button.data("prodId"), "DELETE").then((res) => {
 			if(res.status.code === 204) {
 				button.parents("table").bootstrapTable("refresh");
-				$("#ToastSuccess").children(".toast-body").text("Produit supprimer avec succès");
+				$("#ToastSuccess").children(".toast-body").text(text['toast']['success']);
 				modal.modal("toggle");
 				toastList[1].show();
 			}
 		}).catch((res) => {
-			if(res.status.code === 404) {
-				$("#ToastWarning").children(".toast-body").text("Le produits n'existe pas");
+			if(res === 404) {
+				$("#ToastWarning").children(".toast-body").text(text['toast']['warning']);
 				toastList[2].show();
 			}else {
-				$("#ToastError").children(".toast-body").text("Erreur lors de la suppression")
+				$("#ToastError").children(".toast-body").text(text['toast']['error'])
 				toastList[0].show()
 			}
 		})

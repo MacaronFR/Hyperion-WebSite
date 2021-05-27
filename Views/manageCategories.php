@@ -31,7 +31,8 @@
 						data-height="600"
 						data-ajax="retrieve_cat"
 						data-side-pagination="server"
-						data-row-attributes="rowAttributes">
+						data-row-attributes="rowAttributes"
+						data-locale="<?= $_SESSION['lang']?>">
                     <thead>
                     <tr>
                         <th data-sortable="true" data-field="id">id</th>
@@ -78,7 +79,8 @@
 						data-height="600"
 						data-ajax="retrieve_type"
 						data-side-pagination="server"
-						data-row-attributes="rowAttributes">
+						data-row-attributes="rowAttributes"
+						data-locale="<?= $_SESSION['lang']?>">
                     <thead>
                     <tr>
                         <th data-field="id" data-sortable="true">id</th>
@@ -121,7 +123,8 @@
 						data-height="600"
 						data-ajax="retrieve_spec"
 						data-side-pagination="server"
-						data-row-attributes="rowAttributes">
+						data-row-attributes="rowAttributes"
+						data-locale="<?= $_SESSION['lang']?>">
                     <thead>
                     <tr>
                         <th data-field="id">id</th>

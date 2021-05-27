@@ -1,0 +1,33 @@
+reference:
+  title: "Ajouter une nouvelle référence"
+  main:
+    title: "Général"
+    category: "Sélectionnez une catégorie"
+    type: "Sélectionnez un type"
+  second:
+    brand:
+      title: "Marque"
+      select: "Sélectionnez une marque"
+    model:
+      title: "Modèle"
+      placeholder: "Sélectionnez un modèle"
+  price:
+    title: "Prix"
+    buying:
+      title: "Achat"
+      placeholder: "Montant"
+    selling:
+      title: "Vente"
+      placeholder: "Montant"
+  specification:
+    title: "Spécification"
+    name:
+      text: "Nom"
+      placeholder: "Nom"
+    value:
+      text: "Valeur"
+      placeholder: "Valeur"
+  button:
+    spec: "Ajouter une spécification"
+    reset: "Réinitialisé"
+    validate: "Ajouter cette référence"
