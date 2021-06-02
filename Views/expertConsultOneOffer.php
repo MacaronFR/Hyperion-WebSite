@@ -1,5 +1,5 @@
 <div id="expertoneoffergeneral" class="container-fluid d-flex flex-column">
-    <h3 class="align-self-center mb-4 mt-3">Gestion de l'offre</h3>
+    <h3 class="align-self-center mb-4 mt-3">Offre no 8967856</h3>
     <div class="container-fluid d-flex flex-column flex-lg-row mb-lg-5">
         <div class="container-fluid d-flex flex-column col-lg-5">
             <div id="divexpertoneoffer" class="container-fluid d-flex flex-column justify-content-center my-auto p-4 border border-2 border-warning rounded-3 mb-3">
@@ -12,17 +12,17 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="w-100 d-flex justify-content-center">
-                                <img src="/assets/images/cl4p-tp_right.png" class="align-self-center">
+                                <img src="cl4p-tp_right.png" class="align-self-center">
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="w-100 d-flex justify-content-center">
-                                <img src="/assets/images/cl4p-tp_center.png" class="align-self-center">
+                                <img src="cl4p-tp_center.png" class="align-self-center">
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="w-100 d-flex justify-content-center">
-                                <img src="/assets/images/cl4p-tp_left.png" class="align-self-center">
+                                <img src="cl4p-tp_left.png" class="align-self-center">
                             </div>
                         </div>
                     </div>
@@ -34,9 +34,6 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
-                </div>
-                <div class="d-grid mt-3">
-                    <button type="button" class="btn btn-warning me-1">Consulter l'offre</button>
                 </div>
             </div>
             <div id="divexperthistoryoffertable" class="container-fluid my-auto p-4 border border-2 border-warning rounded-3">
@@ -54,8 +51,14 @@
             <input type="text" class="form-control mb-1" value="16 Go" style="text-align: center">
             <input type="text" class="form-control mb-1" value="Correct" style="text-align: center">
             <input type="text" class="form-control mb-1" value="145 €" style="text-align: center">
+            <div class="d-grid mt-3 mb-4">
+                <input type="text" class="form-control me-1" name="input_price" placeholder="saisie du prix" style="text-align: center">
+            </div>
             <div class="d-grid mt-3">
-                <button type="button" class="btn btn-warning me-1">Offre acceptée</button>
+                <button type="button" class="btn btn-success me-1">Envoyé l'offre</button>
+            </div>
+            <div class="d-grid mt-2">
+                <button type="button" class="btn btn-danger me-1">Refuser !</button>
             </div>
         </div>
     </div>
