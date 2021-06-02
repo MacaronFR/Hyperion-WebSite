@@ -1,7 +1,7 @@
 <div id="expertoneoffergeneral" class="container-fluid d-flex flex-column">
     <h3 class="align-self-center mb-4 mt-3">Offre no 8967856</h3>
     <div class="container-fluid d-flex flex-column flex-lg-row mb-lg-5">
-        <div class="container-fluid d-flex flex-column col-lg-5">
+        <div class="container-fluid d-flex flex-column col-lg-5 p-0 mb-3">
             <div id="divexpertoneoffer" class="container-fluid d-flex flex-column justify-content-center my-auto p-4 border border-2 border-warning rounded-3 mb-3">
                 <div id="carouselexpertoneoffer" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
