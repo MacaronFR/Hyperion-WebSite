@@ -10742,6 +10742,10 @@ textarea.form-control-lg {
   #carouselexpertoneoffer img {
     height: 500px;
   }
+
+  #divShopMain img {
+    height: 500px;
+  }
 }
 /*
   ##Device = Laptops, Desktops
