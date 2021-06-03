@@ -56,7 +56,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Samsung Galaxy A51 Smartphone 128GB 4GB Prism Crush Black</h6>
                     <p class="card-text" style="color: green">Trés bonne etat</p>
-                    <p href="#" class="btn btn-primary" style="width: 100%; color: black">255,00 €</p>
+                    <p href="/shop/one/product" class="btn btn-primary" style="width: 100%; color: black">255,00 €</p>
                 </div>
             </div>
         <?php }
