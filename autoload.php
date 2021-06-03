@@ -21,6 +21,7 @@ require_once "Controllers/ExpertOffersController.php";
 require_once "Controllers/ExpertPendingOfferController.php";
 require_once "Controllers/ExpertHistoryOfferController.php";
 require_once "Controllers/ExpertConsultOneOfferController.php";
+require_once "Controllers/ShopOneProductController.php";
 require_once "Controllers/TranslationController.php";
 require_once "Router.php";
 require_once "utils.php";

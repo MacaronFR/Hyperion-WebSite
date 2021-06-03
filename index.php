@@ -23,6 +23,7 @@ use Hyperion\WebSite\ExpertOffersController;
 use Hyperion\WebSite\ExpertPendingOfferController;
 use Hyperion\WebSite\ExpertConsultOneOfferController;
 use Hyperion\WebSite\MyAccountController;
+use Hyperion\WebSite\ShopOneProductController;
 
 
 include "autoload.php";
@@ -52,6 +53,7 @@ $rt->get("/expert/offers", ExpertOffersController::class);
 $rt->get("/myAccount", MyAccountController::class);
 $rt->post("/check/add/domain/product", VerifAddDomainProductController::class);
 $rt->get("/text/*/*", TranslationController::class);
+$rt->get("/shop/one/product", ShopOneProductController::class);
 if(!$rt->isRouted()){
 	http_response_code(404);
 }
