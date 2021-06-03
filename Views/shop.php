@@ -51,12 +51,12 @@
     <div id="divShopMain" class="d-flex flex-row flex-wrap">
         <?php
         for($i=0; $i<=12; $i++){?>
-            <div class="card mx-4 my-5 col-10 col-lg-2" onClick="window.location='/shop/one/product'">
+            <div class="card mx-4 my-5 col-10 col-lg-2" onClick="window.location='/shop/one/product','_blank'">
                 <img src="/assets/images/cl4p-tp_center.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h6 class="card-title">Samsung Galaxy A51 Smartphone 128GB 4GB Prism Crush Black</h6>
                     <p class="card-text" style="color: green">Trés bonne etat</p>
-                    <p href="/shop/one/product" class="btn btn-primary" style="width: 100%; color: black">255,00 €</p>
+                    <p class="btn btn-primary" style="width: 100%; color: black">255,00 €</p>
                 </div>
             </div>
         <?php }
