@@ -1,5 +1,5 @@
 <div id="divShopPrincipal" class="container-fluid d-flex flex-row">
-    <div id="divShopCategories" class="col-2">
+    <div id="divShopCategories" class="col-2 d-none d-lg-flex flex-column">
         <!-- ============== Price ============== -->
         <h4 class="mb-2">Prix</h4>
         <p class="ms-4 mb-1" style="color: gray">De 0 à 200 euros</p>
@@ -40,13 +40,12 @@
         <p>Clé micro-USB</p>
         <p>Accessoires en Pagaille</p>
     </div>
-    <div id="divShopLine" style="background-color: yellow" class="border border-2
-"></div>
+    <div id="divShopLine" style="background-color: yellow" class="border border-2 d-none d-lg-flex"></div>
     <div id="divShopMain" class="d-flex flex-row flex-wrap">
         <?php
         for($i=0; $i<=12; $i++){?>
-            <div class="card mx-4 my-5" style="width: 14rem;">
-                <img src="cl4p-tp_center.png" class="card-img-top" alt="...">
+            <div class="card mx-4 my-5 col-10 col-lg-2">
+                <img src="/assets/images/cl4p-tp_center.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h6 class="card-title">Samsung Galaxy A51 Smartphone 128GB 4GB Prism Crush Black</h6>
                     <p class="card-text" style="color: green">Trés bonne etat</p>
