@@ -1,44 +1,51 @@
 <div id="divShopPrincipal" class="container-fluid d-flex flex-row">
     <div id="divShopCategories" class="col-2 d-none d-lg-flex flex-column">
         <!-- ============== Price ============== -->
-        <h4 class="mb-2">Prix</h4>
-        <p class="ms-4 mb-1">De 0 à 200 euros</p>
-        <p class="ms-4 mb-1">Plus de 200 euros</p>
-        <p class="ms-4 mb-1">Plus de 400 euros</p>
-
+        <div class="mb-2">
+            <h4 class="mb-2">Prix</h4>
+            <p class="ms-4 mb-1">De 0 à 200 euros</p>
+            <p class="ms-4 mb-1">Plus de 200 euros</p>
+            <p class="ms-4 mb-1">Plus de 400 euros</p>
+        </div>
         <!-- ============== Brand ============== -->
-        <h4 class="mb-2">Marques</h4>
-        <p class="ms-4 mb-1">Acer</p>
-        <p class="ms-4 mb-1">Alcatel</p>
-        <p class="ms-4 mb-1">Asus</p>
-        <p class="ms-4 mb-1">Honor</p>
-        <p class="ms-4 mb-1">Huawei</p>
-        <p class="ms-4 mb-1">LG</p>
-        <p class="ms-4 mb-1">Microsoft</p>
-        <p class="ms-4 mb-1">Motorola</p>
-        <p class="ms-4 mb-1">Nokia</p>
-        <p class="ms-4 mb-1">Samsung</p>
-        <p class="ms-4 mb-1">Sony</p>
-        <p class="ms-4 mb-1">Wiko</p>
-        <p class="ms-4 mb-1">Wileyfox</p>
+        <div class="mb-2">
+            <h4 class="mb-2">Marques</h4>
+            <p class="ms-4 mb-1">Acer</p>
+            <p class="ms-4 mb-1">Alcatel</p>
+            <p class="ms-4 mb-1">Asus</p>
+            <p class="ms-4 mb-1">Honor</p>
+            <p class="ms-4 mb-1">Huawei</p>
+            <p class="ms-4 mb-1">LG</p>
+            <p class="ms-4 mb-1">Microsoft</p>
+            <p class="ms-4 mb-1">Motorola</p>
+            <p class="ms-4 mb-1">Nokia</p>
+            <p class="ms-4 mb-1">Samsung</p>
+            <p class="ms-4 mb-1">Sony</p>
+            <p class="ms-4 mb-1">Wiko</p>
+            <p class="ms-4 mb-1">Wileyfox</p>
+        </div>
 
         <!-- ============== Exploitation system ============== -->
-        <h4 class="mb-2">Systéme d'exploitation</h4>
-        <p class="ms-4 mb-1">Android</p>
-        <p class="ms-4 mb-1">IOS</p>
-        <p class="ms-4 mb-1">Windows Phone</p>
+        <div class="mb-2">
+            <h4 class="mb-2">Systéme d'exploitation</h4>
+            <p class="ms-4 mb-1">Android</p>
+            <p class="ms-4 mb-1">IOS</p>
+            <p class="ms-4 mb-1">Windows Phone</p>
+        </div>
 
         <!-- ============== Accessories ============== -->
-        <h4 class="mb-2">Accessoires</h4>
-        <p class="ms-4 mb-1">Chargeur</p>
-        <p class="ms-4 mb-1">Batteries externes</p>
-        <p class="ms-4 mb-1">Supports et stations d'accueil</p>
-        <p class="ms-4 mb-1">Accessoires Auto</p>
-        <p class="ms-4 mb-1">Casques et Ecouteurs</p>
-        <p class="ms-4 mb-1">Cartes Mémoires microSD</p>
-        <p class="ms-4 mb-1">Cables et Connectiques</p>
-        <p class="ms-4 mb-1">Clé micro-USB</p>
-        <p class="ms-4 mb-1">Accessoires en Pagaille</p>
+        <div class="mb-2">
+            <h4 class="mb-2">Accessoires</h4>
+            <p class="ms-4 mb-1">Chargeur</p>
+            <p class="ms-4 mb-1">Batteries externes</p>
+            <p class="ms-4 mb-1">Supports et stations d'accueil</p>
+            <p class="ms-4 mb-1">Accessoires Auto</p>
+            <p class="ms-4 mb-1">Casques et Ecouteurs</p>
+            <p class="ms-4 mb-1">Cartes Mémoires microSD</p>
+            <p class="ms-4 mb-1">Cables et Connectiques</p>
+            <p class="ms-4 mb-1">Clé micro-USB</p>
+            <p class="ms-4 mb-1">Accessoires en Pagaille</p>
+        </div>
     </div>
     <div id="divShopLine" style="background-color: #D8D8D8" class="border border-2 d-none d-lg-flex"></div>
     <div id="divShopMain" class="d-flex flex-row flex-wrap">
