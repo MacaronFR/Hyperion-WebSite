@@ -55,7 +55,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navBarCategories">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#"><?=$text['header']['products']?></a>
+                <a class="nav-link active" aria-current="page" href="/shop"><?=$text['header']['products']?></a>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']==='3'): ?>
                     <a class="nav-item nav-link" href="/trader/add/offer"><?=$text['header']['trader']['offer']?></a>
                 <?php endif; ?>
