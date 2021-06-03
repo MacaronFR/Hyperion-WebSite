@@ -47,7 +47,7 @@
             <p class="ms-4 mb-1">Accessoires en Pagaille</p>
         </div>
     </div>
-    <div id="divShopLine" style="background-color: #D8D8D8" class="border border-2 d-none d-lg-flex mb-4 rounded"></div>
+    <div id="divShopLine" style="background-color: #D8D8D8" class="border border-2 d-none d-lg-flex mt-4 rounded"></div>
     <div id="divShopMain" class="d-flex flex-row flex-wrap">
         <?php
         for($i=0; $i<=12; $i++){?>
