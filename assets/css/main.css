@@ -11069,4 +11069,13 @@ header {
   color: #CC9E08 !important;
 }
 
+/* ----------------------------------- shop ----------------------------------- */
+#divShopCategories p {
+  color: gray;
+}
+
+#divShopCategories H5 {
+  color: black;
+}
+
 /*# sourceMappingURL=main.css.map */

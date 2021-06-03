@@ -2,45 +2,45 @@
     <div id="divShopCategories" class="col-2 d-none d-lg-flex flex-column">
         <!-- ============== Price ============== -->
         <h4 class="mb-2">Prix</h4>
-        <p class="ms-4 mb-1" style="color: gray">De 0 à 200 euros</p>
-        <p>Plus de 200 euros</p>
-        <p>Plus de 400 euros</p>
+        <p class="ms-4 mb-1">De 0 à 200 euros</p>
+        <p class="ms-4 mb-1">Plus de 200 euros</p>
+        <p class="ms-4 mb-1">Plus de 400 euros</p>
 
         <!-- ============== Brand ============== -->
         <h4>Marques</h4>
-        <p>Acer</p>
-        <p>Alcatel</p>
-        <p>Asus</p>
-        <p>Honor</p>
-        <p>Huawei</p>
-        <p>LG</p>
-        <p>Microsoft</p>
-        <p>Motorola</p>
-        <p>Nokia</p>
-        <p>Samsung</p>
-        <p>Sony</p>
-        <p>Wiko</p>
-        <p>Wileyfox</p>
+        <p class="ms-4 mb-1">Acer</p>
+        <p class="ms-4 mb-1">Alcatel</p>
+        <p class="ms-4 mb-1">Asus</p>
+        <p class="ms-4 mb-1">Honor</p>
+        <p class="ms-4 mb-1">Huawei</p>
+        <p class="ms-4 mb-1">LG</p>
+        <p class="ms-4 mb-1">Microsoft</p>
+        <p class="ms-4 mb-1">Motorola</p>
+        <p class="ms-4 mb-1">Nokia</p>
+        <p class="ms-4 mb-1">Samsung</p>
+        <p class="ms-4 mb-1">Sony</p>
+        <p class="ms-4 mb-1">Wiko</p>
+        <p class="ms-4 mb-1">Wileyfox</p>
 
         <!-- ============== Exploitation system ============== -->
         <h4>Systéme d'exploitation</h4>
-        <p>Android</p>
-        <p>IOS</p>
-        <p>Windows Phone</p>
+        <p class="ms-4 mb-1">Android</p>
+        <p class="ms-4 mb-1">IOS</p>
+        <p class="ms-4 mb-1">Windows Phone</p>
 
         <!-- ============== Accessories ============== -->
         <h4>Accessoires</h4>
-        <p>Chargeur</p>
-        <p>Batteries externes</p>
-        <p>Supports et stations d'accueil</p>
-        <p>Accessoires Auto</p>
-        <p>Casques et Ecouteurs</p>
-        <p>Cartes Mémoires microSD</p>
-        <p>Cables et Connectiques</p>
-        <p>Clé micro-USB</p>
-        <p>Accessoires en Pagaille</p>
+        <p class="ms-4 mb-1">Chargeur</p>
+        <p class="ms-4 mb-1">Batteries externes</p>
+        <p class="ms-4 mb-1">Supports et stations d'accueil</p>
+        <p class="ms-4 mb-1">Accessoires Auto</p>
+        <p class="ms-4 mb-1">Casques et Ecouteurs</p>
+        <p class="ms-4 mb-1">Cartes Mémoires microSD</p>
+        <p class="ms-4 mb-1">Cables et Connectiques</p>
+        <p class="ms-4 mb-1">Clé micro-USB</p>
+        <p class="ms-4 mb-1">Accessoires en Pagaille</p>
     </div>
-    <div id="divShopLine" style="background-color: yellow" class="border border-2 d-none d-lg-flex"></div>
+    <div id="divShopLine" style="background-color: #D8D8D8" class="border border-2 d-none d-lg-flex"></div>
     <div id="divShopMain" class="d-flex flex-row flex-wrap">
         <?php
         for($i=0; $i<=12; $i++){?>
@@ -49,7 +49,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Samsung Galaxy A51 Smartphone 128GB 4GB Prism Crush Black</h6>
                     <p class="card-text" style="color: green">Trés bonne etat</p>
-                    <p href="#" class="btn btn-warning" style="width: 100%; color: black">255,00 €</p>
+                    <p href="#" class="btn btn-primary" style="width: 100%; color: black">255,00 €</p>
                 </div>
             </div>
         <?php }
