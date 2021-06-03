@@ -66,6 +66,9 @@
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'2'): ?>
                     <a class="nav-item nav-link" href="#"><?=$text['header']['admin']['admin']?></a>
                 <?php endif; ?>
+                <?php if(isset($_SESSION['level'])): ?>
+                    <a class="nav-item nav-link" href="#">Panier</a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
