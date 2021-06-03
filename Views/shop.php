@@ -7,7 +7,7 @@
         <p class="ms-4 mb-1">Plus de 400 euros</p>
 
         <!-- ============== Brand ============== -->
-        <h4>Marques</h4>
+        <h4 class="mb-2">Marques</h4>
         <p class="ms-4 mb-1">Acer</p>
         <p class="ms-4 mb-1">Alcatel</p>
         <p class="ms-4 mb-1">Asus</p>
@@ -23,13 +23,13 @@
         <p class="ms-4 mb-1">Wileyfox</p>
 
         <!-- ============== Exploitation system ============== -->
-        <h4>Systéme d'exploitation</h4>
+        <h4 class="mb-2">Systéme d'exploitation</h4>
         <p class="ms-4 mb-1">Android</p>
         <p class="ms-4 mb-1">IOS</p>
         <p class="ms-4 mb-1">Windows Phone</p>
 
         <!-- ============== Accessories ============== -->
-        <h4>Accessoires</h4>
+        <h4 class="mb-2">Accessoires</h4>
         <p class="ms-4 mb-1">Chargeur</p>
         <p class="ms-4 mb-1">Batteries externes</p>
         <p class="ms-4 mb-1">Supports et stations d'accueil</p>
