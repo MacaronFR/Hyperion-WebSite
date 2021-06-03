@@ -29,17 +29,17 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="w-100 d-flex justify-content-center">
-                                <img src="assets/images/cl4p-tp_right.png" class="align-self-center">
+                                <img src="/assets/images/cl4p-tp_right.png" class="align-self-center">
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="w-100 d-flex justify-content-center">
-                                <img src="assets/images/cl4p-tp_center.png" class="align-self-center">
+                                <img src="/assets/images/cl4p-tp_center.png" class="align-self-center">
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="w-100 d-flex justify-content-center">
-                                <img src="assets/images/cl4p-tp_left.png" class="align-self-center">
+                                <img src="/assets/images/cl4p-tp_left.png" class="align-self-center">
                             </div>
                         </div>
                     </div>
