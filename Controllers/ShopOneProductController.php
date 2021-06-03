@@ -19,7 +19,7 @@ class ShopOneProductController extends Controller
     public function get(array $args){
         $root = get_text("root");
         $head = $this->prepareHead("produit");
-        $header = $this->prepareHeader_2($root['header'], "expert");
+        $header = $this->prepareHeader_2($root['header'], "un produit");
         $main = $this->prepareShopOneProduct();
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
