@@ -10744,7 +10744,7 @@ textarea.form-control-lg {
   }
 
   #divShopMain img {
-    height: 500px;
+    height: 450px;
   }
 }
 /*
@@ -10759,6 +10759,10 @@ textarea.form-control-lg {
   #carouselexpertoneoffer img {
     height: 400px;
   }
+
+  #divShopMain img {
+    height: 450px;
+  }
 }
 /*
   ##Device = Tablets, Ipads (portrait)
@@ -10771,6 +10775,10 @@ textarea.form-control-lg {
 
   #carouselexpertoneoffer img {
     height: 700px;
+  }
+
+  #divShopMain img {
+    height: 450px;
   }
 }
 /*
@@ -10785,6 +10793,10 @@ textarea.form-control-lg {
   #carouselexpertoneoffer img {
     height: 350px;
   }
+
+  #divShopMain img {
+    height: 450px;
+  }
 }
 /*
   ##Device = Low Resolution Tablets, Mobiles (Landscape)
@@ -10798,6 +10810,10 @@ textarea.form-control-lg {
   #carouselexpertoneoffer img {
     height: 500px;
   }
+
+  #divShopMain img {
+    height: 450px;
+  }
 }
 @media (min-width: 481px) and (max-width: 767px) and (orientation: landscape) {
   #carouselexpert img {
@@ -10806,6 +10822,10 @@ textarea.form-control-lg {
 
   #carouselexpertoneoffer img {
     height: 350px;
+  }
+
+  #divShopMain img {
+    height: 450px;
   }
 }
 /*
@@ -10820,6 +10840,10 @@ textarea.form-control-lg {
   #carouselexpertoneoffer img {
     height: 350px;
   }
+
+  #divShopMain img {
+    height: 450px;
+  }
 }
 @media (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
   #carouselexpert img {
@@ -10828,6 +10852,10 @@ textarea.form-control-lg {
 
   #carouselexpertoneoffer img {
     height: 500px;
+  }
+
+  #divShopMain img {
+    height: 450px;
   }
 }
 /* ----------------------------------- Generale ----------------------------------- */
