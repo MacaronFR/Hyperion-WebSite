@@ -1,5 +1,5 @@
 <div id="divShopPrincipal" class="container-fluid d-flex flex-row">
-    <div id="divShopCategories" class="col-2 d-none d-lg-flex flex-column">
+    <div id="divShopCategories" class="col-2 d-none d-lg-flex flex-column mt-4">
         <!-- ============== Price ============== -->
         <div class="mb-2">
             <h4 class="mb-2">Prix</h4>
