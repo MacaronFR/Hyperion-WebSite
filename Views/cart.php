@@ -1,5 +1,5 @@
 <div id="divMainCart" style="background-color:ghostwhite" class="p-4 d-flex flex-column flex-lg-row">
-    <div id="divArticlesCart" class="border-bottom border-2 mb-4 p-3 rounded-2 col-lg-8 ms-lg-5" style="background-color: green">
+    <div id="divArticlesCart" class="border-bottom border-2 mb-4 p-3 rounded-2 col-lg-8 ms-lg-5" style="background-color: lightgray">
         <h2 class="mb-3">Votre panier</h2>
         <?php
         for($i=0; $i<=1; $i++){ ?>
@@ -15,7 +15,7 @@
             </div>
         <?php } ?>
     </div>
-    <div id="divArticlesPay" class="d-flex flex-column p-3 rounded-2 col-lg-3 ms-lg-5 h-25" style="background-color: red;">
+    <div id="divArticlesPay" class="d-flex flex-column p-3 rounded-2 col-lg-3 ms-lg-5 h-25" style="background-color: lightgray;">
         <h3 class="mb-3" style="text-align: center">Information de livraison</h3>
         <div class="d-flex flex-column">
             <div class="mb-2">
