@@ -67,7 +67,7 @@
                     <a class="nav-item nav-link" href="#"><?=$text['header']['admin']['admin']?></a>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['level'])): ?>
-                    <a class="nav-item nav-link" href="#">Mon panier</a>
+                    <a class="nav-item nav-link" href="/cart">Mon panier</a>
                 <?php endif; ?>
             </div>
         </div>
