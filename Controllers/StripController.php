@@ -18,7 +18,7 @@ class StripController extends Controller
     public function get(array $args){
         $root = get_text("root");
         $head = $this->prepareHead("strip");
-        $header = $this->prepareHeader_2($root['header'], "strip");
+        $header = $this->prepareHeader();
         $main = $this->Strip();
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
@@ -31,7 +31,7 @@ class StripController extends Controller
     public function post(array $args){
         $root = get_text("root");
         $head = $this->prepareHead("strip");
-        $header = $this->prepareHeader_2($root['header'], "strip");
+        $header = $this->prepareHeader();
         $main = $this->Strip();
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
