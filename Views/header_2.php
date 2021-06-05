@@ -80,7 +80,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltBrandup" aria-controls="navbarNavAltBrandup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
+        <div class="collapse navbar-collapse overflow-scroll" id="navbarNavAltBrandup">
             <div class="navbar-nav">
 				<?php foreach($subHeader as $cat):?>
                 <a class="nav-link active" href="<?=$cat['id']?>"><?=$cat['name']?></a>
