@@ -64,7 +64,6 @@ $rt->get("/order/pending", OrdersPendingController::class);
 $rt->get("/order/history", OrderHistoryController::class);
 $rt->get("/administration/users", AdministrationUsersController::class);
 $rt->post("/strip", StripController::class);
-$rt->get("/lol/d_", TestController::class);
 if(!$rt->isRouted()){
 	http_response_code(404);
 }
