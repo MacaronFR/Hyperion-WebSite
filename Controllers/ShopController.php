@@ -18,29 +18,28 @@ class ShopController extends Controller{
 	public function get(array $args){
 		$root = get_text("root");
 		$head = $this->prepareHead("Shop");
-		$res = API_request("/category", "GET");
-		if($res === false){
-			header("Location: /500");
-		}
-		$categories = $res['content'];
-		unset($categories['total'], $categories['totalNotFiltered']);
-		$header = $this->prepareHeader_2($root['header'], "Shop", $categories);
+		$info = $this->getShopInfo();
+		$header = $this->prepareHeader_2($root['header'], "Shop", $info['categories']);
 		$main = $this->prepareShop();
 		$footer = $this->prepareFooter();
 		$body = $this->prepareBody($header, $main, $footer);
 		include "Views/root.php";
 	}
 
+	public function getShopInfo(): array|false{
+		$res = API_request("/category", "GET");
+		if($res === false){
+			return false;
+		}
+		$categories = $res['content'];
+		unset($categories['total'], $categories['totalNotFiltered']);
+		return ['categories' => $categories];
+	}
+
 	/**
 	 * @inheritDoc
 	 */
 	public function post(array $args){
-		$head = $this->prepareHead("Shop");
-		$header = $this->prepareHeader_2();
-		$main = $this->prepareShop();
-		$footer = $this->prepareFooter();
-		$body = $this->prepareBody($header, $main, $footer);
-		var_dump($_POST);
-		include "Views/root.php";
+		return false;
 	}
 }
