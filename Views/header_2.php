@@ -106,6 +106,21 @@
         </div>
     </div>
 </nav>
+<?php elseif ($title === "Administration"): ?>
+    <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><?= $text['sub_header']['admin']['categories']['title']?></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltBrandup" aria-controls="navbarNavAltBrandup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/administration/users">Gestion des uutilisateurs</a>
+                    <a class="nav-link" href="#">Consulter Facture</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 <?php elseif ($title === "expert"): ?>
     <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
         <div class="container-fluid">
