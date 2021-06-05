@@ -83,7 +83,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
             <div class="navbar-nav">
 				<?php foreach($subHeader as $cat):?>
-                <a class="nav-link active" href="<?= $cat['id']?>"><?=$cat['name']?></a>
+                <a class="nav-link active" href="<?=$cat['id']?>"><?=$cat['name']?></a>
 				<?php endforeach;?>
             </div>
         </div>
