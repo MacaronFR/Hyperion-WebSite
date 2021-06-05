@@ -18,7 +18,7 @@ class AdministrationUsersController extends Controller
      */
     public function get(array $args){
         $root = get_text("root");
-        $head = $this->prepareHead("expert");
+        $head = $this->prepareHead("Administration");
         $header = $this->prepareHeader_2($root['header'], "Administration");
         $main = $this->AdministrationUsers();
         $footer = $this->prepareFooter();
