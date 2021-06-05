@@ -31,7 +31,7 @@
             </div>
             <div>
                 <p class="">Sous-total (2 articles): 865€</p>
-                <button type="button" class="btn btn-primary col-12" onClick="<?php header("Location: /strip?id_item=3");?>" style="color: black">Passer la commande</button>
+                <button type="button" class="btn btn-primary col-12" onClick="<?php header("Location: /strip");?>" style="color: black">Passer la commande</button>
             </div>
         </div>
     </div>
