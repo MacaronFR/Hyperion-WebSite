@@ -1,5 +1,5 @@
 <?php
-require_once('/assets/stripe-php-7.82.0/init.php'); // Ne pas oublier cte ligne +modifier lien vers la bonne librairie
+require_once('assets/stripe-php-7.82.0/init.php'); // Ne pas oublier cte ligne +modifier lien vers la bonne librairie
 
 \Stripe\Stripe::setApiKey("sk_test_51IyypYGc9T6D4Xa9C5Y2Ypke3QmSsyKX2N1nCjgLIAXqpZVFQZ4AR9FHBHjGHxmy4eI5OQzt8K2NTql8wIgC4Q0c00vnBLSKZx");
 
