@@ -21,3 +21,6 @@ $charge = \Stripe\Charge::create(array(
 
 echo '<h1>Payment accepted!</h1>';
 ?>
+
+
+<h1>salut la miff</h1>
