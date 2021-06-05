@@ -25,6 +25,8 @@ use Hyperion\WebSite\ExpertConsultOneOfferController;
 use Hyperion\WebSite\MyAccountController;
 use Hyperion\WebSite\ShopOneProductController;
 use Hyperion\WebSite\CartController;
+use Hyperion\WebSite\OrdersPendingController;
+use Hyperion\WebSite\OrderHistoryController;
 
 
 
@@ -56,6 +58,9 @@ $rt->get("/myAccount", MyAccountController::class);
 $rt->post("/check/add/domain/product", VerifAddDomainProductController::class);
 $rt->get("/text/*/*", TranslationController::class);
 $rt->get("/shop/one/product", ShopOneProductController::class);
+$rt->get("/cart", CartController::class);
+$rt->get("/order/pending", OrdersPendingController::class);
+$rt->get("/order/history", OrderHistoryController::class);
 $rt->get("/cart", CartController::class);
 if(!$rt->isRouted()){
 	http_response_code(404);

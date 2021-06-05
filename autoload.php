@@ -24,5 +24,7 @@ require_once "Controllers/ExpertConsultOneOfferController.php";
 require_once "Controllers/ShopOneProductController.php";
 require_once "Controllers/TranslationController.php";
 require_once "Controllers/CartController.php";
+require_once 'Controllers/OrderHistoryController.php';
+require_once "Controllers/OrdersPendingController.php";
 require_once "Router.php";
 require_once "utils.php";
