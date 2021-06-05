@@ -61,7 +61,6 @@ $rt->get("/shop/one/product", ShopOneProductController::class);
 $rt->get("/cart", CartController::class);
 $rt->get("/order/pending", OrdersPendingController::class);
 $rt->get("/order/history", OrderHistoryController::class);
-$rt->get("/cart", CartController::class);
 if(!$rt->isRouted()){
 	http_response_code(404);
 }
