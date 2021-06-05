@@ -26,5 +26,6 @@ require_once "Controllers/TranslationController.php";
 require_once "Controllers/CartController.php";
 require_once 'Controllers/OrderHistoryController.php';
 require_once "Controllers/OrdersPendingController.php";
+require_once "Controllers/AdministrationUsersController.php";
 require_once "Router.php";
 require_once "utils.php";

@@ -64,7 +64,7 @@
                     <a class="nav-item nav-link" href="/expert/offers"><?=$text['header']['staff']['offer']?></a>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'2'): ?>
-                    <a class="nav-item nav-link" href="#"><?=$text['header']['admin']['admin']?></a>
+                    <a class="nav-item nav-link" href="/administration/users"><?=$text['header']['admin']['admin']?></a>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['level'])): ?>
                     <a class="nav-item nav-link" href="/cart">Mon panier</a>

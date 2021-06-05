@@ -4,12 +4,12 @@
 namespace Hyperion\WebSite;
 
 
-class OrderHistoryController extends Controller
+class AdministrationUsersController extends Controller
 {
 
-    protected function OrdersHistory(): string{
+    protected function AdministrationUsers(): string{
         ob_start();
-        include "Views/orderHistory.php";
+        include "Views/administrationUsers.php";
         return ob_get_clean();
     }
 
@@ -18,9 +18,9 @@ class OrderHistoryController extends Controller
      */
     public function get(array $args){
         $root = get_text("root");
-        $head = $this->prepareHead("Mes commandes");
-        $header = $this->prepareHeader_2($root['header'], "Mes commandes");
-        $main = $this->OrdersHistory();
+        $head = $this->prepareHead("expert");
+        $header = $this->prepareHeader_2($root['header'], "Administration");
+        $main = $this->AdministrationUsers();
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
         include "Views/root.php";
