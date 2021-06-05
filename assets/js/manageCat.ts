@@ -121,15 +121,7 @@ $("#addCategory").on("click", function(){
 	let name = $("#addCategoryInput").val()
 	API_REQUEST("/category/" + token, "POST", {"name": name}).then((res) =>{
 		if(res['status']['code'] === 201){
-			let new_line = $($(".cat-row")[0]).clone(true, true);
-			new_line.children()[0].textContent = res['content'][0];
-			new_line.children()[1].textContent = name;
-			new_line.children()[2].children[0].dataset["categoryId"] = res['content'][0];
-			new_line.children()[2].children[0].dataset["categoryName"] = name;
-			new_line.children()[3].children[0].dataset["categoryId"] = res['content'][0];
-			$(new_line.children()[3].children[0]).off("click");
-			$(new_line.children()[3].children[0]).on("click", deleteCat);
-			new_line.prependTo($("#tabCat"));
+			$("#table_categories").bootstrapTable("refresh")
 			$("#ToastSuccess").children(".toast-body").text("Catégorie ajouter avec succès");
 			toastList[1].show();
 			$("#addCategoryInput").val("");
