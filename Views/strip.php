@@ -1,6 +1,6 @@
 <form action="pay.php" method="POST">
     <script
-        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button btn-primary"
         data-key="clée_api_strip"
         data-amount="469"
         data-name="Hyperion"
