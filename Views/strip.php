@@ -20,4 +20,6 @@ $charge = \Stripe\Charge::create(array(
 ));
 
 echo '<center><h1>Payment accepted!</h1></center>';
+echo '<center><h1>"Remember me when you get some more cash to burn" - Marcus</h1></center>';
+
 ?>
