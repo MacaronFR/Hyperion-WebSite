@@ -27,6 +27,7 @@ use Hyperion\WebSite\ShopOneProductController;
 use Hyperion\WebSite\CartController;
 use Hyperion\WebSite\OrdersPendingController;
 use Hyperion\WebSite\OrderHistoryController;
+use Hyperion\WebSite\AdministrationUsersController;
 
 
 
