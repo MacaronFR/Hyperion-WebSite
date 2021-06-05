@@ -15,9 +15,14 @@ class StripController extends Controller
     /**
      * @inheritDoc
      */
-    public function get(array $args)
-    {
-        return false;
+    public function get(array $args){
+        $root = get_text("root");
+        $head = $this->prepareHead("strip");
+        $header = $this->prepareHeader();
+        $main = $this->Strip();
+        $footer = $this->prepareFooter();
+        $body = $this->prepareBody($header, $main, $footer);
+        include "Views/root.php";
     }
 
     /**
@@ -26,7 +31,7 @@ class StripController extends Controller
     public function post(array $args){
         $root = get_text("root");
         $head = $this->prepareHead("strip");
-        $header = $this->prepareHeader_2($root['header'], "strip");
+        $header = $this->prepareHeader();
         $main = $this->Strip();
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
