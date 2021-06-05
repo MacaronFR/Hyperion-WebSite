@@ -30,22 +30,22 @@
                 <button type="button" class="btn btn-info col-12" style="color: black">Modifier vos informations</button>
             </div>
             <div>
-                <p class="">Sous-total (2 articles): 865€</p>
-                <button type="button" class="btn btn-primary col-12" style="color: black">Passer la commande</button>
+                <p class="" id="div_stripe">Sous-total (2 articles): 865€</p>
+                <!--<button type="button" class="btn btn-primary col-12" style="color: black">Passer la commande</button> -->
+                <form action="#" method="POST">
+                    <script
+                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="pk_test_51IyypYGc9T6D4Xa9gQX722Yl0Km8pX2NzxMXGaovV0I1SXefG4LyT0Gtr1RBjB6CO0HWLyMW9bNGLQkKy4GyeVFV00Bs9RVSq1"
+                            data-amount="469"
+                            data-name="Hyperion"
+                            data-description="Smartphone"
+                            data-image="/assets/images/cl4p-tp_center.png"
+                            data-locale="auto"
+                            data-currency="eur"
+                            data-label="Payer avec Stripe" >
+                    </script>
+                </form>
             </div>
-            <form action="pay.php" method="POST">
-                <script
-                        src="https://checkout.stripe.com/checkout.js" class="btn btn-primary col-12"
-                        data-key="pk_test_51IyypYGc9T6D4Xa9gQX722Yl0Km8pX2NzxMXGaovV0I1SXefG4LyT0Gtr1RBjB6CO0HWLyMW9bNGLQkKy4GyeVFV00Bs9RVSq1"
-                        data-amount="469"
-                        data-name="Hyperion"
-                        data-description="Smartphone"
-                        data-image="/assets/images/cl4p-tp_center.png"
-                        data-locale="auto"
-                        data-currency="eur"
-                        data-label="Payer avec Stripe" >
-                </script>
-            </form>
         </div>
     </div>
 </div>

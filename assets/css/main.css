@@ -11110,4 +11110,9 @@ header {
   color: black;
 }
 
+/* ----------------------------------- stripe ----------------------------------- */
+#div_stripe button {
+  width: 100%;
+}
+
 /*# sourceMappingURL=main.css.map */
