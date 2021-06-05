@@ -19,5 +19,5 @@ $charge = \Stripe\Charge::create(array(
     'receipt_email' => $email
 ));
 
-echo '<h1>Payment accepted!</h1>';
+echo '<center><h1>Payment accepted!</h1></center>';
 ?>
