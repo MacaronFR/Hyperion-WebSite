@@ -32,7 +32,7 @@
             <div>
                 <p class="" id="div_stripe">Sous-total (2 articles): 865€</p>
                 <!--<button type="button" class="btn btn-primary col-12" style="color: black">Passer la commande</button> -->
-                <form action="#" method="POST">
+                <form action="strip.php" method="POST">
                     <script
                             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                             data-key="pk_test_51IyypYGc9T6D4Xa9gQX722Yl0Km8pX2NzxMXGaovV0I1SXefG4LyT0Gtr1RBjB6CO0HWLyMW9bNGLQkKy4GyeVFV00Bs9RVSq1"

@@ -1,13 +1,23 @@
-<form action="pay.php" method="POST">
-    <script
-        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="pk_test_51IyypYGc9T6D4Xa9gQX722Yl0Km8pX2NzxMXGaovV0I1SXefG4LyT0Gtr1RBjB6CO0HWLyMW9bNGLQkKy4GyeVFV00Bs9RVSq1"
-        data-amount="469"
-        data-name="Hyperion"
-        data-description="Smartphone"
-        data-image="/assets/images/cl4p-tp_center.png"
-        data-locale="auto"
-        data-currency="eur"
-        data-label="Payer avec Strip" >
-    </script>
-</form>
+<?php
+require_once('/assets/stripe-php-7.82.0/init.php'); // Ne pas oublier cte ligne +modifier lien vers la bonne librairie
+
+\Stripe\Stripe::setApiKey("sk_test_51IyypYGc9T6D4Xa9C5Y2Ypke3QmSsyKX2N1nCjgLIAXqpZVFQZ4AR9FHBHjGHxmy4eI5OQzt8K2NTql8wIgC4Q0c00vnBLSKZx");
+
+$token  = $_POST['stripeToken'];
+$email  = $_POST['stripeEmail'];
+
+$customer = \Stripe\Customer::create(array(
+    'email' => $email,
+    'source'  => $token
+));
+
+$charge = \Stripe\Charge::create(array(
+    'customer' => $customer->id,
+    'amount'   => 500,
+    'currency' => 'eur',
+    'description' => 'Discover France Guide by Erasmus of Paris',
+    'receipt_email' => $email
+));
+
+echo '<h1>Payment accepted!</h1>';
+?>
