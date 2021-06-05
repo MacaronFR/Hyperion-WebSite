@@ -28,7 +28,7 @@ use Hyperion\WebSite\CartController;
 use Hyperion\WebSite\OrdersPendingController;
 use Hyperion\WebSite\OrderHistoryController;
 use Hyperion\WebSite\AdministrationUsersController;
-
+use Hyperion\WebSite\StripController;
 
 
 include "autoload.php";
@@ -63,6 +63,7 @@ $rt->get("/cart", CartController::class);
 $rt->get("/order/pending", OrdersPendingController::class);
 $rt->get("/order/history", OrderHistoryController::class);
 $rt->get("/administration/users", AdministrationUsersController::class);
+$rt->post("/strip", StripController::class);
 if(!$rt->isRouted()){
 	http_response_code(404);
 }
