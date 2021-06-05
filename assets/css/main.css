@@ -10832,7 +10832,7 @@ textarea.form-control-lg {
   }
 
   #divArticlesCart img {
-    height: 300px;
+    height: 200px;
   }
 }
 @media (min-width: 481px) and (max-width: 767px) and (orientation: landscape) {
@@ -10870,7 +10870,7 @@ textarea.form-control-lg {
   }
 
   #divArticlesCart img {
-    height: 300px;
+    height: 200px;
   }
 }
 @media (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
