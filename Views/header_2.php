@@ -139,8 +139,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/expert/offers">Commandes en préparations</a>
-                    <a class="nav-link" href="/expert/pending/offer">Historique des commandes</a>
+                    <a class="nav-link active" aria-current="page" href="/order/pending">Commandes en préparations</a>
+                    <a class="nav-link" href="/order/history">Historique des commandes</a>
                 </div>
             </div>
         </div>
