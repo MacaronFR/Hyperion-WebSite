@@ -18,7 +18,13 @@ class ShopController extends Controller{
 	public function get(array $args){
 		$root = get_text("root");
 		$head = $this->prepareHead("Shop");
-		$header = $this->prepareHeader_2($root['header'], "Shop");
+		$res = API_request("/category", "GET");
+		if($res === false){
+			header("Location: /500");
+		}
+		$categories = $res['content'];
+		unset($categories['total'], $categories['totalNotFiltered']);
+		$header = $this->prepareHeader_2($root['header'], "Shop", $categories);
 		$main = $this->prepareShop();
 		$footer = $this->prepareFooter();
 		$body = $this->prepareBody($header, $main, $footer);

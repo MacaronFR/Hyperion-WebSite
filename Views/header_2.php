@@ -2,10 +2,10 @@
 /**
  * @var array $text Contain all root text in the desired language
  * @var string $title Contain the title of the page
+ * @var array $subHeader
  */
 
 ?>
-
 <nav id="header_2" class="navbar navbar-expand-lg py-4 py-lg-0 navbar-light bg-light">
     <div class="container-fluid ju">
         <a class="navbar-brand" href="/shop">
@@ -82,17 +82,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-link" href="#">Téléphonie</a>
-                <a class="nav-link" href="#">Photo & Caméscopes</a>
-                <a class="nav-link" href="#">Tv & Vidéo</a>
-                <a class="nav-link" href="#">Audio & HIFI</a>
-                <a class="nav-link" href="#">Objects Connectés</a>
-                <a class="nav-link" href="#">Informatique</a>
-                <a class="nav-link" href="#">GPS & Auto</a>
-                <a class="nav-link" href="#">Eléctromenagers</a>
-                <a class="nav-link" href="#">Bricolage</a>
-                <a class="nav-link" href="#">Consoles</a>
+				<?php foreach($subHeader as $cat):?>
+                <a class="nav-link active" href="<?= $cat['id']?>"><?=$cat['name']?></a>
+				<?php endforeach;?>
             </div>
         </div>
     </div>
