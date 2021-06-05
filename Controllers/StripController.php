@@ -17,7 +17,7 @@ class StripController extends Controller
      */
     public function get(array $args)
     {
-        return flase;
+        return false;
     }
 
     /**
