@@ -4,10 +4,10 @@
         <?php
         for($i=0; $i<=1; $i++){ ?>
             <div class="d-flex flex-row border-top py-3 border-2">
-                <div class="ms-2 col-3 col-lg-2">
+                <div class="ms-2 col-auto">
                     <img src="/assets/images/cl4p-tp_center.png" style="height: 250px">
                 </div>
-                <div class="col-auto">
+                <div class="col-8 ms-2">
                     <h6 class="mb-0">Samsung Galaxy A51 Smartphone 128GB 4GB Prism Crush Black</h6>
                     <p class="mb-0">Trés bonne etat</p>
                     <a href="#">Supprimer</a>
