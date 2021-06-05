@@ -115,8 +115,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/administration/users">Gestion des uutilisateurs</a>
-                    <a class="nav-link" href="#">Consulter Facture</a>
+                    <a class="nav-link active" aria-current="page" href="/administration/users">Gestion des utilisateurs</a>
+                    <a class="nav-link" href="#">Gestiion des Factures</a>
                 </div>
             </div>
         </div>
