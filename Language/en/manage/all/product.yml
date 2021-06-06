@@ -1,0 +1,22 @@
+product:
+  title: "Manage all product"
+  table:
+    header:
+      id: "ID"
+      type: "Type"
+      brand: "Brand"
+      model: "Model"
+      buying: "Buying Price"
+      selling: "Selling Price"
+    button:
+      change: "Change"
+      delete: "Delete"
+  modal:
+    delete:
+      close: "Close"
+      delete: "Delete"
+      title: "Delete product : "
+  toast:
+    success: "Product deleted"
+    warning: "Product does not exist"
+    error: "Error while deleting"

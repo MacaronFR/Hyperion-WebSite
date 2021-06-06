@@ -47,6 +47,9 @@ class Router {
 		$regex = "/^" . str_replace("\*", "([^\/]*)", preg_quote($pattern, "/")) . "$/";
 		$regex = str_replace("\{", "(?:", $regex);
 		$regex = str_replace("\}", ")?", $regex);
+		if($regex[strlen($regex) - 3] === '_' && $regex[strlen($regex) - 4] !== '\\'){
+			$regex = substr_replace($regex, "(.+)", strlen($regex) - 3, 1);
+		}
 		return $regex;
 	}
 	
@@ -140,5 +143,9 @@ class Router {
 				}
 			}
 		}
+	}
+
+	public function isRouted(){
+		return $this->routed;
 	}
 }

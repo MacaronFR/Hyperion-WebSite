@@ -38,4 +38,39 @@ function API_REQUEST(path, method, param, parse) {
         }
     });
 }
+function prepare_url(params, url, token) {
+    if (token === void 0) { token = false; }
+    if (token) {
+        url += token + "/";
+    }
+    url += params.data.offset / 10;
+    if (params.data.order !== undefined && params.data.sort !== undefined) {
+        url += "/search/" + params.data.search;
+        url += "/order/" + params.data.order;
+        url += "/sort/" + params.data.sort;
+    }
+    else if (params.data.search !== "") {
+        url += "/search/" + params.data.search;
+    }
+    return url;
+}
+function getText(lang, section) {
+    return new Promise(function (resolve) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "/text/" + lang + "/" + section);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === xhr.DONE) {
+                if (xhr.status === 200) {
+                    try {
+                        resolve(JSON.parse(xhr.responseText));
+                    }
+                    catch (e) {
+                        console.error("Error while retrieving");
+                    }
+                }
+            }
+        };
+        xhr.send();
+    });
+}
 //# sourceMappingURL=utils.js.map

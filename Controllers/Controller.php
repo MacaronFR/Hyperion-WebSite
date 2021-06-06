@@ -30,7 +30,7 @@ abstract class Controller {
 		return ob_get_clean();
 	}
 
-    protected function prepareHeader_2(array $text, string $title): string{
+    protected function prepareHeader_2(array $text, string $title, array $subHeader = []): string{
         ob_start();
         include "Views/header_2.php";
         return ob_get_clean();

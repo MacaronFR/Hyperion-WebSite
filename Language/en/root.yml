@@ -5,3 +5,35 @@ header:
         disconnect: "Log out"
         inscription: "Sign in"
         connection: "Log in"
+    search:
+        search: "Search"
+        all_cat: "All Categories"
+    header:
+        explore: "Explore"
+        products: "Products"
+        service: "Customer Service"
+        project:
+            human: "Humanitarian Project"
+            eco: "Ecology Project"
+        staff:
+            product: "Product Management"
+            offer: "Offer Management"
+            project: "Project Management"
+        admin:
+            admin: "Administration"
+        trader:
+            offer: "Offer Management"
+    sub_header:
+        trader:
+            offer:
+                title: "Offer"
+                add: "Add offer"
+                pending: "See pending offer"
+                history: "See offer's history"
+        admin:
+            categories:
+                title: "Categories"
+                add: "Add Reference"
+                see_ref: "See reference"
+                see_prod: "See Product"
+                manage: "Manage categories, type and specification"

@@ -2,14 +2,13 @@ declare var token: any;
 declare var $: any;
 declare var bootstrap: any;
 
+// @ts-ignore
 let toastEL = [].slice.call(document.querySelectorAll(".toast"));
+// @ts-ignore
 let toastList = toastEL.map(function (toastE) {
 	return new bootstrap.Toast(toastE)
 })
 
-function rowAttributes(row, index){
-	return {"class": "cat-row"};
-}
 // ---------- callModalDomain  ----------
 //var domainModal = document.getElementById('modalAlterCategory')
 $("#modalAlterCategory").on('show.bs.modal' ,function (e) {
@@ -50,6 +49,8 @@ $("#modalDelete").on("show.bs.modal", function (e){
 		})
 	}else if(button.data("typeId") !== undefined){
 		deleteType(button, $(this));
+	}else if(button.data("specId") !== undefined){
+		deleteSpec(button, $(this));
 	}
 })
 
@@ -61,6 +62,31 @@ function deleteType(button, modal){
 			if(res.status.code === 204) {
 				button.parents("table").bootstrapTable("refresh");
 				$("#ToastSuccess").children(".toast-body").text("Type supprimer avec succès");
+				modal.modal("toggle");
+				toastList[1].show();
+			}else if(res.status.code === 209){
+				$("#ToastWarning").children(".toast-body").text("Des produits ou des références dépende de ce type");
+				toastList[2].show();
+			}
+		}).catch((res) => {
+			if(res === 404) {
+				$("#ToastWarning").children(".toast-body").text("Le type n'existe plus");
+				toastList[2].show();
+			}else {
+				$("#ToastError").children(".toast-body").text("Erreur lors de la suppression")
+				toastList[0].show()
+			}
+		})
+	})
+}
+
+function deleteSpec(button, modal){
+	$(modal).find(".modal-title").text("Supprimer spécification : " + button.data("specName") + " - " + button.data("specValue"));
+	$(modal).find(".delete").off("click").on("click", function () {
+		API_REQUEST("/specification/" + token + "/" + button.data("specId"), "DELETE").then((res) => {
+			if(res.status.code === 204) {
+				button.parents("table").bootstrapTable("refresh");
+				$("#ToastSuccess").children(".toast-body").text("Specification supprimer avec succès");
 				modal.modal("toggle");
 				toastList[1].show();
 			}else if(res.status.code === 209){
@@ -95,15 +121,7 @@ $("#addCategory").on("click", function(){
 	let name = $("#addCategoryInput").val()
 	API_REQUEST("/category/" + token, "POST", {"name": name}).then((res) =>{
 		if(res['status']['code'] === 201){
-			let new_line = $($(".cat-row")[0]).clone(true, true);
-			new_line.children()[0].textContent = res['content'][0];
-			new_line.children()[1].textContent = name;
-			new_line.children()[2].children[0].dataset["categoryId"] = res['content'][0];
-			new_line.children()[2].children[0].dataset["categoryName"] = name;
-			new_line.children()[3].children[0].dataset["categoryId"] = res['content'][0];
-			$(new_line.children()[3].children[0]).off("click");
-			$(new_line.children()[3].children[0]).on("click", deleteCat);
-			new_line.prependTo($("#tabCat"));
+			$("#table_categories").bootstrapTable("refresh")
 			$("#ToastSuccess").children(".toast-body").text("Catégorie ajouter avec succès");
 			toastList[1].show();
 			$("#addCategoryInput").val("");
@@ -149,7 +167,6 @@ $("#modalAlterType").on("show.bs.modal", function (e){
 $("#addType").on("click", function(){
 	let name = $("#typeName").val();
 	let cat = $("#typeCategory").val();
-	console.log(cat);
 	API_REQUEST("/type/" + token, "POST", {"type": name, "category": cat}).then((res) =>{
 		if(res['status']['code'] === 201){
 			$("#table_type").bootstrapTable("refresh");
@@ -168,15 +185,53 @@ $("#addType").on("click", function(){
 })
 
 // ---------- callModalSpec  ----------
-$("#modalAlterSpec").on("click", function (e) {
-	var button = e.relatedTarget
-	var Spec_actual_name = button.getAttribute('data-spec-name')
-	var Spec_actual_value = button.getAttribute('data-spec-value')
-	var id_spec = button.getAttribute('data-spec-id')
-	var modalTitle = document.getElementById('titleModalSpec')
-	var modalBodyInput = $('#actualSpecName');
-	modalTitle.textContent = 'Alterer la spec: ' + Spec_actual_name
-	modalBodyInput.val(id_spec)
+$("#modalAlterSpec").on("show.bs.modal", function (e) {
+	const button = $(e.relatedTarget);
+	$("#titleModalSpec").text("Spécification - " + button.data("specName") + " : " + button.data("specValue"));
+	$("#specNewName").attr("placeholder", button.data("specName"));
+	$("#newSpecValue").attr("placeholder", button.data("specValue"));
+	$("#actualSpecId").val(button.data("specId"));
+	$("#changeSpec").off("click").on("click", function (){
+		let new_name = $("#specNewName").val();
+		let new_val = $("#newSpecValue").val();
+		API_REQUEST("/specification/" + token + "/" + button.data("specId"), "PUT", {"name": new_name, "value": new_val}).then((res) => {
+			if(res['status']['code'] === 200){
+				button.parents("table").bootstrapTable("refresh");
+				$("#modalAlterSpec").modal("toggle");
+				$("#ToastSuccess").children(".toast-body").text("Spécification modifiée avec succès");
+				toastList[1].show();
+				$("#specNewName").val("");
+				$("#newSpecValue").val("");
+			}else if(res['status']['code'] === 202){
+				$("#ToastWarning").children(".toast-body").text("Cette spécification existe déjà");
+				toastList[2].show();
+			}
+		}).catch((res) => {
+			console.log(res);
+			$("#ToastError").children(".toast-body").text("Erreur lors de la modification");
+			toastList[0].show();
+		});
+	})
+})
+
+$("#addSpec").on("click", function(){
+	let name = $("#newSpecName").val();
+	let value = $("#newSpecValue").val();
+	API_REQUEST("/specification/" + token, "POST", {"name": name, "value": value}).then((res) =>{
+		if(res['status']['code'] === 201){
+			$("#table_spec").bootstrapTable("refresh");
+			$("#ToastSuccess").children(".toast-body").text("Spécification ajouté avec succès")
+			toastList[1].show()
+			$("#typeName").val("")
+			$("#typeCategory").val("")
+		}else if(res['status']['code'] === 209){
+			$("#ToastWarning").children(".toast-body").text("Conflit, la spécification existe déjà");
+			toastList[2].show();
+		}
+	}).catch((res) => {
+		$("#ToastError").children(".toast-body").text("Erreur lors de la création")
+		toastList[0].show()
+	})
 })
 
 function retrieve_cat(params){
@@ -201,6 +256,7 @@ function retrieve_type(params){
 	API_REQUEST(url, "GET").then((res) => {
 		let rows = [];
 		let total = res['content'].total;
+
 		let totalNotFiltered = res['content'].totalNotFiltered;
 		delete res['content']['total'];
 		delete res['content']['totalNotFiltered'];
@@ -213,14 +269,19 @@ function retrieve_type(params){
 	})
 }
 
-function prepare_url(params, url: string):string {
-	url += params.data.offset / 10;
-	if(params.data.order !== undefined && params.data.sort !== undefined) {
-		url += "/search/" + params.data.search;
-		url += "/order/" + params.data.order;
-		url += "/sort/" + params.data.sort;
-	}else if (params.data.search !== "") {
-		url += "/search/" + params.data.search;
-	}
-	return url;
+function retrieve_spec(params){
+	let url = prepare_url(params, "/specification/");
+	API_REQUEST(url, "GET").then((res) => {
+		let rows = [];
+		let total = res['content'].total;
+		let totalNotFiltered = res['content'].totalNotFiltered;
+		delete res['content']['total'];
+		delete res['content']['totalNotFiltered'];
+		for(let i = 0; i < Object.keys(res.content).length; ++i){
+			rows.push(res.content[i]);
+			rows[i]['modif'] = "<button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#modalAlterSpec\" data-spec-id=\"" + rows[i]['id'] + "\" data-spec-name=\"" + rows[i]['name'] + "\" data-spec-value=\"" + rows[i]['value'] + "\">Modifier</button>"
+			rows[i]['suppr'] = "<button type=\"button\" class=\"btn btn-danger\" data-spec-id=\"" + rows[i]['id'] + "\" data-bs-toggle=\"modal\" data-bs-target=\"#modalDelete\" data-spec-name=\"" + rows[i]['type'] + "\">Supprimer</button>"
+		}
+		params.success({"total": total, "totalNotFiltered": totalNotFiltered, "rows": rows});
+	})
 }

@@ -5,7 +5,7 @@
  */
 ?>
 <!DOCTYPE html>
-<html lang="">
+<html lang="<?= $_SESSION['lang']?>">
     <head>
         <?= $head ?>
     </head>

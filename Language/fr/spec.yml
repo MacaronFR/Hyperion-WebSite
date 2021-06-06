@@ -1,0 +1,5 @@
+specification:
+    name:
+      storage: "Stockage"
+      processor: "Processeur"
+      screen: "Écran"

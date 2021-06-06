@@ -7,7 +7,7 @@
 <div id="div_main_manage_domains_caracteristiques" class="container-fluid d-flex flex-column mt-11 mt-lg-2">
     <h1 style="text-align: center" class="mb-4">Gestion des caractéristiques & catégories</h1>
     <!-- gestion categories of product -->
-    <div id="div_manage_domain" class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
+    <div id="div_manage_domain" class="row col-11 col-lg-8 border border-2 border-primary rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
         <div id="div_create_category" class="container mb-4">
             <h3 class="mb-3">Ajouter une catégorie de produit</h3>
             <div class="row">
@@ -31,7 +31,8 @@
 						data-height="600"
 						data-ajax="retrieve_cat"
 						data-side-pagination="server"
-						data-row-attributes="rowAttributes">
+						data-row-attributes="rowAttributes"
+						data-locale="<?= $_SESSION['lang']?>">
                     <thead>
                     <tr>
                         <th data-sortable="true" data-field="id">id</th>
@@ -46,7 +47,7 @@
     </div>
 
     <!-- gestion types of product -->
-    <div id="div_manage_types" class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
+    <div id="div_manage_types" class="row col-11 col-lg-8 border border-2 border-primary rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
         <div id="div_create_type" class="container mb-3">
             <h3 class="mb-3">Ajouter un Type de produits associés à son domaine</h3>
             <div class="row">
@@ -78,7 +79,8 @@
 						data-height="600"
 						data-ajax="retrieve_type"
 						data-side-pagination="server"
-						data-row-attributes="rowAttributes">
+						data-row-attributes="rowAttributes"
+						data-locale="<?= $_SESSION['lang']?>">
                     <thead>
                     <tr>
                         <th data-field="id" data-sortable="true">id</th>
@@ -94,78 +96,44 @@
     </div>
 
     <!-- gestion specification of product -->
-    <div id="div_manage_specification" class="row col-11 col-lg-8 border border-2 border-warning rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
+    <div id="div_manage_specification" class="row col-11 col-lg-8 border border-2 border-primary rounded-3 py-4 px-4 align-self-center divs_manage mb-4">
         <div id="div_create_type" class="container mb-3">
             <h3 class="mb-3">Ajouter une specification</h3>
             <div class="row">
                 <div class="col-5">
-                    <input class="form-control" type="text" placeholder="Nommer une specification">
+                    <input class="form-control" type="text" placeholder="Nommer une specification" id="newSpecName">
                 </div>
                 <div class="col-5">
-                    <input class="form-control" type="text" placeholder="attribuer une valeur à cette specification">
+                    <input class="form-control" type="text" placeholder="attribuer une valeur à cette specification" id="newSpecId">
                 </div>
                 <div class="col-2">
-                    <button class="btn btn-primary" type="submit">Créer</button>
+                    <button class="btn btn-primary" type="submit" id="addSpec">Créer</button>
                 </div>
             </div>
         </div>
         <div id="div_manage_all_spec" class="container mt-3">
             <h3 class="mb-3">Toutes les spécifications de produits</h3>
             <div class="table-responsive">
-                <table class="table">
+                <table
+						class="table"
+						id="table_spec"
+						data-toggle="table"
+						data-search="true"
+						data-pagination="true"
+						data-height="600"
+						data-ajax="retrieve_spec"
+						data-side-pagination="server"
+						data-row-attributes="rowAttributes"
+						data-locale="<?= $_SESSION['lang']?>">
                     <thead>
                     <tr>
-                        <th scope="col">id</th>
-                        <th scope="col">Nom De la specification</th>
-                        <th scope="col">valeur de la spécification</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
+                        <th data-field="id">id</th>
+                        <th data-field="name">Nom De la specification</th>
+                        <th data-field="value">valeur de la spécification</th>
+						<th data-field="modif"></th>
+						<th data-field="suppr"></th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>RAM</td>
-                        <td>8 GB</td>
-                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterSpec" data-spec-id="1" data-spec-name="RAM" data-spec-value="8 Gb">Modifier</button></td>
-                        <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>RAM</td>
-                        <td>16 Gb</td>
-                        <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                        <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Stockage</td>
-                        <td>120 Mb</td>
-                        <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                        <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Stockage</td>
-                        <td>4 Gb</td>
-                        <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                        <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Stockage</td>
-                        <td>120 GB</td>
-                        <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                        <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">6</th>
-                        <td>Couleur</td>
-                        <td>rouge</td>
-                        <td><button type="button" class="btn btn-primary">Modifier</button></td>
-                        <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                    </tr>
-                    </tbody>
                 </table>
             </div>
         </div>
@@ -250,11 +218,11 @@
                 <form>
                     <div class="mb-3">
                         <label class="col-form-label">id de la spec:</label>
-                        <input type="text" class="form-control" id="actualSpecName" disabled>
+                        <input type="text" class="form-control" id="actualSpecId" disabled>
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Nouveau nom de la spec:</label>
-                        <input class="form-control" id="newSpecName">
+                        <input class="form-control" id="specNewName">
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Nouvelle valeur de la spec:</label>
@@ -264,7 +232,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Modifier</button>
+                <button type="button" class="btn btn-primary" id="changeSpec">Modifier</button>
             </div>
         </div>
     </div>
