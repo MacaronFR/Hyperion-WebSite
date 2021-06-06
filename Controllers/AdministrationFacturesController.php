@@ -9,7 +9,7 @@ class AdministrationFacturesController extends Controller
 
     protected function AdministrationFactures(): string{
         ob_start();
-        include "Views/administrationUsers.php";
+        include "Views/administrationFactures.php";
         return ob_get_clean();
     }
 
