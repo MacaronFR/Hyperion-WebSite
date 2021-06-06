@@ -116,7 +116,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="/administration/users">Gestion des utilisateurs</a>
-                    <a class="nav-link" href="#">Gestiion des Factures</a>
+                    <a class="nav-link" href="/administration/factures">Gestion des Factures</a>
                 </div>
             </div>
         </div>
