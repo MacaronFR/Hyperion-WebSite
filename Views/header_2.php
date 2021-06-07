@@ -81,7 +81,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltBrandup" aria-controls="navbarNavAltBrandup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
+        <div class="collapse navbar-collapse overflow-scroll" id="navbarNavAltBrandup">
             <div class="navbar-nav">
 				<?php foreach($subHeader as $cat):?>
                 <a class="nav-link <?= $active === $cat['id']?"active":"" ?>" href="/shop/cat/<?=$cat['id']?>"><?=$cat['name']?></a>
@@ -107,6 +107,21 @@
         </div>
     </div>
 </nav>
+<?php elseif ($title === "Administration"): ?>
+    <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><?= $text['sub_header']['admin']['categories']['title']?></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltBrandup" aria-controls="navbarNavAltBrandup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/administration/users">Gestion des utilisateurs</a>
+                    <a class="nav-link" href="/administration/factures">Gestion des Factures</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 <?php elseif ($title === "expert"): ?>
     <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
         <div class="container-fluid">

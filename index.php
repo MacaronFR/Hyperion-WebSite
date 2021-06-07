@@ -28,6 +28,7 @@ use Hyperion\WebSite\CartController;
 use Hyperion\WebSite\OrdersPendingController;
 use Hyperion\WebSite\OrderHistoryController;
 use Hyperion\WebSite\AdministrationUsersController;
+use Hyperion\WebSite\AdministrationFacturesController;
 use Hyperion\WebSite\StripController;
 
 
@@ -64,6 +65,7 @@ $rt->get("/cart", CartController::class);
 $rt->get("/order/pending", OrdersPendingController::class);
 $rt->get("/order/history", OrderHistoryController::class);
 $rt->get("/administration/users", AdministrationUsersController::class);
+$rt->get("/administration/factures", AdministrationFacturesController::class);
 $rt->post("/strip", StripController::class);
 $rt->get("/strip", StripController::class);
 if(!$rt->isRouted()){
