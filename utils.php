@@ -109,3 +109,13 @@ function get_text(string $view): array|false{
 		return false;
 	}
 }
+
+function arrayToFilter(array $filters): string{
+	$string_filter = "/filter";
+	foreach($filters as $name => $values){
+		foreach($values as $value){
+			$string_filter .= "/$name/$value";
+		}
+	}
+	return $string_filter;
+}
