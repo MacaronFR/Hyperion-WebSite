@@ -1,3 +1,8 @@
+<?php
+/**
+ * @var array $info
+ */
+?>
 <div id="divShopPrincipal" class="container-fluid d-flex flex-row">
     <div id="divShopCategories" class="col-2 d-none d-lg-flex flex-column mt-4">
         <!-- ============== Price ============== -->
@@ -10,21 +15,17 @@
         <!-- ============== Brand ============== -->
         <div class="mb-2">
             <h4 class="mb-2">Marques</h4>
-            <p class="ms-4 mb-1">Acer</p>
-            <p class="ms-4 mb-1">Alcatel</p>
-            <p class="ms-4 mb-1">Asus</p>
-            <p class="ms-4 mb-1">Honor</p>
-            <p class="ms-4 mb-1">Huawei</p>
-            <p class="ms-4 mb-1">LG</p>
-            <p class="ms-4 mb-1">Microsoft</p>
-            <p class="ms-4 mb-1">Motorola</p>
-            <p class="ms-4 mb-1">Nokia</p>
-            <p class="ms-4 mb-1">Samsung</p>
-            <p class="ms-4 mb-1">Sony</p>
-            <p class="ms-4 mb-1">Wiko</p>
-            <p class="ms-4 mb-1">Wileyfox</p>
+			<?php foreach ($info['brand'] as $brand):?>
+            <p class="ms-4 mb-1"><?= $brand['value']?></p>
+			<?php endforeach; ?>
         </div>
-
+		<!-- ============== Type ============== -->
+		<div class="mb-2">
+			<h4 class="mb-2">Types</h4>
+			<?php foreach ($info['type'] as $type):?>
+				<p class="ms-4 mb-1"><?= $type['type']?></p>
+			<?php endforeach; ?>
+		</div>
         <!-- ============== Exploitation system ============== -->
         <div class="mb-2">
             <h4 class="mb-2">Systéme d'exploitation</h4>

@@ -24,6 +24,10 @@ function API_request(string $path, string $method, array $param = null): array|f
 	}
 	curl_setopt_array($curl, $opt);
 	$res = curl_exec($curl);
+	$http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+	if($http_code === 204){
+		return ['status' => ['code' => 204, 'message' => "No Content"]];
+	}
 	try{
 		return json_decode($res, associative: true, flags: JSON_THROW_ON_ERROR);
 	}catch(JsonException){
@@ -104,4 +108,14 @@ function get_text(string $view): array|false{
 	}else{
 		return false;
 	}
+}
+
+function arrayToFilter(array $filters): string{
+	$string_filter = "/filter";
+	foreach($filters as $name => $values){
+		foreach($values as $value){
+			$string_filter .= "/$name/$value";
+		}
+	}
+	return $string_filter;
 }
