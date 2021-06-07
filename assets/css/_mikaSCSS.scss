@@ -345,8 +345,14 @@ header {
 	color: #4B4B4B !important;
 }
 
-.subHeader3 > * > * > * > a {
-	color: #4B4B4B !important;
+
+
+.navbar-dark .navbar-nav > .nav-link.active{
+	color: $primary;
+}
+
+.navbar-dark .navbar-nav > .nav-link{
+	color: #4B4B4B;
 }
 
 .divs_manage {
