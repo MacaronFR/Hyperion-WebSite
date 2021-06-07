@@ -84,7 +84,7 @@
         <div class="collapse navbar-collapse overflow-scroll" id="navbarNavAltBrandup">
             <div class="navbar-nav">
 				<?php foreach($subHeader as $cat):?>
-                <a class="nav-link <?= $active === $cat['id']?"active":"" ?>" href="/shop/cat/<?=$cat['id']?>"><?=$cat['name']?></a>
+                <a class="nav-link <?= $active === $cat['id']?"active":"" ?>" href="/shop/cat/<?=$cat['id']?>/0"><?=$cat['name']?></a>
 				<?php endforeach;?>
             </div>
         </div>
