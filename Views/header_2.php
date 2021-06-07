@@ -3,6 +3,7 @@
  * @var array $text Contain all root text in the desired language
  * @var string $title Contain the title of the page
  * @var array $subHeader
+ * @var mixed $active
  */
 
 ?>
@@ -83,7 +84,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
             <div class="navbar-nav">
 				<?php foreach($subHeader as $cat):?>
-                <a class="nav-link active" href="<?=$cat['id']?>"><?=$cat['name']?></a>
+                <a class="nav-link <?= $active === $cat['id']?"active":"" ?>" href="/shop/cat/<?=$cat['id']?>"><?=$cat['name']?></a>
 				<?php endforeach;?>
             </div>
         </div>
