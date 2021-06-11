@@ -57,13 +57,13 @@
     <div id="divShopLine" style="background-color: #D8D8D8" class="border border-2 d-none d-lg-flex mt-4 rounded"></div>
     <div id="divShopMain" class="d-flex flex-row flex-wrap">
         <?php
-        for($i=0; $i<=12; $i++){?>
+        foreach($info['products'] as $p){?>
             <div class="card mx-4 my-5 col-10 col-lg-2" onClick="window.open('/shop/one/product');">
-                <img src="/assets/images/cl4p-tp_center.png" class="card-img-top" alt="...">
+                <img data-product-id="<?=$p['id']?>" class="card-img-top product-picture">
                 <div class="card-body">
-                    <h6 class="card-title">Samsung Galaxy A51 Smartphone 128GB 4GB Prism Crush Black</h6>
-                    <p class="card-text" style="color: green">Trés bonne etat</p>
-                    <p class="btn btn-primary" style="width: 100%; color: black">255,00 €</p>
+                    <h6 class="card-title"><?= "${p['brand']} ${p['model']}"?></h6>
+                    <p class="card-text" style="color: green"><?= $p['state']?></p>
+                    <p class="btn btn-primary" style="width: 100%; color: black"><?= $p['sell_p'] ?? "N/A"?></p>
                 </div>
             </div>
         <?php }
@@ -73,9 +73,20 @@
 <nav aria-label="Page navigation example" class="d-flex justify-content-center mb-1">
     <ul class="pagination">
         <li class="page-item"><a class="page-link" href="#">Précedent</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
+		<?php if($info['active']['page'] > 1): ?>
+        <li class="page-item"><a class="page-link" href="/shop<?= $info['prefix']['category'] . $info['prefix']['type'] . $info['prefix']['brand']?>/<?= ($info['active']['page'] - 2) . $info['prefix']['filter']?>"><?= $info['active']['page'] - 1?></a></li>
+		<?php endif;?>
+		<?php if($info['active']['page'] > 0): ?>
+			<li class="page-item"><a class="page-link" href="/shop<?= $info['prefix']['category'] . $info['prefix']['type'] . $info['prefix']['brand']?>/<?= ($info['active']['page'] - 1) . $info['prefix']['filter']?>"><?= $info['active']['page']?></a></li>
+		<?php endif;?>
+		<li class="page-item"><a class="page-link" href="/shop<?= $info['prefix']['category'] . $info['prefix']['type'] . $info['prefix']['brand']?>/<?= ($info['active']['page']) . $info['prefix']['filter']?>"><?= $info['active']['page'] + 1?></a></li>
+		<?php if($info['active']['page'] < $info['max_page']): ?>
+		<li class="page-item"><a class="page-link" href="/shop<?= $info['prefix']['category'] . $info['prefix']['type'] . $info['prefix']['brand']?>/<?= ($info['active']['page'] + 1) . $info['prefix']['filter']?>"><?= $info['active']['page'] + 2?></a></li>
+		<?php endif;?>
+		<?php if($info['active']['page'] < $info['max_page'] - 1): ?>
+		<li class="page-item"><a class="page-link" href="/shop<?= $info['prefix']['category'] . $info['prefix']['type'] . $info['prefix']['brand']?>/<?= ($info['active']['page'] + 2) . $info['prefix']['filter']?>"><?= $info['active']['page'] + 3?></a></li>
+		<?php endif;?>
         <li class="page-item"><a class="page-link" href="#">Suivant</a></li>
     </ul>
 </nav>
+<script src="/assets/js/shop.js"></script>

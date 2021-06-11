@@ -48,6 +48,9 @@ class ShopController extends Controller{
 				}
 			}
 		}
+		if($info === false){
+			header("Location: /500");
+		}
 		$res = $this->prepareShopURL($args);
 		$info['prefix'] = $res['prefix'];
 		$info['active'] = $res['active'];
@@ -133,6 +136,9 @@ class ShopController extends Controller{
 				}
 			}
 		}
+		if($active['page'] < 0){
+			header("Location: /shop/0");
+		}
 		return ['prefix' => $prefix, 'active' => $active];
 	}
 
@@ -162,14 +168,24 @@ class ShopController extends Controller{
 			return false;
 		}
 		$categories = $res['content'];
+		$products = API_request($_SERVER['REQUEST_URI'], "GET");
+		if($products === false){
+			return false;
+		}
+		if($products['status']['code'] === 204 || $products['status']['code'] === 404){
+			header("Location: /shop/0");
+		}
+		$products = $products['content'];
 		$brand = $this->getBrand($mode, $value)['content'];
 		$type = $this->getType($mode, $value)['content'];
 		$spec = $this->getSpec($mode, $value)['content'];
+		$max_page = floor($products['total'] / 10);
 		unset($categories['total'], $categories['totalNotFiltered']);
 		unset($brand['total'], $brand['totalNotFiltered']);
 		unset($type['total'], $type['totalNotFiltered']);
 		unset($spec['total'], $spec['totalNotFiltered']);
-		return ['categories' => $categories, "brand" => $brand, "type" => $type, "spec" => $spec];
+		unset($products['total'], $products['totalNotFiltered']);
+		return ['categories' => $categories, "brand" => $brand, "type" => $type, "spec" => $spec, "products" => $products, "max_page" => $max_page];
 	}
 
 	private function getBrand(string $mode, mixed $value){
