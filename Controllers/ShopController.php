@@ -44,7 +44,7 @@ class ShopController extends Controller{
 				if(in_array("brand", $args['additional'])){
 					$info = $this->getShopInfo('brand', $args['uri_args']);
 				}else{
-					$info = $this->getShopInfo('main');
+					$info = $this->getShopInfo('main', $args['uri_args']);
 				}
 			}
 		}
@@ -168,7 +168,11 @@ class ShopController extends Controller{
 			return false;
 		}
 		$categories = $res['content'];
-		$products = API_request($_SERVER['REQUEST_URI'], "GET");
+		if($mode === "main"){
+			$products = API_request("/shop/" . ($value[0] ?? 0), "GET");
+		}else{
+			$products = API_request($_SERVER['REQUEST_URI'], "GET");
+		}
 		if($products === false){
 			return false;
 		}
