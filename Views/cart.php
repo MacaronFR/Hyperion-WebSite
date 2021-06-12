@@ -30,8 +30,8 @@
                 <button type="button" class="btn btn-info col-12" style="color: black">Modifier vos informations</button>
             </div>
             <div>
-                <p class="" id="div_stripe">Sous-total (2 articles): 865€</p>
-                <!--<button type="button" class="btn btn-primary col-12" style="color: black">Passer la commande</button> -->
+                <p class="" id="div_stripe" >Sous-total (2 articles): 865€</p>
+                <button type="button" class="btn btn-primary col-12" style="color: black" onClick="window.open('/game');" target="_blank">Patienter ?</button>
                 <form action="/strip" method="POST" target="_blank">
                     <script
                             src="https://checkout.stripe.com/checkout.js" class="stripe-button"

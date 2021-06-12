@@ -29,5 +29,6 @@ require_once "Controllers/OrdersPendingController.php";
 require_once "Controllers/AdministrationUsersController.php";
 require_once "Controllers/AdministrationFacturesController.php";
 require_once "Controllers/StripController.php";
+require_once "Controllers/GameController.php";
 require_once "Router.php";
 require_once "utils.php";
