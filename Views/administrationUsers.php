@@ -7,7 +7,7 @@
                    id="table_user"
                    data-toggle="table"
                    data-pagination="true"
-                   data-height="600"
+                   data-height="500"
                    data-locale="<?= $_SESSION['lang']?>">
                 <thead>
                 <tr>
