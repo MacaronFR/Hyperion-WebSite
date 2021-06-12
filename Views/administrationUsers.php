@@ -3,42 +3,41 @@
     <div class="d-flex flex-column flex-lg-row justify-content-around">
         <div id="divAdminUsers" class=" d-flex flex-column col-10 col-lg-5 mb-4 mb-lg-0 border border-primary border-2 rounded-2 px-2 py-3 align-self-center ">
             <h3 class="align-self-center">Utilisateurs</h3>
-            <table
-                class="table"
-                data-toggle="table"
-                data-search="true"
-                data-pagination="true"
-                data-height="500"
-                data-row-attributes="rowAttributes"
-            <thead>
-            <tr>
-                <th scope="col">id</th>
-                <th scope="col">Identité</th>
-                <th scope="col">email</th>
-                <th scope="col">Niveau</th>
-                <th scope="col">Delete</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>
-                    <button type="button" class="btn btn-danger col-8">Supprimer</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>
-                    <button type="button" class="btn btn-danger col-8">Supprimer</button>
-                </td>
-            </tr>
-            </tbody>
+            <table class="table"
+                   id="table_user"
+                   data-toggle="table"
+                   data-pagination="true"
+                   data-height="600"
+                   data-locale="<?= $_SESSION['lang']?>">
+                <thead>
+                <tr>
+                    <th data-sortable data-field="id">id</th>
+                    <th data-sortable data-field="type">Identité</th>
+                    <th data-sortable data-field="email">Email</th>
+                    <th data-sortable data-field="level">Niveau</th>
+                    <th data-sortable data-field="delete">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>Admin</td>
+                    <td>
+                        <button type="button" class="btn btn-danger col-8">Supprimer</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>Expert</td>
+                    <td>
+                        <button type="button" class="btn btn-danger col-8">Supprimer</button>
+                    </td>
+                </tr>
+                </tbody>
             </table>
         </div>
         <div id="divAdminOneUser" class="d-flex flex-column col-10 col-lg-5 border border-primary border-2 rounded-2 px-2 py-3 align-self-center">
