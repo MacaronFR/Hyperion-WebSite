@@ -30,6 +30,7 @@ use Hyperion\WebSite\OrderHistoryController;
 use Hyperion\WebSite\AdministrationUsersController;
 use Hyperion\WebSite\AdministrationFacturesController;
 use Hyperion\WebSite\StripController;
+use Hyperion\WebSite\GameController;
 
 
 include "autoload.php";
@@ -43,8 +44,14 @@ $rt->get("/connect/*", ConnectionController::class);
 $rt->post("/check/connect", VerifConnectionController::class);
 $rt->get("/inscription{/*/*}", InscriptionController::class);
 $rt->post("/check/inscription", VerifInscriptionController::class);
-$rt->get("/shop", ShopController::class, ['main']);
-$rt->get("/shop/cat/*", ShopController::class, ['cat']);
+$rt->get("/shop{/*}", ShopController::class, ['main']);
+$rt->get("/shop/cat/*/type/*/brand/*/*{/filter/_}", ShopController::class, ['cat', 'type', 'brand']);
+$rt->get("/shop/cat/*/brand/*/*{/filter/_}", ShopController::class, ['cat', 'brand']);
+$rt->get("/shop/cat/*/type/*/*{/filter/_}", ShopController::class, ['cat', 'type']);
+$rt->get("/shop/type/*/brand/*/*{/filter/_}", ShopController::class, ['type', 'brand']);
+$rt->get("/shop/type/*/*{/filter/_}", ShopController::class, ['type']);
+$rt->get("/shop/brand/*/*{/filter/_}", ShopController::class, ['brand']);
+$rt->get("/shop/cat/*/*{/filter/_}", ShopController::class, ['cat']);
 $rt->get("/disconnect", DisconnectController::class);
 $rt->get("/manage/all/categories", ManageCategoriesController::class);
 $rt->get("/manage/add/reference", ManageAddReferenceController::class);
@@ -68,6 +75,7 @@ $rt->get("/administration/users", AdministrationUsersController::class);
 $rt->get("/administration/factures", AdministrationFacturesController::class);
 $rt->post("/strip", StripController::class);
 $rt->get("/strip", StripController::class);
+$rt->get("/game", GameController::class);
 if(!$rt->isRouted()){
 	http_response_code(404);
 }
