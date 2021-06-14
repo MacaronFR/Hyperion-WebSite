@@ -1,5 +1,5 @@
 <div class="d-flex flex-column">
-    <div class="mt-5 d-flex flex-column">
+    <div class="mt-5 mt-lg-0 d-flex flex-column">
         <h1 class="d-flex justify-content-center mb-4">Confirmation de votre offre</h1>
         <div class="d-flex flex-column p-3 border border-2 rounded-3 col-11 col-lg-9 align-self-center">
             <h3>Nous vous remercions d'avoir fait appel à nos services. </h3>
