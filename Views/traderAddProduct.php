@@ -3,6 +3,7 @@
  * @var array $categories
  * @var array $traderAddOfferText
  * @var array $traderAddOfferSpecText
+ * @var array $states
  */
 ?>
 <div id="div_trader_add_offer_general" class="container-fluid d-flex flex-column">
@@ -143,16 +144,22 @@
 </div>
 <script>
 	let text = {
-		'select':{
+		'select': {
 			'choose': "<?= $traderAddOfferText['offer']['select']['choose']?>",
 			'file': "<?= $traderAddOfferText['offer']['select']['file']?>"
 		},
-		'warning':<?= json_encode($traderAddOfferText['offer']['warning'])?>,
-		'success':{
+		'warning': <?= json_encode($traderAddOfferText['offer']['warning'])?>,
+		'success': {
 			'created': "<?= $traderAddOfferText['offer']['success']['created']?>"
 		},
 		'error': <?= json_encode($traderAddOfferText['offer']['error'])?>,
-		'specification': <?= json_encode($traderAddOfferSpecText['specification'])?>
+		'specification': <?= json_encode($traderAddOfferSpecText['specification'])?>,
+		'unavailable': "<?= $traderAddOfferText['offer']['unavailable'] ?>"
+	}
+	let stateVal = {
+		<?php foreach($states as $k => $s): ?>
+		"<?= $s['id'] ?>": <?= $s['penality']?> <?= ($states[count($states) - 1]['id'] === $s['id']?"":",")?>
+		<?php endforeach;?>
 	}
 </script>
 <script src="/assets/js/traderAddOffer.js"></script>
