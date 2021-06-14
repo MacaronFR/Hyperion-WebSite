@@ -19,7 +19,7 @@ class TraderInstructionController extends Controller
     public function get(array $args){
         $root = get_text("root");
         $head = $this->prepareHead("Shop");
-        $header = $this->prepareHeader_2($root['header'], "trader");
+        $header = $this->prepareHeader();
         $main = $this->prepareTraderInstruction();
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
