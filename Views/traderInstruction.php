@@ -1,4 +1,4 @@
-<div class="d-flex flex-column pt-5">
+<div class="d-flex flex-column">
     <div class="mt-5 d-flex flex-column">
         <h1 class="d-flex justify-content-center mb-4 mt-5">Confirmation de votre offre</h1>
         <div class="d-flex flex-column p-3 border border-2 rounded-3 col-11 col-lg-9 align-self-center">
