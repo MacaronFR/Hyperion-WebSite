@@ -122,7 +122,7 @@
             </div>
         </div>
     </nav>
-<?php elseif ($title === "expert"): ?>
+<?php elseif (str_starts_with($title, "expert")): ?>
     <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Offres</a>
@@ -131,9 +131,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/expert/offers">Consulter offres</a>
-                    <a class="nav-link" href="/expert/pending/offer">Consulter offres en attentes</a>
-                    <a class="nav-link" href="/expert/history/offer">Consulter historique des offres traités</a>
+                    <a class="nav-link <?= str_ends_with($title, "all")?"active":""?>" aria-current="page" href="/expert/offers">Consulter offres</a>
+                    <a class="nav-link <?= str_ends_with($title, "pending")?"active":""?>" href="/expert/pending/offer">Consulter offres en attentes</a>
+                    <a class="nav-link <?= str_ends_with($title, "history")?"active":""?>" href="/expert/history/offer">Consulter historique des offres traités</a>
                 </div>
             </div>
         </div>
