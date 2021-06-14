@@ -90,7 +90,7 @@
         </div>
     </div>
 </nav>
-<?php elseif ($title === "manage"): ?>
+<?php elseif (str_starts_with($title, "manage")): ?>
 <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><?= $text['sub_header']['admin']['categories']['title']?></a>
@@ -99,10 +99,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="/manage/add/reference"><?= $text['sub_header']['admin']['categories']['add']?></a>
-                <a class="nav-link" href="/manage/all/references"><?= $text['sub_header']['admin']['categories']['see_ref']?></a>
-                <a class="nav-link" href="/manage/all/products"><?= $text['sub_header']['admin']['categories']['see_prod']?></a>
-                <a class="nav-link" href="/manage/all/categories"><?= $text['sub_header']['admin']['categories']['manage']?></a>
+                <a class="nav-link <?= str_ends_with($title, "addref")?"active":""?>" aria-current="page" href="/manage/add/reference"><?= $text['sub_header']['admin']['categories']['add']?></a>
+                <a class="nav-link <?= str_ends_with($title, "allref")?"active":""?>" href="/manage/all/references"><?= $text['sub_header']['admin']['categories']['see_ref']?></a>
+                <a class="nav-link <?= str_ends_with($title, "addprod")?"active":""?>" href="/manage/all/products"><?= $text['sub_header']['admin']['categories']['see_prod']?></a>
+                <a class="nav-link <?= str_ends_with($title, "allprod")?"active":""?>" href="/manage/all/categories"><?= $text['sub_header']['admin']['categories']['manage']?></a>
             </div>
         </div>
     </div>
