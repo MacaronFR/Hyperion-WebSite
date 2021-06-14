@@ -27,7 +27,7 @@ class ManageAddReferenceController extends Controller{
 	public function get(array $args){
 		$root = get_text("root");
 		$head = $this->prepareHead("ManageAddReference");
-		$header = $this->prepareHeader_2($root['header'], "manage");
+		$header = $this->prepareHeader_2($root['header'], "manage:addref");
 		$main = $this->prepareManageAddReference();
 		$footer = $this->prepareFooter();
 		$body = $this->prepareBody($header, $main, $footer);

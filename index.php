@@ -66,7 +66,7 @@ $rt->get("/expert/pending/offer", ExpertPendingOfferController::class);
 $rt->get("/expert/history/offer", ExpertHistoryOfferController::class);
 $rt->get("/expert/consult/offer", ExpertConsultOneOfferController::class);
 $rt->get("/expert/offers", ExpertOffersController::class);
-$rt->get("/myAccount", MyAccountController::class);
+$rt->get("/me", MyAccountController::class);
 $rt->post("/check/add/domain/product", VerifAddDomainProductController::class);
 $rt->get("/text/*/*", TranslationController::class);
 $rt->get("/shop/one/product", ShopOneProductController::class);

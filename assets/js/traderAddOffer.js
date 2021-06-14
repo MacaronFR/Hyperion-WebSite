@@ -37,6 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var maxFile = 3;
 var nFile = 1;
 var b64File = [];
+var estimation = 0;
 // @ts-ignore
 var toastEL = [].slice.call(document.querySelectorAll(".toast"));
 // @ts-ignore
@@ -48,14 +49,17 @@ var sType = $("#selectType");
 var sBrand = $("#selectBrand");
 var sModel = $("#selectModel");
 var sState = $("#selectState");
+var price = $("#priceEstimationOk").find("p");
 var emptySpecSelect = "<div class=\"form-group mt-1 mt-lg-4 mx-2 spec-select\">" +
     "<label>Storage</label>" +
-    "<select class=\"form-select\">" +
+    "<select class=\"form-select specSelect\">" +
     "<option selected class=\"keep\" disabled value=\"-1\">" + text['select']['choose'] + "</option>" +
     "</select>" +
     "</div>";
 var fileTab = "<li class='nav-item'><a class='nav-link' data-bs-toggle='tab' data-bs-target=''>" + text['select']['file'] + "</a></li>";
 sCat.on("change", function () {
+    estimation = 0;
+    price.text(text['unavailable']);
     sType.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
     sBrand.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
     sModel.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
@@ -85,6 +89,8 @@ sCat.on("change", function () {
     });
 });
 sType.on("change", function () {
+    estimation = 0;
+    price.text(text['unavailable']);
     sBrand.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
     sModel.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
     sState.val("undefined").attr("disabled", true);
@@ -113,6 +119,8 @@ sType.on("change", function () {
     });
 });
 sBrand.on("change", function () {
+    estimation = 0;
+    price.text(text['unavailable']);
     sModel.val("-2").attr("disabled", true).find("option:not(.keep)").remove();
     sState.val("undefined").attr("disabled", true);
     var url = "/model";
@@ -156,26 +164,35 @@ sBrand.on("change", function () {
     });
 });
 sModel.on("change", function () {
+    estimation = 0;
+    price.text(text['unavailable']);
     $("#newOffer").find(".spec-select").remove();
     sState.removeAttr("disabled").val("undefined");
     if (sType.val() !== "undefined" && sBrand.val() !== "undefined" && sModel.val() !== "undefined") {
         API_REQUEST("/type/" + sType.val() + "/brand/" + sBrand.val() + "/model/" + sModel.val() + "/reference", "GET").then(function (res) {
             if (res.status.code === 200) {
+                console.log(res);
+                estimation = parseInt(res.content.buying_price);
                 var keys = Object.keys(res.content.spec);
                 for (var i = 0; i < keys.length; ++i) {
                     var select = $(emptySpecSelect);
                     select.find("label").text(text['specification']['name'][keys[i]]).attr("data-name", keys[i]);
                     if (Array.isArray(res.content.spec[keys[i]])) {
+                        select.find("select").on("change", updateEstimation);
                         for (var j = 0; j < res.content.spec[keys[i]].length; ++j) {
-                            select.find("select").append(new Option(res.content.spec[keys[i]][j], res.content.spec[keys[i]][j]));
+                            var option = $(new Option(res.content.spec[keys[i]][j][0], res.content.spec[keys[i]][j][0]));
+                            option.data("bonus", res.content.spec[keys[i]][j][1]);
+                            select.find("select").append(option);
                         }
                     }
                     else {
-                        select.find("select").append(new Option(res.content.spec[keys[i]], res.content.spec[keys[i]]));
+                        estimation += parseInt(res.content.spec[keys[i]][0][1]);
+                        select.find("select").append(new Option(res.content.spec[keys[i]][0][0], res.content.spec[keys[i]][0][0]));
                         select.find("select").val(res.content.spec[keys[i]]);
                     }
                     $("#newOffer").append(select);
                 }
+                price.text(estimation.toString() + " €");
             }
             else if (res.status.code === 204) {
                 $("#ToastWarning").children(".toast-body").text(text['warning']['spec']);
@@ -285,5 +302,19 @@ function readFile() {
             }
         });
     });
+}
+sState.on("change", updateEstimation);
+function updateEstimation() {
+    var tmpEstimation = estimation;
+    $(".specSelect").each(function () {
+        if ($(this).find("option:selected").data("bonus") !== undefined) {
+            tmpEstimation += parseInt($(this).find("option:selected").data("bonus"));
+        }
+    });
+    var state = sState.val();
+    if (state === null) {
+        state = 5;
+    }
+    price.text((tmpEstimation * ((100 - stateVal[state]) / 100)).toFixed(2).toString() + " €");
 }
 //# sourceMappingURL=traderAddOffer.js.map

@@ -12,6 +12,8 @@ class TraderAddOfferController extends Controller{
 		}
 		$categories = $categories['content'];
 		unset($categories['total'], $categories['totalNotFiltered']);
+		$states = API_request("/state", "GET");
+		$states = $states['content'];
 		ob_start();
 		include "Views/traderAddProduct.php";
 		return ob_get_clean();
