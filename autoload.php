@@ -16,6 +16,7 @@ require_once "Controllers/ManageAllReferenceController.php";
 require_once "Controllers/TraderAddOfferController.php";
 require_once "Controllers/TraderHistoryOfferController.php";
 require_once "Controllers/TraderPendingOfferController.php";
+require_once "Controllers/TraderInstructionController.php";
 require_once "Controllers/MyAccountController.php";
 require_once "Controllers/ExpertOffersController.php";
 require_once "Controllers/ExpertPendingOfferController.php";
