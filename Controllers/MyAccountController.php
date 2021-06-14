@@ -7,6 +7,8 @@ namespace Hyperion\WebSite;
 class MyAccountController extends Controller
 {
     protected function prepareMyAccount(): string{
+    	$me = API_request("/me/".$_SESSION['token'], "GET");
+    	$me = $me['content'];
         ob_start();
         include "Views/MyAccount.php";
         return ob_get_clean();

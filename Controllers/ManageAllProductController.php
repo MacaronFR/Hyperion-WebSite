@@ -18,7 +18,7 @@ class ManageAllProductController extends Controller{
 	public function get(array $args){
 		$root = get_text("root");
 		$head = $this->prepareHead("ManageAllProducts");
-		$header = $this->prepareHeader_2($root['header'], "manage");
+		$header = $this->prepareHeader_2($root['header'], "manage:addprod");
 		$main = $this->prepareManageAllProducts();
 		$footer = $this->prepareFooter();
 		$body = $this->prepareBody($header, $main, $footer);
