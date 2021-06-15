@@ -62,7 +62,7 @@
                 <?php endif; ?>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'3'): ?>
                     <a class="nav-item nav-link" href="/manage/add/reference"><?=$text['header']['staff']['product']?></a>
-                    <a class="nav-item nav-link" href="/expert/offers"><?=$text['header']['staff']['offer']?></a>
+                    <a class="nav-item nav-link" href="/expert/offer"><?=$text['header']['staff']['offer']?></a>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['level']) AND $_SESSION['level']<'2'): ?>
                     <a class="nav-item nav-link" href="/administration/users"><?=$text['header']['admin']['admin']?></a>
@@ -131,9 +131,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
                 <div class="navbar-nav">
-                    <a class="nav-link <?= str_ends_with($title, "all")?"active":""?>" aria-current="page" href="/expert/offers">Consulter offres</a>
-                    <a class="nav-link <?= str_ends_with($title, "pending")?"active":""?>" href="/expert/pending/offer">Consulter offres en attentes</a>
-                    <a class="nav-link <?= str_ends_with($title, "history")?"active":""?>" href="/expert/history/offer">Consulter historique des offres traités</a>
+                    <a class="nav-link <?= str_ends_with($title, "all")?"active":""?>" aria-current="page" href="/expert/offer">Consulter offres</a>
+                    <a class="nav-link <?= str_ends_with($title, "pending")?"active":""?>" href="/expert/offer/pending">Consulter offres en attentes</a>
+                    <a class="nav-link <?= str_ends_with($title, "history")?"active":""?>" href="/expert/offer/history">Consulter historique des offres traités</a>
                 </div>
             </div>
         </div>

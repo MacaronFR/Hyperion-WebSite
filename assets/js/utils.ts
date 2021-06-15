@@ -37,6 +37,9 @@ function API_REQUEST(path: string, method: string, param = {}, parse = true) {
 }
 
 function prepare_url(params, url: string, token = false):string {
+	if(params.data.search === undefined){
+		params.data.search = "";
+	}
 	if (token){
 		url += token + "/";
 	}
