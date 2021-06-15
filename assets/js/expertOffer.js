@@ -16,7 +16,6 @@ function retrieve_offer(params) {
             rows.push(res.content[i]);
             rows[i]['select'] = "<button type=\"button\" class=\"btn btn-success select-offer\" data-offer-id=\"" + rows[i]['id'] + "\">Prendre en Charge</button>";
         }
-        console.log(rows);
         params.success({ "total": total, "totalNotFiltered": totalNotFiltered, "rows": rows });
         $(".select-offer").on("click", selectOffer);
     });
@@ -24,7 +23,6 @@ function retrieve_offer(params) {
 function selectOffer() {
     var _this = this;
     API_REQUEST("/expert/offer/" + token + "/" + $(this).data("offerId"), "POST").then(function (res) {
-        console.log(res);
         if (res.status.code === 200) {
             $("#ToastSuccess").children(".toast-body").text("offre accepté");
             toastList[1].show();
