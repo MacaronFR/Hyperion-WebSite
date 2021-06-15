@@ -1,105 +1,139 @@
-<div id="experthistoryoffergeneral" class="container-fluid d-flex flex-column mb-5">
-    <h3 class="align-self-center mb-4 mt-3">Offres en attentes</h3>
-    <div class="container-fluid d-flex flex-column flex-lg-row">
-        <div id="divexperthistoryoffertable" class="container-fluid col-lg-7">
-            <table class="table"
-                   id="table_spec"
-                   data-toggle="table"
-                   data-pagination="true"
-                   data-height="600"
-				   data-locale="<?= $_SESSION['lang']?>">
-                <thead>
-                <tr>
-                    <th data-sortable data-field="id">id de l'offre</th>
-                    <th data-sortable data-field="type">type de produit</th>
-                    <th data-sortable data-field="state">date de l'offre</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td>17/05/2021</td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td>17/05/2021</td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td>17/05/2021</td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td>17/05/2021</td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td>17/05/2021</td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td>17/05/2021</td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td>17/05/2021</td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td>17/05/2021</td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td>17/05/2021</td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td>17/05/2021</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div id="divexperthistoryofferinfo" class="container-fluid col-lg-3 d-flex flex-column justify-content-center my-auto p-4 border border-2 border-warning rounded-3">
-
-            <div id="carouselexpert" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="/assets/images/cl4p-tp_right.png" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/assets/images/cl4p-tp_center.png" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/assets/images/cl4p-tp_left.png" class="d-block w-100">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselexpert" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselexpert" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-            <div class="d-grid mt-3">
-                <button type="button" class="btn btn-warning me-1" onClick="window.location = '/expert/consult/offer'">Traiter l'offre</button>
-            </div>
-        </div>
-    </div>
+<?php
+/**
+* @var array $categories
+ * @var array $expertPendingOfferText
+ * @var $states
+ */
+?>
+<div class="container-fluid d-flex flex-column">
+	<h3 class="align-self-center mb-4 mt-3"><?= $expertPendingOfferText['expert']['title']?></h3>
+	<div class="container-fluid d-flex flex-column flex-lg-row">
+		<div class="container-fluid col-lg-7">
+			<table
+					class="table"
+					id="table_offer"
+					data-toggle="table"
+					data-pagination="true"
+					data-height="600"
+					data-ajax="retrieve_pending_offer"
+					data-side-pagination="server"
+					data-row-attributes="rowAttributes"
+					data-locale="<?= $_SESSION['lang']?>">
+				<thead>
+				<tr>
+					<th data-sortable data-field="id">ID</th>
+					<th data-field="type">Type</th>
+					<th data-sortable data-field="date">Date</th>
+					<th data-field="brand">Brand</th>
+					<th data-field="model">Model</th>
+					<th data-field="change"></th>
+					<th data-field="confirm"></th>
+				</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
 </div>
+<!-- TOAST -->
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 1500">
+	<div id="ToastError" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-danger">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+	<div id="ToastSuccess" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-success">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+	<div id="ToastWarning" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-warning">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modalModify" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"><?= $expertPendingOfferText['expert']['modal']['title']?></h5>
+				<p id="priceEstimation"><?= $expertPendingOfferText['expert']['unavailable']?></p>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body" id="modalModifyOffer">
+				<div class="form-group mt-1 mt-lg-4">
+					<div class="mx-2">
+						<select class="form-select" id="selectCategory">
+							<option selected disabled class="keep"><?= $expertPendingOfferText['expert']['modal']['category']?></option>
+							<option value="undefined" class="keep"><?= $expertPendingOfferText['expert']['modal']['unreferenced']?></option>
+							<?php foreach($categories as $category): ?>
+								<option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
+							<?php endforeach; ?>
+						</select>
+					</div>
+				</div>
+				<div class="form-group mt-1 mt-lg-4">
+					<div class="mx-2">
+						<select class="form-select" id="selectType" disabled>
+							<option selected disabled class="keep" value="-2"><?= $expertPendingOfferText['expert']['modal']['type']?></option>
+							<option value="undefined" class="keep"><?= $expertPendingOfferText['expert']['modal']['unreferenced']?></option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group mt-1 mt-lg-4">
+					<div class="mx-2">
+						<select class="form-select" id="selectBrand" disabled>
+							<option selected disabled class="keep" value="-2"><?= $expertPendingOfferText['expert']['modal']['brand']?></option>
+							<option value="undefined" class="keep"><?= $expertPendingOfferText['expert']['modal']['unreferenced']?></option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group mt-1 mt-lg-4">
+					<div class="mx-2">
+						<select class="form-select" id="selectModel" disabled>
+							<option selected disabled class="keep" value="-2"><?= $expertPendingOfferText['expert']['modal']['model']?></option>
+							<option value="undefined" class="keep"><?= $expertPendingOfferText['expert']['modal']['unreferenced']?></option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group mt-1 mt-lg-4">
+					<div class="mx-2">
+						<select class="form-select" id="selectState" disabled>
+							<option selected class="keep" disabled value="undefined"><?= $expertPendingOfferText['expert']['modal']['state']['state_title']?></option>
+							<option value="1"><?= $expertPendingOfferText['expert']['modal']['state']['state_jabba']?></option>
+							<option value="2"><?= $expertPendingOfferText['expert']['modal']['state']['state_passable']?></option>
+							<option value="3"><?= $expertPendingOfferText['expert']['modal']['state']['state_ok']?></option>
+							<option value="4"><?= $expertPendingOfferText['expert']['modal']['state']['state_good']?></option>
+							<option value="5"><?= $expertPendingOfferText['expert']['modal']['state']['state_new']?></option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $expertPendingOfferText['expert']['modal']['close']?></button>
+				<button type="button" class="btn btn-primary"><?= $expertPendingOfferText['expert']['modal']['ok']?></button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	let text = {
+		'select': {
+			'choose': "<?= $expertPendingOfferText['expert']['modal']['choose']?>"
+		},
+		'warning': <?= json_encode($expertPendingOfferText['expert']['warning'])?>,
+		'success': {
+			'created': "<?= $expertPendingOfferText['expert']['success']['created']?>"
+		},
+		'error': <?= json_encode($expertPendingOfferText['expert']['error'])?>,
+		'specification': <?= json_encode($expertPendingOfferText['specification'])?>,
+		'unavailable': "<?= $expertPendingOfferText['expert']['unavailable'] ?>"
+	}
+	let stateVal = {
+		<?php foreach($states as $k => $s): ?>
+		"<?= $s['id'] ?>": <?= $s['penality']?> <?= ($states[count($states) - 1]['id'] === $s['id']?"":",")?>
+		<?php endforeach;?>
+	}
+</script>
+<script src="/assets/js/expertOfferPending.js"></script>

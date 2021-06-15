@@ -2,15 +2,7 @@
 declare var token: any;
 declare var $: any;
 declare var bootstrap: any;
-declare var text: object;
 declare var stateVal: object;
-declare var lang: string;
-declare var Base64: any;
-
-const maxFile = 3;
-let nFile = 1;
-let b64File = [];
-let estimation = 0;
 
 // @ts-ignore
 let toastEL = [].slice.call(document.querySelectorAll(".toast"));
@@ -19,6 +11,8 @@ let toastList = toastEL.map(function (toastE) {
 	return new bootstrap.Toast(toastE)
 })
 
+// @ts-ignore
+let estimation = 0;
 // @ts-ignore
 let sCat = $("#selectCategory");
 // @ts-ignore
@@ -30,18 +24,34 @@ let sModel = $("#selectModel");
 // @ts-ignore
 let sState = $("#selectState");
 // @ts-ignore
-let price = $("#priceEstimationOk").find("p");
+let price = $("#priceEstimation");
 
 // @ts-ignore
 let emptySpecSelect =
 	"<div class=\"form-group mt-1 mt-lg-4 mx-2 spec-select\">" +
-		"<label>Storage</label>" +
-		"<select class=\"form-select specSelect\">" +
-			"<option selected class=\"keep\" disabled value=\"-1\">" + text['select']['choose'] + "</option>" +
-		"</select>" +
+	"<label>Storage</label>" +
+	"<select class=\"form-select specSelect\">" +
+	"<option selected class=\"keep\" disabled value=\"-1\">" + text['select']['choose'] + "</option>" +
+	"</select>" +
 	"</div>";
 
-let fileTab = "<li class='nav-item'><a class='nav-link' data-bs-toggle='tab' data-bs-target=''>" + text['select']['file'] + "</a></li>"
+function retrieve_pending_offer(params){
+	let url = prepare_url(params, "/expert/offer/pending/" + token + "/");
+	API_REQUEST(url, "GET").then((res) => {
+		let rows = [];
+		let total = res['content'].total;
+		let totalNotFiltered = res['content'].totalNotFiltered;
+		delete res['content']['total'];
+		delete res['content']['totalNotFiltered'];
+		for(let i = 0; i < Object.keys(res.content).length; ++i){
+			rows.push(res.content[i]);
+			console.log(res.content[i])
+			rows[i]['change'] = "<button type=\"button\" class=\"btn btn-warning\" data-offer-id=\"" + rows[i]['id'] + "\" data-bs-toggle=\"modal\" data-bs-target=\"#modalModify\" data-cat=\"" + rows[i]['category'] + "\">Modifier</button>"
+			rows[i]['confirm'] = "<button type=\"button\" class=\"btn btn-success\" data-offer-id=\"" + rows[i]['id'] + "\">Valider</button>"
+		}
+		params.success({"total": total, "totalNotFiltered": totalNotFiltered, "rows": rows});
+	})
+}
 
 sCat.on("change", function () {
 	estimation = 0;
@@ -173,7 +183,7 @@ sModel.on("change", function(){
 						select.find("select").append(new Option(res.content.spec[keys[i]][0][0], res.content.spec[keys[i]][0][0]));
 						select.find("select").val(res.content.spec[keys[i]]);
 					}
-					$("#newOffer").append(select);
+					$("#modalModifyOffer").append(select);
 				}
 				price.text(estimation.toString() + " €")
 			}else if(res.status.code === 204){
@@ -181,102 +191,11 @@ sModel.on("change", function(){
 				toastList[2].show();
 			}
 		}).catch( (res) => {
-			console.log(res);
 			$("#ToastError").children(".toast-body").text(text['error']['spec']);
 			toastList[0].show();
 		});
 	}
 })
-
-$("#newOffer").on("submit", function (e){
-	e.preventDefault();
-	let specOK = true;
-	$(".spec-select").each(function(){if($(this).find("select").val() === null) specOK = false;})
-	if(sCat.val() === null || sType.val() === null || sBrand.val() === null || sModel.val() === null || sState.val() === null || !specOK){
-		$("#ToastWarning").children(".toast-body").text(text['warning']['not_full']);
-		toastList[2].show()
-		return;
-	}
-	if(sCat.val() === "undefined" || sType.val() === "undefined" || sBrand.val() === "undefined" || sModel.val() === "undefined" || sState.val() === "undefined"){
-		$("#modalUndefined").modal("show");
-		return;
-	}
-	sendOffer();
-})
-
-$("#sendUndefined").on("click", sendOffer);
-
-async function sendOffer(){
-	let specOK = true;
-	let spec = {};
-	$(".spec-select").each(function(){
-		if($(this).find("select").val() === null){
-			specOK = false;
-			return false;
-		}
-		spec[$(this).find("label").data("name")] = $(this).find("select").val();
-	});
-	if(sCat.val() !== null && sType.val() !== null && sBrand.val() !== null && sModel.val() !== null && sState.val() !== null && specOK){
-		let post = {
-			'cat': sCat.val(),
-			'type': sType.val(),
-			'brand': sBrand.val(),
-			'model': sModel.val(),
-			'state': sState.val(),
-			'spec': spec,
-			'files': []
-		}
-		await readFile();
-		post.files = b64File;
-		API_REQUEST("/offer/" + token, "POST", post).then( (res) => {
-			$("#ToastSuccess").children(".toast-body").text(text['success']['created']);
-			toastList[1].show()
-			console.log("Je redirige vers /trader/offer/{token}/" + res.content.offer);
-			//TODO redirection
-		}).catch( (res) => {
-			console.log(res)
-			$("#ToastError").children(".toast-body").text(text['error']);
-			toastList[0].show()
-		})
-	}
-	return
-}
-
-$("#newFile").on("click", function(){
-	if(nFile < maxFile){
-		++nFile;
-		let tmp = $(fileTab);
-		tmp.find("a").attr("data-bs-target", "#f" + nFile);
-		$(this).before(tmp);
-	}
-	if(nFile >= maxFile){
-		$(this).find("a").addClass("disabled")
-	}
-})
-
-function readFile(): Promise<void>{
-	return new Promise(function (resolve) {
-		b64File = [];
-		$(".offer-file").each(function (i) {
-			if (this.files.length === 1) {
-				const r = new FileReader();
-				r.onload = (ev) => {
-					b64File.push({
-						'content': Base64.encode(ev.target.result),
-						'filename': this.files[0].name,
-						'type': this.files[0].type
-					});
-					if (i === maxFile - 1) {
-						resolve();
-					}
-				}
-				r.readAsText(this.files[0]);
-			} else if (i === maxFile - 1) {
-				resolve();
-			}
-		});
-	});
-}
 
 sState.on("change", updateEstimation)
 
@@ -292,5 +211,14 @@ function updateEstimation(){
 	if(state === null){
 		state = 5
 	}
+	console.log("NIKK")
 	price.text((tmpEstimation * ((100 - stateVal[state]) / 100)).toFixed(2).toString() + " €");
 }
+
+function reset(){
+	sState.val("undefined")
+}
+
+$("#modalModify").on("show.bs.modal", function (e){
+	console.log(e.relatedTarget)
+})
