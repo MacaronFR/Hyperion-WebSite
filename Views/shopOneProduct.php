@@ -1,79 +1,92 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Factory</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
-    <script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
-
-</head>
-<body>
-<div id="expertoneoffergeneral" class="container-fluid d-flex flex-column">
-    <h3 class="align-self-center mb-4 mt-3">Offre no 8967856</h3>
+<?php
+/**
+ * @var array $prod
+ * @var array $spec
+ * @var array $productText
+ */
+?>
+<div class="container-fluid d-flex flex-column">
+    <h3 class="align-self-center mb-4 mt-3"><?= $prod['brand'] . " " . $prod['model']?></h3>
     <div class="container-fluid d-flex flex-column flex-lg-row mb-lg-5 mb-3">
         <div class="container-fluid d-flex flex-column col-lg-5 p-0 mb-3">
-            <div id="divexpertoneoffer" class="container-fluid d-flex flex-column justify-content-center my-auto p-4 border border-2 border-warning rounded-3 mb-3">
-                <div id="carouselexpertoneoffer" class="carousel slide" data-bs-ride="carousel">
+            <div class="container-fluid d-flex flex-column justify-content-center my-auto p-4 border border-2 border-warning rounded-3 mb-3 carousel-bg">
+                <div class="carousel slide" data-bs-ride="carousel" id="productPicture">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#productPicture" data-bs-slide-to="0" class="active" id="indicator1"></button>
+                        <button type="button" data-bs-target="#productPicture" data-bs-slide-to="1" id="indicator2"></button>
+                        <button type="button" data-bs-target="#productPicture" data-bs-slide-to="2" id="indicator3"></button>
                     </div>
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
+                        <div class="carousel-item active" id="img1">
                             <div class="w-100 d-flex justify-content-center">
-                                <img src="/assets/images/cl4p-tp_right.png" class="align-self-center">
+                                <img class="align-self-center">
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" id="img2">
                             <div class="w-100 d-flex justify-content-center">
-                                <img src="/assets/images/cl4p-tp_center.png" class="align-self-center">
+                                <img class="align-self-center">
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" id="img3">
                             <div class="w-100 d-flex justify-content-center">
-                                <img src="/assets/images/cl4p-tp_left.png" class="align-self-center">
+                                <img class="align-self-center">
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselexpertoneoffer" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#productPicture" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselexpertoneoffer" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#productPicture" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
             </div>
-            <div id="divexperthistoryoffertable" class="container-fluid my-auto p-4 border border-2 border-warning rounded-3">
-                <div class="">
-                    <label for="description" class="form-label">Description du produit</label>
-                    <textarea class="form-control" id="description" rows="3"></textarea>
-                </div>
-            </div>
         </div>
         <div id="divexperthistoryofferinfo" class="container-fluid col-lg-4 d-flex flex-column justify-content-center my-auto p-4 border border-2 border-warning rounded-3">
             <h4 class="align-self-center mb-3">informations du produit</h4>
-            <input type="text" class="form-control mb-1" value="Smartphone" style="text-align: center">
-            <input type="text" class="form-control mb-1" value="Apple" style="text-align: center">
-            <input type="text" class="form-control mb-1" value="6s - White" style="text-align: center">
-            <input type="text" class="form-control mb-1" value="16 Go" style="text-align: center">
-            <input type="text" class="form-control mb-1" value="Correct" style="text-align: center">
-            <input type="text" class="form-control mb-1" value="145 €" style="text-align: center">
+            <input type="text" class="form-control mb-1" value="<?= $prod['brand']?>" style="text-align: center" readonly>
+            <input type="text" class="form-control mb-1" value="<?= $prod['model']?>" style="text-align: center" readonly>
+			<?php foreach($spec as $n => $s):?>
+				<div class="input-group">
+					<span class="input-group-text mb-1"><?= $n ?></span>
+					<input type="text" class="form-control mb-1" value="<?= htmlspecialchars($s)?>" style="text-align: center" readonly>
+				</div>
+			<?php endforeach;?>
+            <input type="text" class="form-control mb-1" value="<?= $prod['state']?>" style="text-align: center" readonly>
+            <input type="text" class="form-control mb-1" value="<?= $prod['sell_p'] ?? 0?> €" style="text-align: center" readonly>
 
             <div class="d-grid mt-3">
-                <button type="button" class="btn btn-success me-1">Ajouter au panier</button>
+                <button type="button" class="btn btn-success me-1" id="addToCart">Ajouter au panier</button>
             </div>
         </div>
     </div>
 </div>
-</body>
-</html>
+<!-- TOAST -->
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 1500">
+	<div id="ToastError" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-danger">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+	<div id="ToastSuccess" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-success">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+	<div id="ToastWarning" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-warning">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+</div>
+<script>
+	let id = <?= $prod['id']?>;
+	let text = {
+		"error": <?= json_encode($productText['product']['error'])?>,
+		"warning": <?= json_encode($productText['product']['warning'])?>,
+		"success": <?= json_encode($productText['product']['success'])?>
+	}
+</script>
+<script src="/assets/js/shopProd.js"></script>

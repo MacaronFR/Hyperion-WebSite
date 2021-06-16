@@ -1,0 +1,10 @@
+product:
+  title: "Produit - "
+  warning:
+    not_connected: "Vous devez vous connectez pour cette action"
+    in_cart: "Le produit est déjà dans le panier"
+    not_available: "Le produit n'est plus disponible"
+  success:
+    add: "Produit ajouter au panier"
+  error:
+    server: "Erreur Serveur"

@@ -1,0 +1,6 @@
+state:
+  state_jabba: "Jabba the Hutt"
+  state_passable: "Passable"
+  state_ok: "OK"
+  state_good: "Good"
+  state_new: "Factory New"

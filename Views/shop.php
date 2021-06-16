@@ -58,14 +58,14 @@
     <div id="divShopMain" class="d-flex flex-row flex-wrap">
         <?php
         foreach($info['products'] as $p){?>
-            <div class="card mx-4 my-5 col-10 col-lg-2" onClick="window.open('/shop/one/product');">
+            <a class="card mx-4 my-5 col-10 col-lg-2" href="/shop/product/<?= $p['id']?>">
                 <img data-product-id="<?=$p['id']?>" class="card-img-top product-picture">
                 <div class="card-body">
                     <h6 class="card-title"><?= "${p['brand']} ${p['model']}"?></h6>
                     <p class="card-text" style="color: green"><?= $p['state']?></p>
                     <p class="btn btn-primary" style="width: 100%; color: black"><?= $p['sell_p'] ?? "N/A"?></p>
                 </div>
-            </div>
+            </a>
         <?php }
         ?>
     </div>
