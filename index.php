@@ -32,6 +32,7 @@ use Hyperion\WebSite\AdministrationUsersController;
 use Hyperion\WebSite\AdministrationFacturesController;
 use Hyperion\WebSite\StripController;
 use Hyperion\WebSite\GameController;
+use Hyperion\WebSite\InvoicesController;
 
 
 include "autoload.php";
@@ -78,6 +79,8 @@ $rt->get("/administration/factures", AdministrationFacturesController::class);
 $rt->post("/strip", StripController::class);
 $rt->get("/strip", StripController::class);
 $rt->get("/game", GameController::class);
+$rt->get("/invoice", InvoicesController::class);
+
 if(!$rt->isRouted()){
 	http_response_code(404);
 }
