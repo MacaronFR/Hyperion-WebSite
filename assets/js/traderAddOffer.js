@@ -44,12 +44,19 @@ var toastEL = [].slice.call(document.querySelectorAll(".toast"));
 var toastList = toastEL.map(function (toastE) {
     return new bootstrap.Toast(toastE);
 });
+// @ts-ignore
 var sCat = $("#selectCategory");
+// @ts-ignore
 var sType = $("#selectType");
+// @ts-ignore
 var sBrand = $("#selectBrand");
+// @ts-ignore
 var sModel = $("#selectModel");
+// @ts-ignore
 var sState = $("#selectState");
+// @ts-ignore
 var price = $("#priceEstimationOk").find("p");
+// @ts-ignore
 var emptySpecSelect = "<div class=\"form-group mt-1 mt-lg-4 mx-2 spec-select\">" +
     "<label>Storage</label>" +
     "<select class=\"form-select specSelect\">" +
@@ -171,7 +178,6 @@ sModel.on("change", function () {
     if (sType.val() !== "undefined" && sBrand.val() !== "undefined" && sModel.val() !== "undefined") {
         API_REQUEST("/type/" + sType.val() + "/brand/" + sBrand.val() + "/model/" + sModel.val() + "/reference", "GET").then(function (res) {
             if (res.status.code === 200) {
-                console.log(res);
                 estimation = parseInt(res.content.buying_price);
                 var keys = Object.keys(res.content.spec);
                 for (var i = 0; i < keys.length; ++i) {
@@ -304,6 +310,7 @@ function readFile() {
     });
 }
 sState.on("change", updateEstimation);
+// @ts-ignore
 function updateEstimation() {
     var tmpEstimation = estimation;
     $(".specSelect").each(function () {

@@ -40,6 +40,9 @@ function API_REQUEST(path, method, param, parse) {
 }
 function prepare_url(params, url, token) {
     if (token === void 0) { token = false; }
+    if (params.data.search === undefined) {
+        params.data.search = "";
+    }
     if (token) {
         url += token + "/";
     }

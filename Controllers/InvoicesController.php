@@ -4,12 +4,12 @@
 namespace Hyperion\WebSite;
 
 
-class ShopOneProductController extends Controller
+class InvoicesController extends Controller
 {
 
-    protected function prepareShopOneProduct(): string{
+    protected function showInvoices(): string{
         ob_start();
-        include "Views/shopOneProduct.php";
+        include "Views/invoices.php";
         return ob_get_clean();
     }
 
@@ -18,9 +18,9 @@ class ShopOneProductController extends Controller
      */
     public function get(array $args){
         $root = get_text("root");
-        $head = $this->prepareHead("produit");
-        $header = $this->prepareHeader_2($root['header'], "un produit");
-        $main = $this->prepareShopOneProduct();
+        $head = $this->prepareHead("Mes commandes");
+        $header = $this->prepareHeader();
+        $main = $this->showInvoices();
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
         include "Views/root.php";

@@ -1,3 +1,4 @@
+// @ts-ignore
 declare var token: any;
 declare var $: any;
 declare var bootstrap: any;
@@ -18,13 +19,20 @@ let toastList = toastEL.map(function (toastE) {
 	return new bootstrap.Toast(toastE)
 })
 
+// @ts-ignore
 let sCat = $("#selectCategory");
+// @ts-ignore
 let sType = $("#selectType");
+// @ts-ignore
 let sBrand = $("#selectBrand");
+// @ts-ignore
 let sModel = $("#selectModel");
+// @ts-ignore
 let sState = $("#selectState");
+// @ts-ignore
 let price = $("#priceEstimationOk").find("p");
 
+// @ts-ignore
 let emptySpecSelect =
 	"<div class=\"form-group mt-1 mt-lg-4 mx-2 spec-select\">" +
 		"<label>Storage</label>" +
@@ -148,7 +156,6 @@ sModel.on("change", function(){
 	if(sType.val() !== "undefined" && sBrand.val() !== "undefined" && sModel.val() !== "undefined"){
 		API_REQUEST("/type/" + sType.val() + "/brand/" + sBrand.val() + "/model/" + sModel.val() + "/reference", "GET").then( (res)=> {
 			if(res.status.code === 200) {
-				console.log(res)
 				estimation = parseInt(res.content.buying_price);
 				const keys = Object.keys(res.content.spec)
 				for (let i = 0; i < keys.length; ++i) {
@@ -273,6 +280,7 @@ function readFile(): Promise<void>{
 
 sState.on("change", updateEstimation)
 
+// @ts-ignore
 function updateEstimation(){
 	let tmpEstimation = estimation;
 	$(".specSelect").each(function (){

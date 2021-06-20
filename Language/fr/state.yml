@@ -1,0 +1,6 @@
+state:
+  state_jabba: "Jabba le Hutt"
+  state_passable: "Passable"
+  state_ok: "OK"
+  state_good: "Bon"
+  state_new: "Neuf"

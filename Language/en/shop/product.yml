@@ -1,0 +1,10 @@
+product:
+  title: "Product - "
+  warning:
+    not_connected: "You must be connected to do this action"
+    in_cart: "Product already in cart"
+    not_available: "Product no longer available"
+  success:
+    add: "Product add to cart"
+  error:
+    server: "Server Error"

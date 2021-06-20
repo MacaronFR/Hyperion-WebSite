@@ -18,7 +18,7 @@ class ExpertHistoryOfferController extends Controller
     public function get(array $args){
         $root = get_text("root");
         $head = $this->prepareHead("expert");
-        $header = $this->prepareHeader_2($root['header'], "expert");
+        $header = $this->prepareHeader_2($root['header'], "expert:history");
         $main = $this->prepareExpertHistoryOffer();
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
