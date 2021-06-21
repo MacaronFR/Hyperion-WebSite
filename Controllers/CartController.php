@@ -22,11 +22,6 @@ class CartController extends Controller
 			header("Location: /500");
 		}
 		$user = $user['content'] ?? [];
-		$cart_id = API_request("/cart/active/${_SESSION['token']}", "GET");
-		if($cart_id === false){
-			header("Location: /500");
-		}
-		$cart_id = $cart_id['content'];
 		if($user['addr'] === false){
 			$address = "Set Address First";
 			$adid = false;
@@ -42,6 +37,11 @@ class CartController extends Controller
 		$conf = read_conf("[Stripe]");
 		Stripe::setApiKey($conf[0]);
 		if($total > 0){
+			$cart_id = API_request("/cart/active/${_SESSION['token']}", "GET");
+			if($cart_id === false){
+				header("Location: /500");
+			}
+			$cart_id = $cart_id['content'];
 			$session = Session::create([
 				'payment_method_types' => ['card'],
 				'line_items' => [[
