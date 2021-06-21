@@ -132,7 +132,7 @@
 	}
 	let stateVal = {
 		<?php foreach($states as $k => $s): ?>
-		"<?= $s['id'] ?>": <?= $s['penality']?> <?= ($states[count($states) - 1]['id'] === $s['id']?"":",")?>
+		"<?= $s['id'] ?>": <?= $s['penality']?>;<?= ($states[count($states) - 1]['id'] === $s['id']?"":",")?>
 		<?php endforeach;?>
 	}
 </script>
