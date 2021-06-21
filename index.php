@@ -1,5 +1,6 @@
 <?php
 
+use Hyperion\WebSite\PayementController;
 use Hyperion\WebSite\Router;
 use Hyperion\WebSite\TestController;
 use Hyperion\WebSite\StoreController;
@@ -77,6 +78,7 @@ $rt->get("/administration/users", AdministrationUsersController::class);
 $rt->get("/administration/factures", AdministrationFacturesController::class);
 $rt->post("/strip", StripController::class);
 $rt->get("/strip", StripController::class);
+$rt->get("/payement/accepted/*", PayementController::class);
 $rt->get("/game", GameController::class);
 if(!$rt->isRouted()){
 	http_response_code(404);
