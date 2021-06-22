@@ -3,41 +3,28 @@
     <div class="d-flex flex-column flex-lg-row justify-content-around">
         <div id="divAdminUsers" class=" d-flex flex-column col-10 col-lg-5 mb-4 mb-lg-0 border border-primary border-2 rounded-2 px-2 py-3 align-self-center ">
             <h3 class="align-self-center">Utilisateurs</h3>
-            <table class="table"
-                   id="table_user"
-                   data-toggle="table"
-                   data-pagination="true"
-                   data-height="500"
-                   data-locale="<?= $_SESSION['lang']?>">
+            <table
+					class="table"
+					id="table_categories"
+					data-toggle="table"
+					data-search="true"
+					data-pagination="true"
+					data-height="600"
+					data-ajax="retrieve_users"
+					data-side-pagination="server"
+					data-row-attributes="rowAttributes"
+					data-locale="<?= $_SESSION['lang']?>">
                 <thead>
                 <tr>
-                    <th data-sortable data-field="id">id</th>
-                    <th data-sortable data-field="type">Identité</th>
-                    <th data-sortable data-field="email">Email</th>
-                    <th data-sortable data-field="level">Niveau</th>
-                    <th data-sortable data-field="delete">Delete</th>
+                    <th data-sortable="true" data-field="id">id</th>
+                    <th data-sortable="true" data-field="name">Nom</th>
+                    <th data-sortable="true" data-field="fname">Prénom</th>
+                    <th data-sortable="true" data-field="mail">Email</th>
+                    <th data-sortable="true" data-field="type">Status</th>
+                    <th data-field="change"></th>
+                    <th data-field="delete"></th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>Admin</td>
-                    <td>
-                        <button type="button" class="btn btn-danger col-8">Supprimer</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>Expert</td>
-                    <td>
-                        <button type="button" class="btn btn-danger col-8">Supprimer</button>
-                    </td>
-                </tr>
-                </tbody>
             </table>
         </div>
         <div id="divAdminOneUser" class="d-flex flex-column col-10 col-lg-5 border border-primary border-2 rounded-2 px-2 py-3 align-self-center">
@@ -74,3 +61,22 @@
         </div>
     </div>
 </div>
+<!-- TOAST -->
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 1500">
+	<div id="ToastError" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-danger">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+	<div id="ToastSuccess" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-success">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+	<div id="ToastWarning" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-warning">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+</div>
+<script src="/assets/js/adminUsers.js"></script>
