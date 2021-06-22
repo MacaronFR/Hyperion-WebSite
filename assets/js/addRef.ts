@@ -174,6 +174,7 @@ $("#reset").on("click", function(){
 	reset();
 })
 
+// @ts-ignore
 function reset(){
 	typeSelect.val(-1).attr("disabled", true).find("option:not([disabled])").remove();
 	catSelect.val(-1);

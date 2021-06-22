@@ -8,7 +8,12 @@ class MyAccountController extends Controller
 {
     protected function prepareMyAccount(): string{
     	$me = API_request("/me/".$_SESSION['token'], "GET");
-    	$me = $me['content'];
+    	if($me['status']['code'] === 200){
+			$me = $me['content'];
+		}else{
+    		header("Location: /connect");
+    		exit();
+		}
         ob_start();
         include "Views/MyAccount.php";
         return ob_get_clean();
@@ -18,6 +23,9 @@ class MyAccountController extends Controller
      * @inheritDoc
      */
     public function get(array $args){
+    	if(!isset($_SESSION['level'])){
+    		header("Location: /connect");
+		}
         $root = get_text("root");
         $head = $this->prepareHead("account");
         $header = $this->prepareHeader();
