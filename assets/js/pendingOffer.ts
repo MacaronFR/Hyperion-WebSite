@@ -15,7 +15,6 @@ function retrieve_pending(params){
 	url += params.data.offset / 10;
 	API_REQUEST(url, "GET").then((res) => {
 		if(res.status.code === 200) {
-			console.log(res)
 			let rows = [];
 			let total = res['content'].total;
 			let totalNotFiltered = res['content'].totalNotFiltered;
