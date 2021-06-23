@@ -7,6 +7,7 @@
                 id="table_offer"
                 data-toggle="table"
                 data-pagination="true"
+                data-search="true"
                 data-height="600"
                 data-ajax="retrieve_offer"
                 data-side-pagination="server"
