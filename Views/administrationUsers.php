@@ -39,11 +39,11 @@
                     <input type="text" class="form-control" id="fname" disabled>
                 </div>
             </div>
-			<div class="col-6 me-1">
+			<div class="col-12">
 				<label for="mail" class="form-label">Email :</label>
 				<input type="text" class="form-control" id="mail" disabled>
 			</div>
-			<div class="col-6">
+			<div class="col-12">
 				<label for="address" class="form-label">Adresse :</label>
 				<input type="text" class="form-control" id="address" disabled>
 			</div>
