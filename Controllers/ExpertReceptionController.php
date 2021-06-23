@@ -18,8 +18,8 @@ class ExpertReceptionController extends Controller
      */
     public function get(array $args){
         $root = get_text("root");
-        $head = $this->prepareHead("Expert Reception");
-        $header = $this->prepareHeader_2($root['header'], "Expert:Reception");
+        $head = $this->prepareHead("Expert");
+        $header = $this->prepareHeader_2($root['header'], "expert:reception");
         $main = $this->ExpertReception();
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
