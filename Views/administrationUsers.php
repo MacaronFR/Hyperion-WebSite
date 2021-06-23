@@ -29,13 +29,15 @@
         </div>
         <div class="d-flex flex-column col-10 col-lg-5 border border-primary border-2 rounded-2 px-2 py-3 align-self-center mb-3">
             <h3 class="align-self-center">Informations utilisateur :</h3>
-            <div class="mb-3">
-                <label for="name" class="form-label">Nom :</label>
-                <input type="text" class="form-control" id="name" disabled>
-            </div>
-            <div class="mb-3">
-                <label for="fname" class="form-label">Prénom :</label>
-                <input type="text" class="form-control" id="fname" disabled>
+            <div class="mb-3 d-flex flex-row justify-content-between">
+                <div class="col-5">
+                    <label for="name" class="form-label">Nom :</label>
+                    <input type="text" class="form-control" id="name" disabled>
+                </div>
+                <div class="col-5">
+                    <label for="fname" class="form-label">Prénom :</label>
+                    <input type="text" class="form-control" id="fname" disabled>
+                </div>
             </div>
 			<div class="mb-3">
 				<label for="mail" class="form-label">Email :</label>
