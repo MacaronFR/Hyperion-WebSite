@@ -207,13 +207,13 @@ function updateEstimation() {
     if (state === null) {
         state = 5;
     }
-    console.log("NIKK");
     price.text((tmpEstimation * ((100 - stateVal[state]) / 100)).toFixed(2).toString() + " €");
 }
 function reset() {
     sState.val("undefined");
 }
 $("#modalModify").on("show.bs.modal", function (e) {
+    var _this = this;
     var button = e.relatedTarget;
     API_REQUEST("/offer/" + token + "/" + button.dataset['offerId'], "GET").then(function (res) {
         if (res.status.code === 200) {
@@ -261,8 +261,28 @@ $("#modalModify").on("show.bs.modal", function (e) {
             sState.removeAttr("disabled");
             updateSpec(res.content.type_id, res.content.spec.brand, res.content.spec.model, res.content.spec);
         }
+        $("#changeOffer").off("click").on("click", function () {
+            var info = {
+                "type": sType.val(),
+                "brand": sBrand.val(),
+                "model": sModel.val(),
+                "state": sState.val(),
+                "spec": {}
+            };
+            $(".specSelect").each(function (i, e) {
+                info.spec[$(e).siblings("label").attr("data-name")] = $(e).val();
+            });
+            API_REQUEST("/offer/set/" + token + "/" + res.content.id_offer, "PUT", info).then(function (resO) {
+                $(".table").bootstrapTable("refresh");
+                $("#ToastSuccess").children(".toast-body").text("Offre Modifié");
+                toastList[1].show();
+                $(_this).modal("toggle");
+            }).catch(function () {
+                $("#ToastError").children(".toast-body").text("Erreur lors de la modifaction de l'offre");
+                toastList[0].show();
+            });
+        });
     });
-    sCat.select();
 });
 function validateCounterOffer(element) {
     API_REQUEST("/offer/counter/send/" + token + "/" + element.dataset['offerId'], "PUT").then(function (res) {
@@ -271,7 +291,8 @@ function validateCounterOffer(element) {
             $("#ToastSuccess").children(".toast-body").text("Contre Offre envoyé");
             toastList[1].show();
         }
-    }).catch(function () {
+    }).catch(function (res) {
+        console.log(res);
         $("#ToastError").children(".toast-body").text("Erreur lors de l'envoie de la contre-offre");
         toastList[0].show();
     });

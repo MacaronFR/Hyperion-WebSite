@@ -112,7 +112,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $expertPendingOfferText['expert']['modal']['close']?></button>
-				<button type="button" class="btn btn-primary"><?= $expertPendingOfferText['expert']['modal']['ok']?></button>
+				<button type="button" class="btn btn-primary" id="changeOffer"><?= $expertPendingOfferText['expert']['modal']['ok']?></button>
 			</div>
 		</div>
 	</div>

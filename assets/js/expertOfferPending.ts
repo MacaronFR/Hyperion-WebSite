@@ -218,7 +218,6 @@ function updateEstimation(){
 	if(state === null){
 		state = 5
 	}
-	console.log("NIKK")
 	price.text((tmpEstimation * ((100 - stateVal[state]) / 100)).toFixed(2).toString() + " €");
 }
 
@@ -274,8 +273,28 @@ $("#modalModify").on("show.bs.modal", function (e){
 			sState.removeAttr("disabled");
 			updateSpec(res.content.type_id, res.content.spec.brand, res.content.spec.model, res.content.spec);
 		}
+		$("#changeOffer").off("click").on("click", () => {
+			const info = {
+				"type": sType.val(),
+				"brand": sBrand.val(),
+				"model": sModel.val(),
+				"state": sState.val(),
+				"spec": {}
+			}
+			$(".specSelect").each(function(i, e){
+				info.spec[$(e).siblings("label").attr("data-name")] = $(e).val()
+			})
+			API_REQUEST("/offer/set/" + token + "/" + res.content.id_offer, "PUT", info).then( (resO) => {
+				$(".table").bootstrapTable("refresh");
+				$("#ToastSuccess").children(".toast-body").text("Offre Modifié");
+				toastList[1].show();
+				$(this).modal("toggle");
+			}).catch( () => {
+				$("#ToastError").children(".toast-body").text("Erreur lors de la modifaction de l'offre");
+				toastList[0].show();
+			})
+		})
 	})
-	sCat.select()
 })
 
 function validateCounterOffer(element){
@@ -285,7 +304,8 @@ function validateCounterOffer(element){
 			$("#ToastSuccess").children(".toast-body").text("Contre Offre envoyé");
 			toastList[1].show();
 		}
-	}).catch( () => {
+	}).catch( (res) => {
+		console.log(res)
 		$("#ToastError").children(".toast-body").text("Erreur lors de l'envoie de la contre-offre");
 		toastList[0].show();
 	})
