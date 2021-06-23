@@ -217,7 +217,6 @@ $("#modalModify").on("show.bs.modal", function (e) {
     var button = e.relatedTarget;
     API_REQUEST("/offer/" + token + "/" + button.dataset['offerId'], "GET").then(function (res) {
         if (res.status.code === 200) {
-            console.log(res);
             sCat.val(res.content.category);
             API_REQUEST("/category/" + res.content.category + "/type", "GET").then(function (resT) {
                 if (resT.status.code === 200) {
@@ -262,6 +261,26 @@ $("#modalModify").on("show.bs.modal", function (e) {
             updateSpec(res.content.type_id, res.content.spec.brand, res.content.spec.model, res.content.spec);
         }
         $("#changeOffer").off("click").on("click", function () {
+            if (sType.val() === null) {
+                $("#ToastWarning").children(".toast-body").text("Type non rempli");
+                toastList[2].show();
+                return;
+            }
+            if (sBrand.val() === null) {
+                $("#ToastWarning").children(".toast-body").text("Marque non rempli");
+                toastList[2].show();
+                return;
+            }
+            if (sModel.val() === null) {
+                $("#ToastWarning").children(".toast-body").text("Model non rempli");
+                toastList[2].show();
+                return;
+            }
+            if (sState.val() === null) {
+                $("#ToastWarning").children(".toast-body").text("État non rempli");
+                toastList[2].show();
+                return;
+            }
             var info = {
                 "type": sType.val(),
                 "brand": sBrand.val(),
