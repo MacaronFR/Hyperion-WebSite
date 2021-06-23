@@ -67,7 +67,7 @@
 			</div>
 			<div class="mb-3">
 				<label for="l_login" class="form-label">Dernière connexion :</label>
-				<input type="text" class="form-control" id="l_login" disabled>
+				<input type="text" class="form-control" id="l_login" disabled readonly>
 			</div>
             <div class="mb-3">
                 <label for="userName" class="form-label">Niveau d'authenfication :</label>
@@ -101,6 +101,20 @@
 	<div id="ToastWarning" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
 		<div class="toast-body bg-warning">
 			Hello, world! This is a toast message.
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="modalDelete" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"></h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+				<button type="button" class="btn btn-danger delete">Supprimer</button>
+			</div>
 		</div>
 	</div>
 </div>
