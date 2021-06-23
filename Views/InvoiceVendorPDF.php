@@ -51,7 +51,7 @@ class InvoiceVendorPDF extends FPDF
         $this->SetFont('Helvetica','',20);
         $this->setFillColor(230,230,230);
         $this->SetX(70);
-        $this->Cell(80,10,'Facture',0,0,'C',1);
+        $this->Cell(80,10,'FACTURE D AVOIR',0,0,'C',1);
         $this->Ln(18);
     }
 
