@@ -8,7 +8,7 @@ $db_port = 8889;
 
 /**@var $db string database connect */
 
-try {
+/**try {
     $db = new PDO("mysql:host=$db_host;dbname=$db_db", $db_user, $db_password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "";
@@ -18,11 +18,25 @@ try {
 
 
 /* ============================ Extraction from database ============================ */
-$requete = $db ->prepare("SELECT *, users.name as userName  FROM users INNER JOIN facture on facture.id_user = users.id_user INNER JOIN orders on orders.id_order = facture.`order` INNER JOIN products on orders.id_order = products.id_order INNER JOIN addresses on users.address = addresses.id_address");
+/*$requete = $db ->prepare("SELECT *, users.name as userName  FROM users INNER JOIN facture on facture.id_user = users.id_user INNER JOIN orders on orders.id_order = facture.`order` INNER JOIN products on orders.id_order = products.id_order INNER JOIN addresses on users.address = addresses.id_address");
 $requete ->fetchAll(PDO::FETCH_ASSOC);
 $requete->execute();
 $tab = $requete->fetchAll(PDO::FETCH_ASSOC);
-
+*/
+$tab = [
+	[
+		'userName' => "TURBIEZ",
+		'firstname' => 'Denis',
+		'address' => '8 rue de la mairie',
+		'zip' => "77830",
+		'city' => 'pamfou'
+	],
+	[
+		'description' => "NIK TOI",
+		'tva' => 20,
+		'selling_price' => 159.4
+	]
+];
 
 /* ============================ Filling PDF ============================ */
 require("fpdf/fpdf.php");
@@ -31,7 +45,7 @@ class InvoicePDF extends FPDF
 {
 // Header
     function Header() {
-        $this->Image('/fpdf/HyperionLogo2.png',15,5, 35);
+        $this->Image(__DIR__ . '/../fpdf/HyperionLogo2.png',15,5, 35);
         $this->Ln(20);
         $this->SetFont('Helvetica','',20);
         $this->setFillColor(230,230,230);
@@ -62,7 +76,7 @@ $pdf->Cell(75,6, utf8_decode($tab[0]['userName']." ".$tab[0]['firstname'] ),0,0,
 $pdf->Cell(112,6,'242 Rue du Faubourg Saint-Antoine',0,1,'R',0);
 $pdf->Cell(75,6, utf8_decode($tab[0]['address']),0,0,'L',1);
 $pdf->Cell(112,6,'Paris XII 75012',0,1,'R',0);
-$pdf->Cell(75,6, utf8_decode($tab[0]['zip_code'].", ".utf8_decode($tab[0]['city'])),0,0,'L',1);
+$pdf->Cell(75,6, utf8_decode($tab[0]['zip'].", ".utf8_decode($tab[0]['city'])),0,0,'L',1);
 $pdf->Cell(112,6,'TVA: FR12637848934987',0,1,'R',0);
 $pdf->Ln(10);
 
@@ -78,8 +92,7 @@ $pdf->Cell(75,6, '19.06.2021',0,1,'',1);
 
 
 
-function entete_table($position_entete) {
-    global $pdf;
+function entete_table($position_entete, $pdf) {
     $pdf->SetDrawColor(183);
     $pdf->SetFillColor(221);
     $pdf->SetTextColor(0);
@@ -118,14 +131,14 @@ function entete_table($position_entete) {
 $position_entete = 100;
 $pdf->SetFont('Helvetica','',9);
 $pdf->SetTextColor(0);
-entete_table($position_entete);
+entete_table($position_entete, $pdf);
 
 $position_detail = 110;
 $htSum = 0;
 $tvaSum = 0;
 $ttcSum = 0;
 
-for($i=0; $i<count($tab); $i++){
+for($i=1; $i<count($tab); $i++){
     $pdf->SetY($position_detail);
     $pdf->SetX(10);
     $pdf->MultiCell(80,8,utf8_decode($tab[$i]['description']),1,'C');
