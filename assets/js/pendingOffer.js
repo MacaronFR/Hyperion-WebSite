@@ -33,8 +33,8 @@ function retrieve_pending(params) {
     });
 }
 var button = "<div class=\"d-flex justify-content-center mt-3 button-detail\">" +
-    "<button type=\"button\" class=\"btn btn-success me-1 col-6\">Accepter !</button>" +
-    "<button type=\"button\" class=\"btn btn-danger ms-1 col-6\">Refuser !</button>" +
+    "<button type=\"button\" class=\"btn btn-success me-1 col-6 accept\">Accepter !</button>" +
+    "<button type=\"button\" class=\"btn btn-danger ms-1 col-6 refuse\">Refuser !</button>" +
     "</div>";
 function seeDetail(element) {
     var detail = $("#divtraderpendinginfo");
@@ -50,6 +50,38 @@ function seeDetail(element) {
     else {
         detail.find("[name=counter]").val(element.dataset['offerCounter'] + " €").removeAttr("disabled");
         detail.append(button);
+        detail.find(".accept").off("click").on("click", function () {
+            API_REQUEST("/offer/counter/accept/" + token + "/" + element.dataset['offerId'], "PUT").then(function (res) {
+                if (res.status.code === 200) {
+                    $(".table").bootstrapTable("refresh");
+                    $("#ToastSuccess").children(".toast-body").text("Offre Acceptée");
+                    toastList[1].show();
+                }
+                else {
+                    $("#ToastWarning").children(".toast-body").text("Erreur");
+                    toastList[1].show();
+                }
+            }).catch(function () {
+                $("#ToastError").children(".toast-body").text("Erreur");
+                toastList[0].show();
+            });
+        });
+        detail.find(".refuse").off("click").on("click", function () {
+            API_REQUEST("/offer/counter/refuse/" + token + "/" + element.dataset['offerId'], "PUT").then(function (res) {
+                if (res.status.code === 200) {
+                    $(".table").bootstrapTable("refresh");
+                    $("#ToastWarning").children(".toast-body").text("Offre Refusée");
+                    toastList[1].show();
+                }
+                else {
+                    $("#ToastWarning").children(".toast-body").text("Erreur");
+                    toastList[1].show();
+                }
+            }).catch(function () {
+                $("#ToastError").children(".toast-body").text("Erreur");
+                toastList[0].show();
+            });
+        });
     }
 }
 //# sourceMappingURL=pendingOffer.js.map
