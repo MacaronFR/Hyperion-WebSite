@@ -62,7 +62,7 @@ class InvoiceVendorPDF extends FPDF
     }
 }
 
-$pdf = new InvoicePDF('P','mm','A4');
+$pdf = new InvoiceVendorPDF('P','mm','A4');
 $pdf->AddPage();
 $pdf->SetFont('Helvetica','',9);
 $pdf->SetTextColor(0);
