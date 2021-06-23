@@ -46,7 +46,7 @@ function retrieve_pending_offer(params){
 		for(let i = 0; i < Object.keys(res.content).length; ++i){
 			rows.push(res.content[i]);
 			rows[i]['change'] = "<button type=\"button\" class=\"btn btn-warning\" data-offer-id=\"" + rows[i]['id'] + "\" data-bs-toggle=\"modal\" data-bs-target=\"#modalModify\">Modifier</button>"
-			rows[i]['confirm'] = "<button type=\"button\" class=\"btn btn-success\" data-offer-id=\"" + rows[i]['id'] + "\">Valider</button>"
+			rows[i]['confirm'] = "<button type=\"button\" class=\"btn btn-success\" data-offer-id=\"" + rows[i]['id'] + "\" onclick=\"validateCounterOffer(this)\">Valider</button>"
 		}
 		params.success({"total": total, "totalNotFiltered": totalNotFiltered, "rows": rows});
 	})
@@ -163,11 +163,11 @@ sModel.on("change", function(){
 	$("#newOffer").find(".spec-select").remove();
 	sState.removeAttr("disabled").val("undefined");
 	if(sType.val() !== "undefined" && sBrand.val() !== "undefined" && sModel.val() !== "undefined"){
-		updateSpec(sType.val(), sBrand.val(), sModel.val());
+		updateSpec(sType.val(), sBrand.val(), sModel.val(), null);
 	}
 })
 
-function updateSpec(type, brand, model){
+function updateSpec(type, brand, model, specValue){
 	API_REQUEST("/type/" + type + "/brand/" + brand + "/model/" + model + "/reference", "GET").then( (res)=> {
 		if(res.status.code === 200) {
 			$(".spec-select").remove()
@@ -176,17 +176,20 @@ function updateSpec(type, brand, model){
 			for (let i = 0; i < keys.length; ++i) {
 				const select = $(emptySpecSelect);
 				select.find("label").text(text['specification']['name'][keys[i]]).attr("data-name", keys[i]);
-				if (Array.isArray(res.content.spec[keys[i]])) {
+				if (res.content.spec[keys[i]].length !== 1){
 					select.find("select").on("change", updateEstimation);
 					for (let j = 0; j < res.content.spec[keys[i]].length; ++j) {
 						let option = $(new Option(res.content.spec[keys[i]][j][0], res.content.spec[keys[i]][j][0]))
 						option.data("bonus", res.content.spec[keys[i]][j][1])
 						select.find("select").append(option);
 					}
+					if(specValue !== null && specValue[keys[i]]){
+						select.find("select").val(specValue[keys[i]])
+					}
 				} else {
 					estimation += parseInt(res.content.spec[keys[i]][0][1]);
 					select.find("select").append(new Option(res.content.spec[keys[i]][0][0], res.content.spec[keys[i]][0][0]));
-					select.find("select").val(res.content.spec[keys[i]]);
+					select.find("select").val(res.content.spec[keys[i]][0][0]);
 				}
 				$("#modalModifyOffer").append(select);
 			}
@@ -269,8 +272,21 @@ $("#modalModify").on("show.bs.modal", function (e){
 			})
 			sState.val(res.content.state);
 			sState.removeAttr("disabled");
-			updateSpec(res.content.type_id, res.content.spec.brand, res.content.spec.model);
+			updateSpec(res.content.type_id, res.content.spec.brand, res.content.spec.model, res.content.spec);
 		}
 	})
 	sCat.select()
 })
+
+function validateCounterOffer(element){
+	API_REQUEST("/offer/counter/send/" + token + "/" + element.dataset['offerId'], "PUT").then((res) => {
+		if(res.status.code === 200){
+			$(".table").bootstrapTable("refresh");
+			$("#ToastSuccess").children(".toast-body").text("Contre Offre envoyé");
+			toastList[1].show();
+		}
+	}).catch( () => {
+		$("#ToastError").children(".toast-body").text("Erreur lors de l'envoie de la contre-offre");
+		toastList[0].show();
+	})
+}
