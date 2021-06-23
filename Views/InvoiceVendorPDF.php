@@ -1,5 +1,45 @@
 <?php
+/* ============================ Connexion database ============================ */
+$db_host = 'localhost';
+$db_user = 'root';
+$db_password = 'root';
+$db_db = 'projetA';
+$db_port = 8889;
 
+/**@var $db string database connect */
+
+/**try {
+$db = new PDO("mysql:host=$db_host;dbname=$db_db", $db_user, $db_password);
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+echo "";
+} catch(PDOException $e) {
+echo "Connection failed: " . $e->getMessage();
+}
+
+
+/* ============================ Extraction from database ============================ */
+/*$requete = $db ->prepare("SELECT *, users.name as userName  FROM users INNER JOIN facture on facture.id_user = users.id_user INNER JOIN orders on orders.id_order = facture.`order` INNER JOIN products on orders.id_order = products.id_order INNER JOIN addresses on users.address = addresses.id_address");
+$requete ->fetchAll(PDO::FETCH_ASSOC);
+$requete->execute();
+$tab = $requete->fetchAll(PDO::FETCH_ASSOC);
+*/
+$tab = [
+    [
+        'userName' => "TURBIEZ",
+        'firstname' => 'Denis',
+        'address' => '8 rue de la mairie',
+        'zip' => "77830",
+        'city' => 'pamfou'
+    ],
+    [
+        'description' => "NIK TOI",
+        'tva' => 20,
+        'selling_price' => 159.4
+    ]
+];
+
+/* ============================ Filling PDF ============================ */
+require("fpdf/fpdf.php");
 
 class InvoiceVendorPDF extends FPDF
 {
