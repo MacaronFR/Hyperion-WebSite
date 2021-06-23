@@ -29,46 +29,54 @@
         </div>
         <div class="d-flex flex-column col-10 col-lg-5 border border-primary border-2 rounded-2 px-2 py-3 align-self-center mb-3">
             <h3 class="align-self-center">Informations utilisateur :</h3>
-            <div class="mb-3">
-                <label for="name" class="form-label">Nom :</label>
-                <input type="text" class="form-control" id="name" disabled>
+            <div class="mb-3 d-flex flex-row justify-content-between">
+                <div class="col-6 me-1">
+                    <label for="name" class="form-label">Nom :</label>
+                    <input type="text" class="form-control" id="name" disabled>
+                </div>
+                <div class="col-6">
+                    <label for="fname" class="form-label">Prénom :</label>
+                    <input type="text" class="form-control" id="fname" disabled>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="fname" class="form-label">Prénom :</label>
-                <input type="text" class="form-control" id="fname" disabled>
-            </div>
-			<div class="mb-3">
+			<div class="col-12">
 				<label for="mail" class="form-label">Email :</label>
 				<input type="text" class="form-control" id="mail" disabled>
 			</div>
-			<div class="mb-3">
+			<div class="col-12">
 				<label for="address" class="form-label">Adresse :</label>
 				<input type="text" class="form-control" id="address" disabled>
 			</div>
-			<div class="mb-3">
-				<label for="city" class="form-label">Ville :</label>
-				<input type="text" class="form-control" id="city" disabled>
-			</div>
-			<div class="mb-3">
-				<label for="zip" class="form-label">Code Postal :</label>
-				<input type="text" class="form-control" id="zip" disabled>
-			</div>
-			<div class="mb-3">
-				<label for="region" class="form-label">Region :</label>
-				<input type="text" class="form-control" id="region" disabled>
-			</div>
-			<div class="mb-3">
-				<label for="country" class="form-label">Pays :</label>
-				<input type="text" class="form-control" id="country" disabled>
-			</div>
-			<div class="mb-3">
-				<label for="ac_creation" class="form-label">Création du compte :</label>
-				<input type="text" class="form-control" id="ac_creation" disabled readonly>
-			</div>
-			<div class="mb-3">
-				<label for="l_login" class="form-label">Dernière connexion :</label>
-				<input type="text" class="form-control" id="l_login" disabled readonly>
-			</div>
+            <div class="mb-3 d-flex flex-row justify-content-between">
+                <div class="col-6 me-1">
+                    <label for="city" class="form-label">Ville :</label>
+                    <input type="text" class="form-control" id="city" disabled>
+                </div>
+                <div class="col-6">
+                    <label for="zip" class="form-label">Code Postal :</label>
+                    <input type="text" class="form-control" id="zip" disabled>
+                </div>
+            </div>
+            <div class="mb-3 d-flex flex-row justify-content-between">
+                <div class="col-6 me-1">
+                    <label for="region" class="form-label">Region :</label>
+                    <input type="text" class="form-control" id="region" disabled>
+                </div>
+                <div class="col-6">
+                    <label for="country" class="form-label">Pays :</label>
+                    <input type="text" class="form-control" id="country" disabled>
+                </div>
+            </div>
+            <div class="mb-3 d-flex flex-row justify-content-between">
+                <div class="col-6 me-1">
+                    <label for="ac_creation" class="form-label">Création du compte :</label>
+                    <input type="text" class="form-control" id="ac_creation" disabled readonly>
+                </div>
+                <div class="col-6">
+                    <label for="l_login" class="form-label">Dernière connexion :</label>
+                    <input type="text" class="form-control" id="l_login" disabled readonly>
+                </div>
+            </div>
             <div class="mb-3">
                 <label for="userName" class="form-label">Niveau d'authenfication :</label>
                 <select class="form-select" disabled id="level">
