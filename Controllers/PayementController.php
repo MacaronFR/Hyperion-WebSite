@@ -8,6 +8,7 @@ class PayementController extends Controller{
 
 	private function preparePayement(int $cart_id): string{
 		$invoice = API_request("/invoice/cart/${_SESSION['token']}/$cart_id", "GET");
+		//$res = API_request("/invoice/payed/${_SESSION['token']}/${invoice['id']}", "PUT");
 		if($invoice === false){
 			header("Location: /500");
 		}
