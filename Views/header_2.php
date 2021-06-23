@@ -131,6 +131,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
                 <div class="navbar-nav">
+                    <a class="nav-link <?= str_ends_with($title, "reception")?"active":""?>" aria-current="page" href="/expert/reception">Consulter reception des produits</a>
                     <a class="nav-link <?= str_ends_with($title, "all")?"active":""?>" aria-current="page" href="/expert/offer">Consulter offres</a>
                     <a class="nav-link <?= str_ends_with($title, "pending")?"active":""?>" href="/expert/offer/pending">Consulter offres en attentes</a>
                     <a class="nav-link <?= str_ends_with($title, "history")?"active":""?>" href="/expert/offer/history">Consulter historique des offres traités</a>
