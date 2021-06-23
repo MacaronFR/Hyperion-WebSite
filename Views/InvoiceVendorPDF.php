@@ -70,7 +70,7 @@ $pdf->AliasNbPages();
 
 $pdf->SetFont('Helvetica','B',12);
 $pdf->setFillColor(230,230,230);
-$pdf->Cell(75,6,'Adresse de facturation:',0,0,'L',1);
+$pdf->Cell(75,6,'Identification du vendeur:',0,0,'L',1);
 $pdf->Cell(112,6,'Hyperion S.A.R.L',0,1,'R',0);
 $pdf->SetFont('Helvetica','',9);
 $pdf->Cell(75,6, utf8_decode($tab[0]['userName']." ".$tab[0]['firstname'] ),0,0,'L',1);
