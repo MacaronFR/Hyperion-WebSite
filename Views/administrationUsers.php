@@ -47,30 +47,36 @@
 				<label for="address" class="form-label">Adresse :</label>
 				<input type="text" class="form-control" id="address" disabled>
 			</div>
-			<div class="mb-3">
-				<label for="city" class="form-label">Ville :</label>
-				<input type="text" class="form-control" id="city" disabled>
-			</div>
-			<div class="mb-3">
-				<label for="zip" class="form-label">Code Postal :</label>
-				<input type="text" class="form-control" id="zip" disabled>
-			</div>
-			<div class="mb-3">
-				<label for="region" class="form-label">Region :</label>
-				<input type="text" class="form-control" id="region" disabled>
-			</div>
-			<div class="mb-3">
-				<label for="country" class="form-label">Pays :</label>
-				<input type="text" class="form-control" id="country" disabled>
-			</div>
-			<div class="mb-3">
-				<label for="ac_creation" class="form-label">Création du compte :</label>
-				<input type="text" class="form-control" id="ac_creation" disabled readonly>
-			</div>
-			<div class="mb-3">
-				<label for="l_login" class="form-label">Dernière connexion :</label>
-				<input type="text" class="form-control" id="l_login" disabled readonly>
-			</div>
+            <div class="mb-3 d-flex flex-row justify-content-between">
+                <div class="mb-3">
+                    <label for="city" class="form-label">Ville :</label>
+                    <input type="text" class="form-control" id="city" disabled>
+                </div>
+                <div class="mb-3">
+                    <label for="zip" class="form-label">Code Postal :</label>
+                    <input type="text" class="form-control" id="zip" disabled>
+                </div>
+            </div>
+            <div class="mb-3 d-flex flex-row justify-content-between">
+                <div class="mb-3">
+                    <label for="region" class="form-label">Region :</label>
+                    <input type="text" class="form-control" id="region" disabled>
+                </div>
+                <div class="mb-3">
+                    <label for="country" class="form-label">Pays :</label>
+                    <input type="text" class="form-control" id="country" disabled>
+                </div>
+            </div>
+            <div class="mb-3 d-flex flex-row justify-content-between">
+                <div class="mb-3">
+                    <label for="ac_creation" class="form-label">Création du compte :</label>
+                    <input type="text" class="form-control" id="ac_creation" disabled readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="l_login" class="form-label">Dernière connexion :</label>
+                    <input type="text" class="form-control" id="l_login" disabled readonly>
+                </div>
+            </div>
             <div class="mb-3">
                 <label for="userName" class="form-label">Niveau d'authenfication :</label>
                 <select class="form-select" disabled id="level">
