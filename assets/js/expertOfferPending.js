@@ -35,9 +35,8 @@ function retrieve_pending_offer(params) {
         delete res['content']['totalNotFiltered'];
         for (var i = 0; i < Object.keys(res.content).length; ++i) {
             rows.push(res.content[i]);
-            console.log(res.content[i]);
-            rows[i]['change'] = "<button type=\"button\" class=\"btn btn-warning\" data-offer-id=\"" + rows[i]['id'] + "\" data-bs-toggle=\"modal\" data-bs-target=\"#modalModify\" data-cat=\"" + rows[i]['category'] + "\">Modifier</button>";
-            rows[i]['confirm'] = "<button type=\"button\" class=\"btn btn-success\" data-offer-id=\"" + rows[i]['id'] + "\">Valider</button>";
+            rows[i]['change'] = "<button type=\"button\" class=\"btn btn-warning\" data-offer-id=\"" + rows[i]['id'] + "\" data-bs-toggle=\"modal\" data-bs-target=\"#modalModify\">Modifier</button>";
+            rows[i]['confirm'] = "<button type=\"button\" class=\"btn btn-success\" data-offer-id=\"" + rows[i]['id'] + "\" onclick=\"validateCounterOffer(this)\">Valider</button>";
         }
         params.success({ "total": total, "totalNotFiltered": totalNotFiltered, "rows": rows });
     });
@@ -154,40 +153,47 @@ sModel.on("change", function () {
     $("#newOffer").find(".spec-select").remove();
     sState.removeAttr("disabled").val("undefined");
     if (sType.val() !== "undefined" && sBrand.val() !== "undefined" && sModel.val() !== "undefined") {
-        API_REQUEST("/type/" + sType.val() + "/brand/" + sBrand.val() + "/model/" + sModel.val() + "/reference", "GET").then(function (res) {
-            if (res.status.code === 200) {
-                estimation = parseInt(res.content.buying_price);
-                var keys = Object.keys(res.content.spec);
-                for (var i = 0; i < keys.length; ++i) {
-                    var select = $(emptySpecSelect);
-                    select.find("label").text(text['specification']['name'][keys[i]]).attr("data-name", keys[i]);
-                    if (Array.isArray(res.content.spec[keys[i]])) {
-                        select.find("select").on("change", updateEstimation);
-                        for (var j = 0; j < res.content.spec[keys[i]].length; ++j) {
-                            var option = $(new Option(res.content.spec[keys[i]][j][0], res.content.spec[keys[i]][j][0]));
-                            option.data("bonus", res.content.spec[keys[i]][j][1]);
-                            select.find("select").append(option);
-                        }
-                    }
-                    else {
-                        estimation += parseInt(res.content.spec[keys[i]][0][1]);
-                        select.find("select").append(new Option(res.content.spec[keys[i]][0][0], res.content.spec[keys[i]][0][0]));
-                        select.find("select").val(res.content.spec[keys[i]]);
-                    }
-                    $("#modalModifyOffer").append(select);
-                }
-                price.text(estimation.toString() + " €");
-            }
-            else if (res.status.code === 204) {
-                $("#ToastWarning").children(".toast-body").text(text['warning']['spec']);
-                toastList[2].show();
-            }
-        }).catch(function (res) {
-            $("#ToastError").children(".toast-body").text(text['error']['spec']);
-            toastList[0].show();
-        });
+        updateSpec(sType.val(), sBrand.val(), sModel.val(), null);
     }
 });
+function updateSpec(type, brand, model, specValue) {
+    API_REQUEST("/type/" + type + "/brand/" + brand + "/model/" + model + "/reference", "GET").then(function (res) {
+        if (res.status.code === 200) {
+            $(".spec-select").remove();
+            estimation = parseInt(res.content.buying_price);
+            var keys = Object.keys(res.content.spec);
+            for (var i = 0; i < keys.length; ++i) {
+                var select = $(emptySpecSelect);
+                select.find("label").text(text['specification']['name'][keys[i]]).attr("data-name", keys[i]);
+                if (res.content.spec[keys[i]].length !== 1) {
+                    select.find("select").on("change", updateEstimation);
+                    for (var j = 0; j < res.content.spec[keys[i]].length; ++j) {
+                        var option = $(new Option(res.content.spec[keys[i]][j][0], res.content.spec[keys[i]][j][0]));
+                        option.data("bonus", res.content.spec[keys[i]][j][1]);
+                        select.find("select").append(option);
+                    }
+                    if (specValue !== null && specValue[keys[i]]) {
+                        select.find("select").val(specValue[keys[i]]);
+                    }
+                }
+                else {
+                    estimation += parseInt(res.content.spec[keys[i]][0][1]);
+                    select.find("select").append(new Option(res.content.spec[keys[i]][0][0], res.content.spec[keys[i]][0][0]));
+                    select.find("select").val(res.content.spec[keys[i]][0][0]);
+                }
+                $("#modalModifyOffer").append(select);
+            }
+            price.text(estimation.toString() + " €");
+        }
+        else if (res.status.code === 204) {
+            $("#ToastWarning").children(".toast-body").text(text['warning']['spec']);
+            toastList[2].show();
+        }
+    }).catch(function () {
+        $("#ToastError").children(".toast-body").text(text['error']['spec']);
+        toastList[0].show();
+    });
+}
 sState.on("change", updateEstimation);
 // @ts-ignore
 function updateEstimation() {
@@ -201,13 +207,113 @@ function updateEstimation() {
     if (state === null) {
         state = 5;
     }
-    console.log("NIKK");
     price.text((tmpEstimation * ((100 - stateVal[state]) / 100)).toFixed(2).toString() + " €");
 }
 function reset() {
     sState.val("undefined");
 }
 $("#modalModify").on("show.bs.modal", function (e) {
-    console.log(e.relatedTarget);
+    var _this = this;
+    var button = e.relatedTarget;
+    API_REQUEST("/offer/" + token + "/" + button.dataset['offerId'], "GET").then(function (res) {
+        if (res.status.code === 200) {
+            sCat.val(res.content.category);
+            API_REQUEST("/category/" + res.content.category + "/type", "GET").then(function (resT) {
+                if (resT.status.code === 200) {
+                    var total = resT.content.total;
+                    delete resT.content.total;
+                    delete resT.content.totalNotFiltered;
+                    for (var i = 0; i < total; ++i) {
+                        sType.append(new Option(resT.content[i].type, resT.content[i].id));
+                        if (res.content.type === resT.content[i].type) {
+                            sType.val(resT.content[i].id);
+                        }
+                    }
+                    sType.removeAttr("disabled");
+                }
+            });
+            API_REQUEST("/type/" + res.content.type_id + "/brand", "GET").then(function (resB) {
+                if (resB.status.code === 200) {
+                    var total = resB.content.total;
+                    delete resB.content.total;
+                    delete resB.content.totalNotFiltered;
+                    for (var i = 0; i < total; ++i) {
+                        sBrand.append(new Option(resB.content[i].value));
+                    }
+                    sBrand.removeAttr("disabled");
+                    sBrand.val(res.content.spec.brand);
+                }
+            });
+            API_REQUEST("/type/" + res.content.type_id + "/brand/" + res.content.spec.brand + "/model", "GET").then(function (resM) {
+                if (resM.status.code === 200) {
+                    var total = resM.content.total;
+                    delete resM.content.total;
+                    delete resM.content.totalNotFiltered;
+                    for (var i = 0; i < total; ++i) {
+                        sModel.append(new Option(resM.content[i].value));
+                    }
+                    sModel.removeAttr("disabled");
+                    sModel.val(res.content.spec.model);
+                }
+            });
+            sState.val(res.content.state);
+            sState.removeAttr("disabled");
+            updateSpec(res.content.type_id, res.content.spec.brand, res.content.spec.model, res.content.spec);
+        }
+        $("#changeOffer").off("click").on("click", function () {
+            if (sType.val() === null) {
+                $("#ToastWarning").children(".toast-body").text("Type non rempli");
+                toastList[2].show();
+                return;
+            }
+            if (sBrand.val() === null) {
+                $("#ToastWarning").children(".toast-body").text("Marque non rempli");
+                toastList[2].show();
+                return;
+            }
+            if (sModel.val() === null) {
+                $("#ToastWarning").children(".toast-body").text("Model non rempli");
+                toastList[2].show();
+                return;
+            }
+            if (sState.val() === null) {
+                $("#ToastWarning").children(".toast-body").text("État non rempli");
+                toastList[2].show();
+                return;
+            }
+            var info = {
+                "type": sType.val(),
+                "brand": sBrand.val(),
+                "model": sModel.val(),
+                "state": sState.val(),
+                "spec": {}
+            };
+            $(".specSelect").each(function (i, e) {
+                info.spec[$(e).siblings("label").attr("data-name")] = $(e).val();
+            });
+            API_REQUEST("/offer/set/" + token + "/" + res.content.id_offer, "PUT", info).then(function (resO) {
+                $(".table").bootstrapTable("refresh");
+                $("#ToastSuccess").children(".toast-body").text("Offre Modifié");
+                toastList[1].show();
+                $(_this).modal("toggle");
+            }).catch(function () {
+                $("#ToastError").children(".toast-body").text("Erreur lors de la modifaction de l'offre");
+                toastList[0].show();
+            });
+        });
+    });
 });
+function validateCounterOffer(element) {
+    API_REQUEST("/offer/counter/send/" + token + "/" + element.dataset['offerId'], "PUT").then(function (res) {
+        if (res.status.code === 200) {
+            $(".table").bootstrapTable("refresh");
+            $("#ToastSuccess").children(".toast-body").text("Contre Offre envoyé");
+            toastList[1].show();
+        }
+    }).catch(function (res) {
+        console.log(res);
+        $("#ToastError").children(".toast-body").text("Erreur lors de l'envoie de la contre-offre");
+        toastList[0].show();
+    });
+}
 //# sourceMappingURL=expertOfferPending.js.map

@@ -9,11 +9,11 @@ $db_port = 8889;
 /**@var $db string database connect */
 
 /**try {
-    $db = new PDO("mysql:host=$db_host;dbname=$db_db", $db_user, $db_password);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "";
+$db = new PDO("mysql:host=$db_host;dbname=$db_db", $db_user, $db_password);
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+echo "";
 } catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+echo "Connection failed: " . $e->getMessage();
 }
 
 
@@ -24,25 +24,26 @@ $requete->execute();
 $tab = $requete->fetchAll(PDO::FETCH_ASSOC);
 */
 $tab = [
-	[
-		'userName' => "TURBIEZ",
-		'firstname' => 'Denis',
-		'address' => '8 rue de la mairie',
-		'zip' => "77830",
-		'city' => 'pamfou'
-	],
-	[
-		'description' => "NIK TOI",
-		'tva' => 20,
-		'selling_price' => 159.4
-	]
+    [
+        'userName' => "TURBIEZ",
+        'firstname' => 'Denis',
+        'address' => '8 rue de la mairie',
+        'zip' => "77830",
+        'city' => 'pamfou'
+    ],
+    [
+        'description' => "NIK TOI",
+        'tva' => 20,
+        'selling_price' => 159.4
+    ]
 ];
 
 /* ============================ Filling PDF ============================ */
 require("fpdf/fpdf.php");
 
-class InvoicePDF extends FPDF
+class InvoiceVendorPDF extends FPDF
 {
+
 // Header
     function Header() {
         $this->Image(__DIR__ . '/../fpdf/HyperionLogo2.png',15,5, 35);
@@ -50,7 +51,7 @@ class InvoicePDF extends FPDF
         $this->SetFont('Helvetica','',20);
         $this->setFillColor(230,230,230);
         $this->SetX(70);
-        $this->Cell(80,10,'Facture',0,0,'C',1);
+        $this->Cell(80,10,'AVOIR',0,0,'C',1);
         $this->Ln(18);
     }
 
@@ -61,7 +62,7 @@ class InvoicePDF extends FPDF
     }
 }
 
-$pdf = new InvoicePDF('P','mm','A4');
+$pdf = new InvoiceVendorPDF('P','mm','A4');
 $pdf->AddPage();
 $pdf->SetFont('Helvetica','',9);
 $pdf->SetTextColor(0);
@@ -69,7 +70,7 @@ $pdf->AliasNbPages();
 
 $pdf->SetFont('Helvetica','B',12);
 $pdf->setFillColor(230,230,230);
-$pdf->Cell(75,6,'Adresse de facturation:',0,0,'L',1);
+$pdf->Cell(75,6,'Identification du vendeur:',0,0,'L',1);
 $pdf->Cell(112,6,'Hyperion S.A.R.L',0,1,'R',0);
 $pdf->SetFont('Helvetica','',9);
 $pdf->Cell(75,6, utf8_decode($tab[0]['userName']." ".$tab[0]['firstname'] ),0,0,'L',1);

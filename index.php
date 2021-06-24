@@ -1,5 +1,6 @@
 <?php
 
+use Hyperion\WebSite\PayementController;
 use Hyperion\WebSite\Router;
 use Hyperion\WebSite\TestController;
 use Hyperion\WebSite\StoreController;
@@ -23,6 +24,7 @@ use Hyperion\WebSite\ExpertHistoryOfferController;
 use Hyperion\WebSite\ExpertOffersController;
 use Hyperion\WebSite\ExpertPendingOfferController;
 use Hyperion\WebSite\ExpertConsultOneOfferController;
+use Hyperion\WebSite\ExpertReceptionController;
 use Hyperion\WebSite\MyAccountController;
 use Hyperion\WebSite\ShopProductController;
 use Hyperion\WebSite\CartController;
@@ -33,6 +35,7 @@ use Hyperion\WebSite\AdministrationFacturesController;
 use Hyperion\WebSite\StripController;
 use Hyperion\WebSite\GameController;
 use Hyperion\WebSite\InvoicesController;
+use Hyperion\WebSite\InvoicesVendorsController;
 
 
 include "autoload.php";
@@ -67,6 +70,7 @@ $rt->get("/expert/offer/pending", ExpertPendingOfferController::class);
 $rt->get("/expert/offer/history", ExpertHistoryOfferController::class);
 $rt->get("/expert/offer/consult", ExpertConsultOneOfferController::class);
 $rt->get("/expert/offer", ExpertOffersController::class);
+$rt->get("/expert/reception", ExpertReceptionController::class);
 $rt->get("/me", MyAccountController::class);
 $rt->post("/check/add/domain/product", VerifAddDomainProductController::class);
 $rt->get("/text/*/*", TranslationController::class);
@@ -78,8 +82,10 @@ $rt->get("/administration/users", AdministrationUsersController::class);
 $rt->get("/administration/factures", AdministrationFacturesController::class);
 $rt->post("/strip", StripController::class);
 $rt->get("/strip", StripController::class);
+$rt->get("/payement/accepted/*", PayementController::class);
 $rt->get("/game", GameController::class);
 $rt->get("/invoice", InvoicesController::class);
+$rt->get("/invoice/vendor", InvoicesVendorsController::class);
 
 if(!$rt->isRouted()){
 	http_response_code(404);

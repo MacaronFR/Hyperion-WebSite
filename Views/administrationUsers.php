@@ -3,74 +3,136 @@
     <div class="d-flex flex-column flex-lg-row justify-content-around">
         <div id="divAdminUsers" class=" d-flex flex-column col-10 col-lg-5 mb-4 mb-lg-0 border border-primary border-2 rounded-2 px-2 py-3 align-self-center ">
             <h3 class="align-self-center">Utilisateurs</h3>
-            <table class="table"
-                   id="table_user"
-                   data-toggle="table"
-                   data-pagination="true"
-                   data-height="500"
-                   data-locale="<?= $_SESSION['lang']?>">
+            <table
+					class="table"
+					id="table_categories"
+					data-toggle="table"
+					data-search="true"
+					data-pagination="true"
+					data-height="600"
+					data-ajax="retrieve_users"
+					data-side-pagination="server"
+					data-row-attributes="rowAttributes"
+					data-locale="<?= $_SESSION['lang']?>">
                 <thead>
                 <tr>
-                    <th data-sortable data-field="id">id</th>
-                    <th data-sortable data-field="type">Identité</th>
-                    <th data-sortable data-field="email">Email</th>
-                    <th data-sortable data-field="level">Niveau</th>
-                    <th data-sortable data-field="delete">Delete</th>
+                    <th data-sortable="true" data-field="id">id</th>
+                    <th data-sortable="true" data-field="name">Nom</th>
+                    <th data-sortable="true" data-field="fname">Prénom</th>
+                    <th data-sortable="true" data-field="mail">Email</th>
+                    <th data-sortable="true" data-field="type">Status</th>
+                    <th data-field="change"></th>
+                    <th data-field="delete"></th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>Admin</td>
-                    <td>
-                        <button type="button" class="btn btn-danger col-8">Supprimer</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>Expert</td>
-                    <td>
-                        <button type="button" class="btn btn-danger col-8">Supprimer</button>
-                    </td>
-                </tr>
-                </tbody>
             </table>
         </div>
-        <div id="divAdminOneUser" class="d-flex flex-column col-10 col-lg-5 border border-primary border-2 rounded-2 px-2 py-3 align-self-center">
-            <h3 class="align-self-center">Informations utilisateur:</h3>
-            <div class="mb-3">
-                <label for="userName" class="form-label">Identité:</label>
-                <input type="text" class="form-control" id="userName" value="TALLA MICHAEL">
+        <div class="d-flex flex-column col-10 col-lg-5 border border-primary border-2 rounded-2 px-2 py-3 align-self-center mb-3">
+            <h3 class="align-self-center">Informations utilisateur :</h3>
+            <div class="mb-3 d-flex flex-row justify-content-between">
+                <div class="col-6 me-1">
+                    <label for="name" class="form-label">Nom :</label>
+                    <input type="text" class="form-control" id="name" disabled>
+                </div>
+                <div class="col-6">
+                    <label for="fname" class="form-label">Prénom :</label>
+                    <input type="text" class="form-control" id="fname" disabled>
+                </div>
+            </div>
+			<div class="col-12">
+				<label for="mail" class="form-label">Email :</label>
+				<input type="text" class="form-control" id="mail" disabled>
+			</div>
+			<div class="col-12">
+				<label for="address" class="form-label">Adresse :</label>
+				<input type="text" class="form-control" id="address" disabled>
+			</div>
+            <div class="mb-3 d-flex flex-row justify-content-between">
+                <div class="col-6 me-1">
+                    <label for="city" class="form-label">Ville :</label>
+                    <input type="text" class="form-control" id="city" disabled>
+                </div>
+                <div class="col-6">
+                    <label for="zip" class="form-label">Code Postal :</label>
+                    <input type="text" class="form-control" id="zip" disabled>
+                </div>
+            </div>
+            <div class="mb-3 d-flex flex-row justify-content-between">
+                <div class="col-6 me-1">
+                    <label for="region" class="form-label">Region :</label>
+                    <input type="text" class="form-control" id="region" disabled>
+                </div>
+                <div class="col-6">
+                    <label for="country" class="form-label">Pays :</label>
+                    <input type="text" class="form-control" id="country" disabled>
+                </div>
+            </div>
+            <div class="mb-3 d-flex flex-row justify-content-between">
+                <div class="col-6 me-1">
+                    <label for="ac_creation" class="form-label">Création du compte :</label>
+                    <input type="text" class="form-control" id="ac_creation" disabled readonly>
+                </div>
+                <div class="col-6">
+                    <label for="l_login" class="form-label">Dernière connexion :</label>
+                    <input type="text" class="form-control" id="l_login" disabled readonly>
+                </div>
             </div>
             <div class="mb-3">
-                <label for="userName" class="form-label">Adresse:</label>
-                <input type="text" class="form-control" id="address" value="1 rue de Strasbourg">
-            </div>
-            <div class="mb-3">
-                <label for="userName" class="form-label">Ville:</label>
-                <input type="text" class="form-control" id="city" value="Maisons-Alfort">
-            </div>
-            <div class="mb-3">
-                <label for="userName" class="form-label">Email:</label>
-                <input type="text" class="form-control" id="email" value="mai_keul_@hotmail.com">
-            </div>
-            <div class="mb-3">
-                <label for="userName" class="form-label">Niveau d'authenfication:</label>
-                <select class="form-select">
+                <label for="userName" class="form-label">Niveau d'authenfication :</label>
+                <select class="form-select" disabled id="level">
                     <option selected>Niveau d'authentification</option>
-                    <option value="1">Super Admin</option>
-                    <option value="2">Admin</option>
-                    <option value="3">Vendor</option>
-                    <option value="3">Client</option>
+                    <option value="0">Super Administrateur</option>
+                    <option value="1">Administrateur</option>
+                    <option value="2">Employé</option>
+                    <option value="3">Vendeur</option>
+                    <option value="4">Client</option>
                 </select>
             </div>
             <div>
-                <button type="button" class="btn btn-success col-12 my-2">valider les modification</button>
+                <button type="button" class="btn btn-success col-12 my-2" id="save">Enregistrer</button>
             </div>
         </div>
     </div>
 </div>
+<!-- TOAST -->
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 1500">
+	<div id="ToastError" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-danger">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+	<div id="ToastSuccess" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-success">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+	<div id="ToastWarning" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+		<div class="toast-body bg-warning">
+			Hello, world! This is a toast message.
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="modalDelete" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"></h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+				<button type="button" class="btn btn-danger delete">Supprimer</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	let level = {
+		0: "Super Administrateur",
+		1: "Administrateur",
+		2: "Employé",
+		3: "Vendeur",
+		4: "Utilisateurs"
+	}
+</script>
+<script src="/assets/js/adminUsers.js"></script>

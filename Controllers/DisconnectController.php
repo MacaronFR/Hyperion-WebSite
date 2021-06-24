@@ -12,8 +12,8 @@ class DisconnectController extends Controller{
 	 * @inheritDoc
 	 */
 	#[NoReturn] public function get(array $args){
-		if(empty($_SESSION)){
-			header("Location: /connect");
+		if(!isset($_SESSION['token'])){
+			header("Location: /shop");
 		}
 		$response = API_request("/disconnect/${_SESSION['token']}", "DELETE");
 		if($response !== false){

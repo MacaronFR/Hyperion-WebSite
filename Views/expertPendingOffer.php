@@ -112,7 +112,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $expertPendingOfferText['expert']['modal']['close']?></button>
-				<button type="button" class="btn btn-primary"><?= $expertPendingOfferText['expert']['modal']['ok']?></button>
+				<button type="button" class="btn btn-primary" id="changeOffer"><?= $expertPendingOfferText['expert']['modal']['ok']?></button>
 			</div>
 		</div>
 	</div>
@@ -132,7 +132,7 @@
 	}
 	let stateVal = {
 		<?php foreach($states as $k => $s): ?>
-		"<?= $s['id'] ?>": <?= $s['penality']?>;<?= ($states[count($states) - 1]['id'] === $s['id']?"":",")?>
+		"<?= $s['id'] ?>": <?= $s['penality']?><?= ($states[count($states) - 1]['id'] === $s['id']?"":",")?>
 		<?php endforeach;?>
 	}
 </script>

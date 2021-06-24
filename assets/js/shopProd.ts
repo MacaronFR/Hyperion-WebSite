@@ -17,7 +17,7 @@ API_REQUEST("/product/picture/" + id, "GET").then( (res) => {
 			$("#indicator" + i).remove();
 		}
 	for(let i = 1; i <= res.content.length; ++i){
-		document.querySelector("#img" + i + " img").src = "data:image/png;base64," + res.content[i - 1].content
+		document.querySelector("#img" + i + " img").src = "data:" + res.content[i - 1].type + ";base64," + res.content[i - 1].content
 	}
 	}else if(res.status.code === 204){}
 })

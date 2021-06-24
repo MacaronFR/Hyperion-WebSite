@@ -4,16 +4,16 @@
 namespace Hyperion\WebSite;
 
 
-class InvoicesController extends Controller
+class InvoicesVendorsController extends Controller
 {
 
     /**
      * @inheritDoc
      */
     public function get(array $args){
-		ob_start();
-		include "Views/invoices.php";
-		return ob_get_clean();
+        ob_start();
+        include "Views/invoicesVendors.php";
+        return ob_get_clean();
     }
 
     /**
