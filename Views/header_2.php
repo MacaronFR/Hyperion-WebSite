@@ -8,7 +8,7 @@
 
 ?>
 <nav id="header_2" class="navbar navbar-expand-lg py-4 py-lg-0 navbar-light bg-light">
-    <div class="container-fluid ju">
+    <div class="container-fluid justify-content-between">
         <a class="navbar-brand" href="/shop">
             <img src="/assets/images/Hyperion-yellow-transparent.png" alt="logo_Hyperion" height="70">
         </a>
