@@ -56,9 +56,8 @@
 <div class="modal fade" id="modalModify" tabindex="-1" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<div class="modal-header">
+			<div class="modal-header d-flex flex-column">
 				<h5 class="modal-title"><?= $expertPendingOfferText['expert']['modal']['title']?></h5>
-				<p id="priceEstimation"><?= $expertPendingOfferText['expert']['unavailable']?></p>
 				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 			</div>
 			<div class="modal-body" id="modalModifyOffer">
@@ -110,10 +109,16 @@
 					</div>
 				</div>
 			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $expertPendingOfferText['expert']['modal']['close']?></button>
-				<button type="button" class="btn btn-primary" id="changeOffer"><?= $expertPendingOfferText['expert']['modal']['ok']?></button>
-			</div>
+			<div class="modal-footer d-flex flex-column">
+                <div class="d-flex align-self-center">
+                    <p>Estimation du prix: </p>
+                    <p id="priceEstimation"><?=$expertPendingOfferText['expert']['unavailable']?></p>
+                </div>
+                <div class="d-flex flex-column col-12 mx-2">
+                    <button type="button" class="btn btn-danger col-12 mb-2" data-bs-dismiss="modal"><?= $expertPendingOfferText['expert']['modal']['close']?></button>
+                    <button type="button" class="btn btn-success col-12" id="changeOffer"><?= $expertPendingOfferText['expert']['modal']['ok']?></button>
+                </div>
+            </div>
 		</div>
 	</div>
 </div>
