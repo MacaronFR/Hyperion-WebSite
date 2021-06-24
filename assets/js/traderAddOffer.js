@@ -286,25 +286,31 @@ $("#newFile").on("click", function () {
 });
 function readFile() {
     return new Promise(function (resolve) {
+        var count = 0;
         b64File = [];
         $(".offer-file").each(function (i) {
             var _this = this;
             if (this.files.length === 1) {
                 var r = new FileReader();
                 r.onload = function (ev) {
+                    var start = ev.target.result.indexOf('base64,');
                     b64File.push({
-                        'content': Base64.encode(ev.target.result),
+                        'content': ev.target.result.substr(start + 7),
                         'filename': _this.files[0].name,
                         'type': _this.files[0].type
                     });
-                    if (i === maxFile - 1) {
+                    count++;
+                    if (count === 3) {
                         resolve();
                     }
                 };
-                r.readAsText(this.files[0]);
+                r.readAsDataURL(this.files[0]);
             }
-            else if (i === maxFile - 1) {
-                resolve();
+            else {
+                count++;
+                if (count === 3) {
+                    resolve();
+                }
             }
         });
     });

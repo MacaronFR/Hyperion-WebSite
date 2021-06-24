@@ -5,7 +5,7 @@ var toastList = toastEL.map(function (toastE) {
     return new bootstrap.Toast(toastE);
 });
 function retrieve_offer(params) {
-    var url = prepare_url(params, "/expert/offer/" + token + "/");
+    var url = prepare_url(params, "/expert/offer/reception/all/" + token + "/");
     API_REQUEST(url, "GET").then(function (res) {
         if (res.status.code === 200) {
             var rows = [];
@@ -15,7 +15,7 @@ function retrieve_offer(params) {
             delete res['content']['totalNotFiltered'];
             for (var i = 0; i < Object.keys(res.content).length; ++i) {
                 rows.push(res.content[i]);
-                rows[i]['select'] = "<button type=\"button\" class=\"btn btn-success select-offer\" data-offer-id=\"" + rows[i]['id'] + "\">Prendre en Charge</button>";
+                rows[i]['select'] = "<button type=\"button\" class=\"btn btn-success select-offer\" data-offer-id=\"" + rows[i]['id'] + "\">Reception</button>";
             }
             params.success({ "total": total, "totalNotFiltered": totalNotFiltered, "rows": rows });
             $(".select-offer").on("click", selectOffer);
@@ -27,12 +27,11 @@ function retrieve_offer(params) {
 }
 function selectOffer() {
     var _this = this;
-    API_REQUEST("/expert/offer/" + token + "/" + $(this).data("offerId"), "POST").then(function (res) {
+    API_REQUEST("/expert/offer/reception/" + token + "/" + $(this).data("offerId"), "PUT").then(function (res) {
         if (res.status.code === 200) {
             $("#ToastSuccess").children(".toast-body").text("offre accepté");
             toastList[1].show();
             $(_this).parents("table").bootstrapTable("refresh");
-            setTimeout(function () { window.location.href = "/expert/offer/consult"; }, 1000);
         }
         else {
             $("#ToastError").children(".toast-body").text("error");
@@ -40,4 +39,4 @@ function selectOffer() {
         }
     });
 }
-//# sourceMappingURL=expertOffer.js.map
+//# sourceMappingURL=expertOfferReception.js.map

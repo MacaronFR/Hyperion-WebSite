@@ -45,4 +45,4 @@
         </div>
     </div>
 </div>
-<script src="/assets/js/expertOffer.js"></script>
+<script src="/assets/js/expertOfferReception.js"></script>
