@@ -58,11 +58,10 @@
 		<div class="modal-content">
 			<div class="modal-header d-flex flex-column">
 				<h5 class="modal-title"><?= $expertPendingOfferText['expert']['modal']['title']?></h5>
-
 				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 			</div>
 			<div class="modal-body" id="modalModifyOffer">
-                <div class="mt-1 mt-lg-4">
+                <div class="mt-1 mt-lg-4 mx-2">
                     <label for="aaa" class="form-label">Prix (Estimation):</label>
                     <input type="text" class="form-control" id="priceEstimation" value="<?= $expertPendingOfferText['expert']['unavailable']?>">
                 </div>
