@@ -112,6 +112,7 @@
 			<div class="modal-footer d-flex flex-column">
                 <div class="d-flex align-self-center">
                     <p>Estimation du prix: </p>
+                    <p><?=php echo(" ");?></p>
                     <p id="priceEstimation"><?=$expertPendingOfferText['expert']['unavailable']?></p>
                 </div>
                 <div class="d-flex flex-column col-12 mx-2">
