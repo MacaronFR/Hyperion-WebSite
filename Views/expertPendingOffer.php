@@ -109,12 +109,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="modal-footer">
+			<div class="modal-footer d-flex flex-column">
                 <div class="d-flex align-self-center">
-                    <p id="priceEstimation"><?= $expertPendingOfferText['expert']['unavailable']?></p>
+                    <p id="priceEstimation">" "<?="Estimation du prix: ".$expertPendingOfferText['expert']['unavailable']?></p>
                 </div>
-                <div class="d-flex flex-column">
-                    <button type="button" class="btn btn-danger col-12" data-bs-dismiss="modal"><?= $expertPendingOfferText['expert']['modal']['close']?></button>
+                <div class="d-flex flex-column col-12 mx-2">
+                    <button type="button" class="btn btn-danger col-12 mb-2" data-bs-dismiss="modal"><?= $expertPendingOfferText['expert']['modal']['close']?></button>
                     <button type="button" class="btn btn-success col-12" id="changeOffer"><?= $expertPendingOfferText['expert']['modal']['ok']?></button>
                 </div>
             </div>
