@@ -61,10 +61,6 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 			</div>
 			<div class="modal-body" id="modalModifyOffer">
-                <div class="mt-1 mt-lg-4 mx-2">
-                    <label for="aaa" class="form-label">Prix (Estimation):</label>
-                    <input type="text" class="form-control" id="priceEstimation" value="<?= $expertPendingOfferText['expert']['unavailable']?>">
-                </div>
 				<div class="form-group mt-1 mt-lg-4">
 					<div class="mx-2">
 						<select class="form-select" id="selectCategory">
@@ -114,9 +110,14 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $expertPendingOfferText['expert']['modal']['close']?></button>
-				<button type="button" class="btn btn-primary" id="changeOffer"><?= $expertPendingOfferText['expert']['modal']['ok']?></button>
-			</div>
+                <div class="d-flex align-self-center">
+                    <p id="priceEstimation"><?= $expertPendingOfferText['expert']['unavailable']?></p>
+                </div>
+                <div class="d-flex flex-column">
+                    <button type="button" class="btn btn-danger col-12" data-bs-dismiss="modal"><?= $expertPendingOfferText['expert']['modal']['close']?></button>
+                    <button type="button" class="btn btn-success col-12" id="changeOffer"><?= $expertPendingOfferText['expert']['modal']['ok']?></button>
+                </div>
+            </div>
 		</div>
 	</div>
 </div>
