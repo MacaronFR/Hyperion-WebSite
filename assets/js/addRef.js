@@ -62,7 +62,7 @@ catSelect.on("change", function () {
     });
 });
 typeSelect.on("change", function () {
-    API_REQUEST("/type/" + typeSelect.val() + "/brand", "GET").then(function (res) {
+    API_REQUEST("/brand", "GET").then(function (res) {
         modelInput.attr("disabled", true);
         if (res.status.code === 204) {
             $("#ToastWarning").children(".toast-body").text("Aucune marque de ce type");
