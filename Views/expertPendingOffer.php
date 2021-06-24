@@ -56,12 +56,16 @@
 <div class="modal fade" id="modalModify" tabindex="-1" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<div class="modal-header">
+			<div class="modal-header d-flex flex-column">
 				<h5 class="modal-title"><?= $expertPendingOfferText['expert']['modal']['title']?></h5>
-				<p id="priceEstimation"><?= $expertPendingOfferText['expert']['unavailable']?></p>
+
 				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 			</div>
 			<div class="modal-body" id="modalModifyOffer">
+                <div class="mt-1 mt-lg-4">
+                    <label for="aaa" class="form-label">Prix (Estimation):</label>
+                    <input type="text" class="form-control" id="priceEstimation" value="<?= $expertPendingOfferText['expert']['unavailable']?>">
+                </div>
 				<div class="form-group mt-1 mt-lg-4">
 					<div class="mx-2">
 						<select class="form-select" id="selectCategory">
