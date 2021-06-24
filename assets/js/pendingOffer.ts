@@ -75,7 +75,7 @@ function seeDetail(element) {
 				if (res.status.code === 200) {
 					$(".table").bootstrapTable("refresh");
 					$("#ToastWarning").children(".toast-body").text("Offre Refusée");
-					toastList[1].show();
+					toastList[2].show();
 				}else{
 					$("#ToastWarning").children(".toast-body").text("Erreur");
 					toastList[1].show();

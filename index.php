@@ -82,6 +82,7 @@ $rt->get("/administration/users", AdministrationUsersController::class);
 $rt->get("/administration/factures", AdministrationFacturesController::class);
 $rt->post("/strip", StripController::class);
 $rt->get("/strip", StripController::class);
+$rt->post("/strip/confirm", StripController::class);
 $rt->get("/payement/accepted/*", PayementController::class);
 $rt->get("/game", GameController::class);
 $rt->get("/invoice", InvoicesController::class);
