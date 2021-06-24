@@ -17,20 +17,6 @@
         </button>
 
         <div id="navbarHeader2" class="collapse navbar-collapse">
-            <div class="d-flex flex-column flex-lg-row container-lg">
-                <div class="input-group">
-                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?=$text['search']['all_cat']?></button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">aaaaaaaa</a></li>
-                        <li><a class="dropdown-item" href="#">bbbbbbbb</a></li>
-                        <li><a class="dropdown-item" href="#">cccccccc</a></li>
-                    </ul>
-                    <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                </div>
-                <div class="d-grid gap-2 mt-3 mt-lg-0">
-                    <button id="search_barre_bouton" class="btn btn-outline-success" type="submit"><?=$text['search']['search']?></button>
-                </div>
-            </div>
             <div class="navbar-nav me-lg-5" id="header_1_link">
                 <?php if(isset($_SESSION['mail'])): ?>
                     <a class="nav-item nav-link" href="/me"><?= $text['account']['my_account'] ?></a>
@@ -81,7 +67,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltBrandup" aria-controls="navbarNavAltBrandup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse overflow-scroll" id="navbarNavAltBrandup">
+        <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
             <div class="navbar-nav">
 				<?php foreach($subHeader as $cat):?>
                 <a class="nav-link <?= $active === $cat['id']?"active":"" ?>" href="/shop/cat/<?=$cat['id']?>/0"><?=$cat['name']?></a>
