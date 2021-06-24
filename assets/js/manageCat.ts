@@ -252,7 +252,7 @@ function retrieve_cat(params){
 }
 
 function retrieve_type(params){
-	let url = prepare_url(params, "/type_cat/");
+	let url = prepare_url(params, "/typeCat/");
 	API_REQUEST(url, "GET").then((res) => {
 		let rows = [];
 		let total = res['content'].total;
