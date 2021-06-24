@@ -128,14 +128,14 @@
 <?php elseif ($title === "Mes commandes"): ?>
     <nav class="navbar navbar-expand-lg navbar-dark subHeader3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Commandes</a>
+            <a class="navbar-brand" href="#">Factures</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltBrandup" aria-controls="navbarNavAltBrandup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltBrandup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/order/pending">Commandes en préparations</a>
-                    <a class="nav-link" href="/order/history">Historique des commandes</a>
+                    <a class="nav-link active" aria-current="page" href="/invoice/history">Factures</a>
+                    <a class="nav-link" href="/credit/history">Avoir</a>
                 </div>
             </div>
         </div>
