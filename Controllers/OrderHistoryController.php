@@ -3,9 +3,6 @@
 
 namespace Hyperion\WebSite;
 
-
-use http\Env\Response;
-
 class OrderHistoryController extends Controller
 {
 
