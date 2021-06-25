@@ -1,0 +1,54 @@
+{
+  "id": "evt_1J5ogkGc9T6D4Xa9bt3zTA3Y",
+  "object": "event",
+  "api_version": "2020-08-27",
+  "created": 1624526254,
+  "data": {
+    "object": {
+      "id": "cus_JjHFjrqEHfatl7",
+      "object": "customer",
+      "address": {
+        "city": null,
+        "country": "FR",
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "state": null
+      },
+      "balance": 0,
+      "created": 1624526252,
+      "currency": null,
+      "default_source": null,
+      "delinquent": false,
+      "description": null,
+      "discount": null,
+      "email": "zefrgdhgj@sdfg.com",
+      "invoice_prefix": "4A3F963D",
+      "invoice_settings": {
+        "custom_fields": null,
+        "default_payment_method": null,
+        "footer": null
+      },
+      "livemode": false,
+      "metadata": {
+      },
+      "name": "NIK",
+      "phone": null,
+      "preferred_locales": [
+
+      ],
+      "shipping": null,
+      "tax_exempt": "none"
+    },
+    "previous_attributes": {
+      "address": null
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": {
+    "id": null,
+    "idempotency_key": null
+  },
+  "type": "customer.updated"
+}

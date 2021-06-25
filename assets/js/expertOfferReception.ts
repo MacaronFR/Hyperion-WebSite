@@ -10,7 +10,7 @@ let toastList = toastEL.map(function (toastE) {
 })
 
 function retrieve_offer(params){
-	let url = prepare_url(params, "/expert/offer/" + token + "/");
+	let url = prepare_url(params, "/expert/offer/reception/all/" + token + "/");
 	API_REQUEST(url, "GET").then((res) => {
 		if(res.status.code === 200) {
 			let rows = [];
@@ -20,7 +20,7 @@ function retrieve_offer(params){
 			delete res['content']['totalNotFiltered'];
 			for (let i = 0; i < Object.keys(res.content).length; ++i) {
 				rows.push(res.content[i]);
-				rows[i]['select'] = "<button type=\"button\" class=\"btn btn-success select-offer\" data-offer-id=\"" + rows[i]['id'] + "\">Prendre en Charge</button>"
+				rows[i]['select'] = "<button type=\"button\" class=\"btn btn-success select-offer\" data-offer-id=\"" + rows[i]['id'] + "\">Reception</button>"
 			}
 			params.success({"total": total, "totalNotFiltered": totalNotFiltered, "rows": rows});
 			$(".select-offer").on("click", selectOffer);
@@ -31,12 +31,11 @@ function retrieve_offer(params){
 }
 
 function selectOffer(){
-	API_REQUEST("/expert/offer/" + token + "/" + $(this).data("offerId"), "POST").then( (res) => {
+	API_REQUEST("/expert/offer/reception/" + token + "/" + $(this).data("offerId"), "PUT").then( (res) => {
 		if(res.status.code === 200){
 			$("#ToastSuccess").children(".toast-body").text("offre accepté");
 			toastList[1].show();
 			$(this).parents("table").bootstrapTable("refresh");
-			setTimeout(function(){window.location.href = "/expert/offer/consult"}, 1000)
 		}else{
 			$("#ToastError").children(".toast-body").text("error")
 			toastList[0].show()

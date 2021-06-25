@@ -162,4 +162,5 @@
 		<?php endforeach;?>
 	}
 </script>
+<script src="https://cdn.jsdelivr.net/npm/js-base64@3.6.1/base64.min.js"></script>
 <script src="/assets/js/traderAddOffer.js"></script>

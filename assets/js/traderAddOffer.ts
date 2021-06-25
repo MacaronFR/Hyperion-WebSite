@@ -256,23 +256,29 @@ $("#newFile").on("click", function(){
 
 function readFile(): Promise<void>{
 	return new Promise(function (resolve) {
+		let count = 0;
 		b64File = [];
 		$(".offer-file").each(function (i) {
 			if (this.files.length === 1) {
 				const r = new FileReader();
 				r.onload = (ev) => {
+					let start = (ev.target.result as string).indexOf('base64,');
 					b64File.push({
-						'content': Base64.encode(ev.target.result),
+						'content': (ev.target.result as string).substr(start + 7),
 						'filename': this.files[0].name,
 						'type': this.files[0].type
 					});
-					if (i === maxFile - 1) {
-						resolve();
+					count++;
+					if(count === 3){
+						resolve()
 					}
 				}
-				r.readAsText(this.files[0]);
-			} else if (i === maxFile - 1) {
-				resolve();
+				r.readAsDataURL(this.files[0]);
+			} else{
+				count++
+				if(count === 3){
+					resolve()
+				}
 			}
 		});
 	});

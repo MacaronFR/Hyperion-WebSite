@@ -28,6 +28,7 @@ var emptySpec = "<div class=\"row col-11 col-lg-10 col-xl-8 border border-2 bord
     "<div class='input-group mb-3 px-3'>" +
     "<span class='input-group-text'>" + text['spec']['value']['text'] + "</span>" +
     "<input type='text' placeholder='" + text['spec']['value']['placeholder'] + "' class='spec-value form-control' name='value'>" +
+    "<input type='number' placeholder='Bonus' class='specbonus form-control' name='bonus'>" +
     "</div>" +
     "<div class='input-group px-3'>" +
     "<button type='button' class='btn btn-outline-secondary w-100 add-spec-value'>+</button>" +
@@ -37,6 +38,7 @@ var emptySpec = "<div class=\"row col-11 col-lg-10 col-xl-8 border border-2 bord
 var emptySpecValue = "<div class='input-group mb-3 px-3'>" +
     "<span class='input-group-text'>" + text['spec']['value']['text'] + "</span>" +
     "<input type='text' placeholder='" + text['spec']['value']['placeholder'] + "' class='spec-value form-control'>" +
+    "<input type='number' placeholder='Bonus' class='specbonus form-control' name='bonus'>" +
     "<button class='btn btn-outline-danger delete-val' tabindex='-1' type='button'><i class=\"bi bi-trash\"></i></button>" +
     "</div>";
 catSelect.on("change", function () {
@@ -62,7 +64,7 @@ catSelect.on("change", function () {
     });
 });
 typeSelect.on("change", function () {
-    API_REQUEST("/type/" + typeSelect.val() + "/brand", "GET").then(function (res) {
+    API_REQUEST("/brand", "GET").then(function (res) {
         modelInput.attr("disabled", true);
         if (res.status.code === 204) {
             $("#ToastWarning").children(".toast-body").text("Aucune marque de ce type");
@@ -138,7 +140,7 @@ function prepareSpec() {
         var val = [];
         $("[name='value" + i + "[]']").each(function () {
             if ($(this).val() !== "") {
-                val.push($(this).val());
+                val.push({ "value": $(this).val(), "bonus": $(this).siblings("input.specbonus").val() });
             }
         });
         if ($("[name=name" + i + "]").val() !== "") {
@@ -152,7 +154,7 @@ function prepareSpec() {
 }
 function newSpecListener() {
     $(".add-spec-value").off("click").on("click", function () {
-        $(emptySpecValue).insertBefore($(this).parent()).find("input").attr("name", "value" + $(this).data("n") + "[]");
+        $(emptySpecValue).insertBefore($(this).parent()).find("input.spec-value").attr("name", "value" + $(this).data("n") + "[]");
         $(".delete-val").off("click").on("click", function () {
             $(this).parents(".input-group").remove();
         });

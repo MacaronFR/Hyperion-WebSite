@@ -25,7 +25,7 @@
 							2 => $state['state_passable'],
 							3 => $state['state_ok'],
 							4 => $state['state_good'],
-							5 => $state['state_factory_new']
+							5 => $state['state_new']
 						}
                     ?></p>
 					<h6 class="mb-0"><?= $product['sell_p'] ?? 0?> €</h6>

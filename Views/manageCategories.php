@@ -104,7 +104,7 @@
                     <input class="form-control" type="text" placeholder="Nommer une specification" id="newSpecName">
                 </div>
                 <div class="col-5">
-                    <input class="form-control" type="text" placeholder="attribuer une valeur à cette specification" id="newSpecId">
+                    <input class="form-control" type="text" placeholder="attribuer une valeur à cette specification" id="newSpecValue">
                 </div>
                 <div class="col-2">
                     <button class="btn btn-primary" type="submit" id="addSpec">Créer</button>

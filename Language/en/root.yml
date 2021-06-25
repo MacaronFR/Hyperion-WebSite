@@ -1,7 +1,7 @@
 header:
     account:
         my_account: "My account"
-        my_command: "My commands"
+        my_command: "My Invoices"
         disconnect: "Log out"
         inscription: "Sign in"
         connection: "Log in"

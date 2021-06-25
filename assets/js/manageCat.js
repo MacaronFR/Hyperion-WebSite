@@ -248,7 +248,7 @@ function retrieve_cat(params) {
     });
 }
 function retrieve_type(params) {
-    var url = prepare_url(params, "/type_cat/");
+    var url = prepare_url(params, "/typeCat/");
     API_REQUEST(url, "GET").then(function (res) {
         var rows = [];
         var total = res['content'].total;
