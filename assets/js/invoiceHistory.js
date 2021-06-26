@@ -4,6 +4,7 @@ var toastEL = [].slice.call(document.querySelectorAll(".toast"));
 var toastList = toastEL.map(function (toastE) {
     return new bootstrap.Toast(toastE);
 });
+// @ts-ignore
 function retrieve_invoice(params) {
     var url = prepare_url(params, "/invoice/me/" + token + "/");
     API_REQUEST(url, "GET").then(function (res) {
@@ -24,10 +25,15 @@ function retrieve_invoice(params) {
         }
     });
 }
+// @ts-ignore
 var iID = $("#id");
+// @ts-ignore
 var iTotal = $("#total");
+// @ts-ignore
 var iDate = $("#creation");
+// @ts-ignore
 var iPdf = $("#pdf");
+// @ts-ignore
 function seeDetail(element) {
     iID.val($(element).data("invoiceId"));
     iTotal.val($(element).data("invoiceTotal"));
