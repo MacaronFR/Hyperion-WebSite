@@ -1,6 +1,6 @@
 <?php
 /**
- * @var array $traderPendingText
+ * @var array $traderHistoryOffer
  */
 ?>
 <div id="traderpendingproductgeneral" class="container-fluid d-flex flex-column">
