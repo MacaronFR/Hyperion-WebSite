@@ -9,6 +9,7 @@ let toastList = toastEL.map(function (toastE) {
 	return new bootstrap.Toast(toastE)
 })
 
+// @ts-ignore
 function retrieve_invoice(params){
 	let url = prepare_url(params, "/invoice/me/" + token + "/")
 	API_REQUEST(url, "GET").then( (res) => {
@@ -29,11 +30,16 @@ function retrieve_invoice(params){
 	})
 }
 
+// @ts-ignore
 const iID = $("#id");
+// @ts-ignore
 const iTotal = $("#total");
+// @ts-ignore
 const iDate = $("#creation");
+// @ts-ignore
 const iPdf = $("#pdf");
 
+// @ts-ignore
 function seeDetail(element){
 	iID.val($(element).data("invoiceId"));
 	iTotal.val($(element).data("invoiceTotal"));
