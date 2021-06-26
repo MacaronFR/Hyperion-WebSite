@@ -1,10 +1,10 @@
 <?php
 /**
- * @var array $traderPendingText
+ * @var array $traderHistoryOffer
  */
 ?>
 <div id="traderpendingproductgeneral" class="container-fluid d-flex flex-column">
-    <h3 class="align-self-center mb-4 mt-3"><?= $traderPendingText['offer']['title']?></h3>
+    <h3 class="align-self-center mb-4 mt-3"><?= $traderHistoryOffer['offer']['title']?></h3>
     <div class="container-fluid d-flex flex-column flex-lg-row">
         <div id="divtraderpendingtable" class="container-fluid col-lg-7">
             <table class="table"
@@ -17,17 +17,17 @@
                    data-locale="<?= $_SESSION['lang']?>">
                 <thead>
                 <tr>
-                    <th data-field="id"><?= $traderPendingText['offer']['table']['header']['id']?></th>
-                    <th data-field="date"><?= $traderPendingText['offer']['table']['header']['date']?></th>
-                    <th data-field="type"><?= $traderPendingText['offer']['table']['header']['type']?></th>
-                    <th data-field="status"><?= $traderPendingText['offer']['table']['header']['status']?></th>
+                    <th data-field="id"><?= $traderHistoryOffer['offer']['table']['header']['id']?></th>
+                    <th data-field="date"><?= $traderHistoryOffer['offer']['table']['header']['date']?></th>
+                    <th data-field="type"><?= $traderHistoryOffer['offer']['table']['header']['type']?></th>
+                    <th data-field="status"><?= $traderHistoryOffer['offer']['table']['header']['status']?></th>
                     <th data-field="detail"></th>
                 </tr>
                 </thead>
             </table>
         </div>
         <div id="divtraderpendinginfo" class="container-fluid col-lg-3 d-flex flex-column justify-content-center my-auto p-4 border border-2 border-primary rounded-3">
-            <h4 class="align-self-center mb-3"><?= $traderPendingText['offer']['detail']['title']?></h4>
+            <h4 class="align-self-center mb-3"><?= $traderHistoryOffer['offer']['detail']['title']?></h4>
             <input type="text" name="type" class="form-control mb-1" style="text-align: center" readonly>
             <input type="text" name="brand" class="form-control mb-1" style="text-align: center" readonly>
             <input type="text" name="model" class="form-control mb-1" style="text-align: center" readonly>
@@ -63,20 +63,20 @@
 <script>
     let text = {
         "state":{
-            1:"<?= $traderPendingText['offer']['detail']['state']['state_jabba']?>",
-            2:"<?= $traderPendingText['offer']['detail']['state']['state_passable']?>",
-            3:"<?= $traderPendingText['offer']['detail']['state']['state_ok']?>",
-            4:"<?= $traderPendingText['offer']['detail']['state']['state_good']?>",
-            5:"<?= $traderPendingText['offer']['detail']['state']['state_new']?>"
+            1:"<?= $traderHistoryOffer['offer']['detail']['state']['state_jabba']?>",
+            2:"<?= $traderHistoryOffer['offer']['detail']['state']['state_passable']?>",
+            3:"<?= $traderHistoryOffer['offer']['detail']['state']['state_ok']?>",
+            4:"<?= $traderHistoryOffer['offer']['detail']['state']['state_good']?>",
+            5:"<?= $traderHistoryOffer['offer']['detail']['state']['state_new']?>"
         },
         "status":{
-            1: "<?= $traderPendingText['offer']['table']['status']['not_send']?>",
-            2: "<?= $traderPendingText['offer']['table']['status']['send']?>",
-            3: "<?= $traderPendingText['offer']['table']['status']['analysing']?>",
-            4: "<?= $traderPendingText['offer']['table']['status']['counter']?>",
+            1: "<?= $traderHistoryOffer['offer']['table']['status']['not_send']?>",
+            2: "<?= $traderHistoryOffer['offer']['table']['status']['send']?>",
+            3: "<?= $traderHistoryOffer['offer']['table']['status']['analysing']?>",
+            4: "<?= $traderHistoryOffer['offer']['table']['status']['counter']?>",
         },
-        "detail": "<?= $traderPendingText['offer']['detail']['detail']?>",
-        "counter": "<?= $traderPendingText['offer']['detail']['counter']?>"
+        "detail": "<?= $traderHistoryOffer['offer']['detail']['detail']?>",
+        "counter": "<?= $traderHistoryOffer['offer']['detail']['counter']?>"
     }
 </script>
-<script src="/assets/js/pendingOffer.js"></script>
+<script src="/assets/js/traderHistoryOffer.ts"></script>
