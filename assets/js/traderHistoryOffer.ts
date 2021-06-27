@@ -14,7 +14,7 @@ function retrieve_pending(params) {
     url += token + "/";
     url += params.data.offset / 10;
     API_REQUEST(url, "GET").then((res) => {
-        console.log(res);
+        console.log(res['status']);
         if (res.status.code === 200) {
             let rows = [];
             let total = res['content'].total;
@@ -35,13 +35,11 @@ function retrieve_pending(params) {
             toastList[2].show();
             params.error()
         }
+
     })
 }
 
-const buttonHistory = "<div class=\"d-flex justify-content-center mt-3 button-detail\">" +
-    "<button type=\"button\" class=\"btn btn-success me-1 col-6 ok\">Offre Accepter !</button>" +
-    "<button type=\"button\" class=\"btn btn-danger ms-1 col-6 denied\">Offre Refuser !</button>" +
-    "</div>"
+
 
 function seeDetail(element) {
     const detail = $("#divtraderhistoryinfo");
@@ -55,6 +53,5 @@ function seeDetail(element) {
         detail.find("[name=counter]").val("").attr("disabled", true)
     } else {
         detail.find("[name=counter]").val(element.dataset['offerCounter'] + " €").removeAttr("disabled");
-        detail.append(buttonHistory);
     }
 }

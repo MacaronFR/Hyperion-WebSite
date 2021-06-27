@@ -9,7 +9,7 @@ function retrieve_pending(params) {
     url += token + "/";
     url += params.data.offset / 10;
     API_REQUEST(url, "GET").then(function (res) {
-        console.log(res);
+        console.log(res['status']);
         if (res.status.code === 200) {
             var rows = [];
             var total = res['content'].total;
@@ -33,10 +33,6 @@ function retrieve_pending(params) {
         }
     });
 }
-var buttonHistory = "<div class=\"d-flex justify-content-center mt-3 button-detail\">" +
-    "<button type=\"button\" class=\"btn btn-success me-1 col-6 ok\">Offre Accepter !</button>" +
-    "<button type=\"button\" class=\"btn btn-danger ms-1 col-6 denied\">Offre Refuser !</button>" +
-    "</div>";
 function seeDetail(element) {
     var detail = $("#divtraderhistoryinfo");
     detail.find(".button-detail").remove();
@@ -50,7 +46,6 @@ function seeDetail(element) {
     }
     else {
         detail.find("[name=counter]").val(element.dataset['offerCounter'] + " €").removeAttr("disabled");
-        detail.append(buttonHistory);
     }
 }
 //# sourceMappingURL=traderHistoryOffer.js.map
