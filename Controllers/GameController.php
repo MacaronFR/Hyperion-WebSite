@@ -9,7 +9,7 @@ class GameController extends Controller
 
     protected function prepareGame(): string{
         ob_start();
-        include "/WebGLBuildindex.html";
+        include "WebGLBuild/index.html";
         return ob_get_clean();
     }
 
