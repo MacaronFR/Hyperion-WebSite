@@ -16,7 +16,7 @@ class TraderHistoryOfferController extends Controller
      * @inheritDoc
      */
 	public function get(array $args){
-		$traderHistoryText = get_text("trader/history/offer");
+		$traderHistoryText = get_text("trader/history/history");
 		$root = get_text("root");
 		$head = $this->prepareHead($traderHistoryText['offer']['title']);
 		$header = $this->prepareHeader_2($root['header'], "trader");
