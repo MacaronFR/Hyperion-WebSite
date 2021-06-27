@@ -15,16 +15,16 @@ class TraderHistoryOfferController extends Controller
     /**
      * @inheritDoc
      */
-    public function get(array $args){
-	    $traderHistoryText = get_text("trader/history/offer");
-        $root = get_text("root");
-        $head = $this->prepareHead("Shop");
-        $header = $this->prepareHeader_2($traderHistoryText['offer']['title']);
-        $main = $this->prepareTraderHistoryProduct($traderHistoryText);
-        $footer = $this->prepareFooter();
-        $body = $this->prepareBody($header, $main, $footer);
-        include "Views/root.php";
-    }
+	public function get(array $args){
+		$traderHistoryText = get_text("trader/history/offer");
+		$root = get_text("root");
+		$head = $this->prepareHead($traderHistoryText['offer']['title']);
+		$header = $this->prepareHeader_2($root['header'], "trader");
+		$main = $this->prepareTraderHistoryProduct($traderHistoryText);
+		$footer = $this->prepareFooter();
+		$body = $this->prepareBody($header, $main, $footer);
+		include "Views/root.php";
+	}
 
     /**
      * @inheritDoc
