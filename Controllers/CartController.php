@@ -56,7 +56,7 @@ class CartController extends Controller
 				]],
 				'mode' => 'payment',
 				'success_url' => "${_SERVER['REQUEST_SCHEME']}://${_SERVER['SERVER_NAME']}/payement/accepted/${cart_id['id']}",
-				'cancel_url' => 'https://example.com/cancel',
+				'cancel_url' => "${_SERVER['REQUEST_SCHEME']}://${_SERVER['SERVER_NAME']}${_SERVER['REQUEST_URI']}",
 			]);
 		}
         ob_start();
