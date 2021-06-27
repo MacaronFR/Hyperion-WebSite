@@ -9,8 +9,8 @@ let toastList = toastEL.map(function (toastE) {
     return new bootstrap.Toast(toastE)
 })
 
-function gethistory(params) {
-    let url = "/offer/terminated/*/user/";
+function retrieve_pending(params) {
+    let url = "/offer/pending/";
     url += token + "/";
     url += params.data.offset / 10;
     API_REQUEST(url, "GET").then((res) => {
