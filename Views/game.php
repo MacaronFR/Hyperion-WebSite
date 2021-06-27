@@ -1,16 +1,14 @@
-<script src="../assets/js/three.js"></script>
-<script src="../assets/js/OrbitControls.js"></script>
 <html lang="en-us">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | PAWebGL</title>
-    <link rel="shortcut icon" href="/WebGLBuild/TemplateData/favicon.ico">
-    <link rel="stylesheet" href="/WebGLBuild/TemplateData/style.css">
-    <script src="/WebGLBuild/TemplateData/UnityProgress.js"></script>
-    <script src="/WebGLBuild/Build/UnityLoader.js"></script>
+    <link rel="shortcut icon" href="WebGLBuild/TemplateData/favicon.ico">
+    <link rel="stylesheet" href="WebGLBuild/TemplateData/style.css">
+    <script src="WebGLBuild/TemplateData/UnityProgress.js"></script>
+    <script src="WebGLBuild/Build/UnityLoader.js"></script>
     <script>
-        var unityInstance = UnityLoader.instantiate("unityContainer", "/WebGLBuild/Build/WebGLBuild.json", {onProgress: UnityProgress});
+        var unityInstance = UnityLoader.instantiate("unityContainer", "WebGLBuild/Build/WebGLBuild.json", {onProgress: UnityProgress});
     </script>
 </head>
 <body>
