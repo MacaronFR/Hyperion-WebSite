@@ -12,7 +12,7 @@
                    data-toggle="table"
                    data-pagination="true"
                    data-height="600"
-                   data-ajax="retrieve_pending"
+                   data-ajax="retrieve_history"
                    data-side-pagination="server"
                    data-locale="<?= $_SESSION['lang']?>">
                 <thead>

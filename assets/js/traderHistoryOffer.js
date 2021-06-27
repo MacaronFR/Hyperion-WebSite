@@ -4,8 +4,7 @@ var toastEL = [].slice.call(document.querySelectorAll(".toast"));
 var toastList = toastEL.map(function (toastE) {
     return new bootstrap.Toast(toastE);
 });
-// @ts-ignore
-function retrieve_pending(params) {
+function retrieve_history(params) {
     var url = "/offer/terminated/";
     url += token + "/";
     url += params.data.offset / 10;
