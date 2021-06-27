@@ -19,10 +19,9 @@ function retrieve_history(params) {
             for (var i = 0; i < Object.keys(res.content).length; ++i) {
                 rows.push(res.content[i]);
                 var color = (res.content[i]['status'] == 6) ? "primary" : "secondary";
-                var buttonText = (res.content[i]['status'] == 6) ? "ok" : "denied";
                 rows[i]['status'] = text['status'][rows[i]['status']];
                 rows[i]['state'] = text['state'][rows[i]['state']];
-                rows[i]['detail'] = "<button type=\"button\" class=\"btn btn-" + color + "\" data-offer-id=\"" + rows[i]['id'] + "\" data-offer-type=\"" + rows[i]['type'] + "\" data-offer-brand=\"" + rows[i]['brand'] + "\" data-offer-model=\"" + rows[i]['model'] + "\" data-offer-state=\"" + rows[i]['state'] + "\" data-offer=\"" + rows[i]['offer'] + "\" data-offer-counter=\"" + rows[i]['counter_offer'] + "\" onclick=\"seeDetail(this)\">" + text[buttonText] + "</button>";
+                rows[i]['detail'] = "<button type=\"button\" class=\"btn btn-" + color + "\" data-offer-id=\"" + rows[i]['id'] + "\" data-offer-type=\"" + rows[i]['type'] + "\" data-offer-brand=\"" + rows[i]['brand'] + "\" data-offer-model=\"" + rows[i]['model'] + "\" data-offer-state=\"" + rows[i]['state'] + "\" data-offer=\"" + rows[i]['offer'] + "\" onclick=\"seeDetail(this)\"> Détails</button>";
             }
             params.success({ "total": total, "totalNotFiltered": totalNotFiltered, "rows": rows });
         }
@@ -41,5 +40,6 @@ function seeDetail(element) {
     detail.find("[name=model]").val(element.dataset['offerModel']);
     detail.find("[name=state]").val(element.dataset['offerState']);
     detail.find("[name=offer]").val(element.dataset['offer'] + " €");
+    detail.find("[name=status]").val(element.dataset['status']);
 }
 //# sourceMappingURL=traderHistoryOffer.js.map
