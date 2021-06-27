@@ -24,10 +24,9 @@ function retrieve_history(params) {
             for (let i = 0; i < Object.keys(res.content).length; ++i) {
                 rows.push(res.content[i]);
                 let color = (res.content[i]['status'] == 6) ? "primary" : "secondary";
-                let buttonText = color == "primary" ? "Accepté" :"Refusé";
                 rows[i]['status'] = text['status'][rows[i]['status']];
                 rows[i]['state'] = text['state'][rows[i]['state']];
-                rows[i]['detail'] = "<button type=\"button\" class=\"btn btn-" + color + "\" data-offer-id=\"" + rows[i]['id'] + "\" data-offer-type=\"" + rows[i]['type'] + "\" data-offer-brand=\"" + rows[i]['brand'] + "\" data-offer-model=\"" + rows[i]['model'] + "\" data-offer-state=\"" + rows[i]['state'] +"\" data-offer-status=\"" + text[buttonText] + "\" data-offer=\"" + rows[i]['offer'] + "\" onclick=\"seeDetail(this)\"> Détails</button>"
+                rows[i]['detail'] = "<button type=\"button\" class=\"btn btn-" + color + "\" data-offer-id=\"" + rows[i]['id'] + "\" data-offer-type=\"" + rows[i]['type'] + "\" data-offer-brand=\"" + rows[i]['brand'] + "\" data-offer-model=\"" + rows[i]['model'] + "\" data-offer-state=\"" + rows[i]['state'] + "\" data-offer=\"" + rows[i]['offer'] + "\" onclick=\"seeDetail(this)\"> Détails</button>"
             }
             params.success({"total": total, "totalNotFiltered": totalNotFiltered, "rows": rows});
         } else if (res.status.code === 204) {
