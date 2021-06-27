@@ -5,6 +5,7 @@ offer:
       id: "ID"
       date: "Date"
       type: "Type"
+      brand: "Marque"
       status: "Statut"
     format: "dd/mm/yyyy"
     status:
