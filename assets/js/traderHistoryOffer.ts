@@ -25,9 +25,9 @@ function retrieve_history(params){
     })
 }
 
-const button = "<div class=\"d-flex justify-content-center mt-3 button-detail\">" +
-    "<button type=\"button\" class=\"btn btn-success me-1 col-6 accept\">Accepter !</button>" +
-    "<button type=\"button\" class=\"btn btn-danger ms-1 col-6 refuse\">Refuser !</button>" +
+const button_history = "<div class=\"d-flex justify-content-center mt-3 button-detail\">" +
+    "<button type=\"button\" class=\"btn btn-success me-1 col-6 accept\">Accepter</button>" +
+    "<button type=\"button\" class=\"btn btn-danger ms-1 col-6 refuse\">Refuser</button>" +
     "</div>"
 
 function seeDetail(element) {
