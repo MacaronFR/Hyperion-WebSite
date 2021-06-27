@@ -6,6 +6,7 @@ offer:
       date: "Date"
       type: "Type"
       brand: "Marque"
+      model: "Modèle"
       status: "Statut"
     format: "dd/mm/yyyy"
     status:
