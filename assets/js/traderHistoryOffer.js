@@ -5,10 +5,10 @@ var toastList = toastEL.map(function (toastE) {
     return new bootstrap.Toast(toastE);
 });
 function retrieve_pending(params) {
-    var url = "/offer/history/";
+    var url = "/offer/set/history/";
     url += token + "/";
     url += params.data.offset / 10;
-    API_REQUEST(url, "GET").then(function (res) {
+    API_REQUEST(url, "PUT").then(function (res) {
         console.log(res);
         if (res.status.code === 200) {
             var rows = [];
