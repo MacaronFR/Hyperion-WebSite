@@ -1,0 +1,25 @@
+offer:
+  title: "History"
+  table:
+    header:
+      id: "ID"
+      date: "Date"
+      type: "Type"
+      status: "Statut"
+    format: "dd/mm/yyyy"
+    status:
+      ok: "Validate"
+      denied: "Refused"
+  detail:
+    detail: "Details"
+    title: "Offers detail"
+    state:
+      state_jabba: "Jabba the Hutt"
+      state_passable: "Good Enough"
+      state_ok: "OK"
+      state_good: "Good"
+      state_new: "New"
+    offer: "Offer"
+    counter: "Counter-Offer"
+    accept: "Accepted"
+    deny: "Refused"
