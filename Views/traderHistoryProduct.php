@@ -17,7 +17,6 @@
                    data-locale="<?= $_SESSION['lang']?>">
                 <thead>
                 <tr>
-                    <th data-field="id"><?= $traderHistoryText['offer']['table']['header']['id']?></th>
                     <th data-field="date"><?= $traderHistoryText['offer']['table']['header']['date']?></th>
                     <th data-field="type"><?= $traderHistoryText['offer']['table']['header']['type']?></th>
                     <th data-field="brand"><?= $traderHistoryText['offer']['table']['header']['brand']?></th>
