@@ -32,7 +32,6 @@ function selectOffer() {
             $("#ToastSuccess").children(".toast-body").text("offre accepté");
             toastList[1].show();
             $(_this).parents("table").bootstrapTable("refresh");
-            setTimeout(function () { window.location.href = "/expert/offer/consult"; }, 1000);
         }
         else {
             $("#ToastError").children(".toast-body").text("error");
