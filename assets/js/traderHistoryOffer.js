@@ -18,8 +18,8 @@ function retrieve_pending(params) {
             delete res['content']['totalNotFiltered'];
             for (var i = 0; i < Object.keys(res.content).length; ++i) {
                 rows.push(res.content[i]);
-                var color = (res.content[i]['status'] == 5) ? "primary" : "secondary";
-                var buttonText = res.content[i]['status'] == 5 ? "accepted" : "refused";
+                var color = (res.content[i]['status'] == 6) ? "primary" : "secondary";
+                var buttonText = (res.content[i]['status'] == 6) ? "accepted" : "refused";
                 console.log(buttonText);
                 rows[i]['status'] = text['status'][rows[i]['status']];
                 rows[i]['state'] = text['state'][rows[i]['state']];
