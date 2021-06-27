@@ -21,8 +21,8 @@
                     <th data-field="type"><?= $traderHistoryText['offer']['table']['header']['type']?></th>
                     <th data-field="brand"><?= $traderHistoryText['offer']['table']['header']['brand']?></th>
                     <th data-field="model"><?= $traderHistoryText['offer']['table']['header']['model']?></th>
-                    <th data-field="status"><?= $traderHistoryText['offer']['table']['header']['status']?></th>
-                    <th data-field="detail"></th>
+                    <!---<th data-field="status"><?= $traderHistoryText['offer']['table']['header']['status']?></th> --->
+                    <th data-field="status"></th>
                 </tr>
                 </thead>
             </table>
