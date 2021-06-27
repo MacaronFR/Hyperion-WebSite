@@ -9,7 +9,6 @@ function retrieve_history(params) {
     url += token + "/";
     url += params.data.offset / 10;
     API_REQUEST(url, "GET").then(function (res) {
-        console.log(res);
         if (res.status.code === 200) {
             var rows = [];
             var total = res['content'].total;
