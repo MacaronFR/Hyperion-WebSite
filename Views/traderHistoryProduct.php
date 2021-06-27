@@ -70,8 +70,8 @@
             5:"<?= $traderHistoryText['offer']['detail']['state']['state_new']?>"
         },
         "status":{
-            1: "<?= $traderHistoryText['offer']['table']['status']['accept']?>",
-            2: "<?= $traderHistoryText['offer']['table']['status']['deny']?>",
+            1: "<?= $traderHistoryText['offer']['table']['status']['ok']?>",
+            2: "<?= $traderHistoryText['offer']['table']['status']['denied']?>",
         },
         "detail": "<?= $traderHistoryText['offer']['detail']['detail']?>",
         "counter": "<?= $traderHistoryText['offer']['detail']['counter']?>"
