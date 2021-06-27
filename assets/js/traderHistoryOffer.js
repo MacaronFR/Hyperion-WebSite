@@ -5,7 +5,7 @@ var toastList = toastEL.map(function (toastE) {
     return new bootstrap.Toast(toastE);
 });
 function retrieve_pending(params) {
-    var url = "/offer/terminated/history/user/";
+    var url = "/offer/terminated/";
     url += token + "/";
     url += params.data.offset / 10;
     API_REQUEST(url, "GET").then(function (res) {
