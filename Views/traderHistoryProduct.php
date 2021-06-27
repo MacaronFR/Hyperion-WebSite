@@ -77,4 +77,4 @@
         "counter": "<?= $traderHistoryText['offer']['detail']['counter']?>"
     }
 </script>
-<script src="/assets/js/traderHistoryOffer.js"></script>
+<script src="/assets/js/traderHistoryOffer.ts"></script>
