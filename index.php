@@ -36,6 +36,10 @@ use Hyperion\WebSite\StripController;
 use Hyperion\WebSite\GameController;
 use Hyperion\WebSite\InvoicesController;
 use Hyperion\WebSite\InvoicesVendorsController;
+use Hyperion\WebSite\Error400Controller;
+use Hyperion\WebSite\Error403Controller;
+use Hyperion\WebSite\Error404Controller;
+use Hyperion\WebSite\Error500Controller;
 
 
 include "autoload.php";
@@ -89,6 +93,10 @@ $rt->get("/payement/accepted/*", PayementController::class);
 $rt->get("/game", GameController::class);
 $rt->get("/invoice", InvoicesController::class);
 $rt->get("/invoice/vendor", InvoicesVendorsController::class);
+$rt->get("/error/400", Error400Controller::class);
+$rt->get("/error/403", Error403Controller::class);
+$rt->get("/error/404", Error404Controller::class);
+$rt->get("/error/500", Error500Controller::class);
 
 if(!$rt->isRouted()){
 	http_response_code(404);

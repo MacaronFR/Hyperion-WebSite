@@ -25,3 +25,4 @@ conf
 /assets/bootstrap-5/package-lock.json
 /assets/bootstrap-5/README.md
 /assets/bootstrap-5/SECURITY.md
+/node_modules/

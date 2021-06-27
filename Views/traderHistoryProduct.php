@@ -1,5 +1,10 @@
+<?php
+/**
+ * @var array $traderHistoryText
+ */
+?>
 <div id="traderhistoryproductgeneral" class="container-fluid d-flex flex-column">
-    <h3 class="align-self-center mb-4 mt-3">Historique des Offres</h3>
+    <h3 class="align-self-center mb-4 mt-3"><?= $traderHistoryText['offer']['title']?></h3>
     <div class="container-fluid d-flex flex-column flex-lg-row">
         <div id="divtraderhistorytable" class="container-fluid col-lg-7">
             <table class="table"
@@ -7,99 +12,70 @@
                    data-toggle="table"
                    data-pagination="true"
                    data-height="600"
-				   data-locale="<?= $_SESSION['lang']?>">
+                   data-ajax="retrieve_history"
+                   data-side-pagination="server"
+                   data-locale="<?= $_SESSION['lang']?>">
                 <thead>
                 <tr>
-                    <th data-sortable data-field="id">id de l'offre</th>
-                    <th data-sortable data-field="type">type de produit</th>
-                    <th data-sortable data-field="state">etat de l'offre</th>
+                    <th data-field="date"><?= $traderHistoryText['offer']['table']['header']['date']?></th>
+                    <th data-field="type"><?= $traderHistoryText['offer']['table']['header']['type']?></th>
+                    <th data-field="brand"><?= $traderHistoryText['offer']['table']['header']['brand']?></th>
+                    <th data-field="model"><?= $traderHistoryText['offer']['table']['header']['model']?></th>
+                    <th data-field="status"><?= $traderHistoryText['offer']['table']['header']['status']?></th>
+                    <th data-field="detail"></th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td class="d-grid">
-                        <button type="button" class="btn btn-success">Acceptée le 16/05/2021</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td class="d-grid">
-                        <button type="button" class="btn btn-success">Acceptée le 13/05/2021</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td class="d-grid">
-                        <button type="button" class="btn btn-danger">Refusé le 09/05/2021</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td class="d-grid">
-                        <button type="button" class="btn btn-danger">Refusé le 09/05/2021</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td class="d-grid">
-                        <button type="button" class="btn btn-success">Acceptée le 08/05/2021</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td class="d-grid">
-                        <button type="button" class="btn btn-danger">Refusé le 02/05/2021</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td class="d-grid">
-                        <button type="button" class="btn btn-danger">Refusé le 20/04/2021</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td class="d-grid">
-                        <button type="button" class="btn btn-danger">Refusé le 17/04/2021</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td class="d-grid">
-                        <button type="button" class="btn btn-success">Acceptée le 16/04/2021</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2134214</th>
-                    <td>Smartphone</td>
-                    <td class="d-grid">
-                        <button type="button" class="btn btn-success">Acceptée le 02/04/2021</button>
-                    </td>
-                </tr>
-                </tbody>
             </table>
         </div>
         <div id="divtraderhistoryinfo" class="container-fluid col-lg-3 d-flex flex-column justify-content-center my-auto p-4 border border-2 border-primary rounded-3">
-            <h4 class="align-self-center mb-3">informations du produit</h4>
-            <input type="text" class="form-control mb-1" value="Smartphone" style="text-align: center">
-            <input type="text" class="form-control mb-1" value="Apple" style="text-align: center">
-            <input type="text" class="form-control mb-1" value="6s - White" style="text-align: center">
-            <input type="text" class="form-control mb-1" value="16 Go" style="text-align: center">
-            <input type="text" class="form-control mb-1" value="Correct" style="text-align: center">
-            <input type="text" class="form-control mb-1" value="145 €" style="text-align: center">
-            <div class="d-grid mt-3">
-                <button type="button" class="btn btn-success me-1">Acceptée</button>
+            <h4 class="align-self-center mb-3"><?= $traderHistoryText['offer']['detail']['title']?></h4>
+            <input type="text" name="type" class="form-control mb-1" style="text-align: center" readonly>
+            <input type="text" name="brand" class="form-control mb-1" style="text-align: center" readonly>
+            <input type="text" name="model" class="form-control mb-1" style="text-align: center" readonly>
+            <input type="text" name="state" class="form-control mb-1" style="text-align: center" readonly>
+            <div class="input-group mb-1">
+                <span class="input-group-text">Offre</span>
+                <input type="text" name="offer" class="form-control" style="text-align: center" readonly>
+            </div>
+            <div class="input-group mb-1">
+                <span class="input-group-text">Contre Offre</span>
+                <input name="counter" type="text" class="form-control" style="text-align: center" readonly>
             </div>
         </div>
     </div>
 </div>
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 1500">
+    <div id="ToastError" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+        <div class="toast-body bg-danger">
+            Hello, world! This is a toast message.
+        </div>
+    </div>
+    <div id="ToastSuccess" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+        <div class="toast-body bg-success">
+            Hello, world! This is a toast message.
+        </div>
+    </div>
+    <div id="ToastWarning" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1700">
+        <div class="toast-body bg-warning">
+            Hello, world! This is a toast message.
+        </div>
+    </div>
+</div>
+<script>
+    let text = {
+        "state":{
+            1:"<?= $traderHistoryText['offer']['detail']['state']['state_jabba']?>",
+            2:"<?= $traderHistoryText['offer']['detail']['state']['state_passable']?>",
+            3:"<?= $traderHistoryText['offer']['detail']['state']['state_ok']?>",
+            4:"<?= $traderHistoryText['offer']['detail']['state']['state_good']?>",
+            5:"<?= $traderHistoryText['offer']['detail']['state']['state_new']?>"
+        },
+        "status":{
+            1: "<?= $traderHistoryText['offer']['table']['status']['ok']?>",
+            2: "<?= $traderHistoryText['offer']['table']['status']['denied']?>",
+        },
+        "detail": "<?= $traderHistoryText['offer']['detail']['detail']?>",
+        "counter": "<?= $traderHistoryText['offer']['detail']['counter']?>"
+    }
+</script>
+<script src="/assets/js/traderHistoryOffer.js"></script>

@@ -1,0 +1,27 @@
+offer:
+  title: "Historique"
+  table:
+    header:
+      id: "ID"
+      date: "Date"
+      type: "Type"
+      brand: "Marque"
+      model: "Modèle"
+      status: "Statut"
+    format: "dd/mm/yyyy"
+    status:
+      ok: "Valider"
+      denied: "Refuser"
+  detail:
+    detail: "Détail"
+    title: "Détail de l'offre"
+    state:
+      state_jabba: "Jabba le Hutt"
+      state_passable: "Passable"
+      state_ok: "OK"
+      state_good: "Bon"
+      state_new: "Neuf"
+    offer: "Offre"
+    counter: "Contre-Offre"
+    accept: "Accepter"
+    deny: "Refuser"
