@@ -9,7 +9,7 @@ let toastList = toastEL.map(function (toastE) {
     return new bootstrap.Toast(toastE)
 })
 
-function retrieve_pending(params) {
+function retrieve_history(params) {
     let url = "/offer/terminated/";
     url += token + "/";
     url += params.data.offset / 10;
@@ -24,7 +24,7 @@ function retrieve_pending(params) {
             for (let i = 0; i < Object.keys(res.content).length; ++i) {
                 rows.push(res.content[i]);
                 let color = (res.content[i]['status'] == 5) ? "primary" : "secondary";
-                let buttonText = res.content[i]['status'] == 5 ? "accepted" : "refused";
+                let buttonText = res.content[i]['status'] == 5 ? "accepted" : res.content[i]['status'] == 6 ? "refused" : "accept";
                 rows[i]['status'] = text['status'][rows[i]['status']];
                 rows[i]['state'] = text['state'][rows[i]['state']];
                 rows[i]['detail'] = "<button type=\"button\" class=\"btn btn-" + color + "\" data-offer-id=\"" + rows[i]['id'] + "\" data-offer-type=\"" + rows[i]['type'] + "\" data-offer-brand=\"" + rows[i]['brand'] + "\" data-offer-model=\"" + rows[i]['model'] + "\" data-offer-state=\"" + rows[i]['state'] + "\" data-offer=\"" + rows[i]['offer'] + "\" data-offer-counter=\"" + rows[i]['counter_offer'] + "\" onclick=\"seeDetail(this)\">" + text[buttonText] + "</button>"
@@ -39,8 +39,8 @@ function retrieve_pending(params) {
 }
 
 const buttonHistory = "<div class=\"d-flex justify-content-center mt-3 button-detail\">" +
-    "<button type=\"button\" class=\"btn btn-success me-1 col-6 accepted\">Offre Accepter le!</button>" +
-    "<button type=\"button\" class=\"btn btn-danger ms-1 col-6 refused\">Offre Refuser le !</button>" +
+    "<button type=\"button\" class=\"btn btn-success me-1 col-6 accepted\">Offre Accepter !</button>" +
+    "<button type=\"button\" class=\"btn btn-danger ms-1 col-6 refused\">Offre Refuser !</button>" +
     "</div>"
 
 function seeDetail(element) {

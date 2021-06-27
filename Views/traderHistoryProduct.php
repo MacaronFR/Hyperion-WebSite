@@ -63,12 +63,7 @@
 <script>
     let text = {
         "state":{
-            1:"<?= $traderHistoryText['offer']['detail']['state']['state_jabba']?>",
-            2:"<?= $traderHistoryText['offer']['detail']['state']['state_passable']?>",
-            3:"<?= $traderHistoryText['offer']['detail']['state']['state_ok']?>",
-            4:"<?= $traderHistoryText['offer']['detail']['state']['state_good']?>",
-            5:"<?= $traderHistoryText['offer']['detail']['state']['state_new']?>"
-        },
+            1:"<?= $traderHistoryText['offer']['detail']['state']?>",
         "status":{
             1: "<?= $traderHistoryText['offer']['table']['status']['accepted']?>",
             2: "<?= $traderHistoryText['offer']['table']['status']['refused']?>",
