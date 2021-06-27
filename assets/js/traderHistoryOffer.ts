@@ -10,7 +10,7 @@ let toastList = toastEL.map(function (toastE) {
 })
 
 function retrieve_pending(params) {
-    let url = "/offer/pending/";
+    let url = "/offer/history/";
     url += token + "/";
     url += params.data.offset / 10;
     API_REQUEST(url, "GET").then((res) => {
