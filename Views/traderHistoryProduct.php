@@ -3,10 +3,10 @@
  * @var array $traderHistoryText
  */
 ?>
-<div id="traderpendingproductgeneral" class="container-fluid d-flex flex-column">
+<div id="traderhistoryproductgeneral" class="container-fluid d-flex flex-column">
     <h3 class="align-self-center mb-4 mt-3"><?= $traderHistoryText['offer']['title']?></h3>
     <div class="container-fluid d-flex flex-column flex-lg-row">
-        <div id="divtraderpendingtable" class="container-fluid col-lg-7">
+        <div id="divtraderhistorytable" class="container-fluid col-lg-7">
             <table class="table"
                    id="table_spec"
                    data-toggle="table"
@@ -26,7 +26,7 @@
                 </thead>
             </table>
         </div>
-        <div id="divtraderpendinginfo" class="container-fluid col-lg-3 d-flex flex-column justify-content-center my-auto p-4 border border-2 border-primary rounded-3">
+        <div id="divtraderhistoryinfo" class="container-fluid col-lg-3 d-flex flex-column justify-content-center my-auto p-4 border border-2 border-primary rounded-3">
             <h4 class="align-self-center mb-3"><?= $traderHistoryText['offer']['detail']['title']?></h4>
             <input type="text" name="type" class="form-control mb-1" style="text-align: center" readonly>
             <input type="text" name="brand" class="form-control mb-1" style="text-align: center" readonly>
@@ -70,10 +70,8 @@
             5:"<?= $traderHistoryText['offer']['detail']['state']['state_new']?>"
         },
         "status":{
-            1: "<?= $traderHistoryText['offer']['table']['status']['not_send']?>",
-            2: "<?= $traderHistoryText['offer']['table']['status']['send']?>",
-            3: "<?= $traderHistoryText['offer']['table']['status']['analysing']?>",
-            4: "<?= $traderHistoryText['offer']['table']['status']['counter']?>",
+            1: "<?= $traderHistoryText['offer']['table']['status']['accepted']?>",
+            2: "<?= $traderHistoryText['offer']['table']['status']['refused']?>",
         },
         "detail": "<?= $traderHistoryText['offer']['detail']['detail']?>",
         "counter": "<?= $traderHistoryText['offer']['detail']['counter']?>"
