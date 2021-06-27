@@ -9,7 +9,7 @@ let toastList = toastEL.map(function (toastE) {
     return new bootstrap.Toast(toastE)
 })
 
-function retrieve_history(params) {
+function retrieve_pending(params) {
     let url = "/offer/terminated/";
     url += token + "/";
     url += params.data.offset / 10;
