@@ -27,7 +27,7 @@ function retrieve_history(params) {
                 let button = (color === "success") ? "Validé" : "Refusé";
                 rows[i]['status'] = text['status'][rows[i]['status']];
                 rows[i]['state'] = text['state'][rows[i]['state']];
-                rows[i]['detail'] = "<button type=\"button\" class=\"btn btn-" + color + "\" data-offer-id=\"" + rows[i]['id'] + "\" data-offer-type=\"" + rows[i]['type'] + "\" data-offer-brand=\"" + rows[i]['brand'] + "\" data-offer-model=\"" + rows[i]['model'] + "\" data-offer-state=\"" + rows[i]['state'] + "\" data-offer=\"" + rows[i]['offer'] + "\" onclick=\"seeDetail(this)\">" + text[button]  + "</button>"
+                rows[i]['detail'] = "<button type=\"button\" class=\"btn btn-" + color + "\" data-offer-id=\"" + rows[i]['id'] + "\" data-offer-type=\"" + rows[i]['type'] + "\" data-offer-brand=\"" + rows[i]['brand'] + "\" data-offer-model=\"" + rows[i]['model'] + "\" data-offer-state=\"" + rows[i]['state'] + "\" data-offer=\"" + rows[i]['offer'] + "\" onclick=\"seeDetail(this)\">" + button  + "</button>"
             }
             params.success({"total": total, "totalNotFiltered": totalNotFiltered, "rows": rows});
         } else if (res.status.code === 204) {
