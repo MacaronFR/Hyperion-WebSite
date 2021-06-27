@@ -22,7 +22,7 @@ function retrieve_history(params) {
                 var buttonText = (res.content[i]['status'] == 6) ? "ok" : "denied";
                 rows[i]['status'] = text['status'][rows[i]['status']];
                 rows[i]['state'] = text['state'][rows[i]['state']];
-                rows[i]['detail'] = "<button type=\"button\" class=\"btn btn-" + color + "\" data-offer-id=\"" + rows[i]['id'] + "\" data-offer-type=\"" + rows[i]['type'] + "\" data-offer-brand=\"" + rows[i]['brand'] + "\" data-offer-model=\"" + rows[i]['model'] + "\" data-offer-state=\"" + rows[i]['state'] + "\" data-offer=\"" + rows[i]['offer'] + "\" onclick=\"seeDetail(this)\">" + text[buttonText] + "</button>";
+                rows[i]['detail'] = "<button type=\"button\" class=\"btn btn-" + color + "\" data-offer-id=\"" + rows[i]['id'] + "\" data-offer-type=\"" + rows[i]['type'] + "\" data-offer-brand=\"" + rows[i]['brand'] + "\" data-offer-model=\"" + rows[i]['model'] + "\" data-offer-state=\"" + rows[i]['state'] + "\" data-offer-status=\"" + text[buttonText] + "\" data-offer=\"" + rows[i]['offer'] + "\" onclick=\"seeDetail(this)\"> Détails</button>";
             }
             params.success({ "total": total, "totalNotFiltered": totalNotFiltered, "rows": rows });
         }
