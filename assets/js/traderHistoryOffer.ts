@@ -24,7 +24,7 @@ function retrieve_pending(params) {
             for (let i = 0; i < Object.keys(res.content).length; ++i) {
                 rows.push(res.content[i]);
                 let color = (res.content[i]['status'] == 6) ? "primary" : "secondary";
-                let buttonText = (res.content[i]['status'] == 6) ? "ok" : "denied";
+                let buttonText = (res.content[i]['status'] == 6) ? "accept" : "deny";
                 console.log(buttonText);
                 rows[i]['status'] = text['status'][rows[i]['status']];
                 rows[i]['state'] = text['state'][rows[i]['state']];
