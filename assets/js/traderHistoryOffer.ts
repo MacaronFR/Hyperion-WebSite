@@ -14,7 +14,7 @@ function retrieve_pending(params) {
     url += token + "/";
     url += params.data.offset / 10;
     API_REQUEST(url, "GET").then((res) => {
-        console.log(res['status']);
+        console.log(res['content']['status']);
         if (res.status.code === 200) {
             let rows = [];
             let total = res['content'].total;
