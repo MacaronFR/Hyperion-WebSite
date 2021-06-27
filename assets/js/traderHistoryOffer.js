@@ -41,5 +41,6 @@ function seeDetail(element) {
     detail.find("[name=model]").val(element.dataset['offerModel']);
     detail.find("[name=state]").val(element.dataset['offerState']);
     detail.find("[name=offer]").val(element.dataset['offer'] + " €");
+    detail.find("[name=status]").val(element.dataset['status']);
 }
 //# sourceMappingURL=traderHistoryOffer.js.map

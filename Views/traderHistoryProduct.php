@@ -33,6 +33,7 @@
             <input type="text" name="brand" class="form-control mb-1" style="text-align: center" readonly>
             <input type="text" name="model" class="form-control mb-1" style="text-align: center" readonly>
             <input type="text" name="state" class="form-control mb-1" style="text-align: center" readonly>
+            <input type="text" name="status" class="form-control mb-1" style="text-align: center" readonly>
             <div class="input-group mb-1">
                 <span class="input-group-text">Offre</span>
                 <input type="text" name="offer" class="form-control" style="text-align: center" readonly>
