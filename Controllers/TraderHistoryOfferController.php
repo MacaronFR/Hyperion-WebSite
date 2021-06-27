@@ -6,7 +6,7 @@ namespace Hyperion\WebSite;
 
 class TraderHistoryOfferController extends Controller
 {
-	protected function prepareTraderPendingProduct(array $traderPendingText): string{
+	protected function prepareTraderHistoryProduct(array $traderPendingText): string{
 		ob_start();
 		include "Views/traderHistoryProduct.php";
 		return ob_get_clean();
