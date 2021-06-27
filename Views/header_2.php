@@ -16,7 +16,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div id="navbarHeader2" class="collapse navbar-collapse">
+        <div id="navbarHeader2" class="collapse navbar-collapse justify-content-end">
             <div class="navbar-nav me-lg-5" id="header_1_link">
                 <?php if(isset($_SESSION['mail'])): ?>
                     <a class="nav-item nav-link" href="/me"><?= $text['account']['my_account'] ?></a>
