@@ -6,17 +6,11 @@ namespace Hyperion\WebSite;
 
 class TraderHistoryOfferController extends Controller
 {
-    protected function prepareTraderHistoryProduct(): string{
-	    $categories = API_request("", "GET");
-	    if($categories === false){
-		    header("Location: /500");
-	    }
-	    $categories = $categories['content'];
-	    unset($categories['total'], $categories['totalNotFiltered']);
-	    ob_start();
-	    include "Views/traderHistoryProduct.php";
-	    return ob_get_clean();
-    }
+	protected function prepareTraderPendingProduct(array $traderPendingText): string{
+		ob_start();
+		include "Views/traderHistoryProduct.php";
+		return ob_get_clean();
+	}
 
     /**
      * @inheritDoc
