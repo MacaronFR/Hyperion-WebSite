@@ -9,6 +9,7 @@ function retrieve_pending(params) {
     url += token + "/";
     url += params.data.offset / 10;
     API_REQUEST(url, "GET").then(function (res) {
+        console.log(res);
         if (res.status.code === 200) {
             var rows = [];
             var total = res['content'].total;
@@ -33,11 +34,11 @@ function retrieve_pending(params) {
     });
 }
 var buttonHistory = "<div class=\"d-flex justify-content-center mt-3 button-detail\">" +
-    "<button type=\"button\" class=\"btn btn-success me-1 col-6 accepted\">Accepter !</button>" +
-    "<button type=\"button\" class=\"btn btn-danger ms-1 col-6 refused\">Refuser !</button>" +
+    "<button type=\"button\" class=\"btn btn-success me-1 col-6 accepted\">Offre Accepter le!</button>" +
+    "<button type=\"button\" class=\"btn btn-danger ms-1 col-6 refused\">Offre Refuser le !</button>" +
     "</div>";
 function seeDetail(element) {
-    var detail = $("#divtraderpendinginfo");
+    var detail = $("#divtraderhistoryinfo");
     detail.find(".button-detail").remove();
     detail.find("[name=type]").val(element.dataset['offerType']);
     detail.find("[name=brand]").val(element.dataset['offerBrand']);
@@ -50,38 +51,6 @@ function seeDetail(element) {
     else {
         detail.find("[name=counter]").val(element.dataset['offerCounter'] + " €").removeAttr("disabled");
         detail.append(buttonHistory);
-        detail.find(".accept").off("click").on("click", function () {
-            API_REQUEST("/offer/counter/accept/" + token + "/" + element.dataset['offerId'], "PUT").then(function (res) {
-                if (res.status.code === 200) {
-                    $(".table").bootstrapTable("refresh");
-                    $("#ToastSuccess").children(".toast-body").text("Offre Acceptée");
-                    toastList[1].show();
-                }
-                else {
-                    $("#ToastWarning").children(".toast-body").text("Erreur");
-                    toastList[1].show();
-                }
-            }).catch(function () {
-                $("#ToastError").children(".toast-body").text("Erreur");
-                toastList[0].show();
-            });
-        });
-        detail.find(".refuse").off("click").on("click", function () {
-            API_REQUEST("/offer/counter/refuse/" + token + "/" + element.dataset['offerId'], "PUT").then(function (res) {
-                if (res.status.code === 200) {
-                    $(".table").bootstrapTable("refresh");
-                    $("#ToastWarning").children(".toast-body").text("Offre Refusée");
-                    toastList[2].show();
-                }
-                else {
-                    $("#ToastWarning").children(".toast-body").text("Erreur");
-                    toastList[1].show();
-                }
-            }).catch(function () {
-                $("#ToastError").children(".toast-body").text("Erreur");
-                toastList[0].show();
-            });
-        });
     }
 }
 //# sourceMappingURL=traderHistoryOffer.js.map
