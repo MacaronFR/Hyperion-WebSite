@@ -50,7 +50,7 @@
             </div>
             <div>
                 <p class="" id="div_stripe" >Total : <?= $total ?> €</p>
-                <a class="btn btn-primary col-12" style="color: black" href="../WebGLBuild/index.html" target="_blank">Patienter ?</a>
+                <a class="btn btn-primary col-12" style="color: black" href="game.php" target="_blank">Patienter ?</a>
 				<button id="checkout-button" class="btn btn-success col-12 mt-2" <?= $total<= 0?"disabled":""?>>Payer</button>
             </div>
         </div>
