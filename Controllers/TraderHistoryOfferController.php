@@ -19,7 +19,7 @@ class TraderHistoryOfferController extends Controller
 	    $traderHistoryText = get_text("trader/history/offer");
         $root = get_text("root");
         $head = $this->prepareHead("Shop");
-        $header = $this->prepareHeader_2($root['header'], "trader");
+        $header = $this->prepareHeader_2($traderHistoryText['offer']['title']);
         $main = $this->prepareTraderHistoryProduct($traderHistoryText);
         $footer = $this->prepareFooter();
         $body = $this->prepareBody($header, $main, $footer);
