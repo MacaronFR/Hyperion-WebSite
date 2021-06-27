@@ -10,10 +10,10 @@ let toastList = toastEL.map(function (toastE) {
 })
 
 function retrieve_pending(params) {
-    let url = "/offer/set/history/";
+    let url = "/offer/terminated/history/user/";
     url += token + "/";
     url += params.data.offset / 10;
-    API_REQUEST(url, "PUT").then((res) => {
+    API_REQUEST(url, "GET").then((res) => {
         console.log(res);
         if (res.status.code === 200) {
             let rows = [];
