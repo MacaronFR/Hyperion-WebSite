@@ -38,10 +38,6 @@
                 <span class="input-group-text">Offre</span>
                 <input type="text" name="offer" class="form-control" style="text-align: center" readonly>
             </div>
-            <div class="input-group mb-1">
-                <span class="input-group-text">Contre Offre</span>
-                <input name="counter" type="text" class="form-control" style="text-align: center" readonly>
-            </div>
         </div>
     </div>
 </div>
