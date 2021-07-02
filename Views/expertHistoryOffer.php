@@ -1,5 +1,5 @@
 <div id="experthistoryoffergeneral" class="container-fluid d-flex flex-column">
-    <h3 class="align-self-center mb-4 mt-3">Offres non traitées</h3>
+    <h3 class="align-self-center mb-4 mt-3"> Historique des offres</h3>
     <div class="container-fluid d-flex flex-column flex-lg-row">
         <div id="divexperthistoryoffertable" class="container-fluid col-lg-7">
 			<table
